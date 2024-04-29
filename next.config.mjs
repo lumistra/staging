@@ -4,9 +4,10 @@ const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
   skipTrailingSlashRedirect: false,
-  basePath: `/${process.env.BASE_PATH}`,
+  ...(process.env.BASE_PATH && { basePath: `/${process.env.BASE_PATH}` }),
   env: {
     basePath: `/${process.env.BASE_PATH}`,
+    storyblokApiToken: process.env.STORYBLOK_API_TOKEN,
   },
   images: {
     unoptimized: true,
