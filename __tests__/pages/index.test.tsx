@@ -1,9 +1,9 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
-import Page from '@/pages/[[...slug]]';
+import Home from '@/pages/index';
 
-describe('page: [[...slug]]', () => {
-  test('renders Page', () => {
-    render(<Page story={{ content: { title: 'Title', description: 'Description' } } as any} />);
+describe('page: Home', () => {
+  test('renders Home page', () => {
+    render(<Home />);
   });
 });

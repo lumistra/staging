@@ -18,3 +18,5 @@ beforeEach(() => {
 afterEach(() => {
   jest.clearAllMocks();
 });
+
+jest.mock('*.svg', () => 'svg');

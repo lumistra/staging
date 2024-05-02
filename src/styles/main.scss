@@ -1,0 +1,28 @@
+@import "./reset";
+@import "./colors";
+@import "./fonts";
+@import "./sizes";
+@import "./image";
+@import "./navigation";
+
+@font-face {
+  font-family: $regular;
+  src: url("../fonts/Geist.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: $mono;
+  src: url("../fonts/GeistMono.woff2") format("woff2");
+}
+
+html,
+body {
+  background-color: $white;
+  color: $black;
+  font-family: $regular, sans-serif;
+  height: 100%;
+
+  #__next {
+    height: 100%;
+  }
+}
