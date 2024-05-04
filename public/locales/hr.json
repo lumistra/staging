@@ -1,0 +1,13 @@
+{
+  "routes": {
+    "home": "Naslovnica",
+    "work": "Radovi",
+    "about": "O nama",
+    "contact": "Kontakt",
+    "services": "Servisi",
+    "articles": "Objave"
+  },
+  "navigation": {
+    "language": "Jezici"
+  }
+}

@@ -1,17 +1,20 @@
 .navigation-wrapper {
+  background-color: $white;
   display: flex;
   height: 110px;
   justify-content: center;
+  left: 0;
+  position: sticky;
+  top: 0;
   width: 100%;
+  z-index: 999;
 
   @mixin blendMode {
     mix-blend-mode: difference;
   }
 
   @mixin svgFill {
-    fill: $white;
-
-    * {
+    > * {
       fill: $white;
     }
   }
@@ -28,8 +31,16 @@
     .logo {
       @include blendMode;
       @include svgFill;
-      height: 30px;
-      width: 160px;
+
+      &.logo-text {
+        height: 30px;
+        width: 160px;
+      }
+
+      &.logo-icon {
+        height: 30px;
+        width: 30px;
+      }
     }
 
     .links-wrapper {
@@ -40,15 +51,92 @@
       .nav-link {
         @include blendMode;
         color: $white;
+        font-size: 21px;
       }
     }
   }
 
-  .sidenav-icon {
+  .menu-icon {
     @include blendMode;
     @include svgFill;
+    cursor: pointer;
     height: 15px;
     margin-left: 70px;
     width: 30px;
+  }
+
+  .sidenav-wrapper {
+    background-color: $whitish;
+    display: flex;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    .sidenav-container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      margin: 0 96px;
+      max-width: $maxContentWidth;
+      width: 100%;
+
+      .top-container {
+        align-items: center;
+        display: flex;
+        height: 110px;
+        justify-content: flex-end;
+        width: 100%;
+
+        .close-icon {
+          cursor: pointer;
+          height: 30px;
+          width: 30px;
+        }
+      }
+
+      .split-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: auto 0;
+
+        .label {
+          font-size: 21px;
+        }
+
+        .content-wrapper {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .locale-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .locales {
+              align-items: center;
+              color: $gray;
+              display: flex;
+              font-size: 48px;
+              gap: 10px;
+
+              .active,
+              .locale:hover {
+                color: $black;
+              }
+            }
+          }
+        }
+
+        .routes-wrapper {
+          display: flex;
+          flex-direction: column;
+          font-size: 72px;
+          gap: 30px;
+        }
+      }
+    }
   }
 }

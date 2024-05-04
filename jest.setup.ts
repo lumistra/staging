@@ -20,3 +20,23 @@ afterEach(() => {
 });
 
 jest.mock('*.svg', () => 'svg');
+
+jest.mock('next/router', () => ({
+  useRouter() {
+    return {
+      route: '/',
+      pathname: '/',
+      query: {},
+      asPath: '/',
+      isFallback: false,
+      basePath: '',
+      locale: undefined,
+      locales: undefined,
+      defaultLocale: undefined,
+      isReady: false,
+      domainLocales: undefined,
+      isPreview: false,
+      isLocaleDomain: false,
+    };
+  },
+}));

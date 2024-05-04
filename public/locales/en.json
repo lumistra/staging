@@ -1,0 +1,13 @@
+{
+  "routes": {
+    "home": "Home",
+    "work": "Work",
+    "about": "About",
+    "contact": "Contact",
+    "services": "Services",
+    "articles": "Articles"
+  },
+  "navigation": {
+    "language": "Language"
+  }
+}

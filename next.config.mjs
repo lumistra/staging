@@ -1,12 +1,17 @@
 /** @type {import('next').NextConfig} */
+
+const conditionalConfig = {
+  ...(process.env.BASE_PATH && { basePath: `/${process.env.BASE_PATH}` }),
+};
+
 const nextConfig = {
   output: 'export',
   reactStrictMode: true,
   trailingSlash: true,
   skipTrailingSlashRedirect: false,
-  ...(process.env.BASE_PATH && { basePath: `/${process.env.BASE_PATH}` }),
+  ...conditionalConfig,
   env: {
-    basePath: `/${process.env.BASE_PATH}`,
+    ...conditionalConfig,
     storyblokApiToken: process.env.STORYBLOK_API_TOKEN,
   },
   images: {

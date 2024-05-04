@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
 
-const navigation = dynamic(() => import('./navigation/Navigation'));
+const navigation = dynamic(() => import('@/components/navigation/Navigation'));
 
 const components = {
   navigation,
