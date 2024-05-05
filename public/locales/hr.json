@@ -7,7 +7,21 @@
     "services": "Servisi",
     "articles": "Objave"
   },
-  "navigation": {
-    "language": "Jezici"
+  "globals": {
+    "language": "Jezik",
+    "socials": "Društvene mreže",
+    "privacy_policy": "Pravila o privatnosti",
+    "cookies": "Kolačići",
+    "back_to_top": "Natrag na vrh"
+  },
+  "home": {
+    "title": "Lumistra",
+    "hero": "Kreativni dizajnerski studio koji pretvara iskre i ideje u brandove i iskustva."
+  },
+  "work": {
+    "title": "Lumistra - Rad"
+  },
+  "privacy-policy": {
+    "title": "Lumistra - Pravila o privatnosti"
   }
 }

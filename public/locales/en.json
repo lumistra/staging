@@ -7,7 +7,21 @@
     "services": "Services",
     "articles": "Articles"
   },
-  "navigation": {
-    "language": "Language"
+  "globals": {
+    "language": "Language",
+    "socials": "Social media",
+    "privacy_policy": "Privacy Policy",
+    "cookies": "Cookies",
+    "back_to_top": "Back to top"
+  },
+  "home": {
+    "title": "Lumistra",
+    "hero": "Creative design studio transforming sparks and ideas into brands and experiences."
+  },
+  "work": {
+    "title": "Lumistra - Work"
+  },
+  "privacy-policy": {
+    "title": "Lumistra - Privacy Policy"
   }
 }

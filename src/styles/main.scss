@@ -4,6 +4,8 @@
 @import "./sizes";
 @import "./image";
 @import "./navigation";
+@import "./sidenav";
+@import "./footer";
 
 @font-face {
   font-family: $regular;
@@ -25,5 +27,25 @@ body {
 
   #__next {
     height: 100%;
+  }
+
+  .max-content-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    .max-content-container {
+      margin-left: $minBleedWidth;
+      margin-right: $minBleedWidth;
+      max-width: $maxContentWidth;
+      width: 100%;
+    }
+  }
+
+  .to-top {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
   }
 }

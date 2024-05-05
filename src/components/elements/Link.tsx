@@ -1,15 +1,20 @@
+import classNames from 'classnames';
 import NextLink from 'next/link';
+import { useRouter } from 'next/router';
 import useTranslations, { defaultLocale } from '@/hooks/useTranslations';
+import { getRawPath } from '@/utils';
 
 type Props = {
   children: any
   className?: string,
-  href: string,
+  href?: string,
   locale?: string,
+  addActiveFlag?: boolean,
   onClick?: () => void,
 };
 
 export default function Link(props: Props) {
+  const router = useRouter();
   const { currentLocale } = useTranslations();
 
   const getLocale = () => {
@@ -23,10 +28,24 @@ export default function Link(props: Props) {
     }
   };
 
+  const getHref = () => {
+    if (props.href) {
+      return `/${getLocale() + props.href}`.replace('//', '/');
+    }
+
+    return `/${getLocale() + getRawPath(router.asPath)}`.replace('//', '/');
+  };
+
+  const trueHref = getHref();
+
   return (
     <NextLink
-      className={props.className}
-      href={`/${getLocale() + props.href}`.replace('//', '/')}
+      className={classNames(props.className, {
+        ...(props.addActiveFlag ? {
+          active: getRawPath(router.asPath) === getRawPath(trueHref),
+        } : null),
+      })}
+      href={trueHref}
       onClick={props.onClick}
     >
       {props.children}

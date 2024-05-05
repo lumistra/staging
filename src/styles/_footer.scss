@@ -1,0 +1,137 @@
+footer {
+  background-color: $black;
+  color: $white;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  .content-container {
+    margin-left: $minBleedWidth;
+    margin-right: $minBleedWidth;
+    max-width: $maxContentWidth;
+    padding-bottom: 140px;
+    padding-top: 230px;
+    width: 100%;
+
+    .identity-wrapper {
+      align-items: center;
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(4, 1fr);
+      padding-bottom: 280px;
+
+      .logo {
+        > * {
+          fill: $white;
+        }
+
+        &.logo-icon {
+          width: 50%;
+        }
+
+        &.logo-text {
+          grid-column-start: 3;
+          grid-column-end: 5;
+        }
+      }
+    }
+
+    .divider {
+      background-color: $white;
+      border: none;
+      height: 1px;
+      width: 100%;
+    }
+
+    .cta-wrapper {
+      display: grid;
+      font-size: 36px;
+      gap: 20px;
+      grid-template-columns: repeat(6, 1fr);
+      padding-bottom: 160px;
+      padding-top: 40px;
+
+      .sitemap-wrapper {
+        display: grid;
+        gap: 40px 20px;
+        grid-column-end: 4;
+        grid-column-start: 1;
+        grid-template-columns: repeat(3, 25%);
+      }
+
+      .locale-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        .locales {
+          align-items: center;
+          color: $dark;
+          display: flex;
+          font-size: 48px;
+          gap: 10px;
+
+          .splitter {
+            color: $white;
+          }
+
+          .locale {
+            transition: 0.3s;
+
+            &.active,
+            &:hover {
+              color: $white;
+            }
+          }
+        }
+      }
+
+      .socials-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        grid-column-end: 7;
+        grid-column-start: 5;
+
+        .socials {
+          align-items: center;
+          display: flex;
+          gap: 40px;
+
+          .social-icon {
+            align-items: center;
+            display: flex;
+            height: 40px;
+            justify-content: center;
+            width: 40px;
+
+            svg > * {
+              transition: 0.3s;
+              fill: $dark;
+            }
+
+            &:hover svg > * {
+              fill: $white;
+            }
+          }
+        }
+      }
+    }
+
+    .legal-wrapper {
+      display: grid;
+      font-size: 21px;
+      gap: 20px;
+      grid-template-columns: repeat(6, 1fr);
+
+      .copyright {
+        grid-column-start: 1;
+        grid-column-end: 4;
+      }
+
+      .to-top {
+        margin-left: auto;
+      }
+    }
+  }
+}

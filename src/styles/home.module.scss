@@ -1,0 +1,13 @@
+.heroWrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-bottom: 190px;
+  padding-top: 160px;
+
+  h1 {
+    display: flex;
+    font-size: 86px;
+    grid-column-end: 4;
+    grid-column-start: 1;
+  }
+}

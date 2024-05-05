@@ -1,12 +1,31 @@
-import Navigation from '@/components/navigation/Navigation';
-import { generateStaticPaths, routes } from '@/utils';
+import { useRouter } from 'next/router';
+import Footer from '@/components/containers/Footer';
+import Navigation from '@/components/containers/navigation/Navigation';
+import Home from '@/components/pages/Home';
+import PrivacyPolicy from '@/components/pages/PrivacyPolicy';
+import Work from '@/components/pages/Work';
+import { generateStaticPaths, getRawPath, routes } from '@/utils';
 
-export default function Home() {
+function Main() {
+  const router = useRouter();
+
+  switch (true) {
+    case getRawPath(router.asPath) === routes.privacyPolicy:
+      return <PrivacyPolicy />;
+    case getRawPath(router.asPath) === routes.work:
+      return <Work />;
+    default:
+      return <Home />;
+  }
+}
+
+export default function Page() {
   return (
-    <div>
+    <>
       <Navigation />
-      <section style={{ height: '100vh' }} />
-    </div>
+      <Main />
+      <Footer />
+    </>
   );
 }
 
@@ -16,7 +35,7 @@ export async function getStaticProps() {
 
 export async function getStaticPaths() {
   return {
-    paths: generateStaticPaths(routes.home),
+    paths: generateStaticPaths(),
     fallback: false,
   };
 }

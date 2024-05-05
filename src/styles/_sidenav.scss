@@ -1,0 +1,113 @@
+.sidenav-wrapper {
+  background-color: $whitish;
+  display: flex;
+  height: 100%;
+  left: 0;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+
+  .sidenav-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0 96px;
+    max-width: $maxContentWidth;
+    width: 100%;
+
+    .top-container {
+      align-items: center;
+      display: flex;
+      height: 110px;
+      justify-content: flex-end;
+      min-height: 110px;
+      width: 100%;
+
+      .close-icon {
+        cursor: pointer;
+        height: 30px;
+        width: 30px;
+      }
+    }
+
+    .split-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: auto 0;
+      padding-bottom: 110px;
+
+      .label {
+        font-size: 21px;
+      }
+
+      .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-right: 40px;
+
+        .locale-wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          .locales {
+            align-items: center;
+            color: $gray;
+            display: flex;
+            font-size: 48px;
+            gap: 10px;
+
+            .splitter {
+              color: $black;
+            }
+
+            .locale {
+              transition: 0.3s;
+
+              &.active,
+              &:hover {
+                color: $black;
+              }
+            }
+          }
+        }
+
+        .socials {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 30px 50px;
+          margin-bottom: 100px;
+        }
+      }
+
+      .routes-wrapper {
+        display: flex;
+        flex-direction: column;
+        font-size: 72px;
+        gap: 30px;
+
+        .nav-link {
+          position: relative;
+
+          &::after {
+            border-bottom: 1px solid $black;
+            bottom: -15px;
+            content: "";
+            left: 0;
+            position: absolute;
+            transition: 0.3s;
+            width: 0;
+          }
+
+          &.active::after,
+          &:hover::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
