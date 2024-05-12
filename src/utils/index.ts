@@ -1,11 +1,13 @@
 import {
-  compact, flatten, forEach, isEmpty, map, split,
+  compact, filter, flatten, forEach, isEmpty, isString, map, split,
 } from 'lodash';
-import { locales } from '@/hooks/useTranslations';
+import { getProjects } from '@/content/projects';
+import { locales, t } from '@/hooks/useTranslations';
 
 export const routes = {
   home: '/',
   work: '/work',
+  project: (slug: string) => `/work/${slug}`,
   about: '/about',
   contact: '/contact',
   services: '/services',
@@ -13,7 +15,12 @@ export const routes = {
   privacyPolicy: '/privacy-policy',
 };
 
-export const generateStaticPaths = () => flatten(map(routes, (route) => map(locales, (locale) => {
+const sitemap = [
+  ...filter(routes, isString),
+  ...map(getProjects(t), ({ slug }) => routes.project(slug)),
+];
+
+export const generateStaticPaths = () => flatten(map(sitemap, (route) => map(locales, (locale) => {
   const slug = compact(split(route, '/'));
   let slugPath;
   if (locale.default) {
@@ -38,3 +45,5 @@ export const getRawPath = (path: string, stripLocale: boolean = true) => {
 
   return newPath;
 };
+
+export const getOrderNumber = (index: number): string => '(' + (index + 1).toString().padStart(2, '0') + ')';

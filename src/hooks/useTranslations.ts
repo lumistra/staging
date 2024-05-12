@@ -20,8 +20,8 @@ export const locales = [
 
 export const defaultLocale = find(locales, ['default', true])?.value || 'en';
 
-export const t = (path: string, locale: string) => {
-  const selectedTranslationFile = get(translations, locale, {});
+export const t = (path: string, locale?: string) => {
+  const selectedTranslationFile = get(translations, locale || defaultLocale, {});
   const selectedTranslation = get(selectedTranslationFile, path);
   if (selectedTranslation) return selectedTranslation;
 

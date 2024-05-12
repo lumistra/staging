@@ -42,6 +42,17 @@ body {
     }
   }
 
+  .cta-link {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+
+    svg {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
   .to-top {
     align-items: center;
     cursor: pointer;

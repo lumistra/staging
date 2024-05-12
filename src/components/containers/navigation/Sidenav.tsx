@@ -2,9 +2,9 @@ import { map } from 'lodash';
 import Close from '@/assets/svg/close.svg';
 import Link from '@/components/elements/Link';
 import LocaleSwitcher from '@/components/elements/LocaleSwitcher';
+import { email, socials } from '@/content';
 import useTranslations from '@/hooks/useTranslations';
 import { routes } from '@/utils';
-import { email, socials } from '@/utils/content';
 
 type Props = {
   isOpen: boolean

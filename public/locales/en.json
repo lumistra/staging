@@ -12,16 +12,89 @@
     "socials": "Social media",
     "privacy_policy": "Privacy Policy",
     "cookies": "Cookies",
-    "back_to_top": "Back to top"
+    "back_to_top": "Back to top",
+    "see_full_project": "See full project",
+    "see_all_projects": "See all projects"
   },
   "home": {
     "title": "Lumistra",
-    "hero": "Creative design studio transforming sparks and ideas into brands and experiences."
+    "hero": "Creative design studio transforming sparks and ideas into brands and experiences.",
+    "about_us": {
+      "tagline_1": "One step further",
+      "tagline_2": "always.",
+      "paragraph": "We strongly believe that every idea is a spark with potential. Through strategic collaboration and bold branding initiatives, together we are transforming it into your next big thing.",
+      "link": "About us"
+    },
+    "process": {
+      "title": "When you're part of the process,\nyou're invested in the outcome.",
+      "paragraph": "That's why we believe in building together.",
+      "cta": "Scroll to see if we can help you"
+    },
+    "services": {
+      "title": "Services",
+      "paragraph_1": "If you're interested in collaborating but unsure if we offer a specific service, feel free to ask here or visit ",
+      "paragraph_2": " page.",
+      "link": "our services",
+      "prompts": {
+        "input": {
+          "start": "I need",
+          "placeholder": "write a service here"
+        },
+        "idle": {
+          "title": "Ready when you are.",
+          "paragraph": "You can type in the service you need and get an answer right away."
+        },
+        "positive": {
+          "title": "We can help you with that.",
+          "paragraph": "The service you need is something we can help you with. Feel free to explore more or get in touch."
+        },
+        "negative": {
+          "title": "We don’t do that, but...",
+          "paragraph": "If you think that is something we can help you with, you can always reach out to us at info@lumistra.com"
+        }
+      }
+    }
   },
   "work": {
     "title": "Lumistra - Work"
   },
   "privacy-policy": {
     "title": "Lumistra - Privacy Policy"
+  },
+  "projects": {
+    "selected": {
+      "section": "Projects",
+      "title": "Selected work"
+    },
+    "project_1": {
+      "title": "Apiar"
+    },
+    "project_2": {
+      "title": "Spika"
+    },
+    "project_3": {
+      "title": "Houndtrek"
+    },
+    "project_4": {
+      "title": "The Lighthouse"
+    },
+    "project_5": {
+      "title": "Hoo St. Werburgh BattleGeese"
+    },
+    "project_6": {
+      "title": "Exit Osijek"
+    },
+    "project_7": {
+      "title": "Bergmann & Hillebrand"
+    },
+    "project_8": {
+      "title": "Stereo"
+    },
+    "project_9": {
+      "title": "Soundgarden"
+    },
+    "project_10": {
+      "title": "Ritmo"
+    }
   }
 }

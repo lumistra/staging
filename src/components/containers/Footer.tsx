@@ -1,9 +1,9 @@
 import { map } from 'lodash';
 import Icon from '@/assets/svg/icon.svg';
 import Logo from '@/assets/svg/logo.svg';
+import { socials } from '@/content';
 import useTranslations from '@/hooks/useTranslations';
 import { routes } from '@/utils';
-import { socials } from '@/utils/content';
 import Link from '../elements/Link';
 import LocaleSwitcher from '../elements/LocaleSwitcher';
 import ToTop from '../elements/ToTop';

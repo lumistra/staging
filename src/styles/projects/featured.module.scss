@@ -1,0 +1,37 @@
+@import "../colors";
+@import "../fonts";
+
+.featuredWrapper {
+  display: flex;
+  gap: 25px;
+
+  &.featuredTop {
+    flex-direction: column;
+  }
+
+  &.featuredBottom {
+    flex-direction: column-reverse;
+  }
+
+  .featuredTextWrapper {
+    display: grid;
+    font-size: 21px;
+    grid-template-columns: repeat(4, 1fr);
+
+    .featuredIndex {
+      display: flex;
+      font-family: $mono;
+      grid-column-end: 5;
+      grid-column-start: 4;
+      justify-self: flex-end;
+    }
+  }
+
+  .featuredCover {
+    background-color: $gray;
+    height: 915px;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+  }
+}

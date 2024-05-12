@@ -1,0 +1,53 @@
+@import "../colors";
+
+.selectedWrapper {
+  border-top: 1px solid $black;
+
+  .selectedTextWrapper {
+    align-items: flex-end;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 40px 0;
+
+    .selectedTitle {
+      font-size: 72px;
+
+      &:last-of-type {
+        grid-column-end: 4;
+        grid-column-start: 2;
+        text-align: right;
+      }
+    }
+
+    .selectedCTA {
+      justify-self: flex-end;
+      margin-bottom: 15px;
+    }
+  }
+
+  .projectsWrapper {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 300px;
+    margin-top: 60px;
+
+    .projectContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+
+      .projectCover {
+        aspect-ratio: 1/1;
+        background-color: $gray;
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+      }
+
+      .projectTitle {
+        font-size: 21px;
+      }
+    }
+  }
+}

@@ -4,12 +4,12 @@ import Icon from '@/assets/svg/icon.svg';
 import Logo from '@/assets/svg/logo.svg';
 import Menu from '@/assets/svg/menu.svg';
 import Link from '@/components/elements/Link';
-import useTranslation from '@/hooks/useTranslations';
+import useTranslations from '@/hooks/useTranslations';
 import { routes } from '@/utils';
 import Sidenav from './Sidenav';
 
 export default function Navigation() {
-  const { t } = useTranslation();
+  const { t } = useTranslations();
   const [isTop, setIsTop] = useState(true);
   const [isSidenavOpen, setIsSidenavOpen] = useState(false);
 
