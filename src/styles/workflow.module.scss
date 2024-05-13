@@ -1,0 +1,10 @@
+@import "./colors";
+
+.backgroundWrapper {
+  background-color: $primary;
+
+  .wrapper {
+    margin-bottom: 300px;
+    margin-top: 200px;
+  }
+}

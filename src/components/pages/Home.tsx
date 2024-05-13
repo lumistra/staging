@@ -8,6 +8,7 @@ import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/home.module.scss';
 import { routes } from '@/utils';
 import ServiceSelection from '../containers/ServiceSelection';
+import Workflow from '../containers/Workflow';
 
 export default function Home() {
   const { t } = useTranslations();
@@ -50,6 +51,7 @@ export default function Home() {
         </span>
       </Section>
       <ServiceSelection />
+      <Workflow />
     </>
   );
 }

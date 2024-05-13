@@ -15,11 +15,17 @@ export default function Selected() {
   return (
     <Section containerClassName={style.selectedWrapper}>
       <div className={style.selectedTextWrapper}>
-        <span className={style.selectedTitle}>{t('projects.selected.section')}</span>
-        <span className={style.selectedTitle}>{t('projects.selected.title')}</span>
-        <CtaLink className={style.selectedCTA} href={routes.work}>
-          {t('globals.see_all_projects')}
-        </CtaLink>
+        <span className={style.selectedTitle}>
+          {t('projects.selected.section')}
+        </span>
+        <div className={style.selectedColumn}>
+          <span className={style.selectedTitle}>
+            {t('projects.selected.title')}
+          </span>
+          <CtaLink className={style.selectedCTA} href={routes.work}>
+            {t('globals.see_all_projects')}
+          </CtaLink>
+        </div>
       </div>
       <div className={style.projectsWrapper}>
         {map(selectedProjects, (project) => (

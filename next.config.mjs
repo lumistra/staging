@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 
 const conditionalConfig = {
-  ...(process.env.BASE_PATH && { basePath: `/${process.env.BASE_PATH}` }),
+  ...(process.env.BASE_PATH && {
+    basePath: `/${process.env.BASE_PATH}`,
+    assetPrefix: `/${process.env.BASE_PATH}`,
+  }),
 };
 
 const nextConfig = {

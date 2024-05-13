@@ -30,8 +30,11 @@
   .featuredCover {
     background-color: $gray;
     height: 915px;
-    object-fit: cover;
-    object-position: center;
     width: 100%;
+
+    img {
+      object-fit: cover;
+      object-position: center;
+    }
   }
 }

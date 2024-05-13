@@ -6,17 +6,19 @@
   .selectedTextWrapper {
     align-items: flex-end;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
     margin: 40px 0;
+
+    .selectedColumn {
+      align-items: flex-end;
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+    }
 
     .selectedTitle {
       font-size: 72px;
-
-      &:last-of-type {
-        grid-column-end: 4;
-        grid-column-start: 2;
-        text-align: right;
-      }
     }
 
     .selectedCTA {

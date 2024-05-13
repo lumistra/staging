@@ -18,11 +18,11 @@
   },
   "home": {
     "title": "Lumistra",
-    "hero": "Creative design studio transforming sparks and ideas into brands and experiences.",
+    "hero": "Creative design studio\ntransforming sparks and ideas\ninto brands and experiences.",
     "about_us": {
       "tagline_1": "One step further",
       "tagline_2": "always.",
-      "paragraph": "We strongly believe that every idea is a spark with potential. Through strategic collaboration and bold branding initiatives, together we are transforming it into your next big thing.",
+      "paragraph": "We strongly believe that every idea is a spark\nwith potential. Through strategic collaboration\nand bold branding initiatives, together we are\ntransforming it into your next big thing.",
       "link": "About us"
     },
     "process": {
@@ -32,25 +32,26 @@
     },
     "services": {
       "title": "Services",
-      "paragraph_1": "If you're interested in collaborating but unsure if we offer a specific service, feel free to ask here or visit ",
+      "paragraph_1": "If you're interested in collaborating but unsure if we offer a\nspecific service, feel free to ask here or visit ",
       "paragraph_2": " page.",
       "link": "our services",
       "prompts": {
         "input": {
           "start": "I need",
-          "placeholder": "write a service here"
+          "placeholder": "write a service here",
+          "no_results": "No results..."
         },
         "idle": {
           "title": "Ready when you are.",
-          "paragraph": "You can type in the service you need and get an answer right away."
+          "paragraph": "You can type in the service you need\nand get an answer right away."
         },
         "positive": {
           "title": "We can help you with that.",
-          "paragraph": "The service you need is something we can help you with. Feel free to explore more or get in touch."
+          "paragraph": "The service you need is something\nwe can help you with. Feel free\nto explore more or get in touch."
         },
         "negative": {
           "title": "We don’t do that, but...",
-          "paragraph": "If you think that is something we can help you with, you can always reach out to us at info@lumistra.com"
+          "paragraph": "If you think that is something we can\nhelp you with, you can always reach\nout to us at info@lumistra.com"
         }
       }
     }
@@ -95,6 +96,48 @@
     },
     "project_10": {
       "title": "Ritmo"
+    }
+  },
+  "services": {
+    "list": {
+      "brand_strategy": "Brand strategy",
+      "research_analysis": "Research & analysis",
+      "brand_positioning": "Brand positioning",
+      "brand_narrative": "Brand narrative",
+      "communication": "Communication",
+      "content_strategy": "Content strategy",
+      "design_strategy": "Design strategy",
+      "digital_strategy": "Digital strategy",
+      "social_media_strategy": "Social media strategy",
+      "naming": "Naming",
+      "brand_design": "Brand design",
+      "visual_identity": "Visual identity",
+      "verbal_identity": "Verbal identity",
+      "motion_design": "Motion design",
+      "packaging_label": "Packaging & label",
+      "publications": "Publications",
+      "typography": "Typography",
+      "illustration": "Illustration",
+      "brand_guidelines": "Brand guidelines",
+      "art_illustration": "Art & illustration",
+      "digital_design": "Digital design",
+      "ux_ui_design": "UX/UI design",
+      "interaction_design": "Interaction design",
+      "digital_design_systems": "Digital design systems",
+      "digital_prototyping": "Digital prototyping",
+      "website_design": "Website design",
+      "marketing_materials": "Marketing materials",
+      "ad_creative": "Ad creative",
+      "app_design": "App design",
+      "social_media_creative": "Social media creative",
+      "presentation_design": "Presentation design",
+      "brand_communication": "Brand communication",
+      "brand_story": "Brand story",
+      "advertising": "Advertising",
+      "merchandise": "Merchandise",
+      "editorial_design": "Editorial Design",
+      "social_media": "Social media",
+      "signage": "Signage"
     }
   }
 }

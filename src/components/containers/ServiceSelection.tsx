@@ -1,6 +1,11 @@
 import { useState } from 'react';
-import type { ChangeEvent } from 'react';
-import { isEmpty } from 'lodash';
+import type { ChangeEvent, KeyboardEvent } from 'react';
+import classNames from 'classnames';
+import {
+  filter, includes, isEmpty, lowerCase, map, some,
+  toLower,
+} from 'lodash';
+import useServices from '@/content/services';
 import { useDebouncedState } from '@/hooks/useDebounce';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/home.module.scss';
@@ -16,17 +21,42 @@ enum State {
 
 export default function ServiceSelection() {
   const { t } = useTranslations();
+  const { services } = useServices();
   const [state, setState] = useState(State.idle);
   const [value, setValue] = useDebouncedState('', (current: string) => {
-    if (isEmpty(current)) return setState(State.idle);
-    if (current === 'positive') return setState(State.positive);
-    if (current === 'negative') return setState(State.negative);
+    if (isEmpty(current)) {
+      return setState(State.idle);
+    }
+    if (some(services, (service) => lowerCase(service) === lowerCase(current))) {
+      return setState(State.positive);
+    }
+
+    return setState(State.negative);
   });
+
+  const handleSelect = (current: string) => {
+    setValue(current);
+    if (isEmpty(current)) {
+      return setState(State.idle);
+    }
+    if (some(services, (service) => lowerCase(service) === lowerCase(current))) {
+      return setState(State.positive);
+    }
+
+    return setState(State.negative);
+  };
+
+  const handleEnter = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      handleSelect(value);
+    }
+  };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
   };
 
+  const filteredServices = filter(services, (service) => includes(lowerCase(service), lowerCase(value)));
   const responses = {
     [State.idle]: {
       title: t('home.services.prompts.idle.title'),
@@ -58,11 +88,30 @@ export default function ServiceSelection() {
       </div>
       <div className={style.inputWrapper}>
         <span>{t('home.services.prompts.input.start')}</span>
-        <input
-          placeholder={t('home.services.prompts.input.placeholder')}
-          value={value}
-          onChange={handleChange}
-        />
+        <div className={style.inputContainer}>
+          <input
+            placeholder={t('home.services.prompts.input.placeholder')}
+            value={value}
+            onChange={handleChange}
+            onKeyDown={handleEnter}
+          />
+          <div className={style.searchWrapper}>
+            {toLower(filteredServices[0]) !== toLower(value) && map(filteredServices, (service) => (
+              <button
+                key={service}
+                className={style.searchItem}
+                onClick={() => handleSelect(service)}
+              >
+                {service}
+              </button>
+            ))}
+            {filteredServices.length === 0 && (
+              <span className={classNames(style.searchItem, style.searchItemNoResults)}>
+                {t('home.services.prompts.input.no_results')}
+              </span>
+            )}
+          </div>
+        </div>
       </div>
     </Section>
   );
