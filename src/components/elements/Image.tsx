@@ -8,9 +8,12 @@ type Props = {
 };
 
 export default function Image(props: Props) {
+  const basePath = (process.env.basePath || '');
+  const src = `${basePath}${props.src}`;
+
   return (
     <div className={classNames('image-container', props.className)}>
-      <NextImage src={props.src} alt={props.alt} fill />
+      <NextImage src={src} alt={props.alt} fill />
     </div>
   );
 }

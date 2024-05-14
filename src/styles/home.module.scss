@@ -115,7 +115,7 @@
 
 .servicesWrapper {
   display: grid;
-  gap: 160px;
+  gap: 160px 20px;
   grid-template-columns: repeat(2, 1fr);
   margin-bottom: 160px;
   margin-top: 160px;
@@ -157,6 +157,11 @@
     .promptParagraph {
       font-size: 21px;
       white-space: pre-wrap;
+
+      a {
+        border-bottom: 1px solid $gray;
+        padding-bottom: 2px;
+      }
     }
   }
 

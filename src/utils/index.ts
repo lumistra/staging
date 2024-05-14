@@ -1,5 +1,6 @@
+import Parser from 'html-react-parser';
 import {
-  compact, filter, flatten, forEach, isEmpty, isString, map, split,
+  compact, filter, flatten, forEach, isEmpty, isString, map, replace, split,
 } from 'lodash';
 import { getProjects } from '@/content/projects';
 import { locales, t } from '@/hooks/useTranslations';
@@ -46,4 +47,18 @@ export const getRawPath = (path: string, stripLocale: boolean = true) => {
   return newPath;
 };
 
-export const getOrderNumber = (index: number): string => '(' + (index + 1).toString().padStart(2, '0') + ')';
+export const getOrderNumber = (index: number, brackets?: boolean): string => {
+  const number = (index + 1).toString().padStart(2, '0');
+
+  if (brackets) return '(' + number + ')';
+
+  return number;
+};
+
+export const parseMarkdown = (markdown: string) => {
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let input = markdown;
+  input = replace(input, linkRegex, '<a href="$2" target="_blank">$1</a>');
+
+  return Parser(input);
+};

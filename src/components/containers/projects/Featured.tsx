@@ -45,7 +45,7 @@ export default function Featured(props: Props) {
           {t('globals.see_full_project')}
         </CtaLink>
         <span className={style.featuredIndex}>
-          {getOrderNumber(currentIndex)}
+          {getOrderNumber(currentIndex, true)}
         </span>
       </div>
       <Image

@@ -9,7 +9,7 @@ import useServices from '@/content/services';
 import { useDebouncedState } from '@/hooks/useDebounce';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/home.module.scss';
-import { routes } from '@/utils';
+import { parseMarkdown, routes } from '@/utils';
 import Section from './Section';
 import Link from '../elements/Link';
 
@@ -64,11 +64,11 @@ export default function ServiceSelection() {
     },
     [State.positive]: {
       title: t('home.services.prompts.positive.title'),
-      paragraph: t('home.services.prompts.positive.paragraph'),
+      paragraph: parseMarkdown(t('home.services.prompts.positive.paragraph')),
     },
     [State.negative]: {
       title: t('home.services.prompts.negative.title'),
-      paragraph: t('home.services.prompts.negative.paragraph'),
+      paragraph: parseMarkdown(t('home.services.prompts.negative.paragraph')),
     },
   };
 

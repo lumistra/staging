@@ -47,11 +47,11 @@
         },
         "positive": {
           "title": "We can help you with that.",
-          "paragraph": "The service you need is something\nwe can help you with. Feel free\nto explore more or get in touch."
+          "paragraph": "The service you need is something\nwe can help you with. Feel free\nto explore more or [get in touch](mailto:info@lumistra.com)."
         },
         "negative": {
           "title": "We don’t do that, but...",
-          "paragraph": "If you think that is something we can\nhelp you with, you can always reach\nout to us at info@lumistra.com"
+          "paragraph": "If you think that is something we can\nhelp you with, you can always reach\nout to us at [info@lumistra.com](mailto:info@lumistra.com)"
         }
       }
     }
@@ -138,6 +138,40 @@
       "editorial_design": "Editorial Design",
       "social_media": "Social media",
       "signage": "Signage"
+    }
+  },
+  "workflow": {
+    "title": "Workflow blueprint",
+    "paragraph": "Peek at our creative process and see\nwhat defines our approach to bringing\nyour vision to reality.",
+    "steps": {
+      "discovery": {
+        "label": "Discovery",
+        "paragraph": "Diving deep into understanding\nthe client’s needs and challenges,\nwhile identifying potential goals\nand long term solutions."
+      },
+      "strategy_development": {
+        "label": "Strategy Development",
+        "paragraph": "Based on our findings, we\ndevelop a tailored strategy that\noutlines clear objectives and\naction plans to guide our efforts."
+      },
+      "magic_phase": {
+        "label": "Magic Phase",
+        "paragraph": "Collaborative brainstorming,\ngenerating innovative ideas and\nconcepts that will resonate with\nthe target audience."
+      },
+      "check_in": {
+        "label": "Check-In",
+        "paragraph": "We never break contact and\nalways keep clients involved in\nthe process to ensure the best\npossible outcome."
+      },
+      "review": {
+        "label": "Review",
+        "paragraph": "Assessing the effectiveness and\nidentifying areas for improvement\nto maximize the impact and\nsuccess of the project."
+      },
+      "ta_daa_moment": {
+        "label": "Ta-Daa Moment",
+        "paragraph": "With attention to detail, we\nexecute the strategy, ensuring\nconsistency across all assets\nand communications."
+      },
+      "partnership_support": {
+        "label": "Partnership and Support",
+        "paragraph": "We maintain open communication\nand collaboration with our clients\noffering guidance and support in\novercoming challenges."
+      }
     }
   }
 }

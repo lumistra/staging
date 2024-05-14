@@ -1,10 +1,93 @@
 @import "./colors";
+@import "./fonts";
 
 .backgroundWrapper {
   background-color: $primary;
+  color: $white;
 
   .wrapper {
     margin-bottom: 300px;
     margin-top: 200px;
+
+    .header,
+    .row {
+      display: grid;
+      font-size: 21px;
+      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      white-space: pre-wrap;
+      width: 100%;
+    }
+
+    .header {
+      align-items: flex-start;
+      margin-bottom: 190px;
+
+      .icon {
+        aspect-ratio: 1/1;
+        height: 168px;
+        width: 168px;
+      }
+
+      .column {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        .title {
+          font-size: 72px;
+        }
+      }
+    }
+
+    .row {
+      border-top: 1px solid $white;
+      cursor: pointer;
+      padding: 30px 0;
+
+      &:last-of-type {
+        border-bottom: 1px solid $white;
+      }
+
+      .index {
+        font-family: $mono;
+        font-size: 48px;
+      }
+
+      .column {
+        height: fit-content;
+        overflow-y: hidden;
+        transition: 1s;
+
+        .heading {
+          align-items: center;
+          display: flex;
+          font-size: 48px;
+          gap: 20px;
+          justify-content: space-between;
+
+          .icon {
+            aspect-ratio: 1/1;
+            height: 35px;
+            width: 35px;
+
+            path:first-of-type {
+              rotate: 0;
+              transform-origin: center;
+              transition: 0.3s;
+            }
+
+            &.expanded path:first-of-type {
+              rotate: 90deg;
+            }
+          }
+        }
+
+        p {
+          padding-bottom: 120px;
+          padding-top: 30px;
+        }
+      }
+    }
   }
 }
