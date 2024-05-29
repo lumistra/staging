@@ -106,7 +106,7 @@
         width: 16px;
 
         * {
-          fill: $gray;
+          stroke: $gray !important;
         }
       }
     }
@@ -197,10 +197,31 @@
         top: 100%;
         width: 100%;
 
+        /* width */
+        &::-webkit-scrollbar {
+          width: 10px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+          border: 1px solid $light;
+          border-radius: 100vw;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+          background: $primary;
+          border-radius: 100vw;
+          cursor: pointer;
+        }
+
         .searchItem {
           border-bottom: 1px solid $light;
           cursor: pointer;
+          hyphens: auto;
           padding: 10px 0;
+          white-space: break-spaces;
+          word-break: break-word;
 
           &.searchItemNoResults {
             color: $gray;

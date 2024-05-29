@@ -1,0 +1,36 @@
+@import "./colors";
+
+.contactWrapper {
+  align-items: flex-start;
+  border-top: 1px solid $black;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 300px;
+  padding: 40px 0;
+
+  .contentWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    .title {
+      font-size: 72px;
+    }
+
+    .paragraph {
+      font-size: 21px;
+      white-space: pre-wrap;
+    }
+  }
+
+  .action {
+    font-size: 72px;
+    gap: 30px;
+
+    svg {
+      height: 54px;
+      width: 54px;
+    }
+  }
+}

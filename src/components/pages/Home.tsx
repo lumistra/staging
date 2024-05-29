@@ -7,6 +7,8 @@ import CtaLink from '@/components/elements/CtaLink';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/home.module.scss';
 import { routes } from '@/utils';
+import Latest from '../containers/articles/Latest';
+import Contact from '../containers/Contact';
 import ServiceSelection from '../containers/ServiceSelection';
 import Workflow from '../containers/Workflow';
 
@@ -52,6 +54,8 @@ export default function Home() {
       </Section>
       <ServiceSelection />
       <Workflow />
+      <Latest />
+      <Contact />
     </>
   );
 }

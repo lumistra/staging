@@ -10,7 +10,7 @@ import Section from '../Section';
 
 export default function Selected() {
   const { t } = useTranslations();
-  const { selectedProjects } = useProjects();
+  const { selected } = useProjects();
 
   return (
     <Section containerClassName={style.selectedWrapper}>
@@ -28,7 +28,7 @@ export default function Selected() {
         </div>
       </div>
       <div className={style.projectsWrapper}>
-        {map(selectedProjects, (project) => (
+        {map(selected, (project) => (
           <Link
             key={project.slug}
             className={style.projectContainer}

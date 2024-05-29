@@ -14,7 +14,8 @@
     "cookies": "Cookies",
     "back_to_top": "Back to top",
     "see_full_project": "See full project",
-    "see_all_projects": "See all projects"
+    "see_all_projects": "See all projects",
+    "read_all": "Read all"
   },
   "home": {
     "title": "Lumistra",
@@ -98,48 +99,7 @@
       "title": "Ritmo"
     }
   },
-  "services": {
-    "list": {
-      "brand_strategy": "Brand strategy",
-      "research_analysis": "Research & analysis",
-      "brand_positioning": "Brand positioning",
-      "brand_narrative": "Brand narrative",
-      "communication": "Communication",
-      "content_strategy": "Content strategy",
-      "design_strategy": "Design strategy",
-      "digital_strategy": "Digital strategy",
-      "social_media_strategy": "Social media strategy",
-      "naming": "Naming",
-      "brand_design": "Brand design",
-      "visual_identity": "Visual identity",
-      "verbal_identity": "Verbal identity",
-      "motion_design": "Motion design",
-      "packaging_label": "Packaging & label",
-      "publications": "Publications",
-      "typography": "Typography",
-      "illustration": "Illustration",
-      "brand_guidelines": "Brand guidelines",
-      "art_illustration": "Art & illustration",
-      "digital_design": "Digital design",
-      "ux_ui_design": "UX/UI design",
-      "interaction_design": "Interaction design",
-      "digital_design_systems": "Digital design systems",
-      "digital_prototyping": "Digital prototyping",
-      "website_design": "Website design",
-      "marketing_materials": "Marketing materials",
-      "ad_creative": "Ad creative",
-      "app_design": "App design",
-      "social_media_creative": "Social media creative",
-      "presentation_design": "Presentation design",
-      "brand_communication": "Brand communication",
-      "brand_story": "Brand story",
-      "advertising": "Advertising",
-      "merchandise": "Merchandise",
-      "editorial_design": "Editorial Design",
-      "social_media": "Social media",
-      "signage": "Signage"
-    }
-  },
+  "services": {},
   "workflow": {
     "title": "Workflow blueprint",
     "paragraph": "Peek at our creative process and see\nwhat defines our approach to bringing\nyour vision to reality.",
@@ -172,6 +132,28 @@
         "label": "Partnership and Support",
         "paragraph": "We maintain open communication\nand collaboration with our clients\noffering guidance and support in\novercoming challenges."
       }
+    }
+  },
+  "contact": {
+    "cta": {
+      "title": "Let’s work together.",
+      "paragraph": "We are more than ready to hear\nall about your next big thing.",
+      "action": "Contact us"
+    }
+  },
+  "articles": {
+    "latest": {
+      "section": "News",
+      "title": "Latest articles"
+    },
+    "article_1": {
+      "title": "Design for digital age"
+    },
+    "article_2": {
+      "title": "Shakespeare in the Parks 2024"
+    },
+    "article_3": {
+      "title": "Matt Willey Designs Custom Typeface for Vineyard Theatre Identity"
     }
   }
 }

@@ -70,11 +70,11 @@ function useProjects() {
 
   const projects = getProjects(t);
 
-  const selectedProjects = filter(projects, 'selected');
+  const selected = filter(projects, 'selected');
 
   return {
     projects,
-    selectedProjects,
+    selected,
   };
 }
 

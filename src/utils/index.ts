@@ -2,6 +2,7 @@ import Parser from 'html-react-parser';
 import {
   compact, filter, flatten, forEach, isEmpty, isString, map, replace, split,
 } from 'lodash';
+import { getArticles } from '@/content/articles';
 import { getProjects } from '@/content/projects';
 import { locales, t } from '@/hooks/useTranslations';
 
@@ -13,12 +14,14 @@ export const routes = {
   contact: '/contact',
   services: '/services',
   articles: '/articles',
+  article: (slug: string) => `/articles/${slug}`,
   privacyPolicy: '/privacy-policy',
 };
 
 const sitemap = [
   ...filter(routes, isString),
   ...map(getProjects(t), ({ slug }) => routes.project(slug)),
+  ...map(getArticles(t), ({ slug }) => routes.project(slug)),
 ];
 
 export const generateStaticPaths = () => flatten(map(sitemap, (route) => map(locales, (locale) => {

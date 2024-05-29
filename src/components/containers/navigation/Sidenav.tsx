@@ -50,6 +50,7 @@ export default function Sidenav(props: Props) {
               <a
                 className="label"
                 href={`mailto:${email}`}
+                target="_blank"
               >
                 {email}
               </a>
