@@ -58,7 +58,13 @@
     }
   },
   "work": {
-    "title": "Lumistra - Work"
+    "title": "Lumistra - Work",
+    "hero": "Explore our work.",
+    "view-mode": {
+      "label": "View mode",
+      "list": "List",
+      "grid": "Grid"
+    }
   },
   "privacy-policy": {
     "title": "Lumistra - Privacy Policy"
@@ -139,6 +145,7 @@
     "hero": "Get in touch.",
     "cta": {
       "title": "Let’s work together.",
+      "title-alt": "Get in touch.",
       "paragraph": "We are more than ready to hear\nall about your next big thing.",
       "action": "Contact us"
     },

@@ -1,0 +1,104 @@
+@import "./colors";
+
+.heroWrapper {
+  display: flex;
+  min-height: 400px;
+  padding-bottom: 300px;
+  padding-top: 120px;
+
+  h1 {
+    display: flex;
+    font-size: 86px;
+    white-space: pre-wrap;
+  }
+}
+
+.gridWrapper {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+
+  &.noGap {
+    gap: 0 20px;
+    margin-bottom: 560px;
+  }
+
+  .viewModeWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    grid-column: 3;
+    margin-bottom: 140px;
+
+    .viewModeSelect {
+      align-items: center;
+      color: $dark;
+      display: flex;
+      font-size: 48px;
+      gap: 10px;
+
+      .viewModeOption {
+        color: $whitish;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &.viewModeActive,
+        &:hover {
+          color: $black;
+        }
+      }
+
+      .viewModeSplitter {
+        color: $black;
+      }
+    }
+  }
+
+  .projectListItem {
+    align-items: center;
+    border-top: 1px solid $gray;
+    cursor: pointer;
+    display: flex;
+    font-size: 48px;
+    grid-column-end: 4;
+    grid-column-start: 1;
+    justify-content: space-between;
+    padding: 40px 0;
+
+    &:last-of-type {
+      border-bottom: 1px solid $gray;
+    }
+
+    .projectListArrow {
+      height: 50px;
+      width: 50px;
+
+      * {
+        stroke: $gray !important;
+        stroke-width: 1 !important;
+      }
+    }
+  }
+
+  .projectModal {
+    aspect-ratio: 1/1;
+    background-color: $dark;
+    height: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition:
+      height 0.2s ease-in-out,
+      width 0.2s ease-in-out;
+    width: 0;
+
+    &.projectModalActive {
+      height: 310px;
+      width: 310px;
+    }
+
+    .projectModalCover {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

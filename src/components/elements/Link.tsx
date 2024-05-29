@@ -11,6 +11,8 @@ type Props = {
   locale?: string,
   addActiveFlag?: boolean,
   onClick?: () => void,
+  onMouseEnter?: () => void,
+  onMouseLeave?: () => void,
 };
 
 export default function Link(props: Props) {
@@ -47,6 +49,8 @@ export default function Link(props: Props) {
       })}
       href={trueHref}
       onClick={props.onClick}
+      onMouseEnter={props.onMouseEnter}
+      onMouseLeave={props.onMouseLeave}
     >
       {props.children}
     </NextLink>

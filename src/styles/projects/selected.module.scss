@@ -33,23 +33,27 @@
     grid-template-columns: repeat(3, 1fr);
     margin-bottom: 300px;
     margin-top: 60px;
+  }
+}
 
-    .projectContainer {
-      display: flex;
-      flex-direction: column;
-      gap: 26px;
+.projectContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
 
-      .projectCover {
-        aspect-ratio: 1/1;
-        background-color: $gray;
-        object-fit: cover;
-        object-position: center;
-        width: 100%;
-      }
+  .projectCover {
+    aspect-ratio: 1/1;
+    background-color: $gray;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+  }
 
-      .projectTitle {
-        font-size: 21px;
-      }
-    }
+  .projectTitle {
+    font-size: 21px;
+  }
+
+  .projectTitleMin {
+    min-height: 240px;
   }
 }

@@ -6,6 +6,7 @@ import style from '@/styles/contact.module.scss';
 import Section from './Section';
 
 type Props = {
+  altTitle?: boolean
   isSmall?: boolean
 };
 
@@ -20,7 +21,7 @@ export default function Contact(props: Props) {
           [style.titleSmall]: props.isSmall,
         })}
         >
-          {t('contact.cta.title')}
+          {props.altTitle ? t('contact.cta.title-alt') : t('contact.cta.title')}
         </span>
         <p className={style.paragraph}>
           {t('contact.cta.paragraph')}
