@@ -5,13 +5,21 @@ import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/contact.module.scss';
 import Section from './Section';
 
-export default function Contact() {
+type Props = {
+  isSmall?: boolean
+};
+
+export default function Contact(props: Props) {
   const { t } = useTranslations();
 
   return (
-    <Section containerClassName={style.contactWrapper}>
+    <Section containerClassName={style.contactCTAWrapper}>
       <div className={style.contentWrapper}>
-        <span className={style.title}>
+        <span className={classNames({
+          [style.title]: !props.isSmall,
+          [style.titleSmall]: props.isSmall,
+        })}
+        >
           {t('contact.cta.title')}
         </span>
         <p className={style.paragraph}>
@@ -19,7 +27,10 @@ export default function Contact() {
         </p>
       </div>
       <a
-        className={classNames('cta-link', style.action)}
+        className={classNames('cta-link', {
+          [style.action]: !props.isSmall,
+          [style.actionSmall]: props.isSmall,
+        })}
         href={`mailto:${email}`}
         target="_blank"
       >

@@ -1,6 +1,54 @@
 @import "./colors";
 
-.contactWrapper {
+.heroWrapper {
+  display: flex;
+  min-height: 400px;
+  padding-bottom: 400px;
+  padding-top: 120px;
+
+  h1 {
+    display: flex;
+    font-size: 86px;
+    white-space: pre-wrap;
+  }
+}
+
+.articleBackgroundWrapper {
+  background-color: $black;
+  color: $white;
+
+  .articleWrapper {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 290px;
+    margin-top: 270px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      grid-column: 2;
+
+      h3 {
+        font-size: 48px;
+      }
+
+      p {
+        font-size: 21px;
+        line-height: 36px;
+        white-space: pre-wrap;
+
+        a {
+          border-bottom: 1px solid $gray;
+          padding-bottom: 2px;
+        }
+      }
+    }
+  }
+}
+
+.contactCTAWrapper {
   align-items: flex-start;
   border-top: 1px solid $black;
   display: grid;
@@ -18,6 +66,10 @@
       font-size: 72px;
     }
 
+    .titleSmall {
+      font-size: 48px;
+    }
+
     .paragraph {
       font-size: 21px;
       white-space: pre-wrap;
@@ -31,6 +83,16 @@
     svg {
       height: 54px;
       width: 54px;
+    }
+  }
+
+  .actionSmall {
+    font-size: 48px;
+    gap: 26px;
+
+    svg {
+      height: 40px;
+      width: 40px;
     }
   }
 }
