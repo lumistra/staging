@@ -1,0 +1,115 @@
+@import "./colors";
+
+.heroWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 260px;
+  min-height: 400px;
+  padding-bottom: 280px;
+  padding-top: 120px;
+
+  h1 {
+    display: flex;
+    font-size: 86px;
+    white-space: pre-wrap;
+  }
+
+  span {
+    align-items: center;
+    color: $gray;
+    display: flex;
+    font-size: 21px;
+    gap: 10px;
+    margin-top: 240px;
+
+    svg {
+      height: 16px;
+      rotate: 90deg;
+      width: 16px;
+
+      * {
+        stroke: $gray !important;
+      }
+    }
+  }
+}
+
+.servicesWrapper {
+  display: grid;
+  gap: 160px 20px;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 400px;
+  margin-top: 40px;
+
+  .servicesTitle {
+    font-size: 72px;
+  }
+
+  .servicesParagraph {
+    font-size: 21px;
+    white-space: pre-wrap;
+  }
+
+  .servicesGrid {
+    display: grid;
+    gap: 60px 20px;
+    grid-template-columns: repeat(2, 1fr);
+
+    .servicesColumn {
+      display: flex;
+      flex-direction: column;
+      font-size: 21px;
+      gap: 10px;
+
+      .servicesColumnLabel {
+        color: $gray;
+      }
+    }
+  }
+}
+
+.checkInBackgroundWrapper {
+  background-color: $primary;
+  color: $white;
+
+  .checkInWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-bottom: 260px;
+    margin-top: 440px;
+
+    h3 {
+      font-size: 84px;
+    }
+
+    p {
+      font-size: 48px;
+      white-space: pre-wrap;
+    }
+
+    .checkInCTA {
+      align-items: center;
+      color: $white;
+      display: flex;
+      font-size: 21px;
+      gap: 10px;
+      margin-top: 240px;
+
+      svg {
+        height: 16px;
+        width: 16px;
+
+        * {
+          stroke: $white !important;
+        }
+      }
+    }
+  }
+}
+
+.noBorderContact {
+  border: none;
+  margin-bottom: 340px;
+  margin-top: 340px;
+}

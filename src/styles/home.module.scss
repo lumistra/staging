@@ -83,7 +83,6 @@
     margin-top: 260px;
 
     h3 {
-      // margin-top: 160px;
       font-size: 84px;
       white-space: pre-wrap;
     }
@@ -107,129 +106,6 @@
 
         * {
           stroke: $gray !important;
-        }
-      }
-    }
-  }
-}
-
-.servicesWrapper {
-  display: grid;
-  gap: 160px 20px;
-  grid-template-columns: repeat(2, 1fr);
-  margin-bottom: 160px;
-  margin-top: 160px;
-
-  .heroWrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    grid-column-end: 3;
-    grid-column-start: 2;
-
-    .heroTitle {
-      font-size: 72px;
-    }
-
-    .heroParagraph {
-      font-size: 21px;
-      white-space: pre-wrap;
-
-      a {
-        border-bottom: 1px solid $gray;
-        padding-bottom: 2px;
-      }
-    }
-  }
-
-  .promptWrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    min-height: 360px;
-
-    .promptTitle {
-      color: $primary;
-      font-size: 48px;
-      white-space: pre-wrap;
-    }
-
-    .promptParagraph {
-      font-size: 21px;
-      white-space: pre-wrap;
-
-      a {
-        border-bottom: 1px solid $gray;
-        padding-bottom: 2px;
-      }
-    }
-  }
-
-  .inputWrapper {
-    display: flex;
-    font-size: 48px;
-    gap: 16px;
-    height: fit-content;
-    white-space: nowrap;
-
-    .inputContainer {
-      position: relative;
-
-      &:focus-within {
-        .searchWrapper {
-          display: flex;
-        }
-      }
-
-      input::placeholder {
-        color: $gray;
-      }
-
-      .searchWrapper {
-        display: none;
-        flex-direction: column;
-        font-size: 36px;
-        height: 450px;
-        left: 0;
-        overflow-y: auto;
-        padding-bottom: 250px;
-        position: absolute;
-        top: 100%;
-        width: 100%;
-
-        /* width */
-        &::-webkit-scrollbar {
-          width: 10px;
-        }
-
-        /* Track */
-        &::-webkit-scrollbar-track {
-          border: 1px solid $light;
-          border-radius: 100vw;
-        }
-
-        /* Handle */
-        &::-webkit-scrollbar-thumb {
-          background: $primary;
-          border-radius: 100vw;
-          cursor: pointer;
-        }
-
-        .searchItem {
-          border-bottom: 1px solid $light;
-          cursor: pointer;
-          hyphens: auto;
-          padding: 10px 0;
-          white-space: break-spaces;
-          word-break: break-word;
-
-          &.searchItemNoResults {
-            color: $gray;
-          }
-
-          &:last-of-type {
-            border-bottom: none;
-          }
         }
       }
     }

@@ -38,6 +38,9 @@ export const generateStaticPaths = () => flatten(map(sitemap, (route) => map(loc
 
 export const getRawPath = (path: string, stripLocale: boolean = true) => {
   let newPath = path;
+  if (newPath.match(/[#?].*/)) {
+    newPath = newPath.replace(/[#?].*/, '');
+  }
   if (stripLocale) {
     forEach(locales, (locale) => {
       newPath = newPath.replace(`/${locale.value}`, '');

@@ -35,26 +35,7 @@
       "title": "Services",
       "paragraph_1": "If you're interested in collaborating but unsure if we offer a\nspecific service, feel free to ask here or visit ",
       "paragraph_2": " page.",
-      "link": "our services",
-      "prompts": {
-        "input": {
-          "start": "I need",
-          "placeholder": "write a service here",
-          "no_results": "No results..."
-        },
-        "idle": {
-          "title": "Ready when you are.",
-          "paragraph": "You can type in the service you need\nand get an answer right away."
-        },
-        "positive": {
-          "title": "We can help you with that.",
-          "paragraph": "The service you need is something\nwe can help you with. Feel free\nto explore more or [get in touch](mailto:info@lumistra.com)."
-        },
-        "negative": {
-          "title": "We don’t do that, but...",
-          "paragraph": "If you think that is something we can\nhelp you with, you can always reach\nout to us at [info@lumistra.com](mailto:info@lumistra.com)"
-        }
-      }
+      "link": "our services"
     }
   },
   "work": {
@@ -73,6 +54,11 @@
       "title": "About us",
       "paragraph": "Lumistra is an idea. A flare of guidance that leads and\nmotivates. We aim to offer the best possible solutions\nto those who want to amplify their idea.\n\nAt Lumistra, we are committed to excel in just that -\ntransforming the initial spark into your next big thing."
     },
+    "projects": "Featured projects"
+  },
+  "services": {
+    "title": "Lumistra - Services",
+    "hero": "Overview of what we do\nand how can we do it for you.",
     "pitch": {
       "step_1": {
         "title": "Timeless approach",
@@ -88,9 +74,40 @@
         "cta": "See our services"
       }
     },
-    "projects": "Featured projects"
+    "bio": {
+      "title": "What we do",
+      "section": "Services",
+      "paragraph": "Our range of services cover almost everything you\nmight need for your next project. If you can’t find it\nfrom the list, you can always scroll down  and type\nin the service you need to see if we can help you.",
+      "brand_strategy": "Brand strategy",
+      "brand_design": "Brand design",
+      "digital_design": "Digital design",
+      "brand_communication": "Brand communication",
+      "check_in": {
+        "title": "Feel free to check-in",
+        "paragraph": "We never break contact and always\nkeep clients involved in the process to\nensure the best possible outcome.",
+        "cta": "See our creative process"
+      }
+    },
+    "prompts": {
+      "input": {
+        "start": "I need",
+        "placeholder": "write a service here",
+        "no_results": "No results..."
+      },
+      "idle": {
+        "title": "Ready when you are.",
+        "paragraph": "You can type in the service you need\nand get an answer right away."
+      },
+      "positive": {
+        "title": "We can help you with that.",
+        "paragraph": "The service you need is something\nwe can help you with. Feel free\nto explore more or [get in touch](mailto:info@lumistra.com)."
+      },
+      "negative": {
+        "title": "We don’t do that, but...",
+        "paragraph": "If you think that is something we can\nhelp you with, you can always reach\nout to us at [info@lumistra.com](mailto:info@lumistra.com)"
+      }
+    }
   },
-  "services": {},
   "workflow": {
     "title": "Workflow blueprint",
     "paragraph": "Peek at our creative process and see\nwhat defines our approach to bringing\nyour vision to reality.",

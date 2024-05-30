@@ -27,7 +27,11 @@ function Workflow() {
   ];
 
   return (
-    <Section className={style.backgroundWrapper} containerClassName={style.wrapper}>
+    <Section
+      id="workflow"
+      className={style.backgroundWrapper}
+      containerClassName={style.wrapper}
+    >
       <div className={style.header}>
         <Arrow className={style.icon} />
         <div className={style.column}>

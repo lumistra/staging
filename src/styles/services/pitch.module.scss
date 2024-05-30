@@ -1,0 +1,47 @@
+@import "../colors";
+@import "../fonts";
+
+.pitchWrapper {
+  display: flex;
+  flex-direction: column;
+
+  .pitchItem {
+    align-items: flex-start;
+    border-top: 1px solid $black;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 35px 0;
+
+    &:last-of-type {
+      border-bottom: 1px solid $black;
+    }
+
+    .pitchNumber {
+      color: $gray;
+      font-size: 21px;
+      font-family: $mono;
+    }
+
+    .pitchContent {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin-bottom: 80px;
+      min-height: 320px;
+
+      .pitchTitle {
+        font-size: 72px;
+      }
+
+      .pitchParagraph {
+        font-size: 21px;
+        white-space: pre-wrap;
+      }
+
+      .pitchCTA {
+        margin-top: 60px;
+      }
+    }
+  }
+}

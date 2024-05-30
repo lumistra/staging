@@ -6,6 +6,7 @@ import style from '@/styles/contact.module.scss';
 import Section from './Section';
 
 type Props = {
+  className?: string
   altTitle?: boolean
   isSmall?: boolean
 };
@@ -14,7 +15,7 @@ export default function Contact(props: Props) {
   const { t } = useTranslations();
 
   return (
-    <Section containerClassName={style.contactCTAWrapper}>
+    <Section containerClassName={classNames(style.contactCTAWrapper, props.className)}>
       <div className={style.contentWrapper}>
         <span className={classNames({
           [style.title]: !props.isSmall,

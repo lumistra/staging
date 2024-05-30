@@ -2,7 +2,7 @@ import { uniq } from 'lodash';
 import useTranslations from '@/hooks/useTranslations';
 
 function useServices() {
-  const { currentLocale } = useTranslations();
+  const { currentLocale, t } = useTranslations();
 
   const services = () => {
     switch (currentLocale) {
@@ -253,7 +253,100 @@ function useServices() {
     }
   };
 
-  return { services: uniq(services()) };
+  const brandStrategy = () => {
+    switch (currentLocale) {
+      case 'hr':
+        return [];
+      default:
+        return [
+          'Research & analisys',
+          'Brand positioning',
+          'Brand narrative',
+          'Communication',
+          'Content strategy',
+          'Design strategy',
+          'Digital strategy',
+          'Social media strategy',
+          'Naming',
+        ];
+    }
+  };
+
+  const brandDesign = () => {
+    switch (currentLocale) {
+      case 'hr':
+        return [];
+      default:
+        return [
+          'Visual identity',
+          'Verbal identity',
+          'Motion design',
+          'Packaging & label',
+          'Publications',
+          'Typography',
+          'Illustration',
+          'Brand guidelines',
+          'Art & illustration',
+        ];
+    }
+  };
+
+  const digitalDesign = () => {
+    switch (currentLocale) {
+      case 'hr':
+        return [];
+      default:
+        return [
+          'UX/UI design',
+          'Interaction design',
+          'Digital design systems',
+          'Digital prototyping',
+          'Website design',
+          'Marketing materials',
+          'Ad creative',
+          'App design',
+          'Social media creative',
+          'Presentation design',
+        ];
+    }
+  };
+
+  const brandCommunication = () => {
+    switch (currentLocale) {
+      case 'hr':
+        return [];
+      default:
+        return [
+          'Brand story',
+          'Advertising',
+          'Merchandise',
+          'Editorial Design',
+          'Social media',
+          'Signage',
+        ];
+    }
+  };
+
+  const groups = {
+    brandStrategy: {
+      label: t('services.bio.brand_strategy'),
+      list: brandStrategy(),
+    },
+    brandDesign: {
+      label: t('services.bio.brand_design'),
+      list: brandDesign(),
+    },
+    digitalDesign: {
+      label: t('services.bio.digital_design'),
+      list: digitalDesign(),
+    },
+    brandCommunication: {
+      label: t('services.bio.brand_communication'),
+      list: brandCommunication(),
+    },
+  };
+
+  return { services: uniq(services()), groups };
 }
 
 export default useServices;

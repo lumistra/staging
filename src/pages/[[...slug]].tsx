@@ -5,6 +5,7 @@ import About from '@/components/pages/About';
 import Contact from '@/components/pages/Contact';
 import Home from '@/components/pages/Home';
 import PrivacyPolicy from '@/components/pages/PrivacyPolicy';
+import Services from '@/components/pages/Services';
 import Work from '@/components/pages/Work';
 import { generateStaticPaths, getRawPath, routes } from '@/utils';
 
@@ -18,6 +19,8 @@ function Main() {
       return <Contact />;
     case getRawPath(router.asPath) === routes.about:
       return <About />;
+    case getRawPath(router.asPath) === routes.services:
+      return <Services />;
     case getRawPath(router.asPath) === routes.work:
       return <Work />;
     default:
