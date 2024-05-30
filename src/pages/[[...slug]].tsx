@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import Footer from '@/components/containers/Footer';
 import Navigation from '@/components/containers/navigation/Navigation';
+import About from '@/components/pages/About';
 import Contact from '@/components/pages/Contact';
 import Home from '@/components/pages/Home';
 import PrivacyPolicy from '@/components/pages/PrivacyPolicy';
@@ -15,6 +16,8 @@ function Main() {
       return <PrivacyPolicy />;
     case getRawPath(router.asPath) === routes.contact:
       return <Contact />;
+    case getRawPath(router.asPath) === routes.about:
+      return <About />;
     case getRawPath(router.asPath) === routes.work:
       return <Work />;
     default:

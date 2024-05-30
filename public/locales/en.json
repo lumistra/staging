@@ -66,44 +66,29 @@
       "grid": "Grid"
     }
   },
-  "privacy-policy": {
-    "title": "Lumistra - Privacy Policy"
-  },
-  "projects": {
-    "selected": {
-      "section": "Projects",
-      "title": "Selected work"
+  "about": {
+    "title": "Lumistra - About us",
+    "hero": "From spark to light.",
+    "bio": {
+      "title": "About us",
+      "paragraph": "Lumistra is an idea. A flare of guidance that leads and\nmotivates. We aim to offer the best possible solutions\nto those who want to amplify their idea.\n\nAt Lumistra, we are committed to excel in just that -\ntransforming the initial spark into your next big thing."
     },
-    "project_1": {
-      "title": "Apiar"
+    "pitch": {
+      "step_1": {
+        "title": "Timeless approach",
+        "paragraph": "We design for consistency, maintaining a timeless\napproach that will stand the test of time. This means\nhaving a flexible and scalable brand ready for future\ninnovation and adaptation in ever-changing environment."
+      },
+      "step_2": {
+        "title": "Stay relevant",
+        "paragraph": "Our aim is to figure out the heart of your idea.\nBy recognizing the core values that drive your passion\nwe anticipate the future needs of the brand making it\nrelevant across all touchpoints."
+      },
+      "step_3": {
+        "title": "Make a difference",
+        "paragraph": "Not every idea is big, but we believe each one can make\na difference. Our aim has always been to help you get it\nout there with a little help from our side.",
+        "cta": "See our services"
+      }
     },
-    "project_2": {
-      "title": "Spika"
-    },
-    "project_3": {
-      "title": "Houndtrek"
-    },
-    "project_4": {
-      "title": "The Lighthouse"
-    },
-    "project_5": {
-      "title": "Hoo St. Werburgh BattleGeese"
-    },
-    "project_6": {
-      "title": "Exit Osijek"
-    },
-    "project_7": {
-      "title": "Bergmann & Hillebrand"
-    },
-    "project_8": {
-      "title": "Stereo"
-    },
-    "project_9": {
-      "title": "Soundgarden"
-    },
-    "project_10": {
-      "title": "Ritmo"
-    }
+    "projects": "Featured projects"
   },
   "services": {},
   "workflow": {
@@ -152,6 +137,45 @@
     "article": {
       "title": "Want to publish an article?",
       "paragraph": "If you have something you would like to share\nto our audience, you can always drop us a message\nat [info@lumistra.com](mailto:info@lumistra.com)"
+    }
+  },
+  "privacy-policy": {
+    "title": "Lumistra - Privacy Policy"
+  },
+  "projects": {
+    "selected": {
+      "section": "Projects",
+      "title": "Selected work"
+    },
+    "project_1": {
+      "title": "Apiar"
+    },
+    "project_2": {
+      "title": "Spika"
+    },
+    "project_3": {
+      "title": "Houndtrek"
+    },
+    "project_4": {
+      "title": "The Lighthouse"
+    },
+    "project_5": {
+      "title": "Hoo St. Werburgh BattleGeese"
+    },
+    "project_6": {
+      "title": "Exit Osijek"
+    },
+    "project_7": {
+      "title": "Bergmann & Hillebrand"
+    },
+    "project_8": {
+      "title": "Stereo"
+    },
+    "project_9": {
+      "title": "Soundgarden"
+    },
+    "project_10": {
+      "title": "Ritmo"
     }
   },
   "articles": {

@@ -9,6 +9,7 @@ import { getOrderNumber, routes } from '@/utils';
 import Section from '../Section';
 
 type Props = {
+  className?: string
   textPosition: 'top' | 'bottom'
 };
 
@@ -34,7 +35,7 @@ export default function Featured(props: Props) {
   }, [projects]);
 
   return (
-    <Section containerClassName={classNames(style.featuredWrapper, {
+    <Section containerClassName={classNames(style.featuredWrapper, props.className, {
       [style.featuredTop]: props.textPosition === 'top',
       [style.featuredBottom]: props.textPosition === 'bottom',
     })}
