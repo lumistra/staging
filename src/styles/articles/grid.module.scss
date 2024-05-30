@@ -1,0 +1,25 @@
+@import "../colors";
+
+.articleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  .articleCover {
+    aspect-ratio: 1/1;
+    background-color: $gray;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+  }
+
+  .articleDate {
+    color: $gray;
+    font-size: 21px;
+    margin-top: 16px;
+  }
+
+  .articleTitle {
+    font-size: 21px;
+  }
+}

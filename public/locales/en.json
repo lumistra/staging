@@ -150,10 +150,6 @@
       "title-alt": "Get in touch.",
       "paragraph": "We are more than ready to hear\nall about your next big thing.",
       "action": "Contact us"
-    },
-    "article": {
-      "title": "Want to publish an article?",
-      "paragraph": "If you have something you would like to share\nto our audience, you can always drop us a message\nat [info@lumistra.com](mailto:info@lumistra.com)"
     }
   },
   "privacy-policy": {
@@ -193,6 +189,14 @@
     },
     "project_10": {
       "title": "Ritmo"
+    }
+  },
+  "news": {
+    "title": "Lumistra - News",
+    "sub_title": "All articles",
+    "cta": {
+      "title": "Want to publish an article?",
+      "paragraph": "If you have something you would like to share\nto our audience, you can always drop us a message\nat [info@lumistra.com](mailto:info@lumistra.com)"
     }
   },
   "articles": {

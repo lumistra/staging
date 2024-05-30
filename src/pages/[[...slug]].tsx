@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import Footer from '@/components/containers/Footer';
 import Navigation from '@/components/containers/navigation/Navigation';
 import About from '@/components/pages/About';
+import Articles from '@/components/pages/Articles';
 import Contact from '@/components/pages/Contact';
 import Home from '@/components/pages/Home';
 import PrivacyPolicy from '@/components/pages/PrivacyPolicy';
@@ -15,6 +16,8 @@ function Main() {
   switch (true) {
     case getRawPath(router.asPath) === routes.privacyPolicy:
       return <PrivacyPolicy />;
+    case getRawPath(router.asPath) === routes.articles:
+      return <Articles />;
     case getRawPath(router.asPath) === routes.contact:
       return <Contact />;
     case getRawPath(router.asPath) === routes.about:
