@@ -68,8 +68,21 @@
         }
       }
 
-      input::placeholder {
+      input {
+        position: relative;
+        z-index: 2;
+      }
+
+      input::placeholder,
+      .inputSuggestion {
         color: $gray;
+      }
+
+      .inputSuggestion {
+        left: 0;
+        position: absolute;
+        top: 0;
+        z-index: 1;
       }
 
       .searchWrapper {

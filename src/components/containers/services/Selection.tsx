@@ -2,11 +2,9 @@ import { useState } from 'react';
 import type { ChangeEvent, KeyboardEvent } from 'react';
 import classNames from 'classnames';
 import {
-  filter, includes, isEmpty, lowerCase, map, some,
-  toLower,
+  filter, first, includes, isEmpty, lowerCase, map, some, toLower,
 } from 'lodash';
 import useServices from '@/content/services';
-import { useDebouncedState } from '@/hooks/useDebounce';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/services/selection.module.scss';
 import { parseMarkdown, routes } from '@/utils';
@@ -26,39 +24,9 @@ type Props = {
 export default function Selection(props: Props) {
   const { t } = useTranslations();
   const { services } = useServices();
+  const [showResults, setShowResults] = useState(false);
   const [state, setState] = useState(State.idle);
-  const [value, setValue] = useDebouncedState('', (current: string) => {
-    if (isEmpty(current)) {
-      return setState(State.idle);
-    }
-    if (some(services, (service) => lowerCase(service) === lowerCase(current))) {
-      return setState(State.positive);
-    }
-
-    return setState(State.negative);
-  });
-
-  const handleSelect = (current: string) => {
-    setValue(current);
-    if (isEmpty(current)) {
-      return setState(State.idle);
-    }
-    if (some(services, (service) => lowerCase(service) === lowerCase(current))) {
-      return setState(State.positive);
-    }
-
-    return setState(State.negative);
-  };
-
-  const handleEnter = (event: KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Enter') {
-      handleSelect(value);
-    }
-  };
-
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
-  };
+  const [value, setValue] = useState('');
 
   const filteredServices = filter(services, (service) => includes(lowerCase(service), lowerCase(value)));
   const responses = {
@@ -74,6 +42,34 @@ export default function Selection(props: Props) {
       title: t('services.prompts.negative.title'),
       paragraph: parseMarkdown(t('services.prompts.negative.paragraph')),
     },
+  };
+
+  const handleSelect = (current: string) => {
+    setValue(current);
+    const currentFilteredServices = filter(services, (service) => includes(lowerCase(service), lowerCase(current)));
+    if (!isEmpty(current) && isEmpty(currentFilteredServices)) {
+      return setState(State.negative);
+    }
+    if (!isEmpty(current) && some(services, (service) => lowerCase(service) === lowerCase(current))) {
+      return setState(State.positive);
+    }
+
+    return setState(State.idle);
+  };
+
+  const handleEnter = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Tab') {
+      event.preventDefault();
+
+      if (!isEmpty(value) && !isEmpty(filteredServices)) {
+        handleSelect(first(filteredServices) || '');
+      }
+    }
+  };
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    handleSelect(event.target.value);
+    if (!showResults) setShowResults(true);
   };
 
   return (
@@ -101,22 +97,29 @@ export default function Selection(props: Props) {
             onChange={handleChange}
             onKeyDown={handleEnter}
           />
-          <div className={style.searchWrapper}>
-            {toLower(filteredServices[0]) !== toLower(value) && map(filteredServices, (service) => (
-              <button
-                key={service}
-                className={style.searchItem}
-                onClick={() => handleSelect(service)}
-              >
-                {service}
-              </button>
-            ))}
-            {filteredServices.length === 0 && (
+          {!isEmpty(value) && (
+            <span className={style.inputSuggestion}>
+              {first(filteredServices) || ''}
+            </span>
+          )}
+          {showResults && (
+            <div className={style.searchWrapper}>
+              {toLower(filteredServices[0]) !== toLower(value) && map(filteredServices, (service) => (
+                <button
+                  key={service}
+                  className={style.searchItem}
+                  onClick={() => handleSelect(service)}
+                >
+                  {service}
+                </button>
+              ))}
+              {filteredServices.length === 0 && (
               <span className={classNames(style.searchItem, style.searchItemNoResults)}>
                 {t('services.prompts.input.no_results')}
               </span>
-            )}
-          </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </Section>
