@@ -19,8 +19,8 @@
   gap: 35px 20px;
   grid-template-columns: repeat(4, 1fr);
   min-height: 600px;
-  padding-bottom: 200px;
-  padding-top: 200px;
+  padding-bottom: 280px;
+  padding-top: 280px;
 
   h5 {
     align-items: center;
@@ -65,9 +65,8 @@
     display: flex;
     flex-direction: column;
     font-size: 21px;
-    gap: 40px;
-    grid-column: 3 / -1;
-    white-space: pre-wrap;
+    gap: 20px;
+    grid-column: 3;
   }
 }
 
@@ -83,7 +82,7 @@
     margin-top: 260px;
 
     h3 {
-      font-size: 84px;
+      font-size: 86px;
       white-space: pre-wrap;
     }
 

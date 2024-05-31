@@ -36,7 +36,7 @@ export default function About() {
         <h3>{t('about.bio.title')}</h3>
         <p>{t('about.bio.paragraph')}</p>
       </Section>
-      <Pitch showCTA />
+      <Pitch />
       <Section containerClassName={style.projectsWrapper}>
         <h3>{t('about.projects')}</h3>
         <CtaLink href={routes.work}>{t('globals.see_all_projects')}</CtaLink>

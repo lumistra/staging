@@ -24,9 +24,6 @@ export default function Contact(props: Props) {
         >
           {props.altTitle ? t('contact.cta.title-alt') : t('contact.cta.title')}
         </span>
-        <p className={style.paragraph}>
-          {t('contact.cta.paragraph')}
-        </p>
       </div>
       <a
         className={classNames('cta-link', {

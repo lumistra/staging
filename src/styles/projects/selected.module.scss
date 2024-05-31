@@ -8,7 +8,7 @@
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(2, 1fr);
-    margin: 40px 0;
+    margin: 20px 0 40px 0;
 
     .selectedColumn {
       align-items: flex-end;
@@ -54,6 +54,6 @@
   }
 
   .projectTitleMin {
-    min-height: 240px;
+    min-height: 120px;
   }
 }

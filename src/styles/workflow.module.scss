@@ -15,35 +15,30 @@
       font-size: 21px;
       gap: 20px;
       grid-template-columns: repeat(2, 1fr);
-      white-space: pre-wrap;
       width: 100%;
     }
 
     .header {
-      align-items: flex-start;
       margin-bottom: 190px;
 
-      .icon {
-        aspect-ratio: 1/1;
-        height: 168px;
-        width: 168px;
+      .title {
+        font-size: 72px;
+        grid-column-end: 3;
+        grid-column-start: 1;
       }
 
-      .column {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-
-        .title {
-          font-size: 72px;
-        }
+      .paragraph {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        font-size: 21px;
+        grid-row: 2;
       }
     }
 
     .row {
       border-top: 1px solid $white;
       cursor: pointer;
-      padding: 30px 0;
+      padding: 20px 0;
 
       &:last-of-type {
         border-bottom: 1px solid $white;
@@ -84,6 +79,8 @@
         }
 
         p {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
           padding-bottom: 120px;
           padding-top: 30px;
         }

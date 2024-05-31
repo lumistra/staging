@@ -16,7 +16,8 @@
     "see_full_project": "See full project",
     "see_all_projects": "See all projects",
     "read_all": "Read all",
-    "read_next": "Read next"
+    "read_next": "Read next",
+    "next_project": "Next project"
   },
   "home": {
     "title": "Lumistra",
@@ -78,14 +79,14 @@
     "bio": {
       "title": "What we do",
       "section": "Services",
-      "paragraph": "Our range of services cover almost everything you\nmight need for your next project. If you can’t find it\nfrom the list, you can always scroll down  and type\nin the service you need to see if we can help you.",
+      "paragraph": "Our range of services cover almost everything you\nmight need for your next project. If you can’t find it\nfrom the list, you can always scroll down and type\nin the service you need to see if we can help you.",
       "brand_strategy": "Brand strategy",
       "brand_design": "Brand design",
       "digital_design": "Digital design",
       "brand_communication": "Brand communication",
       "check_in": {
-        "title": "Feel free to check-in",
-        "paragraph": "We never break contact and always\nkeep clients involved in the process to\nensure the best possible outcome.",
+        "title": "Ta-Daa Moment",
+        "paragraph": "With attention to detail, we execute the strategy, ensuring consistency across all assets and communications.",
         "cta": "See our creative process"
       }
     },
@@ -149,7 +150,6 @@
     "cta": {
       "title": "Let’s work together.",
       "title-alt": "Get in touch.",
-      "paragraph": "We are more than ready to hear\nall about your next big thing.",
       "action": "Contact us"
     }
   },

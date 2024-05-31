@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { filter } from 'lodash';
 import useTranslations from '@/hooks/useTranslations';
 import type { Projects } from '@/types/projects';
@@ -67,8 +68,7 @@ export const getProjects = (t: Function): Projects => [
 
 function useProjects() {
   const { t } = useTranslations();
-
-  const projects = getProjects(t);
+  const [projects] = useState(getProjects(t));
 
   const selected = filter(projects, 'selected');
 

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { ChangeEvent, KeyboardEvent } from 'react';
 import classNames from 'classnames';
 import {
-  filter, first, includes, isEmpty, lowerCase, map, some, toLower,
+  filter, first, isEmpty, lowerCase, map, some, startsWith, toLower,
 } from 'lodash';
 import useServices from '@/content/services';
 import useTranslations from '@/hooks/useTranslations';
@@ -28,7 +28,7 @@ export default function Selection(props: Props) {
   const [state, setState] = useState(State.idle);
   const [value, setValue] = useState('');
 
-  const filteredServices = filter(services, (service) => includes(lowerCase(service), lowerCase(value)));
+  const filteredServices = filter(services, (service) => startsWith(lowerCase(service), lowerCase(value)));
   const responses = {
     [State.idle]: {
       title: t('services.prompts.idle.title'),
@@ -46,7 +46,7 @@ export default function Selection(props: Props) {
 
   const handleSelect = (current: string) => {
     setValue(current);
-    const currentFilteredServices = filter(services, (service) => includes(lowerCase(service), lowerCase(current)));
+    const currentFilteredServices = filter(services, (service) => startsWith(lowerCase(service), lowerCase(current)));
     if (!isEmpty(current) && isEmpty(currentFilteredServices)) {
       return setState(State.negative);
     }
@@ -73,7 +73,10 @@ export default function Selection(props: Props) {
   };
 
   return (
-    <Section containerClassName={style.servicesWrapper}>
+    <Section containerClassName={classNames(style.servicesWrapper, {
+      [style.breakLine]: props.hideHero,
+    })}
+    >
       {!props.hideHero && (
         <div className={style.heroWrapper}>
           <span className={style.heroTitle}>{t('home.services.title')}</span>

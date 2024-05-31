@@ -25,7 +25,7 @@ export default function Article(props: Props) {
       </span>
       <span
         className={style.articleTitle}
-        style={{ minHeight: props.minHeight || 500 }}
+        style={{ minHeight: props.minHeight || 400 }}
       >
         {props.article.title}
       </span>

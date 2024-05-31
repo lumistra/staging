@@ -2,35 +2,35 @@
 
 .latestWrapper {
   margin-top: 300px;
+}
 
-  .latestTextWrapper {
+.latestTextWrapper {
+  align-items: flex-end;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 40px;
+
+  .latestColumn {
     align-items: flex-end;
-    display: grid;
+    display: flex;
     gap: 20px;
-    grid-template-columns: repeat(2, 1fr);
-    margin: 40px 0;
-
-    .latestColumn {
-      align-items: flex-end;
-      display: flex;
-      gap: 20px;
-      justify-content: space-between;
-    }
-
-    .latestTitle {
-      font-size: 72px;
-    }
-
-    .latestCTA {
-      justify-self: flex-end;
-      margin-bottom: 15px;
-    }
+    justify-content: space-between;
   }
 
-  .articlesWrapper {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
-    margin: 60px 0;
+  .latestTitle {
+    font-size: 72px;
   }
+
+  .latestCTA {
+    justify-self: flex-end;
+    margin-bottom: 15px;
+  }
+}
+
+.articlesWrapper {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 60px 0;
 }

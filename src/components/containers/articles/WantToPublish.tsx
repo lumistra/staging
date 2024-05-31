@@ -20,10 +20,8 @@ export default function WantToPublish(props: Props) {
       })}
       containerClassName={style.wantToPublishWrapper}
     >
-      <div>
-        <h3>{t('news.cta.title')}</h3>
-        <p>{parseMarkdown(t('news.cta.paragraph'))}</p>
-      </div>
+      <h3>{t('news.cta.title')}</h3>
+      <p>{parseMarkdown(t('news.cta.paragraph'))}</p>
     </Section>
   );
 }

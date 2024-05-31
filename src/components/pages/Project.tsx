@@ -69,7 +69,7 @@ export default function Project(props: Props) {
         <div className={style.recommendedHeader}>
           <span className={style.recommendedTitle}>{recommended.title}</span>
           <CtaLink className={style.recommendedCTA} href={routes.project(recommended.slug)}>
-            {t('globals.read_next')}
+            {t('globals.next_project')}
           </CtaLink>
         </div>
         <Link href={routes.project(recommended.slug)}>

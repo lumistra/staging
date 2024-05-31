@@ -1,15 +1,10 @@
 import { map } from 'lodash';
-import CtaLink from '@/components/elements/CtaLink';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/services/pitch.module.scss';
 import { getOrderNumber, routes } from '@/utils';
 import Section from '../Section';
 
-type Props = {
-  showCTA?: boolean
-};
-
-export default function Pitch(props: Props) {
+export default function Pitch() {
   const { t } = useTranslations();
 
   const pitch = [
@@ -37,9 +32,6 @@ export default function Pitch(props: Props) {
           <div className={style.pitchContent}>
             <span className={style.pitchTitle}>{item.title}</span>
             <p className={style.pitchParagraph}>{item.paragraph}</p>
-            {props.showCTA && item.cta && (
-              <CtaLink className={style.pitchCTA} href={item.href}>{item.cta}</CtaLink>
-            )}
           </div>
         </div>
       ))}

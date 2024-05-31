@@ -110,13 +110,14 @@
     display: flex;
     min-height: 900px;
     padding-bottom: 160px;
-    padding-top: 160px;
+    padding-top: 120px;
 
     h1 {
       color: $white;
       display: flex;
       font-size: 86px;
-      white-space: pre-wrap;
+      height: fit-content;
+      width: fit-content;
       z-index: 10;
     }
   }
@@ -126,7 +127,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-bottom: 530px;
+  margin-bottom: 420px;
   margin-top: 130px;
 
   h3 {
@@ -144,8 +145,8 @@
   display: flex;
   gap: 20px;
   justify-content: space-between;
-  margin-bottom: 100px;
-  margin-top: 40px;
+  margin-bottom: 60px;
+  margin-top: 20px;
 
   h3 {
     font-size: 72px;

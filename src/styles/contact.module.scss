@@ -19,8 +19,8 @@
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(2, 1fr);
-  margin-bottom: 300px;
-  padding: 40px 0;
+  margin-bottom: 220px;
+  padding: 20px 0;
 
   .contentWrapper {
     display: flex;
@@ -33,11 +33,6 @@
 
     .titleSmall {
       font-size: 48px;
-    }
-
-    .paragraph {
-      font-size: 21px;
-      white-space: pre-wrap;
     }
   }
 

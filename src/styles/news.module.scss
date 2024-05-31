@@ -1,21 +1,24 @@
 @import "./colors";
 
 .latestWrapper {
-  margin-top: 60px;
+  margin-top: 120px;
 }
 
 .articlesWrapper {
+  border-top: 1px solid $gray;
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(3, 1fr);
   margin-bottom: 60px;
   margin-top: 120px;
+  padding-top: 20px;
 
   .articlesTitle {
     display: flex;
     font-size: 86px;
     grid-column-end: 4;
     grid-column-start: 1;
+    margin-bottom: 40px;
   }
 }
 
@@ -30,35 +33,30 @@
 }
 
 .spacingTop {
-  margin-top: 400px;
+  margin-top: 100px;
 }
 
 .wantToPublishWrapper {
   display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(2, 1fr);
-  margin-bottom: 290px;
-  margin-top: 270px;
+  gap: 50px 20px;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 180px;
+  margin-top: 180px;
 
-  div {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    grid-column: 2;
+  h3 {
+    font-size: 48px;
+    grid-column-end: 5;
+    grid-column-start: 3;
+  }
 
-    h3 {
-      font-size: 48px;
-    }
+  p {
+    font-size: 21px;
+    line-height: 36px;
+    grid-column-start: 3;
 
-    p {
-      font-size: 21px;
-      line-height: 36px;
-      white-space: pre-wrap;
-
-      a {
-        border-bottom: 1px solid $gray;
-        padding-bottom: 2px;
-      }
+    a {
+      border-bottom: 1px solid $gray;
+      padding-bottom: 2px;
     }
   }
 }

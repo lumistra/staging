@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { orderBy, take } from 'lodash';
 import useTranslations from '@/hooks/useTranslations';
 import type { Articles } from '@/types/articles';
@@ -28,8 +29,7 @@ export const getArticles = (t: Function): Articles => [
 
 function useArticles() {
   const { t } = useTranslations();
-
-  const articles = getArticles(t);
+  const [articles] = useState(getArticles(t));
 
   const latest = take(orderBy(articles, (article) => new Date(article.publishedAt).getTime(), 'desc'), 3);
 

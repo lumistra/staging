@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import classNames from 'classnames';
 import { map } from 'lodash';
-import Arrow from '@/assets/svg/arrow-corner.svg';
 import Plus from '@/assets/svg/plus.svg';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/workflow.module.scss';
@@ -33,11 +32,8 @@ function Workflow() {
       containerClassName={style.wrapper}
     >
       <div className={style.header}>
-        <Arrow className={style.icon} />
-        <div className={style.column}>
-          <span className={style.title}>{t('workflow.title')}</span>
-          <p>{t('workflow.paragraph')}</p>
-        </div>
+        <span className={style.title}>{t('workflow.title')}</span>
+        <p className={style.paragraph}>{t('workflow.paragraph')}</p>
       </div>
       {map(steps, (step, index) => {
         const isExpanded = expanded === index;

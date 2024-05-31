@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { map } from 'lodash';
 import Head from 'next/head';
@@ -23,8 +23,10 @@ export default function Work() {
   const { t } = useTranslations();
   const { projects } = useProjects();
   const [view, setView] = useState(View.grid);
+  const [modalShow, setModalShow] = useState(false);
   const [modalProject, setModalProject] = useState<Project | null>();
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const timeoutID = useRef<any>();
 
   useEffect(() => {
     const handleMove = ({ x, y }: MouseEvent) => {
@@ -35,6 +37,7 @@ export default function Work() {
 
     return () => {
       window.removeEventListener('mousemove', handleMove);
+      if (timeoutID.current) clearTimeout(timeoutID.current);
     };
   }, []);
 
@@ -43,7 +46,18 @@ export default function Work() {
   };
 
   const handleModalChange = (project: Project | null) => {
-    setModalProject(project);
+    if (timeoutID.current) clearTimeout(timeoutID.current);
+
+    const willShowModal = !!project;
+    if (willShowModal) {
+      setModalProject(project);
+    } else {
+      timeoutID.current = setTimeout(() => {
+        setModalProject(project);
+      }, 500);
+    }
+
+    setModalShow(willShowModal);
   };
 
   return (
@@ -83,7 +97,7 @@ export default function Work() {
         {View.list === view && (
           <div
             className={classNames(style.projectModal, {
-              [style.projectModalActive]: !!modalProject,
+              [style.projectModalActive]: modalShow,
             })}
             style={{
               position: 'fixed',
@@ -93,7 +107,7 @@ export default function Work() {
           >
             {modalProject && (
               <Image
-                className={projectStyle.projectModalCover}
+                className={style.projectModalCover}
                 src={modalProject.cover}
                 alt={modalProject.title}
               />

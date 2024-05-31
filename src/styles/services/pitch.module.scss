@@ -11,7 +11,7 @@
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(2, 1fr);
-    padding: 35px 0;
+    padding: 20px 0;
 
     &:last-of-type {
       border-bottom: 1px solid $gray;
@@ -31,12 +31,14 @@
       min-height: 320px;
 
       .pitchTitle {
-        font-size: 72px;
+        font-size: 48px;
       }
 
       .pitchParagraph {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         font-size: 21px;
-        white-space: pre-wrap;
+        // white-space: pre-wrap;
       }
 
       .pitchCTA {
