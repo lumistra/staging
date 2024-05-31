@@ -7,14 +7,14 @@
 
   .pitchItem {
     align-items: flex-start;
-    border-top: 1px solid $black;
+    border-top: 1px solid $gray;
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(2, 1fr);
     padding: 35px 0;
 
     &:last-of-type {
-      border-bottom: 1px solid $black;
+      border-bottom: 1px solid $gray;
     }
 
     .pitchNumber {
