@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import useTranslations from '@/hooks/useTranslations';
-import style from '@/styles/articles.module.scss';
+import style from '@/styles/news.module.scss';
 import { parseMarkdown } from '@/utils';
 import Section from '../Section';
 

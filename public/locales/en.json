@@ -15,7 +15,8 @@
     "back_to_top": "Back to top",
     "see_full_project": "See full project",
     "see_all_projects": "See all projects",
-    "read_all": "Read all"
+    "read_all": "Read all",
+    "read_next": "Read next"
   },
   "home": {
     "title": "Lumistra",
@@ -156,6 +157,7 @@
     "title": "Lumistra - Privacy Policy"
   },
   "projects": {
+    "overview": "Overview",
     "selected": {
       "section": "Projects",
       "title": "Selected work"

@@ -7,18 +7,21 @@ export const getArticles = (t: Function): Articles => [
     slug: 'design-for-digital-age',
     title: t('articles.article_1.title'),
     cover: '/assets/svg/placeholder.svg',
+    author: 'Lumistra',
     publishedAt: '01.01.2024.',
   },
   {
     slug: 'shakespeare',
     title: t('articles.article_2.title'),
     cover: '/assets/svg/placeholder.svg',
+    author: 'Lumistra',
     publishedAt: '01.01.2024.',
   },
   {
     slug: 'matt-willey',
     title: t('articles.article_3.title'),
     cover: '/assets/svg/placeholder.svg',
+    author: 'Lumistra',
     publishedAt: '01.01.2024.',
   },
 ];

@@ -2,13 +2,13 @@ import { map } from 'lodash';
 import Head from 'next/head';
 import useArticles from '@/content/articles';
 import useTranslations from '@/hooks/useTranslations';
-import style from '@/styles/articles.module.scss';
+import style from '@/styles/news.module.scss';
 import Latest from '../containers/articles/Latest';
 import WantToPublish from '../containers/articles/WantToPublish';
 import Section from '../containers/Section';
 import Article from '../elements/Article';
 
-export default function Articles() {
+export default function News() {
   const { t } = useTranslations();
   const { articles } = useArticles();
 

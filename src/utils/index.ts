@@ -21,7 +21,7 @@ export const routes = {
 const sitemap = [
   ...filter(routes, isString),
   ...map(getProjects(t), ({ slug }) => routes.project(slug)),
-  ...map(getArticles(t), ({ slug }) => routes.project(slug)),
+  ...map(getArticles(t), ({ slug }) => routes.article(slug)),
 ];
 
 export const generateStaticPaths = () => flatten(map(sitemap, (route) => map(locales, (locale) => {

@@ -1,0 +1,68 @@
+.textWrapper {
+  align-items: center;
+  display: grid;
+  font-size: 21px;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 10px;
+  margin-top: 10px;
+  white-space: pre-wrap;
+
+  .alignLeft {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .alignRight {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .imageColumn {
+    aspect-ratio: 14 / 15;
+    width: 100%;
+
+    img {
+      object-fit: cover;
+    }
+  }
+}
+
+.singleImage {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.doubleImageWrapper {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+
+  .doubleImage {
+    aspect-ratio: 14 / 15;
+    width: 100%;
+
+    img {
+      object-fit: cover;
+    }
+  }
+}
+
+.tripleImageWrapper {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+
+  .tripleImage {
+    aspect-ratio: 9 / 16;
+    width: 100%;
+
+    img {
+      object-fit: cover;
+    }
+  }
+}

@@ -1,9 +1,9 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
-import Articles from '@/components/pages/Articles';
+import News from '@/components/pages/News';
 
-describe('page: Articles', () => {
+describe('page: News', () => {
   test('renders page', () => {
-    render(<Articles />);
+    render(<News />);
   });
 });

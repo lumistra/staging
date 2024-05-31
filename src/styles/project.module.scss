@@ -1,0 +1,93 @@
+@import "./colors";
+
+.heroWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+  margin-top: 120px;
+
+  .heroCover {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .heroContentWrapper {
+    align-items: flex-start;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+
+    .heroLabel {
+      color: $gray;
+      font-size: 48px;
+    }
+
+    .heroContent {
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+
+      .heroTitle {
+        font-size: 48px;
+      }
+
+      .heroParagraph {
+        font-size: 21px;
+        white-space: pre-wrap;
+      }
+    }
+  }
+}
+
+.projectWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 80px 20px;
+  margin-bottom: 120px;
+  margin-top: 120px;
+}
+
+.recommendedWrapper {
+  border-top: 1px solid $gray;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  margin-top: 380px;
+  overflow: hidden;
+  padding-top: 50px;
+
+  .recommendedHeader {
+    align-items: flex-start;
+    display: flex;
+    gap: 20px 120px;
+    justify-content: space-between;
+
+    .recommendedTitle {
+      font-size: 72px;
+    }
+
+    .recommendedCTA {
+      gap: 25px;
+      font-size: 72px;
+      white-space: nowrap;
+
+      svg {
+        height: 50px;
+        width: 50px;
+      }
+    }
+  }
+
+  .recommendedCover {
+    aspect-ratio: 16 / 4.5;
+    width: 100%;
+
+    img {
+      object-fit: cover;
+    }
+  }
+}
