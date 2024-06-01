@@ -42,6 +42,9 @@ export default function Selected() {
             <span className={style.projectTitle}>{project.title}</span>
           </Link>
         ))}
+        <CtaLink className={style.selectedMobileCTA} href={routes.work}>
+          {t('globals.see_all_projects')}
+        </CtaLink>
       </div>
     </Section>
   );

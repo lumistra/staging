@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import Arrow from '@/assets/svg/arrow-straight.svg';
+import Arrow from '@/assets/svg/arrow.svg';
 import { email } from '@/content';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/contact.module.scss';

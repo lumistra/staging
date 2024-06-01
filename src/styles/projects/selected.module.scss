@@ -1,29 +1,55 @@
 @import "../colors";
+@import "../sizes";
 
 .selectedWrapper {
-  border-top: 1px solid $gray;
+  @media screen and (max-width: $mobile) {
+    margin: 0 !important;
+  }
 
   .selectedTextWrapper {
     align-items: flex-end;
+    border-top: 1px solid $gray;
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(2, 1fr);
-    margin: 20px 0 40px 0;
+    margin-bottom: 40px;
+    padding-top: 20px;
+
+    @media screen and (max-width: $mobile) {
+      grid-template-columns: 1fr;
+      margin-left: $mobileMinBleedWidth;
+      margin-right: $mobileMinBleedWidth;
+    }
 
     .selectedColumn {
       align-items: flex-end;
       display: flex;
       gap: 20px;
       justify-content: space-between;
+
+      @media screen and (max-width: $mobile) {
+        .selectedTitle {
+          display: flex;
+        }
+      }
     }
 
     .selectedTitle {
       font-size: 72px;
+
+      @media screen and (max-width: $mobile) {
+        display: none;
+        font-size: 24px;
+      }
     }
 
     .selectedCTA {
       justify-self: flex-end;
       margin-bottom: 15px;
+
+      @media screen and (max-width: $mobile) {
+        display: none;
+      }
     }
   }
 
@@ -33,6 +59,31 @@
     grid-template-columns: repeat(3, 1fr);
     margin-bottom: 300px;
     margin-top: 60px;
+
+    @media screen and (max-width: $mobile) {
+      gap: 60px;
+      grid-template-columns: 1fr;
+      margin-bottom: 120px;
+      margin-top: 40px;
+
+      .projectTitle {
+        padding: 0 $mobileMinBleedWidth;
+      }
+    }
+
+    .selectedMobileCTA {
+      border-top: 1px solid $gray;
+      display: none;
+      justify-content: flex-end;
+      margin-left: $mobileMinBleedWidth;
+      margin-right: $mobileMinBleedWidth;
+      padding-top: 10px;
+      width: auto;
+
+      @media screen and (max-width: $mobile) {
+        display: flex;
+      }
+    }
   }
 }
 
@@ -40,6 +91,10 @@
   display: flex;
   flex-direction: column;
   gap: 26px;
+
+  @media screen and (max-width: $mobile) {
+    gap: 22px;
+  }
 
   .projectCover {
     aspect-ratio: 1/1;
@@ -51,6 +106,10 @@
 
   .projectTitle {
     font-size: 21px;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 16px;
+    }
   }
 
   .projectTitleMin {

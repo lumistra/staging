@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Arrow from '@/assets/svg/arrow-straight.svg';
+import Arrow from '@/assets/svg/arrow.svg';
 import Featured from '@/components/containers/projects/Featured';
 import Selected from '@/components/containers/projects/Selected';
 import Section from '@/components/containers/Section';

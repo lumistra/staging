@@ -1,7 +1,9 @@
 import { map } from 'lodash';
 import Icon from '@/assets/svg/icon.svg';
 import Logo from '@/assets/svg/logo.svg';
+import Logotype from '@/assets/svg/logotype.svg';
 import { socials } from '@/content';
+import { useScreenSize } from '@/hooks/useScreenSize';
 import useTranslations from '@/hooks/useTranslations';
 import { routes } from '@/utils';
 import Link from '../elements/Link';
@@ -10,6 +12,7 @@ import ToTop from '../elements/ToTop';
 
 export default function Footer() {
   const { t } = useTranslations();
+  const { isMobile } = useScreenSize();
 
   const sitemap = [
     { label: t('routes.home'), value: routes.home },
@@ -24,8 +27,14 @@ export default function Footer() {
     <footer>
       <div className="content-container">
         <div className="identity-wrapper">
-          <Icon className="logo logo-icon" />
-          <Logo className="logo logo-text" />
+          {isMobile ? (
+            <Logotype className="logo" />
+          ) : (
+            <>
+              <Icon className="logo logo-icon" />
+              <Logo className="logo logo-text" />
+            </>
+          )}
         </div>
         <hr className="divider" />
         <div className="cta-wrapper">
@@ -57,6 +66,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
+        {isMobile && <ToTop className="mobile-to-top" />}
         <div className="legal-wrapper">
           <span className="copyright">
             Copyright &copy; {new Date().getFullYear()} Lumistra
@@ -67,7 +77,7 @@ export default function Footer() {
           <span>
             {t('globals.cookies')}
           </span>
-          <ToTop />
+          <ToTop className="desktop-to-top" />
         </div>
       </div>
     </footer>

@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import Arrow from '@/assets/svg/arrow-straight.svg';
+import Arrow from '@/assets/svg/arrow.svg';
 import Link from './Link';
 
 type Props = {

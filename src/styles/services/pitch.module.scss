@@ -1,5 +1,6 @@
 @import "../colors";
 @import "../fonts";
+@import "../sizes";
 
 .pitchWrapper {
   display: flex;
@@ -21,6 +22,10 @@
       color: $gray;
       font-size: 21px;
       font-family: $mono;
+
+      @media screen and (max-width: $mobile) {
+        font-size: 16px;
+      }
     }
 
     .pitchContent {
@@ -32,13 +37,20 @@
 
       .pitchTitle {
         font-size: 48px;
+
+        @media screen and (max-width: $mobile) {
+          font-size: 24px;
+        }
       }
 
       .pitchParagraph {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         font-size: 21px;
-        // white-space: pre-wrap;
+
+        @media screen and (max-width: $mobile) {
+          font-size: 16px;
+        }
       }
 
       .pitchCTA {

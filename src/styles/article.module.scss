@@ -1,4 +1,5 @@
 @import "./colors";
+@import "./sizes";
 
 .heroWrapper {
   display: flex;
@@ -8,12 +9,20 @@
   .heroTitle {
     font-size: 86px;
     margin-bottom: 80px;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 32px;
+    }
   }
 
   .heroDate {
     color: $gray;
     font-size: 21px;
     margin-bottom: 20px;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 16px;
+    }
   }
 
   .heroCover {
@@ -51,12 +60,20 @@
 
     .recommendedTitle {
       font-size: 48px;
+
+      @media screen and (max-width: $mobile) {
+        font-size: 24px;
+      }
     }
 
     .recommendedCTA {
       gap: 25px;
       font-size: 48px;
       white-space: nowrap;
+
+      @media screen and (max-width: $mobile) {
+        font-size: 24px;
+      }
 
       svg {
         height: 38px;

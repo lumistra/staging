@@ -1,9 +1,15 @@
 @import "../colors";
 @import "../fonts";
+@import "../sizes";
 
 .featuredWrapper {
   display: flex;
   gap: 25px;
+
+  @media screen and (max-width: $mobile) {
+    gap: 20px;
+    margin: 0 !important;
+  }
 
   &.featuredTop {
     flex-direction: column;
@@ -17,6 +23,15 @@
     display: grid;
     font-size: 21px;
     grid-template-columns: repeat(4, 1fr);
+
+    @media screen and (max-width: $mobile) {
+      align-items: flex-end;
+      display: flex;
+      font-size: 16px;
+      gap: 20px;
+      justify-content: space-between;
+      margin: 0 $mobileMinBleedWidth;
+    }
 
     .featuredIndex {
       display: flex;
@@ -32,9 +47,31 @@
     height: 915px;
     width: 100%;
 
+    @media screen and (max-width: $mobile) {
+      aspect-ratio: 1 / 1;
+      height: auto;
+    }
+
     img {
       object-fit: cover;
       object-position: center;
+    }
+  }
+
+  .desktopCTA {
+    display: flex;
+
+    @media screen and (max-width: $mobile) {
+      display: none;
+    }
+  }
+
+  .mobileCTA {
+    display: none;
+    margin: 0 $mobileMinBleedWidth;
+
+    @media screen and (max-width: $mobile) {
+      display: flex;
     }
   }
 }

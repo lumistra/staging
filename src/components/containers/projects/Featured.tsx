@@ -42,7 +42,7 @@ export default function Featured(props: Props) {
     >
       <div className={style.featuredTextWrapper}>
         <span>{currentProject.title}</span>
-        <CtaLink href={routes.project(currentProject.slug)}>
+        <CtaLink className={style.desktopCTA} href={routes.project(currentProject.slug)}>
           {t('globals.see_full_project')}
         </CtaLink>
         <span className={style.featuredIndex}>
@@ -54,6 +54,9 @@ export default function Featured(props: Props) {
         src={currentProject.cover}
         alt={currentProject.title}
       />
+      <CtaLink className={style.mobileCTA} href={routes.project(currentProject.slug)}>
+        {t('globals.see_full_project')}
+      </CtaLink>
     </Section>
   );
 }

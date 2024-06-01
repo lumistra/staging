@@ -1,6 +1,6 @@
 import { map } from 'lodash';
 import Head from 'next/head';
-import Arrow from '@/assets/svg/arrow-straight.svg';
+import Arrow from '@/assets/svg/arrow.svg';
 import Section from '@/components/containers/Section';
 import useServices from '@/content/services';
 import useTranslations from '@/hooks/useTranslations';

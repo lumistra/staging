@@ -1,4 +1,5 @@
 @import "./colors";
+@import "./sizes";
 
 .heroWrapper {
   display: flex;
@@ -12,6 +13,10 @@
     display: flex;
     font-size: 86px;
     white-space: pre-wrap;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 32px;
+    }
   }
 
   span {
@@ -21,6 +26,10 @@
     font-size: 21px;
     gap: 10px;
     margin-top: 25vh;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 16px;
+    }
 
     svg {
       height: 16px;
@@ -43,13 +52,20 @@
 
   .servicesTitle {
     font-size: 72px;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 24px;
+    }
   }
 
   .servicesParagraph {
     display: grid;
     font-size: 21px;
     grid-template-columns: repeat(2, 1fr);
-    // white-space: pre-wrap;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 16px;
+    }
   }
 
   .servicesGrid {
@@ -62,6 +78,10 @@
       flex-direction: column;
       font-size: 21px;
       gap: 10px;
+
+      @media screen and (max-width: $mobile) {
+        font-size: 16px;
+      }
 
       .servicesColumnLabel {
         color: $gray;
@@ -83,12 +103,20 @@
 
     h3 {
       font-size: 86px;
+
+      @media screen and (max-width: $mobile) {
+        font-size: 32px;
+      }
     }
 
     p {
       display: grid;
       font-size: 48px;
       grid-template-columns: repeat(2, 1fr);
+
+      @media screen and (max-width: $mobile) {
+        font-size: 24px;
+      }
     }
 
     .checkInCTA {
@@ -98,6 +126,10 @@
       font-size: 21px;
       gap: 10px;
       margin-top: 240px;
+
+      @media screen and (max-width: $mobile) {
+        font-size: 16px;
+      }
 
       svg {
         height: 16px;

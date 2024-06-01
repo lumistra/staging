@@ -17,6 +17,10 @@
   src: url("../fonts/GeistMono.woff2") format("woff2");
 }
 
+// * {
+//   outline: 1px solid red;
+// }
+
 html,
 body {
   background-color: $white;
@@ -25,6 +29,10 @@ body {
   font-size: 21px;
   font-weight: 400;
   height: 100%;
+
+  @media screen and (max-width: $mobile) {
+    font-size: 16px;
+  }
 
   #__next {
     height: 100%;
@@ -36,10 +44,15 @@ body {
     width: 100%;
 
     .max-content-container {
-      margin-left: $minBleedWidth;
-      margin-right: $minBleedWidth;
+      margin-left: $desktopMinBleedWidth;
+      margin-right: $desktopMinBleedWidth;
       max-width: $maxContentWidth;
       width: 100%;
+
+      @media screen and (max-width: $tablet) {
+        margin-left: $mobileMinBleedWidth;
+        margin-right: $mobileMinBleedWidth;
+      }
     }
   }
 
@@ -50,9 +63,18 @@ body {
     gap: 10px;
     width: fit-content;
 
+    @media screen and (max-width: $mobile) {
+      font-size: 16px;
+    }
+
     svg {
       height: 16px;
       width: 16px;
+
+      @media screen and (max-width: $mobile) {
+        height: 12px;
+        width: 12px;
+      }
     }
   }
 

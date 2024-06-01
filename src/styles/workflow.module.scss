@@ -1,5 +1,6 @@
 @import "./colors";
 @import "./fonts";
+@import "./sizes";
 
 .backgroundWrapper {
   background-color: $primary;
@@ -9,6 +10,11 @@
     margin-bottom: 300px;
     margin-top: 200px;
 
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 120px;
+      margin-top: 60px;
+    }
+
     .header,
     .row {
       display: grid;
@@ -16,15 +22,30 @@
       gap: 20px;
       grid-template-columns: repeat(2, 1fr);
       width: 100%;
+
+      @media screen and (max-width: $mobile) {
+        font-size: 16px;
+      }
     }
 
     .header {
       margin-bottom: 190px;
 
+      @media screen and (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 60px;
+      }
+
       .title {
         font-size: 72px;
         grid-column-end: 3;
         grid-column-start: 1;
+
+        @media screen and (max-width: $mobile) {
+          font-size: 24px;
+        }
       }
 
       .paragraph {
@@ -32,6 +53,12 @@
         grid-template-columns: repeat(2, 1fr);
         font-size: 21px;
         grid-row: 2;
+
+        @media screen and (max-width: $mobile) {
+          font-size: 16px;
+          gap: 20px;
+          grid-template-columns: 1fr 2ch;
+        }
       }
     }
 
@@ -40,6 +67,11 @@
       cursor: pointer;
       padding: 20px 0;
 
+      @media screen and (max-width: $mobile) {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+
       &:last-of-type {
         border-bottom: 1px solid $white;
       }
@@ -47,12 +79,17 @@
       .index {
         font-family: $mono;
         font-size: 48px;
+
+        @media screen and (max-width: $mobile) {
+          font-size: 24px;
+        }
       }
 
       .column {
         height: fit-content;
         overflow-y: hidden;
         transition: 1s;
+        width: 100%;
 
         .heading {
           align-items: center;
@@ -61,10 +98,18 @@
           gap: 20px;
           justify-content: space-between;
 
+          @media screen and (max-width: $mobile) {
+            font-size: 24px;
+          }
+
           .icon {
             aspect-ratio: 1/1;
             height: 35px;
             width: 35px;
+
+            @media screen and (max-width: $mobile) {
+              display: none;
+            }
 
             path:first-of-type {
               rotate: 0;
@@ -83,6 +128,12 @@
           grid-template-columns: repeat(2, 1fr);
           padding-bottom: 120px;
           padding-top: 30px;
+
+          @media screen and (max-width: $mobile) {
+            grid-template-columns: 1fr;
+            padding-bottom: 60px;
+            padding-top: 10px;
+          }
         }
       }
     }

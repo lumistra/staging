@@ -1,4 +1,5 @@
 @import "../colors";
+@import "../sizes";
 
 .articleContainer {
   display: flex;
@@ -17,9 +18,22 @@
     color: $gray;
     font-size: 21px;
     margin-top: 16px;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 16px;
+      margin-left: $mobileMinBleedWidth;
+      margin-right: $mobileMinBleedWidth;
+    }
   }
 
   .articleTitle {
     font-size: 21px;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 16px;
+      margin-left: $mobileMinBleedWidth;
+      margin-right: $mobileMinBleedWidth;
+      min-height: auto !important;
+    }
   }
 }

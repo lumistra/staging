@@ -1,4 +1,4 @@
-import { uniq } from 'lodash';
+import { sortBy, toLower, uniq } from 'lodash';
 import useTranslations from '@/hooks/useTranslations';
 
 function useServices() {
@@ -149,8 +149,8 @@ function useServices() {
           'web design',
           'web development',
           'web coding',
-          'UI / UX design',
-          'UI / UX',
+          'ui/ux design',
+          'ui/ux',
           'landing page design',
           'landing page development',
           'social media post graphics',
@@ -190,8 +190,8 @@ function useServices() {
           'print banner design',
           'custom illustration',
           'illustration',
-          'UI/UX design for mobile apps',
-          'UI/UX design for web apps',
+          'ui/ux design for mobile apps',
+          'ui/ux design for web apps',
           'icon set design',
           'iconography',
           'icons',
@@ -346,7 +346,7 @@ function useServices() {
     },
   };
 
-  return { services: uniq(services()), groups };
+  return { services: sortBy(uniq(services()), (service) => toLower(service)), groups };
 }
 
 export default useServices;

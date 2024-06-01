@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { map } from 'lodash';
 import Head from 'next/head';
-import Arrow from '@/assets/svg/arrow-straight.svg';
+import Arrow from '@/assets/svg/arrow.svg';
 import useProjects from '@/content/projects';
 import useTranslations from '@/hooks/useTranslations';
 import projectStyle from '@/styles/projects/selected.module.scss';

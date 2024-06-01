@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import type { ChangeEvent, KeyboardEvent } from 'react';
 import classNames from 'classnames';
 import {
-  filter, first, isEmpty, lowerCase, map, some, startsWith, toLower,
+  filter, first, isEmpty, map, some, startsWith, toLower,
 } from 'lodash';
 import useServices from '@/content/services';
 import useTranslations from '@/hooks/useTranslations';
@@ -27,8 +27,9 @@ export default function Selection(props: Props) {
   const [showResults, setShowResults] = useState(false);
   const [state, setState] = useState(State.idle);
   const [value, setValue] = useState('');
+  const inputRef = useRef<HTMLInputElement>(null);
 
-  const filteredServices = filter(services, (service) => startsWith(lowerCase(service), lowerCase(value)));
+  const filteredServices = filter(services, (service) => startsWith(toLower(service), value));
   const responses = {
     [State.idle]: {
       title: t('services.prompts.idle.title'),
@@ -46,11 +47,11 @@ export default function Selection(props: Props) {
 
   const handleSelect = (current: string) => {
     setValue(current);
-    const currentFilteredServices = filter(services, (service) => startsWith(lowerCase(service), lowerCase(current)));
+    const currentFilteredServices = filter(services, (service) => startsWith(toLower(service), current));
     if (!isEmpty(current) && isEmpty(currentFilteredServices)) {
       return setState(State.negative);
     }
-    if (!isEmpty(current) && some(services, (service) => lowerCase(service) === lowerCase(current))) {
+    if (!isEmpty(current) && some(services, (service) => toLower(service) === current)) {
       return setState(State.positive);
     }
 
@@ -58,6 +59,10 @@ export default function Selection(props: Props) {
   };
 
   const handleEnter = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      inputRef.current?.blur();
+    }
+
     if (event.key === 'Tab') {
       event.preventDefault();
 
@@ -68,7 +73,7 @@ export default function Selection(props: Props) {
   };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    handleSelect(event.target.value);
+    handleSelect(toLower(event.target.value));
     if (!showResults) setShowResults(true);
   };
 
@@ -95,10 +100,15 @@ export default function Selection(props: Props) {
         <span>{t('services.prompts.input.start')}</span>
         <div className={style.inputContainer}>
           <input
+            ref={inputRef}
             placeholder={t('services.prompts.input.placeholder')}
             value={value}
             onChange={handleChange}
             onKeyDown={handleEnter}
+            autoCapitalize="off"
+            autoComplete="off"
+            inputMode="text"
+            type="text"
           />
           {!isEmpty(value) && (
             <span className={style.inputSuggestion}>
