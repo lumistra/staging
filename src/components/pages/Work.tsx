@@ -131,7 +131,7 @@ export default function Work() {
         {View.grid === view && map(projects, (project) => (
           <Link
             key={project.slug}
-            className={projectStyle.projectContainer}
+            className={classNames(style.gridProject, projectStyle.projectContainer)}
             href={routes.project(project.slug)}
           >
             <Image

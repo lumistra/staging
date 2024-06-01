@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Section from '@/components/containers/Section';
+import { useScreenSize } from '@/hooks/useScreenSize';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/about.module.scss';
 import { routes } from '@/utils';
@@ -12,6 +13,7 @@ import CtaLink from '../elements/CtaLink';
 
 export default function About() {
   const { t } = useTranslations();
+  const { isMobile } = useScreenSize();
 
   return (
     <>
@@ -42,7 +44,7 @@ export default function About() {
         <h3>{t('about.projects')}</h3>
         <CtaLink href={routes.work}>{t('globals.see_all_projects')}</CtaLink>
       </Section>
-      <Featured className={style.featuredWrapper} textPosition="bottom" />
+      <Featured className={style.featuredWrapper} textPosition={isMobile ? 'top' : 'bottom'} />
       <Workflow />
       <Latest />
       <ContactSection />
