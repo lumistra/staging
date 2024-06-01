@@ -34,7 +34,8 @@ export default function About() {
       </Section>
       <Section containerClassName={style.aboutWrapper}>
         <h3>{t('about.bio.title')}</h3>
-        <p>{t('about.bio.paragraph')}</p>
+        <p>{t('about.bio.paragraph_1')}</p>
+        <p>{t('about.bio.paragraph_2')}</p>
       </Section>
       <Pitch />
       <Section containerClassName={style.projectsWrapper}>

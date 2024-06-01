@@ -54,7 +54,8 @@
     "hero": "From spark to light.",
     "bio": {
       "title": "About us",
-      "paragraph": "Lumistra is an idea. A flare of guidance that leads and\nmotivates. We aim to offer the best possible solutions\nto those who want to amplify their idea.\n\nAt Lumistra, we are committed to excel in just that -\ntransforming the initial spark into your next big thing."
+      "paragraph_1": "Lumistra is an idea. A flare of guidance that leads and motivates. We aim to offer the best possible solutions to those who want to amplify their idea.",
+      "paragraph_2": "At Lumistra, we are committed to excel in just that - transforming the initial spark into your next big thing."
     },
     "projects": "Featured projects"
   },
