@@ -7,10 +7,15 @@
   padding-bottom: 400px;
   padding-top: 120px;
 
+  @media screen and (max-width: $mobile) {
+    min-height: auto;
+    padding-bottom: 180px;
+    padding-top: 0;
+  }
+
   h1 {
     display: flex;
     font-size: 86px;
-    white-space: pre-wrap;
 
     @media screen and (max-width: $mobile) {
       font-size: 32px;
@@ -33,7 +38,6 @@
     margin-bottom: 0;
     margin-left: 0 !important;
     margin-right: 0 !important;
-    margin-top: 100px;
     padding: 0;
   }
 
@@ -96,12 +100,26 @@
     gap: 26px;
 
     @media screen and (max-width: $mobile) {
+      background-color: $primary;
+      color: $white;
       font-size: 24px;
+      gap: 10px;
+      padding: 40px $mobileMinBleedWidth;
+      width: 100%;
     }
 
     svg {
       height: 40px;
       width: 40px;
+
+      @media screen and (max-width: $mobile) {
+        height: 20px;
+        width: 20px;
+
+        * {
+          stroke: $white !important;
+        }
+      }
     }
   }
 }

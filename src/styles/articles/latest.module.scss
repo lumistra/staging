@@ -65,7 +65,8 @@
   @media screen and (max-width: $mobile) {
     gap: 60px;
     grid-template-columns: 1fr;
-    margin: 40px 0;
+    margin-bottom: 140px;
+    margin-top: 40px;
   }
 
   .latestMobileCTA {

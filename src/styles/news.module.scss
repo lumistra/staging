@@ -48,6 +48,14 @@
   margin-bottom: 180px;
   margin-top: 180px;
 
+  @media screen and (max-width: $mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 80px;
+    margin-top: 80px;
+  }
+
   h3 {
     font-size: 48px;
     grid-column-end: 5;
