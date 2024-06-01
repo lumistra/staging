@@ -17,9 +17,16 @@
   src: url("../fonts/GeistMono.woff2") format("woff2");
 }
 
-// * {
-//   outline: 1px solid red;
-// }
+::-moz-selection {
+  /* Code for Firefox */
+  color: $white;
+  background: $primary;
+}
+
+::selection {
+  color: $white;
+  background: $primary;
+}
 
 html,
 body {

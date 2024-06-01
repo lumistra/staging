@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import type { ChangeEvent, KeyboardEvent } from 'react';
+import ReactTextareaAutosize from 'react-textarea-autosize';
 import classNames from 'classnames';
 import {
   filter, first, isEmpty, map, some, startsWith, toLower,
@@ -27,7 +28,7 @@ export default function Selection(props: Props) {
   const [showResults, setShowResults] = useState(false);
   const [state, setState] = useState(State.idle);
   const [value, setValue] = useState('');
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
 
   const filteredServices = filter(services, (service) => startsWith(toLower(service), value));
   const responses = {
@@ -46,19 +47,22 @@ export default function Selection(props: Props) {
   };
 
   const handleSelect = (current: string) => {
-    setValue(current);
-    const currentFilteredServices = filter(services, (service) => startsWith(toLower(service), current));
-    if (!isEmpty(current) && isEmpty(currentFilteredServices)) {
+    const lowerCurrent = toLower(current);
+    setValue(lowerCurrent);
+
+    const currentFilteredServices = filter(services, (service) => startsWith(toLower(service), lowerCurrent));
+
+    if (!isEmpty(lowerCurrent) && isEmpty(currentFilteredServices)) {
       return setState(State.negative);
     }
-    if (!isEmpty(current) && some(services, (service) => toLower(service) === current)) {
+    if (!isEmpty(lowerCurrent) && some(services, (service) => toLower(service) === lowerCurrent)) {
       return setState(State.positive);
     }
 
     return setState(State.idle);
   };
 
-  const handleEnter = (event: KeyboardEvent<HTMLInputElement>) => {
+  const handleEnter = (event: KeyboardEvent<HTMLTextAreaElement>) => {
     if (event.key === 'Enter') {
       inputRef.current?.blur();
     }
@@ -72,8 +76,8 @@ export default function Selection(props: Props) {
     }
   };
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    handleSelect(toLower(event.target.value));
+  const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    handleSelect(event.target.value);
     if (!showResults) setShowResults(true);
   };
 
@@ -99,7 +103,7 @@ export default function Selection(props: Props) {
       <div className={style.inputWrapper}>
         <span>{t('services.prompts.input.start')}</span>
         <div className={style.inputContainer}>
-          <input
+          <ReactTextareaAutosize
             ref={inputRef}
             placeholder={t('services.prompts.input.placeholder')}
             value={value}
@@ -108,16 +112,16 @@ export default function Selection(props: Props) {
             autoCapitalize="off"
             autoComplete="off"
             inputMode="text"
-            type="text"
+            maxRows={3}
+            minRows={1}
           />
-          {!isEmpty(value) && (
+          <div className={style.inputSuggestionsWrapper}>
             <span className={style.inputSuggestion}>
-              {first(filteredServices) || ''}
+              {isEmpty(value) ? '' : toLower(first(filteredServices) || '')}
             </span>
-          )}
-          {showResults && (
+            {showResults && (
             <div className={style.searchWrapper}>
-              {toLower(filteredServices[0]) !== toLower(value) && map(filteredServices, (service) => (
+              {toLower(filteredServices[0]) !== value && map(filteredServices, (service) => (
                 <button
                   key={service}
                   className={style.searchItem}
@@ -132,7 +136,8 @@ export default function Selection(props: Props) {
               </span>
               )}
             </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </Section>

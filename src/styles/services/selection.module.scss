@@ -98,17 +98,18 @@
   .inputWrapper {
     display: flex;
     font-size: 48px;
-    gap: 16px;
+    gap: 0.5ch;
     height: fit-content;
     white-space: nowrap;
 
     @media screen and (max-width: $mobile) {
       font-size: 24px;
-      gap: 12px;
     }
 
     .inputContainer {
       position: relative;
+      white-space: normal;
+      word-break: break-all;
 
       &:focus-within {
         .searchWrapper {
@@ -116,22 +117,33 @@
         }
       }
 
-      input {
+      textarea {
+        overflow: hidden;
         position: relative;
+        resize: none;
         width: 100%;
         z-index: 2;
       }
 
-      input::placeholder,
+      textarea::placeholder,
       .inputSuggestion {
         color: $gray;
       }
 
-      .inputSuggestion {
+      .inputSuggestionsWrapper {
+        height: auto;
         left: 0;
         position: absolute;
         top: 0;
+        width: 100%;
         z-index: 1;
+      }
+
+      .inputSuggestion {
+        display: block;
+        min-height: 2ch;
+        position: relative;
+        width: 100%;
       }
 
       .searchWrapper {
@@ -148,7 +160,7 @@
 
         @media screen and (max-width: $mobile) {
           font-size: 24px;
-          height: 240px;
+          height: 245px;
           padding-bottom: 60px;
         }
 
