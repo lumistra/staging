@@ -16,6 +16,7 @@ export default function News() {
     <>
       <Head>
         <title>{t('news.title')}</title>
+        <meta name="transition-title" content={t('routes.articles')} />
       </Head>
       <Latest className={style.latestWrapper} minHeight={120} hideCTA />
       <Section containerClassName={style.articlesWrapper}>

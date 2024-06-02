@@ -64,6 +64,7 @@ export default function Work() {
     <>
       <Head>
         <title>{t('work.title')}</title>
+        <meta name="transition-title" content={t('routes.work')} />
       </Head>
       <Section containerClassName={style.heroWrapper}>
         <h1>{t('work.hero')}</h1>

@@ -2,6 +2,7 @@ import { includes, map } from 'lodash';
 import { useRouter } from 'next/router';
 import Footer from '@/components/containers/Footer';
 import Navigation from '@/components/containers/navigation/Navigation';
+import PageTransition from '@/components/elements/PageTransition';
 import About from '@/components/pages/About';
 import Article from '@/components/pages/Article';
 import Contact from '@/components/pages/Contact';
@@ -54,6 +55,7 @@ export default function Page() {
       <Navigation />
       <Main />
       <Footer />
+      <PageTransition />
     </>
   );
 }

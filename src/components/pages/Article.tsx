@@ -31,6 +31,7 @@ export default function Article(props: Props) {
     <>
       <Head>
         <title>Lumistra - {article.title}</title>
+        <meta name="transition-title" content={article.title} />
       </Head>
       <Section containerClassName={style.heroWrapper}>
         <h1 className={style.heroTitle}>{article.title}</h1>

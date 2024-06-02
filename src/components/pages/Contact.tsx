@@ -13,6 +13,7 @@ export default function Contact() {
     <>
       <Head>
         <title>{t('contact.title')}</title>
+        <meta name="transition-title" content={t('routes.contact')} />
       </Head>
       <Section containerClassName={style.heroWrapper}>
         <h1>{t('contact.hero')}</h1>

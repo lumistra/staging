@@ -19,6 +19,7 @@ export default function Home() {
     <>
       <Head>
         <title>{t('home.title')}</title>
+        <meta name="transition-title" content={t('routes.home')} />
       </Head>
       <Section containerClassName={style.heroWrapper}>
         <h1>{t('home.hero')}</h1>

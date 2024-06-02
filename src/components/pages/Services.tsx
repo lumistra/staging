@@ -19,6 +19,7 @@ export default function Services() {
     <>
       <Head>
         <title>{t('services.title')}</title>
+        <meta name="transition-title" content={t('routes.services')} />
       </Head>
       <Section containerClassName={style.heroWrapper}>
         <h1>{t('services.hero')}</h1>

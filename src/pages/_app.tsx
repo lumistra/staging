@@ -21,6 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" sizes="any" type="image/svg+xml" href={(process.env.basePath || '') + '/favicon.svg'} />
         <title>Lumistra</title>
         <meta name="description" content="Lumistra" />
+        <meta name="transition-title" content="Lumistra" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="noindex" />
       </Head>

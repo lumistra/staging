@@ -19,6 +19,7 @@ export default function About() {
     <>
       <Head>
         <title>{t('about.title')}</title>
+        <meta name="transition-title" content={t('routes.about')} />
       </Head>
       <Section
         className={style.heroBackground}

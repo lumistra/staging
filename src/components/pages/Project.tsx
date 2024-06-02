@@ -30,6 +30,7 @@ export default function Project(props: Props) {
     <>
       <Head>
         <title>Lumistra - {project.title}</title>
+        <meta name="transition-title" content={project.title} />
       </Head>
       <Section containerClassName={style.heroWrapper}>
         <Image

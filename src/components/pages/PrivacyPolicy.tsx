@@ -13,6 +13,7 @@ export default function PrivacyPolicy() {
     <Section>
       <Head>
         <title>{t('privacy-policy.title')}</title>
+        <meta name="transition-title" content={t('globals.privacy_policy')} />
       </Head>
       <section className={style.privacyWrapper}>
         <h1>Privacy Policy for Lumistra</h1>
