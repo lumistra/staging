@@ -7,6 +7,7 @@ import Section from './Section';
 
 type Props = {
   className?: string
+  ctaClassName?: string
   altTitle?: boolean
   isSmall?: boolean
 };
@@ -26,7 +27,7 @@ export default function Contact(props: Props) {
         </span>
       </div>
       <a
-        className={classNames('cta-link', {
+        className={classNames('cta-link', props.ctaClassName, {
           [style.action]: !props.isSmall,
           [style.actionSmall]: props.isSmall,
         })}

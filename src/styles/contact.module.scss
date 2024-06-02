@@ -32,6 +32,11 @@
   margin-bottom: 220px;
   padding: 20px 0;
 
+  @media screen and (max-width: 1600px) {
+    display: flex;
+    flex-direction: column;
+  }
+
   @media screen and (max-width: $mobile) {
     border: none;
     grid-template-columns: 1fr;
@@ -71,12 +76,19 @@
     font-size: 72px;
     gap: 30px;
 
+    @media screen and (max-width: 1600px) {
+      margin-left: auto;
+    }
+
+    @media screen and (max-width: $tablet) {
+      padding: 40px $mobileMinBleedWidth;
+    }
+
     @media screen and (max-width: $mobile) {
       background-color: $primary;
       color: $white;
       font-size: 24px;
       gap: 10px;
-      padding: 40px $mobileMinBleedWidth;
       width: 100%;
     }
 
@@ -99,12 +111,19 @@
     font-size: 48px;
     gap: 26px;
 
+    @media screen and (max-width: 1600px) {
+      margin-left: auto;
+    }
+
+    @media screen and (max-width: $tablet) {
+      padding: 40px $mobileMinBleedWidth;
+    }
+
     @media screen and (max-width: $mobile) {
       background-color: $primary;
       color: $white;
       font-size: 24px;
       gap: 10px;
-      padding: 40px $mobileMinBleedWidth;
       width: 100%;
     }
 

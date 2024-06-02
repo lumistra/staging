@@ -12,7 +12,7 @@ import ToTop from '../elements/ToTop';
 
 export default function Footer() {
   const { t } = useTranslations();
-  const { isMobile } = useScreenSize();
+  const { isTablet } = useScreenSize();
 
   const sitemap = [
     { label: t('routes.home'), value: routes.home },
@@ -27,7 +27,7 @@ export default function Footer() {
     <footer>
       <div className="content-container">
         <div className="identity-wrapper">
-          {isMobile ? (
+          {isTablet ? (
             <Logotype className="logo" />
           ) : (
             <>
@@ -66,7 +66,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        {isMobile && <ToTop className="mobile-to-top" />}
+        <ToTop className="mobile-to-top" />
         <div className="legal-wrapper">
           <span className="copyright">
             Copyright &copy; {new Date().getFullYear()} Lumistra

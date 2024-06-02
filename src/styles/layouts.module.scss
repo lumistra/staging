@@ -13,6 +13,7 @@
   @media screen and (max-width: $mobile) {
     align-items: flex-start;
     font-size: 16px;
+    gap: 10px;
     grid-template-columns: 1fr;
     margin-bottom: 0;
     margin-top: 0;
@@ -24,6 +25,11 @@
 
     @media screen and (max-width: $mobile) {
       grid-row: 1;
+      margin: 10px 0;
+
+      &.imageColumn {
+        margin: 0;
+      }
     }
   }
 
@@ -34,6 +40,11 @@
     @media screen and (max-width: $mobile) {
       grid-column: 1;
       grid-row: 2;
+      margin: 10px 0;
+
+      &.imageColumn {
+        margin: 0;
+      }
 
       &:only-of-type {
         grid-row: 1;
@@ -69,6 +80,10 @@
   gap: 20px;
   grid-template-columns: repeat(2, 1fr);
 
+  @media screen and (max-width: $mobile) {
+    gap: 10px;
+  }
+
   .doubleImage {
     aspect-ratio: 14 / 15;
     width: 100%;
@@ -83,6 +98,10 @@
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(3, 1fr);
+
+  @media screen and (max-width: $mobile) {
+    gap: 10px;
+  }
 
   .tripleImage {
     aspect-ratio: 9 / 16;

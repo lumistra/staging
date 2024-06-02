@@ -13,7 +13,7 @@ import CtaLink from '../elements/CtaLink';
 
 export default function About() {
   const { t } = useTranslations();
-  const { isMobile } = useScreenSize();
+  const { isTablet } = useScreenSize();
 
   return (
     <>
@@ -44,7 +44,7 @@ export default function About() {
         <h3>{t('about.projects')}</h3>
         <CtaLink href={routes.work}>{t('globals.see_all_projects')}</CtaLink>
       </Section>
-      <Featured className={style.featuredWrapper} textPosition={isMobile ? 'top' : 'bottom'} />
+      <Featured className={style.featuredWrapper} textPosition={isTablet ? 'top' : 'bottom'} />
       <Workflow />
       <Latest />
       <ContactSection />

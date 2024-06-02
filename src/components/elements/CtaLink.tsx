@@ -6,9 +6,22 @@ type Props = {
   children: string
   className?: string,
   href?: string,
+  onClick?: () => void,
 };
 
 export default function CtaLink(props: Props) {
+  if (props.onClick) {
+    return (
+      <div
+        className={classNames('cta-link', props.className)}
+        onClick={props.onClick}
+      >
+        {props.children}
+        <Arrow />
+      </div>
+    );
+  }
+
   return (
     <Link
       className={classNames('cta-link', props.className)}

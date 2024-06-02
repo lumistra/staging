@@ -6,7 +6,7 @@
   display: flex;
   gap: 25px;
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: $tablet) {
     gap: 20px;
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -25,13 +25,24 @@
     font-size: 21px;
     grid-template-columns: repeat(4, 1fr);
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: 1500px) {
+      span {
+        display: flex;
+        grid-column-end: 3;
+        grid-column-start: 1;
+      }
+    }
+
+    @media screen and (max-width: $tablet) {
       align-items: flex-end;
       display: flex;
-      font-size: 16px;
       gap: 20px;
       justify-content: space-between;
       margin: 0 $mobileMinBleedWidth;
+    }
+
+    @media screen and (max-width: $mobile) {
+      font-size: 16px;
     }
 
     .featuredIndex {
@@ -48,7 +59,7 @@
     height: 915px;
     width: 100%;
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: $tablet) {
       aspect-ratio: 1 / 1;
       height: auto;
     }
@@ -62,7 +73,11 @@
   .desktopCTA {
     display: flex;
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: 1500px) {
+      grid-column: 3;
+    }
+
+    @media screen and (max-width: $tablet) {
       display: none;
     }
   }
@@ -71,7 +86,7 @@
     display: none;
     margin: 0 $mobileMinBleedWidth;
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: $tablet) {
       display: flex;
     }
   }

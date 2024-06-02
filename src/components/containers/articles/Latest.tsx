@@ -3,6 +3,7 @@ import { map } from 'lodash';
 import Article from '@/components/elements/Article';
 import CtaLink from '@/components/elements/CtaLink';
 import useArticles from '@/content/articles';
+import { useScreenSize } from '@/hooks/useScreenSize';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/articles/latest.module.scss';
 import { routes } from '@/utils';
@@ -17,6 +18,7 @@ type Props = {
 export default function Latest(props: Props) {
   const { t } = useTranslations();
   const { latest } = useArticles();
+  const { isTablet } = useScreenSize();
 
   return (
     <Section containerClassName={classNames(style.latestWrapper, props.className)}>
@@ -37,7 +39,7 @@ export default function Latest(props: Props) {
       </div>
       <div className={style.articlesWrapper}>
         {map(latest, (article) => (
-          <Article key={article.slug} article={article} minHeight={props.minHeight} />
+          <Article key={article.slug} article={article} minHeight={isTablet ? 100 : props.minHeight} />
         ))}
         {!props.hideCTA && (
           <CtaLink className={style.latestMobileCTA} href={routes.articles}>

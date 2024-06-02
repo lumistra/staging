@@ -36,7 +36,7 @@
 
     @media screen and (max-width: $mobile) {
       border-top: 1px solid $gray;
-      font-size: 32px;
+      font-size: 24px;
       grid-column: 1;
       margin-bottom: 20px;
       margin-left: $mobileMinBleedWidth;
@@ -67,6 +67,14 @@
   margin-bottom: 180px;
   margin-top: 180px;
 
+  @media screen and (max-width: 1600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: $tablet) {
+    grid-template-columns: 1fr;
+  }
+
   @media screen and (max-width: $mobile) {
     display: flex;
     flex-direction: column;
@@ -80,6 +88,14 @@
     grid-column-end: 5;
     grid-column-start: 3;
 
+    @media screen and (max-width: 1600px) {
+      grid-column: 2;
+    }
+
+    @media screen and (max-width: $tablet) {
+      grid-column: 1;
+    }
+
     @media screen and (max-width: $mobile) {
       font-size: 24px;
     }
@@ -90,8 +106,17 @@
     line-height: 36px;
     grid-column-start: 3;
 
+    @media screen and (max-width: 1600px) {
+      grid-column: 2;
+    }
+
+    @media screen and (max-width: $tablet) {
+      grid-column: 1;
+    }
+
     @media screen and (max-width: $mobile) {
       font-size: 16px;
+      line-height: 26px;
     }
 
     a {

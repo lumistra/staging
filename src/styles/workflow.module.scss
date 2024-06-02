@@ -54,6 +54,10 @@
         font-size: 21px;
         grid-row: 2;
 
+        @media screen and (max-width: 1500px) {
+          grid-template-columns: 1fr;
+        }
+
         @media screen and (max-width: $mobile) {
           font-size: 16px;
           gap: 20px;
@@ -67,7 +71,7 @@
       cursor: pointer;
       padding: 20px 0;
 
-      @media screen and (max-width: $mobile) {
+      @media screen and (max-width: 1200px) {
         display: flex;
         flex-direction: row-reverse;
       }
@@ -107,7 +111,7 @@
             height: 35px;
             width: 35px;
 
-            @media screen and (max-width: $mobile) {
+            @media screen and (max-width: 1200px) {
               display: none;
             }
 
@@ -129,8 +133,11 @@
           padding-bottom: 120px;
           padding-top: 30px;
 
-          @media screen and (max-width: $mobile) {
+          @media screen and (max-width: 1500px) {
             grid-template-columns: 1fr;
+          }
+
+          @media screen and (max-width: $mobile) {
             padding-bottom: 60px;
             padding-top: 10px;
           }

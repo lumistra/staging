@@ -17,7 +17,7 @@
     max-width: $maxContentWidth;
     width: 100%;
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: $tablet) {
       margin: 0 $mobileMinBleedWidth;
     }
 

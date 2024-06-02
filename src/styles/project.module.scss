@@ -78,7 +78,7 @@
   margin-top: 120px;
 
   @media screen and (max-width: $mobile) {
-    gap: 20px;
+    gap: 10px;
     margin-bottom: 20px;
     margin-top: 20px;
   }
@@ -90,7 +90,6 @@
   flex-direction: column;
   gap: 100px;
   margin-top: 380px;
-  overflow: hidden;
   padding-top: 20px;
 
   @media screen and (max-width: $mobile) {
@@ -118,14 +117,15 @@
     }
 
     .recommendedCTA {
+      cursor: pointer;
       gap: 25px;
       font-size: 72px;
       white-space: nowrap;
 
       @media screen and (max-width: $mobile) {
-        align-self: flex-end;
-        font-size: 24px;
-        gap: 10px;
+        align-self: flex-start;
+        font-size: 16px;
+        gap: 5px;
       }
 
       svg {
@@ -133,8 +133,8 @@
         width: 50px;
 
         @media screen and (max-width: $mobile) {
-          height: 20px;
-          width: 20px;
+          height: 14px;
+          width: 14px;
         }
       }
     }

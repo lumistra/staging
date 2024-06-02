@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { find, reject, sample } from 'lodash';
 import Head from 'next/head';
 import useArticles from '@/content/articles';
@@ -21,8 +22,8 @@ type Props = {
 export default function Article(props: Props) {
   const { t } = useTranslations();
   const { articles } = useArticles();
+  const [recommended] = useState(sample(reject(articles, (a) => routes.article(a.slug) === props.path)));
   const article = find(articles, (a) => routes.article(a.slug) === props.path);
-  const recommended = sample(reject(articles, (a) => routes.article(a.slug) === props.path));
 
   if (!article || !recommended) return null;
 

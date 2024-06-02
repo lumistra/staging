@@ -14,7 +14,7 @@
     grid-template-columns: repeat(2, 1fr);
     padding: 20px 0;
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: $tablet) {
       display: flex;
       flex-direction: row-reverse;
       padding: 10px 0;
@@ -41,7 +41,7 @@
       margin-bottom: 80px;
       min-height: 320px;
 
-      @media screen and (max-width: $mobile) {
+      @media screen and (max-width: $tablet) {
         gap: 10px;
         min-height: 200px;
       }
@@ -59,8 +59,15 @@
         grid-template-columns: repeat(2, 1fr);
         font-size: 21px;
 
-        @media screen and (max-width: $mobile) {
+        @media screen and (max-width: 1800px) {
+          grid-template-columns: 1fr;
+        }
+
+        @media screen and (max-width: $tablet) {
           display: block;
+        }
+
+        @media screen and (max-width: $mobile) {
           font-size: 16px;
         }
       }
