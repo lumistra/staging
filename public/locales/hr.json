@@ -5,23 +5,215 @@
     "about": "O nama",
     "contact": "Kontakt",
     "services": "Servisi",
-    "articles": "Objave"
+    "articles": "Novosti"
   },
   "globals": {
     "language": "Jezik",
     "socials": "Društvene mreže",
-    "privacy_policy": "Pravila o privatnosti",
+    "privacy_policy": "Pravila privatnosti",
     "cookies": "Kolačići",
-    "back_to_top": "Natrag na vrh"
+    "back_to_top": "Natrag na vrh",
+    "see_full_project": "Cijeli projekt",
+    "see_all_projects": "Svi projekti",
+    "read_all": "Sve novosti",
+    "read_next": "Sljedeće",
+    "next_project": "Sljedeće"
   },
   "home": {
     "title": "Lumistra",
-    "hero": "Kreativni dizajnerski studio koji pretvara iskre i ideje u brandove i iskustva."
+    "hero": "Kreativni dizajnerski studio\nkoji pretvara iskre i ideje\nu brandove i iskustva.",
+    "about_us": {
+      "tagline_1": "Korak dalje",
+      "tagline_2": "uvijek.",
+      "paragraph": "Vjerujemo u to da je svaka ideja iskra puna potencijala. Kroz stratešku suradnju i odvažne odluke, zajedno pretvaramo iskre u tvoju buduću priliku i uspjeh.",
+      "link": "O nama"
+    },
+    "process": {
+      "title": "Kada si i ti dio procesa uključen si u ostvarenje cilja.",
+      "paragraph": "Zato vjerujemo da graditi treba skupa.",
+      "cta": "Pogledaj niže u čemu vam možemo pomoći"
+    },
+    "services": {
+      "title": "Usluge",
+      "paragraph_1": "Ukoliko ste zainteresirani za suradnju, ali niste sigurni nudimo li određene usluge, možete ju upisati ispod ili posjetiti ",
+      "paragraph_2": ".",
+      "link": "naše usluge"
+    }
   },
   "work": {
-    "title": "Lumistra - Rad"
+    "title": "Lumistra - Radovi",
+    "hero": "Istraži naše radove.",
+    "view-mode": {
+      "label": "Pregled",
+      "list": "Lista",
+      "grid": "Mreža"
+    }
+  },
+  "about": {
+    "title": "Lumistra - O nama",
+    "hero": "Od iskre do svijetla.",
+    "bio": {
+      "title": "O nama",
+      "paragraph_1": "Lumistra je ideja. Svjetlo koji vodi i motivira. Naš cilj je ponuditi najbolja moguća rješenja onima koji žele ojačati svoju ideju.",
+      "paragraph_2": "Posvećeni smo pretvaranju inicijalne iskre u tvoju buduću priliku i uspjeh."
+    },
+    "projects": "Izdvojeno"
+  },
+  "services": {
+    "title": "Lumistra - Usluge",
+    "hero": "Pregled onoga što radimo\ni kako vam možemo pomoći.",
+    "pitch": {
+      "step_1": {
+        "title": "Fleksibilnost",
+        "paragraph": "Uvijek dizajniramo s naglaskom na trajanje. To znači da se vaš brand, uz sve buduće izazove, i dalje može graditi i prilagođavati novim zahtjevima promjenjivog okruženja."
+      },
+      "step_2": {
+        "title": "Uvijek u trendu",
+        "paragraph": "Naš cilj je od početka prepoznati srž vaše ideje. Definirajući temeljne vrijednosti koje pokreću vašu brand, predviđamo njegove buduće potrebe čineći ga uvijek modernim i relevantnim."
+      },
+      "step_3": {
+        "title": "Make a difference",
+        "paragraph": "Not every idea is big, but we believe each one can make\na difference. Our aim has always been to help you get it\nout there with a little help from our side."
+      }
+    },
+    "bio": {
+      "title": "Što radimo",
+      "section": "Usluge",
+      "paragraph": "Naše usluge pokrivaju gotovo sve što vam treba za vaš idući projekt. Ako na listi ne možete naći uslugu koja vam treba, niže ju možete upisati i dobiti automatski odgovor.",
+      "brand_strategy": "Brand strategija",
+      "brand_design": "Brand dizajn",
+      "digital_design": "Digital design",
+      "brand_communication": "Brand komunikacija",
+      "check_in": {
+        "title": "Ta-Daa trenutak",
+        "paragraph": "Sa posebnom pažnjom na detalje, ujednačeno provodimo strategiju kroz sve kanale komunikacije.",
+        "cta": "Naš kreativni proces"
+      }
+    },
+    "prompts": {
+      "input": {
+        "start": "Trebam",
+        "placeholder": "upišite uslugu ovdje",
+        "no_results": "Nema rezultata..."
+      },
+      "idle": {
+        "title": "Spremni kada i vi.",
+        "paragraph": "Možete upisati uslugu koju tražite kako bi automatski dobili odgovor."
+      },
+      "positive": {
+        "title": "Možemo vam pomoći.",
+        "paragraph": "Za uslugu koju ste tražili možemo vam ponuditi našu pomoć. Slobodno istražite dalje ili nas [kontaktirajte](mailto:info@lumistra.com)."
+      },
+      "negative": {
+        "title": "Ne nudimo to, ali...",
+        "paragraph": "Ukoliko mislite da je to ipak nešto oko čega vam možemo pomoći, možete nam pisati na [info@lumistra.com](mailto:info@lumistra.com)"
+      }
+    }
+  },
+  "workflow": {
+    "title": "Kreativni proces",
+    "paragraph": "Kratki pregled našeg kreativnog procesa i kako kroz takav pristup dovodimo vašu viziju do stvarnosti.",
+    "steps": {
+      "discovery": {
+        "label": "Istraživanje",
+        "paragraph": "Razumijevanje potreba i izazova, istovremeno identificirajući moguća rješenja i dugoročne ciljeve."
+      },
+      "strategy_development": {
+        "label": "Razvoj strategije",
+        "paragraph": "Razvijanje strategije prilagođene potrebama, postavljajući jasne ciljeve i plan rada."
+      },
+      "magic_phase": {
+        "label": "Magična faza",
+        "paragraph": "Zajednički brainstorming - generiranje inovativnih rješenja koja se poklapaju sa ciljanom skupinom."
+      },
+      "check_in": {
+        "label": "Check-In",
+        "paragraph": "Nikada ne gubimo kontakt i uvijek držimo klijente uključene u proces kako bismo osigurali najbolji mogući rezultat."
+      },
+      "review": {
+        "label": "Pregled",
+        "paragraph": "Procjena učinkovitosti i prepoznavanje područja koja se mogu poboljšati radi maksimiziranja uspjeha projekta."
+      },
+      "ta_daa_moment": {
+        "label": "Ta-Daa trenutak",
+        "paragraph": "Sa posebnom pažnjom na detalje, ujednačeno provodimo strategiju kroz sve kanale komunikacije."
+      },
+      "partnership_support": {
+        "label": "Podrška",
+        "paragraph": "Održavamo otvorenu komunikaciju nudeći vam savjetovanja i podršku kroz buduće izazove."
+      }
+    }
+  },
+  "contact": {
+    "title": "Lumistra - Kontakt",
+    "hero": "Javi se.",
+    "cta": {
+      "title": "Imate ideju?",
+      "title-alt": "Imate ideju?",
+      "action": "Kontakt"
+    }
   },
   "privacy-policy": {
-    "title": "Lumistra - Pravila o privatnosti"
+    "title": "Lumistra - Pravila privatnosti"
+  },
+  "projects": {
+    "overview": "Pregled",
+    "selected": {
+      "section": "Projekti",
+      "title": "Izdvojeno"
+    },
+    "project_1": {
+      "title": "Apiar"
+    },
+    "project_2": {
+      "title": "Spika"
+    },
+    "project_3": {
+      "title": "Houndtrek"
+    },
+    "project_4": {
+      "title": "The Lighthouse"
+    },
+    "project_5": {
+      "title": "Hoo St. Werburgh BattleGeese"
+    },
+    "project_6": {
+      "title": "Exit Osijek"
+    },
+    "project_7": {
+      "title": "Bergmann & Hillebrand"
+    },
+    "project_8": {
+      "title": "Stereo"
+    },
+    "project_9": {
+      "title": "Soundgarden"
+    },
+    "project_10": {
+      "title": "Ritmo"
+    }
+  },
+  "news": {
+    "title": "Lumistra - Novosti",
+    "sub_title": "Sve novosti",
+    "latest": {
+      "section": "Novosti",
+      "title": "Najnovije"
+    },
+    "cta": {
+      "title": "Imate nešto za podijeliti?",
+      "paragraph": "Ako imate nešto što biste željeli podijeliti s našom publikom, slobodno nam pošaljite poruku na [info@lumistra.com](mailto:info@lumistra.com)"
+    }
+  },
+  "articles": {
+    "article_1": {
+      "title": "Design for digital age"
+    },
+    "article_2": {
+      "title": "Shakespeare in the Parks 2024"
+    },
+    "article_3": {
+      "title": "Matt Willey Designs Custom Typeface for Vineyard Theatre Identity"
+    }
   }
 }

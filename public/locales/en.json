@@ -25,17 +25,17 @@
     "about_us": {
       "tagline_1": "One step further",
       "tagline_2": "always.",
-      "paragraph": "We strongly believe that every idea is a spark\nwith potential. Through strategic collaboration\nand bold branding initiatives, together we are\ntransforming it into your next big thing.",
+      "paragraph": "We strongly believe that every idea is a spark with potential. Through strategic collaboration and bold branding initiatives, together we are transforming it into your next big thing.",
       "link": "About us"
     },
     "process": {
-      "title": "When you're part of the process,\nyou're invested in the outcome.",
+      "title": "When you're part of the process, you're invested in the outcome.",
       "paragraph": "That's why we believe in building together.",
       "cta": "Scroll to see if we can help you"
     },
     "services": {
       "title": "Services",
-      "paragraph_1": "If you're interested in collaborating but unsure if we offer a\nspecific service, feel free to ask here or visit ",
+      "paragraph_1": "If you're interested in collaborating but unsure if we offer a specific service, feel free to ask here or visit ",
       "paragraph_2": " page.",
       "link": "our services"
     }
@@ -65,22 +65,21 @@
     "pitch": {
       "step_1": {
         "title": "Timeless approach",
-        "paragraph": "We design for consistency, maintaining a timeless\napproach that will stand the test of time. This means\nhaving a flexible and scalable brand ready for future\ninnovation and adaptation in ever-changing environment."
+        "paragraph": "We design for consistency, maintaining a timeless approach that will stand the test of time. This means having a flexible and scalable brand ready for future innovation and adaptation in ever-changing environment."
       },
       "step_2": {
         "title": "Stay relevant",
-        "paragraph": "Our aim is to figure out the heart of your idea.\nBy recognizing the core values that drive your passion\nwe anticipate the future needs of the brand making it\nrelevant across all touchpoints."
+        "paragraph": "Our aim is to figure out the heart of your idea. By recognizing the core values that drive your passion we anticipate the future needs of the brand making it relevant across all touchpoints."
       },
       "step_3": {
         "title": "Make a difference",
-        "paragraph": "Not every idea is big, but we believe each one can make\na difference. Our aim has always been to help you get it\nout there with a little help from our side.",
-        "cta": "See our services"
+        "paragraph": "Not every idea is big, but we believe each one can make a difference. Our aim has always been to help you get it out there with a little help from our side."
       }
     },
     "bio": {
       "title": "What we do",
       "section": "Services",
-      "paragraph": "Our range of services cover almost everything you\nmight need for your next project. If you can’t find it\nfrom the list, you can always scroll down and type\nin the service you need to see if we can help you.",
+      "paragraph": "Our range of services cover almost everything you might need for your next project. If you can’t find it from the list, you can always scroll down and type in the service you need to see if we can help you.",
       "brand_strategy": "Brand strategy",
       "brand_design": "Brand design",
       "digital_design": "Digital design",
@@ -99,49 +98,49 @@
       },
       "idle": {
         "title": "Ready when you are.",
-        "paragraph": "You can type in the service you need\nand get an answer right away."
+        "paragraph": "You can type in the service you need and get an answer right away."
       },
       "positive": {
         "title": "We can help you with that.",
-        "paragraph": "The service you need is something\nwe can help you with. Feel free\nto explore more or [get in touch](mailto:info@lumistra.com)."
+        "paragraph": "The service you need is something we can help you with. Feel free to explore more or [get in touch](mailto:info@lumistra.com)."
       },
       "negative": {
         "title": "We don’t do that, but...",
-        "paragraph": "If you think that is something we can\nhelp you with, you can always reach\nout to us at [info@lumistra.com](mailto:info@lumistra.com)"
+        "paragraph": "If you think that is something we can help you with, you can always reach out to us at [info@lumistra.com](mailto:info@lumistra.com)"
       }
     }
   },
   "workflow": {
     "title": "Workflow blueprint",
-    "paragraph": "Peek at our creative process and see\nwhat defines our approach to bringing\nyour vision to reality.",
+    "paragraph": "Peek at our creative process and see what defines our approach to bringing your vision to reality.",
     "steps": {
       "discovery": {
         "label": "Discovery",
-        "paragraph": "Diving deep into understanding\nthe client’s needs and challenges,\nwhile identifying potential goals\nand long term solutions."
+        "paragraph": "Diving deep into understanding the client’s needs and challenges, while identifying potential goals and long term solutions."
       },
       "strategy_development": {
         "label": "Strategy Development",
-        "paragraph": "Based on our findings, we\ndevelop a tailored strategy that\noutlines clear objectives and\naction plans to guide our efforts."
+        "paragraph": "Based on our findings, we develop a tailored strategy that outlines clear objectives and action plans to guide our efforts."
       },
       "magic_phase": {
         "label": "Magic Phase",
-        "paragraph": "Collaborative brainstorming,\ngenerating innovative ideas and\nconcepts that will resonate with\nthe target audience."
+        "paragraph": "Collaborative brainstorming, generating innovative ideas and concepts that will resonate with the target audience."
       },
       "check_in": {
         "label": "Check-In",
-        "paragraph": "We never break contact and\nalways keep clients involved in\nthe process to ensure the best\npossible outcome."
+        "paragraph": "We never break contact and always keep clients involved in the process to ensure the best possible outcome."
       },
       "review": {
         "label": "Review",
-        "paragraph": "Assessing the effectiveness and\nidentifying areas for improvement\nto maximize the impact and\nsuccess of the project."
+        "paragraph": "Assessing the effectiveness and identifying areas for improvement to maximize the impact and success of the project."
       },
       "ta_daa_moment": {
         "label": "Ta-Daa Moment",
-        "paragraph": "With attention to detail, we\nexecute the strategy, ensuring\nconsistency across all assets\nand communications."
+        "paragraph": "With attention to detail, we execute the strategy, ensuring consistency across all assets and communications."
       },
       "partnership_support": {
         "label": "Partnership and Support",
-        "paragraph": "We maintain open communication\nand collaboration with our clients\noffering guidance and support in\novercoming challenges."
+        "paragraph": "We maintain open communication and collaboration with our clients offering guidance and support in overcoming challenges."
       }
     }
   },
@@ -197,16 +196,16 @@
   "news": {
     "title": "Lumistra - News",
     "sub_title": "All articles",
-    "cta": {
-      "title": "Want to publish an article?",
-      "paragraph": "If you have something you would like to share\nto our audience, you can always drop us a message\nat [info@lumistra.com](mailto:info@lumistra.com)"
-    }
-  },
-  "articles": {
     "latest": {
       "section": "News",
       "title": "Latest articles"
     },
+    "cta": {
+      "title": "Want to publish an article?",
+      "paragraph": "If you have something you would like to share to our audience, you can always drop us a message at [info@lumistra.com](mailto:info@lumistra.com)"
+    }
+  },
+  "articles": {
     "article_1": {
       "title": "Design for digital age"
     },

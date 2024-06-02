@@ -256,7 +256,17 @@ function useServices() {
   const brandStrategy = () => {
     switch (currentLocale) {
       case 'hr':
-        return [];
+        return [
+          'Istraživanje i analiza',
+          'Brand pozicioniranje',
+          'Priča o brandu',
+          'Komunikacija',
+          'Strategija sadržaja',
+          'Strategija dizajna',
+          'Digitalna strategija',
+          'Strategija društvenih mreža',
+          'Imenovanje',
+        ];
       default:
         return [
           'Research & analisys',
@@ -275,7 +285,16 @@ function useServices() {
   const brandDesign = () => {
     switch (currentLocale) {
       case 'hr':
-        return [];
+        return [
+          'Vizualni identitet',
+          'Verbalni identitet',
+          'Animacija',
+          'Pakiranja i etikete',
+          'Publikacije',
+          'Tipografija',
+          'Ilustracija',
+          'Knjiga standarda',
+        ];
       default:
         return [
           'Visual identity',
@@ -294,7 +313,18 @@ function useServices() {
   const digitalDesign = () => {
     switch (currentLocale) {
       case 'hr':
-        return [];
+        return [
+          'Dizajn korisničkog sučelja (UX/UI)',
+          'Dizajn interakcije',
+          'Dizajn digitalnog sustava',
+          'Digitalni prototip',
+          'Dizajn web stranica',
+          'Marketinški vizuali',
+          'Kreativne komunikacije',
+          'Dizajn aplikacija',
+          'Vizuali za društvene mreže',
+          'Dizajn prezentacija',
+        ];
       default:
         return [
           'UX/UI design',
@@ -314,7 +344,14 @@ function useServices() {
   const brandCommunication = () => {
     switch (currentLocale) {
       case 'hr':
-        return [];
+        return [
+          'Priča o brandu',
+          'Oglašavanje',
+          'Promo materijali',
+          'Dizajn za izdavaštvo',
+          'Društvene mreže',
+          'Signalizacija',
+        ];
       default:
         return [
           'Brand story',

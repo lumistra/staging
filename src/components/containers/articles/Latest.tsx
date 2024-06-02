@@ -24,11 +24,11 @@ export default function Latest(props: Props) {
     <Section containerClassName={classNames(style.latestWrapper, props.className)}>
       <div className={style.latestTextWrapper}>
         <span className={style.latestTitle}>
-          {t('articles.latest.section')}
+          {t('news.latest.section')}
         </span>
         <div className={style.latestColumn}>
           <span className={style.latestTitle}>
-            {t('articles.latest.title')}
+            {t('news.latest.title')}
           </span>
           {!props.hideCTA && (
             <CtaLink className={style.latestDesktopCTA} href={routes.articles}>

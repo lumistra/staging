@@ -1,7 +1,7 @@
 import { map } from 'lodash';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/services/pitch.module.scss';
-import { getOrderNumber, routes } from '@/utils';
+import { getOrderNumber } from '@/utils';
 import Section from '../Section';
 
 export default function Pitch() {
@@ -19,8 +19,6 @@ export default function Pitch() {
     {
       title: t('services.pitch.step_3.title'),
       paragraph: t('services.pitch.step_3.paragraph'),
-      cta: t('services.pitch.step_3.cta'),
-      href: routes.services,
     },
   ];
 
