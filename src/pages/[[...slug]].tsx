@@ -27,9 +27,9 @@ function Main() {
 
   switch (true) {
     case includes(articleSlugs, rawPath):
-      return <Article path={rawPath} />;
+      return <Article path={rawPath} articles={articles} />;
     case includes(projectSlugs, rawPath):
-      return <Project path={rawPath} />;
+      return <Project path={rawPath} projects={projects} />;
     case rawPath === routes.articles:
       return <News />;
     case rawPath === routes.work:

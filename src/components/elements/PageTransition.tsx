@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
+import { includes } from 'lodash';
 import { useRouter } from 'next/router';
-import { getRawPath } from '@/utils';
+import { getRawPath, routes } from '@/utils';
 
 export default function PageTransition() {
   const router = useRouter();
@@ -8,20 +9,23 @@ export default function PageTransition() {
   const path = getRawPath(router.asPath, false);
 
   useEffect(() => {
+    const transitionTitle = document.querySelector('meta[name="transition-title"]')?.getAttribute('content') || 'Lumistra';
+    setTitle(transitionTitle);
+
     const transitionTitleMask = document.getElementById('page-transition-title');
     const transitionMask = document.getElementById('page-transition');
     if (!transitionTitleMask || !transitionMask) return;
 
-    const transitionTitle = document.querySelector('meta[name="transition-title"]')?.getAttribute('content') || 'Lumistra';
-
-    setTitle(transitionTitle);
     transitionTitleMask.classList.add('animate-in');
     const timeoutId = setTimeout(() => {
       transitionMask.classList.add('hide');
     }, 1500);
 
     return () => clearTimeout(timeoutId);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [path]);
+
+  if (!includes(getRawPath(router.asPath), `${routes.work}/`)) return null;
 
   return (
     <div id="page-transition">

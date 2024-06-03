@@ -1,8 +1,9 @@
 import classNames from 'classnames';
+import { includes } from 'lodash';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import useTranslations, { defaultLocale } from '@/hooks/useTranslations';
-import { getRawPath } from '@/utils';
+import { getRawPath, routes } from '@/utils';
 
 type Props = {
   children: any
@@ -52,9 +53,7 @@ export default function Link(props: Props) {
 
     const transitionTitleMask = document.getElementById('page-transition-title');
     const transitionMask = document.getElementById('page-transition');
-    if (!transitionTitleMask || !transitionMask) return;
-
-    if (isTrulySameRoute) {
+    if (isTrulySameRoute || !transitionTitleMask || !transitionMask || !includes(getRawPath(trueHref), `${routes.work}/`)) {
       handleGoTo();
 
       return;

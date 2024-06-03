@@ -1,6 +1,6 @@
+import { useEffect, useState } from 'react';
 import { find, reject, sample } from 'lodash';
 import Head from 'next/head';
-import useProjects from '@/content/projects';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/project.module.scss';
 import { routes } from '@/utils';
@@ -13,18 +13,26 @@ import Text from '../elements/layouts/Text';
 import TextImage from '../elements/layouts/TextImage';
 import TripleImage from '../elements/layouts/TripleImage';
 import Link from '../elements/Link';
+import type { Project as ProjectType, Projects } from '@/types/projects';
 
 type Props = {
   path: string
+  projects: Projects
 };
 
 export default function Project(props: Props) {
   const { t } = useTranslations();
-  const { projects } = useProjects();
-  const project = find(projects, (p) => routes.project(p.slug) === props.path);
-  const recommended = sample(reject(projects, (p) => routes.article(p.slug) === props.path));
+  const [recommended, setRecommended] = useState<ProjectType | undefined>();
+  const project = find(props.projects, (p) => routes.project(p.slug) === props.path);
 
-  if (!project || !recommended) return null;
+  useEffect(() => {
+    const randomSelect = sample(reject(props.projects, (p) => routes.project(p.slug) === props.path));
+
+    setRecommended(randomSelect);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.path]);
+
+  if (!project) return null;
 
   return (
     <>
@@ -66,21 +74,23 @@ export default function Project(props: Props) {
         <SingleImage src="/assets/svg/placeholder.svg" alt="placeholder" />
       </Section>
 
-      <Section containerClassName={style.recommendedWrapper}>
-        <div className={style.recommendedHeader}>
-          <span className={style.recommendedTitle}>{recommended.title}</span>
-          <CtaLink className={style.recommendedCTA} href={routes.project(recommended.slug)}>
-            {t('globals.next_project')}
-          </CtaLink>
-        </div>
-        <Link href={routes.project(recommended.slug)}>
-          <Image
-            className={style.recommendedCover}
-            src={recommended.cover}
-            alt={recommended.title}
-          />
-        </Link>
-      </Section>
+      {recommended && (
+        <Section containerClassName={style.recommendedWrapper}>
+          <div className={style.recommendedHeader}>
+            <span className={style.recommendedTitle}>{recommended.title}</span>
+            <CtaLink className={style.recommendedCTA} href={routes.project(recommended.slug)}>
+              {t('globals.next_project')}
+            </CtaLink>
+          </div>
+          <Link href={routes.project(recommended.slug)}>
+            <Image
+              className={style.recommendedCover}
+              src={recommended.cover}
+              alt={recommended.title}
+            />
+          </Link>
+        </Section>
+      )}
     </>
   );
 }

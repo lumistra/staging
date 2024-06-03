@@ -1,7 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { find, reject, sample } from 'lodash';
 import Head from 'next/head';
-import useArticles from '@/content/articles';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/article.module.scss';
 import { routes } from '@/utils';
@@ -14,18 +13,26 @@ import Text from '../elements/layouts/Text';
 import TextImage from '../elements/layouts/TextImage';
 import TripleImage from '../elements/layouts/TripleImage';
 import Link from '../elements/Link';
+import type { Article as ArticleType, Articles } from '@/types/articles';
 
 type Props = {
   path: string
+  articles: Articles
 };
 
 export default function Article(props: Props) {
   const { t } = useTranslations();
-  const { articles } = useArticles();
-  const [recommended] = useState(sample(reject(articles, (a) => routes.article(a.slug) === props.path)));
-  const article = find(articles, (a) => routes.article(a.slug) === props.path);
+  const [recommended, setRecommended] = useState<ArticleType | undefined>();
+  const article = find(props.articles, (a) => routes.article(a.slug) === props.path);
 
-  if (!article || !recommended) return null;
+  useEffect(() => {
+    const randomSelect = sample(reject(props.articles, (a) => routes.article(a.slug) === props.path));
+
+    setRecommended(randomSelect);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.path]);
+
+  if (!article) return null;
 
   return (
     <>
@@ -64,21 +71,23 @@ export default function Article(props: Props) {
         />
       </Section>
 
-      <Section containerClassName={style.recommendedWrapper}>
-        <div className={style.recommendedHeader}>
-          <span className={style.recommendedTitle}>{recommended.title}</span>
-          <CtaLink className={style.recommendedCTA} href={routes.article(recommended.slug)}>
-            {t('globals.read_next')}
-          </CtaLink>
-        </div>
-        <Link href={routes.article(recommended.slug)}>
-          <Image
-            className={style.recommendedCover}
-            src={recommended.cover}
-            alt={recommended.title}
-          />
-        </Link>
-      </Section>
+      {recommended && (
+        <Section containerClassName={style.recommendedWrapper}>
+          <div className={style.recommendedHeader}>
+            <span className={style.recommendedTitle}>{recommended.title}</span>
+            <CtaLink className={style.recommendedCTA} href={routes.article(recommended.slug)}>
+              {t('globals.read_next')}
+            </CtaLink>
+          </div>
+          <Link href={routes.article(recommended.slug)}>
+            <Image
+              className={style.recommendedCover}
+              src={recommended.cover}
+              alt={recommended.title}
+            />
+          </Link>
+        </Section>
+      )}
     </>
   );
 }
