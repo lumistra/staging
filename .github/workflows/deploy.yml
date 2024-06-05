@@ -34,7 +34,7 @@ jobs:
       - name: Build application
         run: yarn build
         env:
-          BASE_PATH: ${{ github.event.repository.name }}
+          # BASE_PATH: ${{ vars.BASE_PATH }} Not needed with Custom Domain
           STORYBLOK_API_TOKEN: ${{ secrets.STORYBLOK_API_TOKEN }}
 
       - name: Setup GitHub Pages
