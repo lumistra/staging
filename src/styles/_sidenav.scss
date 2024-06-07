@@ -17,6 +17,10 @@
     max-width: $maxContentWidth;
     width: 100%;
 
+    @media screen and (max-width: 1200px) {
+      margin: 0 $laptopMinBleedWidth;
+    }
+
     @media screen and (max-width: $tablet) {
       margin: 0 $mobileMinBleedWidth;
     }
@@ -88,6 +92,10 @@
             font-size: 48px;
             gap: 10px;
 
+            @media screen and (max-width: $desktop) {
+              font-size: 36px;
+            }
+
             @media screen and (max-width: $mobile) {
               font-size: 24px;
             }
@@ -124,6 +132,14 @@
         flex-direction: column;
         font-size: 72px;
         gap: 30px;
+
+        @media screen and (max-width: $desktop) {
+          font-size: 52px;
+        }
+
+        @media screen and (max-width: $laptop) {
+          font-size: 36px;
+        }
 
         @media screen and (max-width: $mobile) {
           font-size: 24px;

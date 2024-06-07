@@ -18,7 +18,7 @@ export default function Contact() {
       <Section containerClassName={style.heroWrapper}>
         <h1>{t('contact.hero')}</h1>
       </Section>
-      <ContactSection isSmall />
+      <ContactSection title={t('contact.cta.title-contact')} isSmall />
       <WantToPublish />
       <Latest />
     </>

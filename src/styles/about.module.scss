@@ -114,7 +114,7 @@
     padding-bottom: 160px;
     padding-top: 230px;
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: $tablet) {
       min-height: 400px;
       padding-bottom: 80px;
       padding-top: 110px;
@@ -127,6 +127,14 @@
       height: fit-content;
       width: fit-content;
       z-index: 10;
+
+      @media screen and (max-width: $desktop) {
+        font-size: 60px;
+      }
+
+      @media screen and (max-width: $laptop) {
+        font-size: 48px;
+      }
 
       @media screen and (max-width: $mobile) {
         font-size: 32px;
@@ -149,6 +157,14 @@
 
   h3 {
     font-size: 72px;
+
+    @media screen and (max-width: $desktop) {
+      font-size: 52px;
+    }
+
+    @media screen and (max-width: $laptop) {
+      font-size: 36px;
+    }
 
     @media screen and (max-width: $mobile) {
       font-size: 24px;
@@ -188,6 +204,14 @@
 
   h3 {
     font-size: 72px;
+
+    @media screen and (max-width: $desktop) {
+      font-size: 52px;
+    }
+
+    @media screen and (max-width: $laptop) {
+      font-size: 36px;
+    }
 
     @media screen and (max-width: $mobile) {
       font-size: 24px;

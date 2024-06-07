@@ -7,7 +7,7 @@
   padding-bottom: 400px;
   padding-top: 120px;
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: $tablet) {
     min-height: auto;
     padding-bottom: 180px;
     padding-top: 0;
@@ -16,6 +16,14 @@
   h1 {
     display: flex;
     font-size: 86px;
+
+    @media screen and (max-width: $desktop) {
+      font-size: 60px;
+    }
+
+    @media screen and (max-width: $laptop) {
+      font-size: 48px;
+    }
 
     @media screen and (max-width: $mobile) {
       font-size: 32px;
@@ -34,11 +42,12 @@
 
   @media screen and (max-width: 1600px) {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
   }
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: $laptop) {
     border: none;
+    display: grid;
     grid-template-columns: 1fr;
     margin-bottom: 0;
     margin-left: 0 !important;
@@ -51,12 +60,20 @@
     flex-direction: column;
     gap: 48px;
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: $laptop) {
       display: none;
     }
 
     .title {
       font-size: 72px;
+
+      @media screen and (max-width: $desktop) {
+        font-size: 52px;
+      }
+
+      @media screen and (max-width: $laptop) {
+        font-size: 36px;
+      }
 
       @media screen and (max-width: $mobile) {
         font-size: 24px;
@@ -65,6 +82,10 @@
 
     .titleSmall {
       font-size: 48px;
+
+      @media screen and (max-width: $desktop) {
+        font-size: 36px;
+      }
 
       @media screen and (max-width: $mobile) {
         font-size: 24px;
@@ -76,33 +97,41 @@
     font-size: 72px;
     gap: 30px;
 
-    @media screen and (max-width: 1600px) {
-      margin-left: auto;
+    @media screen and (max-width: $desktop) {
+      font-size: 52px;
     }
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: $laptop) {
+      background-color: $primary;
+      color: $white;
+      font-size: 36px;
+      gap: 10px;
       padding: 40px $mobileMinBleedWidth;
+      width: 100%;
     }
 
     @media screen and (max-width: $mobile) {
-      background-color: $primary;
-      color: $white;
       font-size: 24px;
-      gap: 10px;
-      width: 100%;
     }
 
     svg {
       height: 54px;
       width: 54px;
 
-      @media screen and (max-width: $mobile) {
-        height: 20px;
-        width: 20px;
+      @media screen and (max-width: $desktop) {
+        height: 32px;
+        width: 32px;
+      }
 
+      @media screen and (max-width: $laptop) {
         * {
           stroke: $white !important;
         }
+      }
+
+      @media screen and (max-width: $mobile) {
+        height: 20px;
+        width: 20px;
       }
     }
   }
@@ -115,29 +144,40 @@
       margin-left: auto;
     }
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: $desktop) {
+      font-size: 36px;
+    }
+
+    @media screen and (max-width: $laptop) {
+      background-color: $primary;
+      color: $white;
+      gap: 10px;
       padding: 40px $mobileMinBleedWidth;
+      width: 100%;
     }
 
     @media screen and (max-width: $mobile) {
-      background-color: $primary;
-      color: $white;
       font-size: 24px;
-      gap: 10px;
-      width: 100%;
     }
 
     svg {
       height: 40px;
       width: 40px;
 
-      @media screen and (max-width: $mobile) {
-        height: 20px;
-        width: 20px;
+      @media screen and (max-width: $desktop) {
+        height: 30px;
+        width: 30px;
+      }
 
+      @media screen and (max-width: $laptop) {
         * {
           stroke: $white !important;
         }
+      }
+
+      @media screen and (max-width: $mobile) {
+        height: 20px;
+        width: 20px;
       }
     }
   }

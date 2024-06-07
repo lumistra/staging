@@ -6,7 +6,7 @@
   display: flex;
   gap: 25px;
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: $mobile) {
     gap: 20px;
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -33,16 +33,13 @@
       }
     }
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: $mobile) {
       align-items: flex-end;
       display: flex;
+      font-size: 16px;
       gap: 20px;
       justify-content: space-between;
       margin: 0 $mobileMinBleedWidth;
-    }
-
-    @media screen and (max-width: $mobile) {
-      font-size: 16px;
     }
 
     .featuredIndex {
@@ -55,11 +52,11 @@
   }
 
   .featuredCover {
+    aspect-ratio: 16 / 9;
     background-color: $gray;
-    height: 915px;
     width: 100%;
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: $mobile) {
       aspect-ratio: 1 / 1;
       height: auto;
     }
@@ -84,10 +81,13 @@
 
   .mobileCTA {
     display: none;
-    margin: 0 $mobileMinBleedWidth;
 
     @media screen and (max-width: $tablet) {
       display: flex;
+    }
+
+    @media screen and (max-width: $mobile) {
+      margin: 0 $mobileMinBleedWidth;
     }
   }
 }

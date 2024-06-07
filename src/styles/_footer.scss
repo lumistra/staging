@@ -15,6 +15,11 @@ footer {
     padding-top: 230px;
     width: 100%;
 
+    @media screen and (max-width: 1200px) {
+      margin-left: $laptopMinBleedWidth;
+      margin-right: $laptopMinBleedWidth;
+    }
+
     @media screen and (max-width: $tablet) {
       margin-left: $mobileMinBleedWidth;
       margin-right: $mobileMinBleedWidth;
@@ -119,6 +124,10 @@ footer {
           display: flex;
           font-size: 48px;
           gap: 10px;
+
+          @media screen and (max-width: $desktop) {
+            font-size: 36px;
+          }
 
           @media screen and (max-width: $mobile) {
             font-size: 32px;

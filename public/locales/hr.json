@@ -4,7 +4,7 @@
     "work": "Radovi",
     "about": "O nama",
     "contact": "Kontakt",
-    "services": "Servisi",
+    "services": "Usluge",
     "articles": "Novosti"
   },
   "globals": {
@@ -146,10 +146,11 @@
   },
   "contact": {
     "title": "Lumistra - Kontakt",
-    "hero": "Javi se.",
+    "hero": "Imate ideju?",
     "cta": {
       "title": "Imate ideju?",
       "title-alt": "Imate ideju?",
+      "title-contact": "Javite se.",
       "action": "Kontakt"
     }
   },

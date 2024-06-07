@@ -7,7 +7,7 @@
   padding-bottom: 300px;
   padding-top: 120px;
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: $tablet) {
     min-height: auto;
     padding-bottom: 180px;
     padding-top: 0;
@@ -16,6 +16,14 @@
   h1 {
     display: flex;
     font-size: 86px;
+
+    @media screen and (max-width: $desktop) {
+      font-size: 60px;
+    }
+
+    @media screen and (max-width: $laptop) {
+      font-size: 48px;
+    }
 
     @media screen and (max-width: $mobile) {
       font-size: 32px;
@@ -72,6 +80,10 @@
       font-size: 48px;
       gap: 10px;
 
+      @media screen and (max-width: $desktop) {
+        font-size: 36px;
+      }
+
       @media screen and (max-width: $mobile) {
         font-size: 24px;
       }
@@ -109,6 +121,10 @@
     grid-column-start: 1;
     justify-content: space-between;
     padding: 40px 0;
+
+    @media screen and (max-width: $desktop) {
+      font-size: 36px;
+    }
 
     @media screen and (max-width: $mobile) {
       font-size: 24px;

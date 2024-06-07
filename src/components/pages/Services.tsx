@@ -55,7 +55,11 @@ export default function Services() {
           {t('services.bio.check_in.cta')}
         </CtaLink>
       </Section>
-      <ContactSection className={style.noBorderContact} ctaClassName={style.ctaAction} altTitle />
+      <ContactSection
+        className={style.noBorderContact}
+        ctaClassName={style.ctaAction}
+        title={t('contact.cta.title-alt')}
+      />
     </>
   );
 }

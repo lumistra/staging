@@ -144,7 +144,7 @@ export default function Work() {
           </Link>
         ))}
       </Section>
-      <Contact altTitle />
+      <Contact title={t('contact.cta.title-alt')} />
     </>
   );
 }

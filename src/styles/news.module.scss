@@ -4,7 +4,7 @@
 .latestWrapper {
   margin-top: 120px;
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: $tablet) {
     margin-top: 0;
   }
 }
@@ -33,6 +33,14 @@
     grid-column-end: 4;
     grid-column-start: 1;
     margin-bottom: 40px;
+
+    @media screen and (max-width: $desktop) {
+      font-size: 60px;
+    }
+
+    @media screen and (max-width: $laptop) {
+      font-size: 48px;
+    }
 
     @media screen and (max-width: $mobile) {
       border-top: 1px solid $gray;
@@ -90,6 +98,10 @@
 
     @media screen and (max-width: 1600px) {
       grid-column: 2;
+    }
+
+    @media screen and (max-width: $desktop) {
+      font-size: 36px;
     }
 
     @media screen and (max-width: $tablet) {

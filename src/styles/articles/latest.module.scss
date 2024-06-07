@@ -48,6 +48,14 @@
       display: none;
     }
 
+    @media screen and (max-width: $desktop) {
+      font-size: 52px;
+    }
+
+    @media screen and (max-width: $laptop) {
+      font-size: 36px;
+    }
+
     @media screen and (max-width: $mobile) {
       font-size: 24px;
     }

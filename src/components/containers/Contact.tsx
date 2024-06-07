@@ -8,7 +8,7 @@ import Section from './Section';
 type Props = {
   className?: string
   ctaClassName?: string
-  altTitle?: boolean
+  title?: string
   isSmall?: boolean
 };
 
@@ -23,7 +23,7 @@ export default function Contact(props: Props) {
           [style.titleSmall]: props.isSmall,
         })}
         >
-          {props.altTitle ? t('contact.cta.title-alt') : t('contact.cta.title')}
+          {props.title || t('contact.cta.title')}
         </span>
       </div>
       <a

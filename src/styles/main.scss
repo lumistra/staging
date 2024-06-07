@@ -57,6 +57,11 @@ body {
       max-width: $maxContentWidth;
       width: 100%;
 
+      @media screen and (max-width: 1200px) {
+        margin-left: $laptopMinBleedWidth;
+        margin-right: $laptopMinBleedWidth;
+      }
+
       @media screen and (max-width: $tablet) {
         margin-left: $mobileMinBleedWidth;
         margin-right: $mobileMinBleedWidth;
@@ -122,6 +127,19 @@ body {
       padding: 0 $desktopMinBleedWidth;
       text-align: center;
       width: 100%;
+      word-break: break-word;
+
+      @media screen and (max-width: $desktop) {
+        font-size: 52px;
+      }
+
+      @media screen and (max-width: 1200px) {
+        padding: 0 $laptopMinBleedWidth;
+      }
+
+      @media screen and (max-width: $laptop) {
+        font-size: 36px;
+      }
 
       @media screen and (max-width: $mobile) {
         padding: 0 $mobileMinBleedWidth;

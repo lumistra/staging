@@ -28,6 +28,10 @@
     max-width: $maxContentWidth;
     width: 100%;
 
+    @media screen and (max-width: 1200px) {
+      margin: 0 $laptopMinBleedWidth;
+    }
+
     @media screen and (max-width: $tablet) {
       margin: 0 $mobileMinBleedWidth;
     }

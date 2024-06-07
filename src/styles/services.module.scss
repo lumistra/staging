@@ -9,7 +9,7 @@
   padding-bottom: 280px;
   padding-top: 120px;
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: $tablet) {
     min-height: auto;
     padding-bottom: 180px;
     padding-top: 0;
@@ -20,8 +20,13 @@
     font-size: 86px;
     white-space: pre-wrap;
 
-    @media screen and (max-width: 1400px) {
+    @media screen and (max-width: $desktop) {
+      font-size: 60px;
       white-space: normal;
+    }
+
+    @media screen and (max-width: $laptop) {
+      font-size: 48px;
     }
 
     @media screen and (max-width: $mobile) {
@@ -73,10 +78,18 @@
   .servicesTitle {
     font-size: 72px;
 
+    @media screen and (max-width: $desktop) {
+      font-size: 52px;
+    }
+
     @media screen and (max-width: 1200px) {
       &:nth-of-type(2) {
         display: none;
       }
+    }
+
+    @media screen and (max-width: $laptop) {
+      font-size: 36px;
     }
 
     @media screen and (max-width: $mobile) {
@@ -150,6 +163,14 @@
     gap: 60px;
     margin: 260px 0;
 
+    @media screen and (max-width: $desktop) {
+      margin: 180px 0;
+    }
+
+    @media screen and (max-width: $laptop) {
+      margin: 100px 0;
+    }
+
     @media screen and (max-width: $mobile) {
       gap: 40px;
       margin: 80px 0;
@@ -157,6 +178,14 @@
 
     h3 {
       font-size: 86px;
+
+      @media screen and (max-width: $desktop) {
+        font-size: 60px;
+      }
+
+      @media screen and (max-width: $laptop) {
+        font-size: 48px;
+      }
 
       @media screen and (max-width: $mobile) {
         font-size: 32px;
@@ -167,6 +196,10 @@
       display: grid;
       font-size: 48px;
       grid-template-columns: repeat(2, 1fr);
+
+      @media screen and (max-width: $desktop) {
+        font-size: 36px;
+      }
 
       @media screen and (max-width: 1200px) {
         display: block;
@@ -207,7 +240,7 @@
   margin-bottom: 120px;
   margin-top: 120px;
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: $laptop) {
     margin-bottom: 0;
     margin-top: 0;
 
