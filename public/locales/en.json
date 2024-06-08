@@ -102,11 +102,11 @@
       },
       "positive": {
         "title": "We can help you with that.",
-        "paragraph": "The service you need is something we can help you with. Feel free to explore more or [get in touch](mailto:info@lumistra.com)."
+        "paragraph": "The service you need is something we can help you with. Feel free to explore more or [get in touch](mailto:info@studiolumistra.com)."
       },
       "negative": {
         "title": "We don’t do that, but...",
-        "paragraph": "If you think that is something we can help you with, you can always reach out to us at [info@lumistra.com](mailto:info@lumistra.com)"
+        "paragraph": "If you think that is something we can help you with, you can always reach out to us at [info@studiolumistra.com](mailto:info@studiolumistra.com)"
       }
     }
   },
@@ -203,7 +203,7 @@
     },
     "cta": {
       "title": "Want to publish an article?",
-      "paragraph": "If you have something you would like to share to our audience, you can always drop us a message at [info@lumistra.com](mailto:info@lumistra.com)"
+      "paragraph": "If you have something you would like to share to our audience, you can always drop us a message at [info@studiolumistra.com](mailto:info@studiolumistra.com)"
     }
   },
   "articles": {

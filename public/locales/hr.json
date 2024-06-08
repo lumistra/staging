@@ -102,11 +102,11 @@
       },
       "positive": {
         "title": "Možemo vam pomoći.",
-        "paragraph": "Za uslugu koju ste tražili možemo vam ponuditi našu pomoć. Slobodno istražite dalje ili nas [kontaktirajte](mailto:info@lumistra.com)."
+        "paragraph": "Za uslugu koju ste tražili možemo vam ponuditi našu pomoć. Slobodno istražite dalje ili nas [kontaktirajte](mailto:info@studiolumistra.com)."
       },
       "negative": {
         "title": "Ne nudimo to, ali...",
-        "paragraph": "Ukoliko mislite da je to ipak nešto oko čega vam možemo pomoći, možete nam pisati na [info@lumistra.com](mailto:info@lumistra.com)"
+        "paragraph": "Ukoliko mislite da je to ipak nešto oko čega vam možemo pomoći, možete nam pisati na [info@studiolumistra.com](mailto:info@studiolumistra.com)"
       }
     }
   },
@@ -203,7 +203,7 @@
     },
     "cta": {
       "title": "Imate nešto za podijeliti?",
-      "paragraph": "Ako imate nešto što biste željeli podijeliti s našom publikom, slobodno nam pošaljite poruku na [info@lumistra.com](mailto:info@lumistra.com)"
+      "paragraph": "Ako imate nešto što biste željeli podijeliti s našom publikom, slobodno nam pošaljite poruku na [info@studiolumistra.com](mailto:info@studiolumistra.com)"
     }
   },
   "articles": {
