@@ -20,6 +20,7 @@ declare module '*.svg' {
 declare namespace NodeJS {
   export interface ProcessEnv {
     basePath: string
+    mockApi: string | undefined
     storyblokApiToken: string
   }
 }

@@ -1,20 +1,27 @@
+import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import { map } from 'lodash';
 import style from '@/styles/layouts.module.scss';
 import Image from '../Image';
-import type { Image as ImageType } from '@/types/shared';
+import type { CMSImage } from '@/types/shared';
 
 type Props = {
-  images: [ImageType, ImageType, ImageType]
+  blok: SbBlokData & {
+    firstImage: CMSImage
+    secondImage: CMSImage
+    thirdImage: CMSImage
+  }
 };
 
 export default function TripleImage(props: Props) {
+  const images = [props.blok.firstImage, props.blok.secondImage, props.blok.thirdImage];
+
   return (
-    <div className={style.tripleImageWrapper}>
-      {map(props.images, (image, index) => (
+    <div className={style.tripleImageWrapper} {...storyblokEditable(props.blok)}>
+      {map(images, (image, index) => (
         <Image
           key={index}
           className={style.tripleImage}
-          src={image.src}
+          src={image.filename}
           alt={image.alt}
         />
       ))}

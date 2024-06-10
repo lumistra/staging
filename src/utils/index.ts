@@ -1,10 +1,10 @@
 import Parser from 'html-react-parser';
 import {
-  compact, filter, flatten, forEach, isEmpty, isString, map, replace, split,
+  compact, filter, flatten, forEach, includes, isEmpty, isString, map, replace, split,
 } from 'lodash';
-import { getArticles } from '@/content/articles';
-import { getProjects } from '@/content/projects';
-import { locales, t } from '@/hooks/useTranslations';
+import { defaultLocale, locales } from '@/hooks/useTranslations';
+
+export const isProd = process.env.NODE_ENV === 'production';
 
 export const routes = {
   home: '/',
@@ -18,23 +18,7 @@ export const routes = {
   privacyPolicy: '/privacy-policy',
 };
 
-const sitemap = [
-  ...filter(routes, isString),
-  ...map(getProjects(t), ({ slug }) => routes.project(slug)),
-  ...map(getArticles(t), ({ slug }) => routes.article(slug)),
-];
-
-export const generateStaticPaths = () => flatten(map(sitemap, (route) => map(locales, (locale) => {
-  const slug = compact(split(route, '/'));
-  let slugPath;
-  if (locale.default) {
-    slugPath = isEmpty(slug) ? [''] : slug;
-  } else {
-    slugPath = [locale.value, ...slug];
-  }
-
-  return { params: { slug: slugPath } };
-})));
+const sitemap = filter(routes, isString);
 
 export const getRawPath = (path: string, stripLocale: boolean = true) => {
   let newPath = path;
@@ -51,6 +35,32 @@ export const getRawPath = (path: string, stripLocale: boolean = true) => {
   }
 
   return newPath;
+};
+
+export const generateStaticPaths = (cmsLinks: string[]) => {
+  const defaultLocaleMatch = `/${defaultLocale}`;
+
+  const staticLinks = flatten(map(sitemap, (route) => map(locales, (locale) => {
+    const slug = compact(split(route, '/'));
+    let slugPath;
+    if (locale.default) {
+      slugPath = isEmpty(slug) ? [''] : slug;
+    } else {
+      slugPath = [locale.value, ...slug];
+    }
+
+    return { params: { slug: slugPath } };
+  })),
+  );
+
+  const dynamicLinks = map(cmsLinks, (link) => {
+    const isDefaultLocaleRoute = includes(link, defaultLocaleMatch);
+    const slugPath = getRawPath(link, isDefaultLocaleRoute);
+
+    return { params: { slug: compact(split(slugPath, '/')) } };
+  });
+
+  return [...staticLinks, ...dynamicLinks];
 };
 
 export const getOrderNumber = (index: number, brackets?: boolean): string => {

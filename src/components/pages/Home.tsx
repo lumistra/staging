@@ -16,7 +16,7 @@ export default function Home() {
   const { t } = useTranslations();
 
   return (
-    <>
+    <main>
       <Head>
         <title>{t('home.title')}</title>
         <meta name="transition-title" content={t('routes.home')} />
@@ -57,6 +57,6 @@ export default function Home() {
       <Workflow />
       <Latest />
       <Contact />
-    </>
+    </main>
   );
 }

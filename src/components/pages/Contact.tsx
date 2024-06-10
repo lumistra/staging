@@ -10,7 +10,7 @@ export default function Contact() {
   const { t } = useTranslations();
 
   return (
-    <>
+    <main>
       <Head>
         <title>{t('contact.title')}</title>
         <meta name="transition-title" content={t('routes.contact')} />
@@ -21,6 +21,6 @@ export default function Contact() {
       <ContactSection title={t('contact.cta.title-contact')} isSmall />
       <WantToPublish />
       <Latest />
-    </>
+    </main>
   );
 }

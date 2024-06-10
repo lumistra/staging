@@ -1,18 +1,14 @@
+import { apiPlugin, storyblokInit } from '@storyblok/react';
 import Head from 'next/head';
+import components from '@/components';
 import type { AppProps } from 'next/app';
 import '@/styles/main.scss';
-// import { apiPlugin, storyblokInit } from '@storyblok/react';
-// import components from '@/components';
-// import Page from './[[...slug]]';
 
-// storyblokInit({
-//   accessToken: process.env.storyblokApiToken,
-//   use: [apiPlugin],
-//   components: {
-//     page: Page,
-//     ...components,
-//   },
-// });
+storyblokInit({
+  accessToken: process.env.storyblokApiToken,
+  use: [apiPlugin],
+  components,
+});
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -25,9 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="noindex" />
       </Head>
-      <main>
-        <Component {...pageProps} />
-      </main>
+      <Component {...pageProps} />
     </>
   );
 }

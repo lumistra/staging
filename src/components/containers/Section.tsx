@@ -6,6 +6,7 @@ type Props = {
   containerClassName?: string,
   children: any
   parentChildren?: any
+  storyblokEditable?: any
 };
 
 export default function Section(props: Props) {
@@ -13,6 +14,7 @@ export default function Section(props: Props) {
     <section
       id={props.id}
       className={classNames('max-content-wrapper', props.className)}
+      {...props.storyblokEditable}
     >
       {props.parentChildren}
       <div className={classNames('max-content-container', props.containerClassName)}>

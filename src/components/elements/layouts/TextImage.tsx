@@ -1,31 +1,36 @@
+import { storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
 import style from '@/styles/layouts.module.scss';
 import Image from '../Image';
-import type { Image as ImageType } from '@/types/shared';
+import RichText from '../RichText';
+import type { CMSImage } from '@/types/shared';
+import type { ISbRichtext, SbBlokData } from '@storyblok/react';
 
 type Props = {
-  align: 'left' | 'right'
-  text: string
-  image: ImageType
+  blok: SbBlokData & {
+    align: 'left' | 'right'
+    text: ISbRichtext
+    image: CMSImage
+  }
 };
 
 export default function TextImage(props: Props) {
   return (
-    <div className={style.textWrapper}>
-      <div className={classNames({
-        [style.alignLeft]: props.align === 'left',
-        [style.alignRight]: props.align === 'right',
+    <div className={style.textWrapper} {...storyblokEditable(props.blok)}>
+      <RichText className={classNames({
+        [style.alignLeft]: props.blok.align === 'left',
+        [style.alignRight]: props.blok.align === 'right',
       })}
       >
-        {props.text}
-      </div>
+        {props.blok.text}
+      </RichText>
       <Image
         className={classNames(style.imageColumn, {
-          [style.alignRight]: props.align === 'left',
-          [style.alignLeft]: props.align === 'right',
+          [style.alignRight]: props.blok.align === 'left',
+          [style.alignLeft]: props.blok.align === 'right',
         })}
-        src={props.image.src}
-        alt={props.image.alt}
+        src={props.blok.image.filename}
+        alt={props.blok.image.alt}
       />
     </div>
   );

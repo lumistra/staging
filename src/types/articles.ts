@@ -1,3 +1,7 @@
+import type { MetaData } from './components';
+import type { CMSImage } from './shared';
+import type { ISbStoryData, SbBlokData } from '@storyblok/react';
+
 export type Article = {
   author: string,
   cover: string,
@@ -7,3 +11,17 @@ export type Article = {
 };
 
 export type Articles = Article[];
+
+export type HeadlineData = {
+  title: string
+  author: string
+  publishedAt: string
+  cover: CMSImage
+};
+
+export type ArticleData = {
+  meta: [MetaData],
+  headline: [HeadlineData],
+  recommended: ISbStoryData<ArticleData>
+  body: SbBlokData[],
+};

@@ -1,72 +1,102 @@
-import { includes, map } from 'lodash';
-import { useRouter } from 'next/router';
+import { getStoryblokApi } from '@storyblok/react';
+import StoryblokStory from '@storyblok/react/story';
+import { includes, reduce, some } from 'lodash';
 import Footer from '@/components/containers/Footer';
 import Navigation from '@/components/containers/navigation/Navigation';
 import PageTransition from '@/components/elements/PageTransition';
-import About from '@/components/pages/About';
-import Article from '@/components/pages/Article';
-import Contact from '@/components/pages/Contact';
-import Home from '@/components/pages/Home';
-import News from '@/components/pages/News';
-import PrivacyPolicy from '@/components/pages/PrivacyPolicy';
-import Project from '@/components/pages/Project';
-import Services from '@/components/pages/Services';
-import Work from '@/components/pages/Work';
-import useArticles from '@/content/articles';
-import useProjects from '@/content/projects';
-import { generateStaticPaths, getRawPath, routes } from '@/utils';
-import NotFound from './404';
+import Main from '@/components/pages/Main';
+import { defaultLocale, locales } from '@/hooks/useTranslations';
+import { generateStaticPaths, routes } from '@/utils';
+import { article } from '../../__mocks__/article';
+import { cmsLinks } from '../../__mocks__/links';
+import { project } from '../../__mocks__/project';
+import type { ISbStoryData } from '@storyblok/react';
 
-function Main() {
-  const router = useRouter();
-  const { articles } = useArticles();
-  const { projects } = useProjects();
-  const articleSlugs = map(articles, (article) => routes.article(article.slug));
-  const projectSlugs = map(projects, (project) => routes.project(project.slug));
-  const rawPath = getRawPath(router.asPath);
+type Props = {
+  story: ISbStoryData | null
+  slug: string
+};
 
-  switch (true) {
-    case includes(articleSlugs, rawPath):
-      return <Article path={rawPath} articles={articles} />;
-    case includes(projectSlugs, rawPath):
-      return <Project path={rawPath} projects={projects} />;
-    case rawPath === routes.articles:
-      return <News />;
-    case rawPath === routes.work:
-      return <Work />;
-    case rawPath === routes.privacyPolicy:
-      return <PrivacyPolicy />;
-    case rawPath === routes.contact:
-      return <Contact />;
-    case rawPath === routes.about:
-      return <About />;
-    case rawPath === routes.services:
-      return <Services />;
-    case rawPath === routes.home:
-      return <Home />;
-    default:
-      return <NotFound />;
-  }
-}
-
-export default function Page() {
+export default function Page(props: Props) {
   return (
     <>
       <Navigation />
-      <Main />
+      {props.story ? (
+        <StoryblokStory story={props.story} />
+      ) : (
+        <Main slug={props.slug} />
+      )}
       <Footer />
       <PageTransition />
     </>
   );
 }
 
-export async function getStaticProps() {
-  return { props: {} };
+type StaticProps = {
+  params: {
+    slug: string[]
+  }
+};
+
+export async function getStaticProps(props: StaticProps) {
+  const storyblokApi = getStoryblokApi();
+  const slug = props.params.slug ? props.params.slug.join('/') : '';
+  const slugPath = slug ? `/${slug}` : '';
+  const slugProp = `${slugPath}/`;
+
+  const isArticleRoute = includes(slugPath, `${routes.articles}/`);
+  const isProjectRoute = includes(slugPath, `${routes.work}/`);
+
+  let apiPath;
+  if (isArticleRoute || isProjectRoute) {
+    const [slugLocale] = props.params.slug;
+    const isSlugLocale = some(locales, (locale) => locale.value === slugLocale);
+
+    apiPath = isSlugLocale ? slugPath : `${defaultLocale}${slugPath}`;
+  }
+
+  if (!isArticleRoute && !isProjectRoute) {
+    return { props: { story: null, slug: slugProp } };
+  }
+
+  if (process.env.mockApi) {
+    let story = null;
+    switch (true) {
+      case isArticleRoute:
+        story = article;
+        break;
+      case isProjectRoute:
+        story = project;
+        break;
+      default:
+        story = null;
+        break;
+    }
+
+    return { props: { story, slug: slugProp } };
+  }
+
+  const { data } = await storyblokApi.get(`cdn/stories/${apiPath}`, {
+    resolve_relations: ['project.recommended', 'article.recommended'],
+    version: 'published',
+  });
+
+  return { props: { story: data.story, slug: slugProp } };
 }
 
 export async function getStaticPaths() {
+  const storyblokApi = getStoryblokApi();
+  const { data } = process.env.mockApi ? { data: cmsLinks } : await storyblokApi.get('cdn/links', { version: 'published' });
+
+  const links = reduce(data.links, (res, link) => {
+    if (link.is_folder) return res;
+    res.push(link.real_path as string);
+
+    return res;
+  }, [] as string[]);
+
   return {
-    paths: generateStaticPaths(),
+    paths: generateStaticPaths(links),
     fallback: false,
   };
 }

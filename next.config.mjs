@@ -16,6 +16,7 @@ const nextConfig = {
   env: {
     ...conditionalConfig,
     storyblokApiToken: process.env.STORYBLOK_API_TOKEN,
+    mockApi: process.env.MOCK_API,
   },
   images: {
     unoptimized: true,

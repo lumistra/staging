@@ -1,21 +1,26 @@
+import { storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
 import style from '@/styles/layouts.module.scss';
+import RichText from '../RichText';
+import type { ISbRichtext, SbBlokData } from '@storyblok/react';
 
 type Props = {
-  align: 'left' | 'right'
-  text: string
+  blok: SbBlokData & {
+    align: 'left' | 'right'
+    text: ISbRichtext
+  }
 };
 
 export default function Text(props: Props) {
   return (
-    <div className={style.textWrapper}>
-      <div className={classNames({
-        [style.alignLeft]: props.align === 'left',
-        [style.alignRight]: props.align === 'right',
+    <div className={style.textWrapper} {...storyblokEditable(props.blok)}>
+      <RichText className={classNames({
+        [style.alignLeft]: props.blok.align === 'left',
+        [style.alignRight]: props.blok.align === 'right',
       })}
       >
-        {props.text}
-      </div>
+        {props.blok.text}
+      </RichText>
     </div>
   );
 }

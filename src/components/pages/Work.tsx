@@ -61,7 +61,7 @@ export default function Work() {
   };
 
   return (
-    <>
+    <main>
       <Head>
         <title>{t('work.title')}</title>
         <meta name="transition-title" content={t('routes.work')} />
@@ -145,6 +145,6 @@ export default function Work() {
         ))}
       </Section>
       <Contact title={t('contact.cta.title-alt')} />
-    </>
+    </main>
   );
 }

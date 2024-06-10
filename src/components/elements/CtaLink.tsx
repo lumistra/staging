@@ -6,6 +6,7 @@ type Props = {
   children: string
   className?: string,
   href?: string,
+  locale?: string,
   onClick?: () => void,
 };
 
@@ -26,6 +27,7 @@ export default function CtaLink(props: Props) {
     <Link
       className={classNames('cta-link', props.className)}
       href={props.href}
+      locale={props.locale}
     >
       {props.children}
       <Arrow />

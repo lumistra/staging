@@ -29,17 +29,17 @@
 
   .articlesTitle {
     display: flex;
-    font-size: 86px;
+    font-size: 72px;
     grid-column-end: 4;
     grid-column-start: 1;
     margin-bottom: 40px;
 
     @media screen and (max-width: $desktop) {
-      font-size: 60px;
+      font-size: 52px;
     }
 
     @media screen and (max-width: $laptop) {
-      font-size: 48px;
+      font-size: 36px;
     }
 
     @media screen and (max-width: $mobile) {

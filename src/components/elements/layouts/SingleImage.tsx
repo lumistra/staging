@@ -1,13 +1,21 @@
+import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import style from '@/styles/layouts.module.scss';
 import Image from '../Image';
-import type { Image as ImageType } from '@/types/shared';
+import type { CMSImage } from '@/types/shared';
 
-export default function SingleImage(props: ImageType) {
+type Props = {
+  blok: SbBlokData & {
+    image: CMSImage
+  }
+};
+
+export default function SingleImage(props: Props) {
   return (
     <Image
       className={style.singleImage}
-      src={props.src}
-      alt={props.alt}
+      src={props.blok.image.filename}
+      alt={props.blok.image.alt}
+      storyblokEditable={storyblokEditable(props.blok)}
     />
   );
 }

@@ -5,6 +5,7 @@ type Props = {
   className?: string,
   src: string,
   alt: string,
+  storyblokEditable?: any
 };
 
 export default function Image(props: Props) {
@@ -12,7 +13,7 @@ export default function Image(props: Props) {
   const src = `${basePath}${props.src}`;
 
   return (
-    <div className={classNames('image-container', props.className)}>
+    <div className={classNames('image-container', props.className)} {...props.storyblokEditable}>
       <NextImage src={src} alt={props.alt} fill />
     </div>
   );

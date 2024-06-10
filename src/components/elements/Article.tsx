@@ -1,3 +1,4 @@
+import { defaultLocale } from '@/hooks/useTranslations';
 import style from '@/styles/articles/grid.module.scss';
 import { routes } from '@/utils';
 import Image from './Image';
@@ -14,6 +15,7 @@ export default function Article(props: Props) {
     <Link
       className={style.articleContainer}
       href={routes.article(props.article.slug)}
+      locale={defaultLocale}
     >
       <Image
         className={style.articleCover}

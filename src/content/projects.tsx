@@ -7,7 +7,7 @@ export const getProjects = (t: Function): Projects => [
   {
     slug: 'apiar',
     title: t('projects.project_1.title'),
-    cover: '/assets/svg/placeholder.svg',
+    cover: 'https://a.storyblok.com/f/286844/1920x1080/3440567a13/apiar-case-1.webp',
     selected: true,
   },
   {

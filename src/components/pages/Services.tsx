@@ -16,7 +16,7 @@ export default function Services() {
   const { groups } = useServices();
 
   return (
-    <>
+    <main>
       <Head>
         <title>{t('services.title')}</title>
         <meta name="transition-title" content={t('routes.services')} />
@@ -60,6 +60,6 @@ export default function Services() {
         ctaClassName={style.ctaAction}
         title={t('contact.cta.title-alt')}
       />
-    </>
+    </main>
   );
 }

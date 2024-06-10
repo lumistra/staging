@@ -13,7 +13,7 @@ export default function News() {
   const { articles } = useArticles();
 
   return (
-    <>
+    <main>
       <Head>
         <title>{t('news.title')}</title>
         <meta name="transition-title" content={t('routes.articles')} />
@@ -28,6 +28,6 @@ export default function News() {
         ))}
       </Section>
       <WantToPublish className={style.spacingTop} altBackground />
-    </>
+    </main>
   );
 }

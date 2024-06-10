@@ -16,7 +16,7 @@ export default function About() {
   const { isTablet } = useScreenSize();
 
   return (
-    <>
+    <main>
       <Head>
         <title>{t('about.title')}</title>
         <meta name="transition-title" content={t('routes.about')} />
@@ -49,6 +49,6 @@ export default function About() {
       <Workflow />
       <Latest />
       <ContactSection />
-    </>
+    </main>
   );
 }

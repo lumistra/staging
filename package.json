@@ -13,12 +13,14 @@
   "dependencies": {
     "@storyblok/react": "^3.0.10",
     "classnames": "^2.5.1",
+    "date-fns": "^3.6.0",
     "html-react-parser": "^5.1.10",
     "lodash": "^4.17.21",
     "next": "14.2.2",
     "react": "^18",
     "react-dom": "^18",
-    "react-textarea-autosize": "^8.5.3"
+    "react-textarea-autosize": "^8.5.3",
+    "storyblok-rich-text-react-renderer": "^2.9.2"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",

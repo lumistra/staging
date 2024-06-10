@@ -1,4 +1,4 @@
-export type Page = {
-  title: string,
-  description: string
+export type MetaData = {
+  title?: string
+  transitionTitle?: string
 };
