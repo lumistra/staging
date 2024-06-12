@@ -16,7 +16,7 @@ export const article = {
           focus: '',
           title: '',
           source: '',
-          filename: 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
+          filename: process.env.mockApi ? '/assets/svg/placeholder.svg' : 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
           copyright: '',
           fieldtype: 'asset',
           meta_data: {
@@ -62,7 +62,7 @@ export const article = {
           focus: '',
           title: '',
           source: '',
-          filename: 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
+          filename: process.env.mockApi ? '/assets/svg/placeholder.svg' : 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
           copyright: '',
           fieldtype: 'asset',
           meta_data: {
@@ -86,7 +86,7 @@ export const article = {
           focus: '',
           title: '',
           source: '',
-          filename: 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
+          filename: process.env.mockApi ? '/assets/svg/placeholder.svg' : 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
           copyright: '',
           fieldtype: 'asset',
           meta_data: {
@@ -105,7 +105,7 @@ export const article = {
           focus: '',
           title: '',
           source: '',
-          filename: 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
+          filename: process.env.mockApi ? '/assets/svg/placeholder.svg' : 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
           copyright: '',
           fieldtype: 'asset',
           meta_data: {
@@ -155,7 +155,7 @@ export const article = {
           focus: '',
           title: '',
           source: '',
-          filename: 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
+          filename: process.env.mockApi ? '/assets/svg/placeholder.svg' : 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
           copyright: '',
           fieldtype: 'asset',
           meta_data: {
@@ -174,7 +174,7 @@ export const article = {
           focus: '',
           title: '',
           source: '',
-          filename: 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
+          filename: process.env.mockApi ? '/assets/svg/placeholder.svg' : 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
           copyright: '',
           fieldtype: 'asset',
           meta_data: {
@@ -193,7 +193,7 @@ export const article = {
           focus: '',
           title: '',
           source: '',
-          filename: 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
+          filename: process.env.mockApi ? '/assets/svg/placeholder.svg' : 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
           copyright: '',
           fieldtype: 'asset',
           meta_data: {
@@ -225,7 +225,7 @@ export const article = {
           focus: '',
           title: '',
           source: '',
-          filename: 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
+          filename: process.env.mockApi ? '/assets/svg/placeholder.svg' : 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
           copyright: '',
           fieldtype: 'asset',
           meta_data: {
@@ -263,7 +263,7 @@ export const article = {
                 focus: '',
                 title: '',
                 source: '',
-                filename: 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
+                filename: process.env.mockApi ? '/assets/svg/placeholder.svg' : 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
                 copyright: '',
                 fieldtype: 'asset',
                 meta_data: {
@@ -309,7 +309,7 @@ export const article = {
                 focus: '',
                 title: '',
                 source: '',
-                filename: 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
+                filename: process.env.mockApi ? '/assets/svg/placeholder.svg' : 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
                 copyright: '',
                 fieldtype: 'asset',
                 meta_data: {
@@ -333,7 +333,7 @@ export const article = {
                 focus: '',
                 title: '',
                 source: '',
-                filename: 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
+                filename: process.env.mockApi ? '/assets/svg/placeholder.svg' : 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
                 copyright: '',
                 fieldtype: 'asset',
                 meta_data: {
@@ -352,7 +352,7 @@ export const article = {
                 focus: '',
                 title: '',
                 source: '',
-                filename: 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
+                filename: process.env.mockApi ? '/assets/svg/placeholder.svg' : 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
                 copyright: '',
                 fieldtype: 'asset',
                 meta_data: {
@@ -402,7 +402,7 @@ export const article = {
                 focus: '',
                 title: '',
                 source: '',
-                filename: 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
+                filename: process.env.mockApi ? '/assets/svg/placeholder.svg' : 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
                 copyright: '',
                 fieldtype: 'asset',
                 meta_data: {
@@ -421,7 +421,7 @@ export const article = {
                 focus: '',
                 title: '',
                 source: '',
-                filename: 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
+                filename: process.env.mockApi ? '/assets/svg/placeholder.svg' : 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
                 copyright: '',
                 fieldtype: 'asset',
                 meta_data: {
@@ -440,7 +440,7 @@ export const article = {
                 focus: '',
                 title: '',
                 source: '',
-                filename: 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
+                filename: process.env.mockApi ? '/assets/svg/placeholder.svg' : 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
                 copyright: '',
                 fieldtype: 'asset',
                 meta_data: {
@@ -472,7 +472,7 @@ export const article = {
                 focus: '',
                 title: '',
                 source: '',
-                filename: 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
+                filename: process.env.mockApi ? '/assets/svg/placeholder.svg' : 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
                 copyright: '',
                 fieldtype: 'asset',
                 meta_data: {
@@ -510,7 +510,7 @@ export const article = {
                       focus: '',
                       title: '',
                       source: '',
-                      filename: 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
+                      filename: process.env.mockApi ? '/assets/svg/placeholder.svg' : 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
                       copyright: '',
                       fieldtype: 'asset',
                       meta_data: {
@@ -556,7 +556,7 @@ export const article = {
                       focus: '',
                       title: '',
                       source: '',
-                      filename: 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
+                      filename: process.env.mockApi ? '/assets/svg/placeholder.svg' : 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
                       copyright: '',
                       fieldtype: 'asset',
                       meta_data: {
@@ -580,7 +580,7 @@ export const article = {
                       focus: '',
                       title: '',
                       source: '',
-                      filename: 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
+                      filename: process.env.mockApi ? '/assets/svg/placeholder.svg' : 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
                       copyright: '',
                       fieldtype: 'asset',
                       meta_data: {
@@ -599,7 +599,7 @@ export const article = {
                       focus: '',
                       title: '',
                       source: '',
-                      filename: 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
+                      filename: process.env.mockApi ? '/assets/svg/placeholder.svg' : 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
                       copyright: '',
                       fieldtype: 'asset',
                       meta_data: {
@@ -649,7 +649,7 @@ export const article = {
                       focus: '',
                       title: '',
                       source: '',
-                      filename: 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
+                      filename: process.env.mockApi ? '/assets/svg/placeholder.svg' : 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
                       copyright: '',
                       fieldtype: 'asset',
                       meta_data: {
@@ -668,7 +668,7 @@ export const article = {
                       focus: '',
                       title: '',
                       source: '',
-                      filename: 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
+                      filename: process.env.mockApi ? '/assets/svg/placeholder.svg' : 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
                       copyright: '',
                       fieldtype: 'asset',
                       meta_data: {
@@ -687,7 +687,7 @@ export const article = {
                       focus: '',
                       title: '',
                       source: '',
-                      filename: 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
+                      filename: process.env.mockApi ? '/assets/svg/placeholder.svg' : 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
                       copyright: '',
                       fieldtype: 'asset',
                       meta_data: {
@@ -719,7 +719,7 @@ export const article = {
                       focus: '',
                       title: '',
                       source: '',
-                      filename: 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
+                      filename: process.env.mockApi ? '/assets/svg/placeholder.svg' : 'https://a.storyblok.com/f/286844/564x531/c0b7a2f889/placeholder.svg',
                       copyright: '',
                       fieldtype: 'asset',
                       meta_data: {
