@@ -7,6 +7,7 @@ import { routes } from '@/utils';
 import Section from '../containers/Section';
 import CtaLink from '../elements/CtaLink';
 import Image from '../elements/Image';
+import Lightbox from '../elements/Lightbox';
 import Link from '../elements/Link';
 import type { ArticleData, HeadlineData } from '@/types/articles';
 import type { SbBlokData } from '@storyblok/react';
@@ -36,11 +37,13 @@ export default function Article(props: Props) {
         <span className={style.heroDate}>
           Written by {headline.author} on {format(publishedAt, 'MMM io yyyy')}
         </span>
-        <Image
-          className={style.heroCover}
-          src={headline.cover.filename}
-          alt={headline.cover.alt}
-        />
+        <Lightbox image={headline.cover}>
+          <Image
+            className={style.heroCover}
+            src={headline.cover.filename}
+            alt={headline.cover.alt}
+          />
+        </Lightbox>
       </Section>
 
       <Section containerClassName={style.articleWrapper}>

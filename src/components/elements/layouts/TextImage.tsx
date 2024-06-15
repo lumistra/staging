@@ -2,6 +2,7 @@ import { storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
 import style from '@/styles/layouts.module.scss';
 import Image from '../Image';
+import Lightbox from '../Lightbox';
 import RichText from '../RichText';
 import type { CMSImage } from '@/types/shared';
 import type { ISbRichtext, SbBlokData } from '@storyblok/react';
@@ -24,14 +25,16 @@ export default function TextImage(props: Props) {
       >
         {props.blok.text}
       </RichText>
-      <Image
-        className={classNames(style.imageColumn, {
-          [style.alignRight]: props.blok.align === 'left',
-          [style.alignLeft]: props.blok.align === 'right',
-        })}
-        src={props.blok.image.filename}
-        alt={props.blok.image.alt}
-      />
+      <Lightbox image={props.blok.image}>
+        <Image
+          className={classNames(style.imageColumn, {
+            [style.alignRight]: props.blok.align === 'left',
+            [style.alignLeft]: props.blok.align === 'right',
+          })}
+          src={props.blok.image.filename}
+          alt={props.blok.image.alt}
+        />
+      </Lightbox>
     </div>
   );
 }

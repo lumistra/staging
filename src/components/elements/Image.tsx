@@ -6,6 +6,7 @@ type Props = {
   src: string,
   alt: string,
   storyblokEditable?: any
+  onClick?: () => void
 };
 
 export default function Image(props: Props) {
@@ -13,7 +14,11 @@ export default function Image(props: Props) {
   const src = `${basePath}${props.src}`;
 
   return (
-    <div className={classNames('image-container', props.className)} {...props.storyblokEditable}>
+    <div
+      className={classNames('image-container', props.className)}
+      {...props.storyblokEditable}
+      onClick={props.onClick}
+    >
       <NextImage src={src} alt={props.alt} fill />
     </div>
   );

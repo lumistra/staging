@@ -1,6 +1,7 @@
 import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import style from '@/styles/layouts.module.scss';
 import Image from '../Image';
+import Lightbox from '../Lightbox';
 import type { CMSImage } from '@/types/shared';
 
 type Props = {
@@ -11,11 +12,13 @@ type Props = {
 
 export default function SingleImage(props: Props) {
   return (
-    <Image
-      className={style.singleImage}
-      src={props.blok.image.filename}
-      alt={props.blok.image.alt}
-      storyblokEditable={storyblokEditable(props.blok)}
-    />
+    <Lightbox image={props.blok.image}>
+      <Image
+        className={style.singleImage}
+        src={props.blok.image.filename}
+        alt={props.blok.image.alt}
+        storyblokEditable={storyblokEditable(props.blok)}
+      />
+    </Lightbox>
   );
 }

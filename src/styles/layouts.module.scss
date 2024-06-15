@@ -57,6 +57,7 @@
 
   .imageColumn {
     aspect-ratio: 14 / 15;
+    cursor: pointer;
     width: 100%;
 
     @media screen and (max-width: $tablet) {
@@ -72,6 +73,7 @@
 
 .singleImage {
   aspect-ratio: 16 / 9;
+  cursor: pointer;
   width: 100%;
 
   img {
@@ -91,6 +93,7 @@
 
   .doubleImage {
     aspect-ratio: 14 / 15;
+    cursor: pointer;
     width: 100%;
 
     img {
@@ -111,6 +114,7 @@
 
   .tripleImage {
     aspect-ratio: 9 / 16;
+    cursor: pointer;
     width: 100%;
 
     img {
