@@ -41,7 +41,6 @@ export default function Link(props: Props) {
 
   const trueHref = getHref();
   const isSameRoute = getRawPath(router.asPath) === getRawPath(trueHref);
-  const isTrulySameRoute = getRawPath(router.asPath, false) === getRawPath(trueHref, false);
 
   const handleGoTo = () => {
     if (props.onClick) props.onClick();
@@ -53,7 +52,7 @@ export default function Link(props: Props) {
 
     const transitionTitleMask = document.getElementById('page-transition-title');
     const transitionMask = document.getElementById('page-transition');
-    if (isTrulySameRoute || !transitionTitleMask || !transitionMask || !includes(getRawPath(trueHref), `${routes.work}/`)) {
+    if (isSameRoute || !transitionTitleMask || !transitionMask || !includes(getRawPath(trueHref), `${routes.work}/`)) {
       handleGoTo();
 
       return;

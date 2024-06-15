@@ -9,9 +9,15 @@ export default function PageTransition() {
   const path = getRawPath(router.asPath, false);
 
   useEffect(() => {
-    const transitionTitle = document.querySelector('meta[name="transition-title"]')?.getAttribute('content') || 'Lumistra';
-    setTitle(transitionTitle);
+    const timeoutId = setTimeout(() => {
+      const transitionTitle = document.querySelector('meta[name="transition-title"]')?.getAttribute('content') || 'Lumistra';
+      setTitle(transitionTitle);
+    }, 100);
 
+    return () => clearTimeout(timeoutId);
+  }, [path]);
+
+  useEffect(() => {
     const transitionTitleMask = document.getElementById('page-transition-title');
     const transitionMask = document.getElementById('page-transition');
     if (!transitionTitleMask || !transitionMask) return;
@@ -22,8 +28,7 @@ export default function PageTransition() {
     }, 1500);
 
     return () => clearTimeout(timeoutId);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [path]);
+  }, [title]);
 
   if (!includes(getRawPath(router.asPath), `${routes.work}/`)) return null;
 
