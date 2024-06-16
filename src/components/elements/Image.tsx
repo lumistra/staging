@@ -7,6 +7,8 @@ type Props = {
   alt: string,
   storyblokEditable?: any
   onClick?: () => void
+  onMouseEnter?: () => void,
+  onMouseLeave?: () => void,
 };
 
 export default function Image(props: Props) {
@@ -18,6 +20,8 @@ export default function Image(props: Props) {
       className={classNames('image-container', props.className)}
       {...props.storyblokEditable}
       onClick={props.onClick}
+      onMouseEnter={props.onMouseEnter}
+      onMouseLeave={props.onMouseLeave}
     >
       <NextImage src={src} alt={props.alt} fill />
     </div>

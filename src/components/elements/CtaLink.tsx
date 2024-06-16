@@ -10,6 +10,21 @@ type Props = {
   onClick?: () => void,
 };
 
+function CtaElement({ children }: { children: string }) {
+  return (
+    <>
+      <div className="cta-container initial-container">
+        {children}
+        <Arrow />
+      </div>
+      <div className="cta-container hover-container">
+        {children}
+        <Arrow />
+      </div>
+    </>
+  );
+}
+
 export default function CtaLink(props: Props) {
   if (props.onClick) {
     return (
@@ -17,8 +32,7 @@ export default function CtaLink(props: Props) {
         className={classNames('cta-link', props.className)}
         onClick={props.onClick}
       >
-        {props.children}
-        <Arrow />
+        <CtaElement>{props.children}</CtaElement>
       </div>
     );
   }
@@ -29,8 +43,7 @@ export default function CtaLink(props: Props) {
       href={props.href}
       locale={props.locale}
     >
-      {props.children}
-      <Arrow />
+      <CtaElement>{props.children}</CtaElement>
     </Link>
   );
 }

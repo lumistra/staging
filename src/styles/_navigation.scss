@@ -20,6 +20,7 @@
   }
 
   .navigation-container {
+    @include fadeDownMask;
     align-items: center;
     display: flex;
     height: 100%;
@@ -53,14 +54,39 @@
 
     .links-wrapper {
       align-items: center;
-      display: flex;
+      display: grid;
       gap: 20px;
+      grid-template-columns: repeat(4, 120px);
+
+      &.minimized {
+        grid-template-columns: auto;
+      }
+
+      @media screen and (max-width: $laptop) {
+        grid-template-columns: auto;
+      }
 
       .nav-link {
         @include blendMode;
         color: $white;
         font-size: 21px;
-        width: 120px;
+        position: relative;
+        width: fit-content;
+
+        &:after {
+          background-color: $white;
+          bottom: -5px;
+          content: "";
+          height: 1.5px;
+          left: 0;
+          position: absolute;
+          transition: 0.3s;
+          width: 0;
+        }
+
+        &:hover:after {
+          width: 100%;
+        }
 
         @media screen and (max-width: $laptop) {
           display: none;
@@ -77,7 +103,7 @@
       @include svgFill;
       cursor: pointer;
       height: 15px;
-      margin-left: 90px;
+      margin-left: auto;
       width: 30px;
     }
   }

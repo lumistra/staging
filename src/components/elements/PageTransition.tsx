@@ -1,17 +1,18 @@
 import { useEffect, useState } from 'react';
+import classNames from 'classnames';
 import { includes } from 'lodash';
 import { useRouter } from 'next/router';
 import { getRawPath, routes } from '@/utils';
 
 export default function PageTransition() {
   const router = useRouter();
-  const [title, setTitle] = useState('');
+  const [title, setTitle] = useState({ value: '', seed: Date.now() });
   const path = getRawPath(router.asPath, false);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       const transitionTitle = document.querySelector('meta[name="transition-title"]')?.getAttribute('content') || 'Lumistra';
-      setTitle(transitionTitle);
+      setTitle({ value: transitionTitle, seed: Date.now() });
     }, 100);
 
     return () => clearTimeout(timeoutId);
@@ -30,12 +31,15 @@ export default function PageTransition() {
     return () => clearTimeout(timeoutId);
   }, [title]);
 
-  if (!includes(getRawPath(router.asPath), `${routes.work}/`)) return null;
-
   return (
-    <div id="page-transition">
+    <div
+      id="page-transition"
+      className={classNames({
+        hide: !includes(getRawPath(router.asPath), `${routes.work}/`),
+      })}
+    >
       <div id="page-transition-title" className="animate-in">
-        <h1>{title}</h1>
+        <h1>{title.value}</h1>
       </div>
     </div>
   );

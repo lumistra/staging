@@ -33,6 +33,10 @@
       grid-template-columns: repeat(2, 1fr);
       width: 100%;
 
+      @media screen and (max-width: $desktop) {
+        grid-template-columns: auto;
+      }
+
       @media screen and (max-width: $mobile) {
         font-size: 16px;
       }
@@ -162,7 +166,15 @@
           padding-top: 30px;
 
           @media screen and (max-width: 1500px) {
-            grid-template-columns: 1fr;
+            grid-template-columns: auto;
+          }
+
+          @media screen and (max-width: $desktop) {
+            grid-template-columns: repeat(2, 1fr);
+          }
+
+          @media screen and (max-width: $tablet) {
+            grid-template-columns: auto;
           }
 
           @media screen and (max-width: $mobile) {

@@ -51,9 +51,35 @@
     }
   }
 
+  .featuredModal {
+    align-items: center;
+    background-color: $primary;
+    border-radius: 100%;
+    color: $white;
+    display: none;
+    height: 120px;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.2s ease-in-out;
+    width: 120px;
+    z-index: 1;
+
+    @media screen and (max-width: $mobile) {
+      display: none;
+    }
+
+    &.featuredModalActive {
+      display: flex;
+      opacity: 1;
+    }
+  }
+
   .featuredCover {
     aspect-ratio: 16 / 9;
     background-color: $gray;
+    cursor: none;
     width: 100%;
 
     @media screen and (max-width: $mobile) {

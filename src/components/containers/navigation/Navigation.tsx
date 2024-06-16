@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import classNames from 'classnames';
 import { map } from 'lodash';
 import Icon from '@/assets/svg/icon.svg';
 import Logo from '@/assets/svg/logo.svg';
@@ -40,7 +41,7 @@ export default function Navigation() {
   return (
     <>
       <nav className="navigation-wrapper">
-        <div className="navigation-container">
+        <div className="navigation-container animate-in">
           <Link href="/">
             {isTop && isDesktop ? (
               <Logo className="logo logo-text" />
@@ -48,7 +49,10 @@ export default function Navigation() {
               <Icon className="logo logo-icon" />
             )}
           </Link>
-          <div className="links-wrapper">
+          <div className={classNames('links-wrapper', {
+            minimized: !isTop,
+          })}
+          >
             {isTop && map(navigation, (link) => (
               <Link
                 key={link.value}

@@ -95,7 +95,6 @@
 
   .action {
     font-size: 72px;
-    gap: 30px;
 
     @media screen and (max-width: $desktop) {
       font-size: 52px;
@@ -138,7 +137,6 @@
 
   .actionSmall {
     font-size: 48px;
-    gap: 26px;
 
     @media screen and (max-width: 1600px) {
       margin-left: auto;

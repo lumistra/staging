@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import CtaLink from '@/components/elements/CtaLink';
 import Image from '@/components/elements/Image';
+import Link from '@/components/elements/Link';
 import useProjects from '@/content/projects';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/projects/featured.module.scss';
@@ -16,6 +17,8 @@ type Props = {
 export default function Featured(props: Props) {
   const { t } = useTranslations();
   const { projects } = useProjects();
+  const [modalShow, setModalShow] = useState(false);
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentProject = projects[currentIndex];
 
@@ -34,6 +37,22 @@ export default function Featured(props: Props) {
     };
   }, [projects]);
 
+  useEffect(() => {
+    const handleMove = ({ x, y }: MouseEvent) => {
+      setCursorPosition({ x, y });
+    };
+
+    window.addEventListener('mousemove', handleMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMove);
+    };
+  }, []);
+
+  const handleShowModal = (shouldShow: boolean) => {
+    setModalShow(shouldShow);
+  };
+
   return (
     <Section containerClassName={classNames(style.featuredWrapper, props.className, {
       [style.featuredTop]: props.textPosition === 'top',
@@ -49,11 +68,27 @@ export default function Featured(props: Props) {
           {getOrderNumber(currentIndex, true)}
         </span>
       </div>
-      <Image
-        className={style.featuredCover}
-        src={currentProject.cover}
-        alt={currentProject.title}
-      />
+      <div
+        className={classNames(style.featuredModal, {
+          [style.featuredModalActive]: modalShow,
+        })}
+        style={{
+          position: 'fixed',
+          left: cursorPosition.x,
+          top: cursorPosition.y,
+        }}
+      >
+        <span>{t('globals.see_more')}</span>
+      </div>
+      <Link href={routes.project(currentProject.slug)}>
+        <Image
+          className={style.featuredCover}
+          src={currentProject.cover}
+          alt={currentProject.title}
+          onMouseEnter={() => handleShowModal(true)}
+          onMouseLeave={() => handleShowModal(false)}
+        />
+      </Link>
       <CtaLink className={style.mobileCTA} href={routes.project(currentProject.slug)}>
         {t('globals.see_full_project')}
       </CtaLink>

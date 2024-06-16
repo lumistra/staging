@@ -109,12 +109,16 @@
     @media screen and (max-width: $mobile) {
       margin-bottom: 60px;
     }
+
+    .gridCover {
+      cursor: none !important;
+    }
   }
 
   .projectListItem {
     align-items: center;
     border-top: 1px solid $gray;
-    cursor: pointer;
+    cursor: none !important;
     display: flex;
     font-size: 48px;
     grid-column-end: 4;
@@ -153,23 +157,53 @@
   }
 
   .projectModal {
-    aspect-ratio: 1/1;
-    background-color: $dark;
+    align-items: center;
+    display: flex;
     height: 0;
+    justify-content: center;
     pointer-events: none;
     transform: translate(-50%, -50%);
-    transition:
-      height 0.2s ease-in-out,
-      width 0.2s ease-in-out;
+    transition: 0s;
     width: 0;
+    z-index: 1;
 
     @media screen and (max-width: $mobile) {
       display: none;
     }
 
-    &.projectModalActive {
-      height: 310px;
-      width: 310px;
+    &.projectModalGrid {
+      background-color: $primary;
+      border-radius: 100%;
+      color: $white;
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+
+      span {
+        display: none;
+      }
+
+      &.projectModalActive {
+        height: 120px;
+        opacity: 1;
+        width: 120px;
+
+        span {
+          display: block;
+        }
+      }
+    }
+
+    &.projectModalList {
+      aspect-ratio: 1/1;
+      background-color: $dark;
+      transition:
+        height 0.2s ease-in-out,
+        width 0.2s ease-in-out;
+
+      &.projectModalActive {
+        height: 310px;
+        width: 310px;
+      }
     }
 
     .projectModalCover {

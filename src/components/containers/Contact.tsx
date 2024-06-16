@@ -34,8 +34,14 @@ export default function Contact(props: Props) {
         href={`mailto:${email}`}
         target="_blank"
       >
-        {t('contact.cta.action')}
-        <Arrow />
+        <div className="cta-container initial-container">
+          {t('contact.cta.action')}
+          <Arrow />
+        </div>
+        <div className="cta-container hover-container">
+          {t('contact.cta.action')}
+          <Arrow />
+        </div>
       </a>
     </Section>
   );

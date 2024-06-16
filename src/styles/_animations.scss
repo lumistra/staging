@@ -1,4 +1,4 @@
-@mixin fadeUpMask($threshold: 0) {
+@mixin fadeUpMask() {
   > * {
     opacity: 0;
   }
@@ -15,16 +15,32 @@
           opacity: 0;
           transform: translateY(10vh);
         }
-        // @if $threshold > 0 {
-        //   /*
-        //   If you see an error here
-        //   This is valid SCSS, the error is produced by the IDE
-        //   */
-        //   #{$threshold}% {
-        //     opacity: 0;
-        //     transform: translateY(10vh);
-        //   }
-        // }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
+@mixin fadeDownMask() {
+  > * {
+    opacity: 0;
+  }
+
+  &.animate-in {
+    $name: fade-down-mask-#{unique-id()};
+    overflow: hidden;
+
+    > * {
+      animation: $name 1s forwards;
+
+      @keyframes #{$name} {
+        0% {
+          opacity: 0;
+          transform: translateY(-10vh);
+        }
         100% {
           opacity: 1;
           transform: translateY(0);
@@ -44,35 +60,25 @@
     overflow: hidden;
 
     > * {
-      animation: $name 1.5s ease-in-out forwards;
+      animation: $name 1.9s ease-in-out forwards;
 
       @keyframes #{$name} {
         0% {
           opacity: 0;
-          transform: translateY(10vh);
+          transform: translateY(100%);
         }
-        30% {
+        20% {
           opacity: 1;
           transform: translateY(0);
         }
-        60% {
+        80% {
           opacity: 1;
           transform: translateY(0);
         }
         100% {
           opacity: 0;
-          transform: translateY(-10vh);
+          transform: translateY(-100%);
         }
-        // @if $threshold > 0 {
-        //   /*
-        //   If you see an error here
-        //   This is valid SCSS, the error is produced by the IDE
-        //   */
-        //   #{$threshold}% {
-        //     opacity: 0;
-        //     transform: translateY(10vh);
-        //   }
-        // }
       }
     }
   }

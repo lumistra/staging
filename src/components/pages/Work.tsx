@@ -95,26 +95,29 @@ export default function Work() {
             </span>
           </div>
         </div>
-        {View.list === view && (
-          <div
-            className={classNames(style.projectModal, {
-              [style.projectModalActive]: modalShow,
-            })}
-            style={{
-              position: 'fixed',
-              left: cursorPosition.x,
-              top: cursorPosition.y,
-            }}
-          >
-            {modalProject && (
-              <Image
-                className={style.projectModalCover}
-                src={modalProject.cover}
-                alt={modalProject.title}
-              />
-            )}
-          </div>
-        )}
+        <div
+          className={classNames(style.projectModal, {
+            [style.projectModalList]: View.list === view,
+            [style.projectModalGrid]: View.grid === view,
+            [style.projectModalActive]: modalShow,
+          })}
+          style={{
+            position: 'fixed',
+            left: cursorPosition.x,
+            top: cursorPosition.y,
+          }}
+        >
+          {View.list === view && modalProject && (
+            <Image
+              className={style.projectModalCover}
+              src={modalProject.cover}
+              alt={modalProject.title}
+            />
+          )}
+          {View.grid === view && modalProject && (
+            <span>{t('globals.see_more')}</span>
+          )}
+        </div>
         {View.list === view && map(projects, (project) => (
           <Link
             key={project.slug}
@@ -136,9 +139,11 @@ export default function Work() {
             href={routes.project(project.slug)}
           >
             <Image
-              className={projectStyle.projectCover}
+              className={classNames(style.gridCover, projectStyle.projectCover)}
               src={project.cover}
               alt={project.title}
+              onMouseEnter={() => handleModalChange(project)}
+              onMouseLeave={() => handleModalChange(null)}
             />
             <span className={classNames(projectStyle.projectTitle, projectStyle.projectTitleMin)}>{project.title}</span>
           </Link>
