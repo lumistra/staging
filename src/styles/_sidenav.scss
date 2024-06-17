@@ -1,171 +1,226 @@
 .sidenav-wrapper {
-  background-color: $whitish;
+  background-color: #000;
   display: flex;
   height: 100%;
   left: 0;
+  opacity: 0;
   overflow-y: auto;
   position: fixed;
   top: 0;
+  transform: translateY(-100%);
+  transition:
+    opacity 0.5s ease-in-out,
+    transform 0s;
   width: 100%;
-  z-index: 999;
+  z-index: 998;
 
-  .sidenav-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    margin: 0 $desktopMinBleedWidth;
-    max-width: $maxContentWidth;
+  &.sidenav-closed {
+    opacity: 0;
+    transition-delay: 0s, 0.5s;
+
+    .sidenav-background-container {
+      transform: translateY(-100%);
+      transition-delay: 0s;
+    }
+  }
+
+  &.sidenav-open {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0s, 0s;
+
+    .sidenav-background-container {
+      transform: translateY(0);
+      transition-delay: 0.2s;
+    }
+  }
+
+  .sidenav-background-container {
+    background-color: $whitish;
+    transform: translateY(-100%);
+    transition: transform 0.5s;
     width: 100%;
+    z-index: 1;
 
-    @media screen and (max-width: 1200px) {
-      margin: 0 $laptopMinBleedWidth;
-    }
-
-    @media screen and (max-width: $tablet) {
-      margin: 0 $mobileMinBleedWidth;
-    }
-
-    .top-container {
-      align-items: center;
+    .sidenav-container {
       display: flex;
-      height: 110px;
-      justify-content: flex-end;
-      min-height: 110px;
-      width: 100%;
+      flex-direction: column;
+      height: 100%;
+      margin: 0 $desktopMinBleedWidth;
+      max-width: $maxContentWidth;
 
-      .close-icon {
-        cursor: pointer;
-        height: 30px;
-        width: 30px;
+      @media screen and (max-width: 1200px) {
+        margin: 0 $laptopMinBleedWidth;
       }
-    }
 
-    .split-wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      margin: auto 0;
-      padding-bottom: 110px;
+      @media screen and (max-width: $tablet) {
+        margin: 0 $mobileMinBleedWidth;
+      }
 
-      @media screen and (max-width: $laptop) {
+      .top-container {
+        align-items: center;
         display: flex;
-        flex-direction: column-reverse;
-        gap: 160px;
-        margin: 0;
-      }
+        height: 110px;
+        justify-content: flex-end;
+        min-height: 110px;
+        width: 100%;
 
-      @media screen and (max-width: $mobile) {
-        gap: 60px;
-      }
-
-      .label {
-        font-size: 21px;
-
-        @media screen and (max-width: $mobile) {
-          font-size: 16px;
+        .close-icon {
+          cursor: pointer;
+          height: 30px;
+          width: 30px;
         }
       }
 
-      .content-wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        margin-right: 40px;
+      .split-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: auto 0;
+        padding-bottom: 110px;
 
         @media screen and (max-width: $laptop) {
+          display: flex;
+          flex-direction: column-reverse;
           gap: 160px;
-          margin-right: 0;
+          margin: 0;
         }
 
         @media screen and (max-width: $mobile) {
           gap: 60px;
         }
 
-        .locale-wrapper {
+        .label {
+          font-size: 21px;
+
+          @media screen and (max-width: $mobile) {
+            font-size: 16px;
+          }
+        }
+
+        .content-wrapper {
           display: flex;
           flex-direction: column;
-          gap: 20px;
+          justify-content: space-between;
+          margin-right: 40px;
 
-          .locales {
-            align-items: center;
-            color: $gray;
+          @media screen and (max-width: $laptop) {
+            gap: 160px;
+            margin-right: 0;
+          }
+
+          @media screen and (max-width: $mobile) {
+            gap: 60px;
+          }
+
+          .locale-wrapper {
             display: flex;
-            font-size: 48px;
-            gap: 10px;
+            flex-direction: column;
+            gap: 20px;
 
-            @media screen and (max-width: $desktop) {
-              font-size: 36px;
-            }
+            .locales {
+              align-items: center;
+              color: $gray;
+              display: flex;
+              font-size: 48px;
+              gap: 10px;
 
-            @media screen and (max-width: $mobile) {
-              font-size: 24px;
-            }
+              @media screen and (max-width: $desktop) {
+                font-size: 36px;
+              }
 
-            .splitter {
-              color: $black;
-            }
+              @media screen and (max-width: $mobile) {
+                font-size: 24px;
+              }
 
-            .locale {
-              transition: 0.3s;
-
-              &.active,
-              &:hover {
+              .splitter {
                 color: $black;
+              }
+
+              .locale {
+                transition: 0.3s;
+
+                &.active,
+                &:hover {
+                  color: $black;
+                }
               }
             }
           }
-        }
 
-        .socials {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 30px 50px;
-          margin-bottom: 100px;
+          .cta-wrapper {
+            .label {
+              position: relative;
+              width: fit-content;
 
-          @media screen and (max-width: $laptop) {
-            margin-bottom: 30px;
-          }
-        }
-      }
+              &:after {
+                background-color: $black;
+                bottom: -5px;
+                content: "";
+                height: 1.5px;
+                left: 0;
+                position: absolute;
+                transition: 0.3s;
+                width: 0;
+              }
 
-      .routes-wrapper {
-        display: flex;
-        flex-direction: column;
-        font-size: 72px;
-        gap: 30px;
-
-        @media screen and (max-width: $desktop) {
-          font-size: 52px;
-        }
-
-        @media screen and (max-width: $laptop) {
-          font-size: 36px;
-        }
-
-        @media screen and (max-width: $mobile) {
-          font-size: 24px;
-          gap: 20px;
-        }
-
-        .nav-link {
-          position: relative;
-
-          &::after {
-            border-bottom: 1px solid $gray;
-            bottom: -15px;
-            content: "";
-            left: 0;
-            position: absolute;
-            transition: 0.3s;
-            width: 0;
-
-            @media screen and (max-width: $mobile) {
-              bottom: -10px;
+              &:hover:after {
+                width: 100%;
+              }
             }
           }
 
-          &.active::after,
-          &:hover::after {
-            width: 100%;
+          .socials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px 50px;
+            margin-bottom: 100px;
+
+            @media screen and (max-width: $laptop) {
+              margin-bottom: 30px;
+            }
+          }
+        }
+
+        .routes-wrapper {
+          display: flex;
+          flex-direction: column;
+          font-size: 72px;
+          gap: 30px;
+
+          @media screen and (max-width: $desktop) {
+            font-size: 52px;
+          }
+
+          @media screen and (max-width: $laptop) {
+            font-size: 36px;
+          }
+
+          @media screen and (max-width: $mobile) {
+            font-size: 24px;
+            gap: 20px;
+          }
+
+          .nav-link {
+            position: relative;
+
+            &::after {
+              border-bottom: 1px solid $gray;
+              bottom: -15px;
+              content: "";
+              left: 0;
+              position: absolute;
+              transition: 0.3s;
+              width: 0;
+
+              @media screen and (max-width: $mobile) {
+                bottom: -10px;
+              }
+            }
+
+            &.active::after,
+            &:hover::after {
+              width: 100%;
+            }
           }
         }
       }

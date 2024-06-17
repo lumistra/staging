@@ -1,5 +1,5 @@
+import classNames from 'classnames';
 import { map } from 'lodash';
-import Close from '@/assets/svg/close.svg';
 import Link from '@/components/elements/Link';
 import LocaleSwitcher from '@/components/elements/LocaleSwitcher';
 import { email, socials } from '@/content';
@@ -23,51 +23,53 @@ export default function Sidenav(props: Props) {
     { label: t('routes.articles'), value: routes.articles },
   ];
 
-  if (!props.isOpen) return null;
-
   return (
-    <div className="sidenav-wrapper">
-      <div className="sidenav-container">
-        <div className="top-container">
-          <Close className="close-icon" onClick={props.onClose} />
-        </div>
-        <div className="split-wrapper">
-          <div className="content-wrapper">
-            <LocaleSwitcher onClick={props.onClose} />
-            <div className="cta-wrapper">
-              <div className="socials">
-                {map(socials, (link) => (
-                  <a
-                    className="label"
-                    key={link.value}
-                    href={link.value}
-                    target="_blank"
-                  >
-                    {link.label}
-                  </a>
-                ))}
+    <div className={classNames('sidenav-wrapper', {
+      'sidenav-closed': !props.isOpen,
+      'sidenav-open': props.isOpen,
+    })}
+    >
+      <div className="sidenav-background-container">
+        <div className="sidenav-container">
+          <div className="top-container" />
+          <div className="split-wrapper">
+            <div className="content-wrapper">
+              <LocaleSwitcher onClick={props.onClose} />
+              <div className="cta-wrapper">
+                <div className="socials">
+                  {map(socials, (link) => (
+                    <a
+                      className="label"
+                      key={link.value}
+                      href={link.value}
+                      target="_blank"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+                <a
+                  className="label"
+                  href={`mailto:${email}`}
+                  target="_blank"
+                >
+                  {email}
+                </a>
               </div>
-              <a
-                className="label"
-                href={`mailto:${email}`}
-                target="_blank"
-              >
-                {email}
-              </a>
             </div>
-          </div>
-          <div className="routes-wrapper">
-            {map(sitemap, (route) => (
-              <Link
-                className="nav-link"
-                key={route.value}
-                href={route.value}
-                onClick={props.onClose}
-                addActiveFlag
-              >
-                {route.label}
-              </Link>
-            ))}
+            <div className="routes-wrapper">
+              {map(sitemap, (route) => (
+                <Link
+                  className="nav-link"
+                  key={route.value}
+                  href={route.value}
+                  onClick={props.onClose}
+                  addActiveFlag
+                >
+                  {route.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>

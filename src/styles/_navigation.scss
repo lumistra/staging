@@ -13,12 +13,6 @@
   width: 100%;
   z-index: 999;
 
-  @mixin svgFill {
-    > * {
-      fill: $white;
-    }
-  }
-
   .navigation-container {
     @include fadeDownMask;
     align-items: center;
@@ -37,9 +31,19 @@
       margin: 0 $mobileMinBleedWidth;
     }
 
+    .nav-visible {
+      opacity: 1;
+      transition: 0.3s;
+      transition-delay: 0.4s;
+    }
+
+    .nav-hidden {
+      opacity: 0;
+      transition: 0s;
+    }
+
     .logo {
       @include blendMode;
-      @include svgFill;
 
       &.logo-text {
         height: 30px;
@@ -49,6 +53,10 @@
       &.logo-icon {
         height: 30px;
         width: 30px;
+      }
+
+      path {
+        fill: $white !important;
       }
     }
 
@@ -100,11 +108,72 @@
 
     .menu-icon {
       @include blendMode;
-      @include svgFill;
+      align-items: center;
       cursor: pointer;
-      height: 15px;
+      display: flex;
+      flex-direction: column;
+      height: 30px;
+      justify-content: center;
       margin-left: auto;
       width: 30px;
+
+      .menu-line-wrapper {
+        display: grid;
+        gap: 5px;
+        transform-origin: center;
+        width: 100%;
+
+        &.menu-line-1 {
+          grid-template-columns: auto 5px;
+        }
+
+        .menu-line {
+          background-color: $white;
+          height: 2.5px;
+          width: 100%;
+
+          &.menu-line-short {
+            width: 5px;
+          }
+        }
+      }
+
+      &.icon-open {
+        gap: 8px;
+        transition: 0.3s;
+        transition-delay: 0.25s;
+
+        .menu-line-wrapper {
+          transition: 0.3s;
+          transition-delay: 0s;
+
+          &.menu-line-1,
+          &.menu-line-2 {
+            rotate: 0;
+            transform: translateY(0);
+          }
+        }
+      }
+
+      &.icon-close {
+        gap: 0px;
+        transition: 0.3s;
+
+        .menu-line-wrapper {
+          transition: 0.5s;
+          transition-delay: 0.25s;
+
+          &.menu-line-1 {
+            rotate: -45deg;
+            transform: translateY(50%);
+          }
+
+          &.menu-line-2 {
+            rotate: 45deg;
+            transform: translateY(-50%);
+          }
+        }
+      }
     }
   }
 }

@@ -3,8 +3,8 @@ import classNames from 'classnames';
 import { map } from 'lodash';
 import Icon from '@/assets/svg/icon.svg';
 import Logo from '@/assets/svg/logo.svg';
-import Menu from '@/assets/svg/menu.svg';
 import Link from '@/components/elements/Link';
+import Menu from '@/components/elements/Menu';
 import { useScreenSize } from '@/hooks/useScreenSize';
 import useTranslations from '@/hooks/useTranslations';
 import { routes } from '@/utils';
@@ -44,9 +44,17 @@ export default function Navigation() {
         <div className="navigation-container animate-in">
           <Link href="/">
             {isTop && isDesktop ? (
-              <Logo className="logo logo-text" />
+              <Logo className={classNames('logo logo-text', {
+                'nav-visible': !isSidenavOpen,
+                'nav-hidden': isSidenavOpen,
+              })}
+              />
             ) : (
-              <Icon className="logo logo-icon" />
+              <Icon className={classNames('logo logo-icon', {
+                'nav-visible': !isSidenavOpen,
+                'nav-hidden': isSidenavOpen,
+              })}
+              />
             )}
           </Link>
           <div className={classNames('links-wrapper', {
@@ -57,12 +65,21 @@ export default function Navigation() {
               <Link
                 key={link.value}
                 href={link.value}
-                className="nav-link"
+                className={classNames('nav-link', {
+                  'nav-visible': !isSidenavOpen,
+                  'nav-hidden': isSidenavOpen,
+                })}
               >
                 {link.label}
               </Link>
             ))}
-            <Menu className="menu-icon" onClick={handleSideMenuToggle} />
+            <Menu
+              className={classNames({
+                'icon-open': !isSidenavOpen,
+                'icon-close': isSidenavOpen,
+              })}
+              onClick={handleSideMenuToggle}
+            />
           </div>
         </div>
       </nav>
