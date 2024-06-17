@@ -41,8 +41,13 @@
 
   .heroCover {
     aspect-ratio: 16 / 9;
-    cursor: pointer;
+    pointer-events: none;
     width: 100%;
+
+    @media screen and (max-width: $tablet) {
+      cursor: pointer;
+      pointer-events: all;
+    }
 
     img {
       object-fit: cover;

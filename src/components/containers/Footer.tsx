@@ -12,7 +12,7 @@ import ToTop from '../elements/ToTop';
 
 export default function Footer() {
   const { t } = useTranslations();
-  const { isTablet } = useScreenSize();
+  const { isLaptop } = useScreenSize();
 
   const sitemap = [
     { label: t('routes.home'), value: routes.home },
@@ -27,7 +27,7 @@ export default function Footer() {
     <footer>
       <div className="content-container">
         <div className="identity-wrapper">
-          {isTablet ? (
+          {isLaptop ? (
             <Logotype className="logo" />
           ) : (
             <>

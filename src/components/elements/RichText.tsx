@@ -3,7 +3,7 @@ import type { ISbRichtext } from '@storyblok/react';
 
 type Props = {
   className?: string
-  children: ISbRichtext
+  children: ISbRichtext | string
 };
 
 export default function RichText(props: Props) {

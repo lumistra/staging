@@ -57,11 +57,13 @@
 
   .imageColumn {
     aspect-ratio: 14 / 15;
-    cursor: pointer;
+    pointer-events: none;
     width: 100%;
 
     @media screen and (max-width: $tablet) {
       aspect-ratio: 16 / 9;
+      cursor: pointer;
+      pointer-events: all;
     }
 
     img {
@@ -73,8 +75,13 @@
 
 .singleImage {
   aspect-ratio: 16 / 9;
-  cursor: pointer;
+  pointer-events: none;
   width: 100%;
+
+  @media screen and (max-width: $tablet) {
+    cursor: pointer;
+    pointer-events: all;
+  }
 
   img {
     object-fit: cover;
@@ -93,8 +100,13 @@
 
   .doubleImage {
     aspect-ratio: 14 / 15;
-    cursor: pointer;
+    pointer-events: none;
     width: 100%;
+
+    @media screen and (max-width: $tablet) {
+      cursor: pointer;
+      pointer-events: all;
+    }
 
     img {
       object-fit: cover;
@@ -114,8 +126,13 @@
 
   .tripleImage {
     aspect-ratio: 9 / 16;
-    cursor: pointer;
+    pointer-events: none;
     width: 100%;
+
+    @media screen and (max-width: $tablet) {
+      cursor: pointer;
+      pointer-events: all;
+    }
 
     img {
       object-fit: cover;

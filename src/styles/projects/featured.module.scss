@@ -66,13 +66,13 @@
     width: 120px;
     z-index: 1;
 
-    @media screen and (max-width: $mobile) {
-      display: none;
-    }
-
     &.featuredModalActive {
       display: flex;
       opacity: 1;
+
+      @media screen and (max-width: $tablet) {
+        display: none;
+      }
     }
   }
 

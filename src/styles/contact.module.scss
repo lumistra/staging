@@ -105,8 +105,17 @@
       color: $white;
       font-size: 36px;
       gap: 10px;
+      height: auto !important;
       padding: 40px $mobileMinBleedWidth;
       width: 100%;
+
+      &:hover div {
+        transform: translateY(0) !important;
+      }
+
+      div:last-of-type {
+        display: none;
+      }
     }
 
     @media screen and (max-width: $mobile) {
@@ -150,8 +159,17 @@
       background-color: $primary;
       color: $white;
       gap: 10px;
+      height: auto !important;
       padding: 40px $mobileMinBleedWidth;
       width: 100%;
+
+      &:hover div {
+        transform: translateY(0) !important;
+      }
+
+      div:last-of-type {
+        display: none;
+      }
     }
 
     @media screen and (max-width: $mobile) {

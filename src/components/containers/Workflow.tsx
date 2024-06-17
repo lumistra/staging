@@ -53,9 +53,12 @@ function Workflow() {
                 })}
                 />
               </div>
-              {isExpanded && (
-                <p>{t(`workflow.steps.${step}.paragraph`)}</p>
-              )}
+              <p className={classNames(style.columnParagraph, {
+                [style.columnParagraphExpanded]: isExpanded,
+              })}
+              >
+                {t(`workflow.steps.${step}.paragraph`)}
+              </p>
             </div>
           </div>
         );

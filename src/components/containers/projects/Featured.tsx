@@ -30,7 +30,7 @@ export default function Featured(props: Props) {
 
         return newIndex;
       });
-    }, 10000);
+    }, 4000);
 
     return () => {
       clearInterval(intervalId);

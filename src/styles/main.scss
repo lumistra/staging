@@ -36,14 +36,14 @@ body {
   font-family: $regular, Arial, sans-serif;
   font-size: 21px;
   font-weight: 400;
-  height: 100%;
+  height: auto;
 
   @media screen and (max-width: $mobile) {
     font-size: 16px;
   }
 
   #__next {
-    height: 100%;
+    height: auto;
   }
 
   .max-content-wrapper {
@@ -79,6 +79,18 @@ body {
 
     &:hover .cta-container {
       transform: translateY(-100%);
+    }
+
+    @media screen and (max-width: $tablet) {
+      height: auto;
+
+      &:hover .cta-container {
+        transform: translateY(0);
+      }
+
+      .cta-container:last-of-type {
+        display: none;
+      }
     }
 
     @media screen and (max-width: $mobile) {
@@ -220,7 +232,7 @@ body {
 
     #page-transition-title {
       @include fadeUpDownMask;
-      font-size: 144px;
+      font-size: 100px;
       font-weight: 500;
       margin-top: -20vh;
       padding: 0 $desktopMinBleedWidth;
@@ -237,7 +249,12 @@ body {
         font-size: 72px;
       }
 
+      @media screen and (max-width: $tablet) {
+        font-size: 36px;
+      }
+
       @media screen and (max-width: $mobile) {
+        font-size: 24px;
         padding: 0 $mobileMinBleedWidth;
       }
     }

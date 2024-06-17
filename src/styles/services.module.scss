@@ -245,10 +245,10 @@
     margin-top: 0;
 
     .ctaAction {
-      background-color: $white;
-      color: $black;
+      background-color: $white !important;
+      color: $black !important;
 
-      svg * {
+      svg path {
         stroke: $primary !important;
       }
     }
