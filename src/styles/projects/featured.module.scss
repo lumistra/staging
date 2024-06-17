@@ -82,6 +82,10 @@
     cursor: none;
     width: 100%;
 
+    @media screen and (max-width: $tablet) {
+      cursor: inherit;
+    }
+
     @media screen and (max-width: $mobile) {
       aspect-ratio: 1 / 1;
       height: auto;

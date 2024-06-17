@@ -112,6 +112,10 @@
 
     .gridCover {
       cursor: none !important;
+
+      @media screen and (max-width: $tablet) {
+        cursor: inherit !important;
+      }
     }
   }
 
@@ -128,6 +132,10 @@
 
     @media screen and (max-width: $desktop) {
       font-size: 36px;
+    }
+
+    @media screen and (max-width: $tablet) {
+      cursor: inherit !important;
     }
 
     @media screen and (max-width: $mobile) {
