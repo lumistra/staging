@@ -95,28 +95,40 @@
   }
 
   .aboutUsLineWrapper {
-    align-items: center;
-    display: flex;
-    gap: 20px;
+    animation: scroll 1.2s ease-in-out infinite;
+    background: linear-gradient(to right, $primary, $primary);
+    background-color: $gray;
+    background-size: 20%;
+    background-repeat: repeat-y;
+    background-position: -25% 0;
+    border: none;
+    height: 2px;
     margin-bottom: -10px;
+    position: relative;
     width: 100%;
 
-    hr {
-      background-color: $black;
-      border: none;
-      height: 2px;
-
-      @media screen and (max-width: $mobile) {
-        height: 1px;
+    @keyframes scroll {
+      50% {
+        background-size: 80%;
       }
-
-      &.aboutUsLineLong {
-        width: 85%;
+      100% {
+        background-position: 125% 0;
       }
+    }
 
-      &.aboutUsLineShort {
-        width: 10%;
-      }
+    @media screen and (max-width: $mobile) {
+      height: 1px;
+    }
+
+    &::after {
+      background-color: $white;
+      content: "";
+      height: 200%;
+      position: absolute;
+      right: 10%;
+      top: 0;
+      transform: translateY(-25%);
+      width: 20px;
     }
   }
 

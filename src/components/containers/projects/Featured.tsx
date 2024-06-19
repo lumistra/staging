@@ -4,6 +4,7 @@ import CtaLink from '@/components/elements/CtaLink';
 import Image from '@/components/elements/Image';
 import Link from '@/components/elements/Link';
 import useProjects from '@/content/projects';
+import { AnimationType, useAnimations } from '@/hooks/useAnimations';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/projects/featured.module.scss';
 import { getOrderNumber, routes } from '@/utils';
@@ -49,6 +50,19 @@ export default function Featured(props: Props) {
     };
   }, []);
 
+  useAnimations({
+    featuredText: {
+      animation: AnimationType.fadeUp,
+      query: '.featured-text',
+      offset: 200,
+    },
+    featuredCover: {
+      animation: AnimationType.fadeIn,
+      query: '.featured-cover',
+      offset: 200,
+    },
+  });
+
   const handleShowModal = (shouldShow: boolean) => {
     setModalShow(shouldShow);
   };
@@ -59,7 +73,7 @@ export default function Featured(props: Props) {
       [style.featuredBottom]: props.textPosition === 'bottom',
     })}
     >
-      <div className={style.featuredTextWrapper}>
+      <div className={classNames('featured-text', style.featuredTextWrapper)}>
         <span>{currentProject.title}</span>
         <CtaLink className={style.desktopCTA} href={routes.project(currentProject.slug)}>
           {t('globals.see_full_project')}
@@ -80,7 +94,7 @@ export default function Featured(props: Props) {
       >
         <span>{t('globals.see_more')}</span>
       </div>
-      <Link href={routes.project(currentProject.slug)}>
+      <Link className="featured-cover" href={routes.project(currentProject.slug)}>
         <Image
           className={style.featuredCover}
           src={currentProject.cover}

@@ -1,3 +1,27 @@
+@mixin fadeIn() {
+  > * {
+    opacity: 0;
+  }
+
+  &.animate-in {
+    $name: fade-in-#{unique-id()};
+    overflow: hidden;
+
+    > * {
+      animation: $name 2s forwards;
+
+      @keyframes #{$name} {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
 @mixin fadeUpMask() {
   > * {
     opacity: 0;
@@ -82,4 +106,20 @@
       }
     }
   }
+}
+
+.animation-fade-in {
+  @include fadeIn;
+}
+
+.animation-fade-up {
+  @include fadeUpMask;
+}
+
+.animation-fade-down {
+  @include fadeUpMask;
+}
+
+.about-us-cta > * {
+  animation-delay: 0.5s !important;
 }
