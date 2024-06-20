@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { map } from 'lodash';
 import Head from 'next/head';
 import useArticles from '@/content/articles';
@@ -7,10 +8,29 @@ import Latest from '../containers/articles/Latest';
 import WantToPublish from '../containers/articles/WantToPublish';
 import Section from '../containers/Section';
 import Article from '../elements/Article';
+import SeeMore from '../elements/SeeMore';
 
 export default function News() {
   const { t } = useTranslations();
   const { articles } = useArticles();
+  const [modalShow, setModalShow] = useState(false);
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMove = ({ x, y }: MouseEvent) => {
+      setCursorPosition({ x, y });
+    };
+
+    window.addEventListener('mousemove', handleMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMove);
+    };
+  }, []);
+
+  const handleShowModal = (shouldShow: boolean) => {
+    setModalShow(shouldShow);
+  };
 
   return (
     <main>
@@ -23,8 +43,15 @@ export default function News() {
         <h2 className={style.articlesTitle}>
           {t('news.sub_title')}
         </h2>
+        <SeeMore cursorPosition={cursorPosition} show={modalShow} />
         {map(articles, (article) => (
-          <Article key={article.slug} article={article} minHeight={120} />
+          <Article
+            key={article.slug}
+            article={article}
+            minHeight={120}
+            onMouseEnter={() => handleShowModal(true)}
+            onMouseLeave={() => handleShowModal(false)}
+          />
         ))}
       </Section>
       <WantToPublish className={style.spacingTop} altBackground />

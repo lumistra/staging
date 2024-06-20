@@ -20,17 +20,17 @@ export default function Home() {
     heroTitle: {
       animation: AnimationType.fadeUp,
       query: '.hero-title',
-      offset: 200,
+      offset: 0,
     },
     aboutUsParagraph: {
       animation: AnimationType.fadeUp,
       query: '.about-us-paragraph',
-      offset: 200,
+      offset: 0,
     },
     aboutUsCTA: {
       animation: AnimationType.fadeUp,
       query: '.about-us-cta',
-      offset: 200,
+      offset: 0,
     },
   });
 
@@ -56,9 +56,11 @@ export default function Home() {
           <TextMask identifier="about-us-paragraph">
             <p>{t('home.about_us.paragraph')}</p>
           </TextMask>
-          <CtaLink className="about-us-cta" href={routes.about}>
-            {t('home.about_us.link')}
-          </CtaLink>
+          <TextMask identifier="about-us-cta">
+            <CtaLink href={routes.about}>
+              {t('home.about_us.link')}
+            </CtaLink>
+          </TextMask>
         </div>
       </Section>
       <Selected />

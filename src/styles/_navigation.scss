@@ -129,7 +129,7 @@
 
         .menu-line {
           background-color: $white;
-          height: 2.5px;
+          height: 3px;
           width: 100%;
 
           &.menu-line-short {
@@ -149,7 +149,7 @@
 
           &.menu-line-1,
           &.menu-line-2 {
-            rotate: 0;
+            rotate: 0deg;
             transform: translateY(0);
           }
         }

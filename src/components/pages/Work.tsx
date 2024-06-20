@@ -12,6 +12,7 @@ import Contact from '../containers/Contact';
 import Section from '../containers/Section';
 import Image from '../elements/Image';
 import Link from '../elements/Link';
+import SeeMore from '../elements/SeeMore';
 import type { Project } from '@/types/projects';
 
 enum View {
@@ -95,29 +96,30 @@ export default function Work() {
             </span>
           </div>
         </div>
-        <div
-          className={classNames(style.projectModal, {
-            [style.projectModalList]: View.list === view,
-            [style.projectModalGrid]: View.grid === view,
-            [style.projectModalActive]: modalShow,
-          })}
-          style={{
-            position: 'fixed',
-            left: cursorPosition.x,
-            top: cursorPosition.y,
-          }}
-        >
-          {View.list === view && modalProject && (
-            <Image
-              className={style.projectModalCover}
-              src={modalProject.cover}
-              alt={modalProject.title}
-            />
-          )}
-          {View.grid === view && modalProject && (
-            <span>{t('globals.see_more')}</span>
-          )}
-        </div>
+        {View.list === view && (
+          <div
+            className={classNames(style.projectModal, {
+              [style.projectModalList]: View.list === view,
+              [style.projectModalActive]: modalShow,
+            })}
+            style={{
+              position: 'fixed',
+              left: cursorPosition.x,
+              top: cursorPosition.y,
+            }}
+          >
+            {modalProject && (
+              <Image
+                className={style.projectModalCover}
+                src={modalProject.cover}
+                alt={modalProject.title}
+              />
+            )}
+          </div>
+        )}
+        {View.grid === view && modalProject && (
+          <SeeMore cursorPosition={cursorPosition} show={modalShow} />
+        )}
         {View.list === view && map(projects, (project) => (
           <Link
             key={project.slug}

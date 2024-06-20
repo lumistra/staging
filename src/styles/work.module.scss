@@ -179,28 +179,6 @@
       display: none;
     }
 
-    &.projectModalGrid {
-      background-color: $primary;
-      border-radius: 100%;
-      color: $white;
-      opacity: 0;
-      transition: opacity 0.2s ease-in-out;
-
-      span {
-        display: none;
-      }
-
-      &.projectModalActive {
-        height: 120px;
-        opacity: 1;
-        width: 120px;
-
-        span {
-          display: block;
-        }
-      }
-    }
-
     &.projectModalList {
       aspect-ratio: 1/1;
       background-color: $dark;

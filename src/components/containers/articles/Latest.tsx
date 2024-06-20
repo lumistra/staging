@@ -1,7 +1,9 @@
+import { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { map } from 'lodash';
 import Article from '@/components/elements/Article';
 import CtaLink from '@/components/elements/CtaLink';
+import SeeMore from '@/components/elements/SeeMore';
 import useArticles from '@/content/articles';
 import { useScreenSize } from '@/hooks/useScreenSize';
 import useTranslations from '@/hooks/useTranslations';
@@ -19,6 +21,24 @@ export default function Latest(props: Props) {
   const { t } = useTranslations();
   const { latest } = useArticles();
   const { isTablet } = useScreenSize();
+  const [modalShow, setModalShow] = useState(false);
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMove = ({ x, y }: MouseEvent) => {
+      setCursorPosition({ x, y });
+    };
+
+    window.addEventListener('mousemove', handleMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMove);
+    };
+  }, []);
+
+  const handleShowModal = (shouldShow: boolean) => {
+    setModalShow(shouldShow);
+  };
 
   return (
     <Section containerClassName={classNames(style.latestWrapper, props.className)}>
@@ -37,9 +57,16 @@ export default function Latest(props: Props) {
           )}
         </div>
       </div>
+      <SeeMore cursorPosition={cursorPosition} show={modalShow} />
       <div className={style.articlesWrapper}>
         {map(latest, (article) => (
-          <Article key={article.slug} article={article} minHeight={isTablet ? 100 : props.minHeight} />
+          <Article
+            key={article.slug}
+            article={article}
+            minHeight={isTablet ? 100 : props.minHeight}
+            onMouseEnter={() => handleShowModal(true)}
+            onMouseLeave={() => handleShowModal(false)}
+          />
         ))}
         {!props.hideCTA && (
           <CtaLink className={style.latestMobileCTA} href={routes.articles}>

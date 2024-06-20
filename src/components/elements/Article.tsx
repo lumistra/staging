@@ -8,6 +8,8 @@ import type { Article as ArticleType } from '@/types/articles';
 type Props = {
   article: ArticleType
   minHeight?: number
+  onMouseEnter?: () => void,
+  onMouseLeave?: () => void,
 };
 
 export default function Article(props: Props) {
@@ -21,6 +23,8 @@ export default function Article(props: Props) {
         className={style.articleCover}
         src={props.article.cover}
         alt={props.article.title}
+        onMouseEnter={props.onMouseEnter}
+        onMouseLeave={props.onMouseLeave}
       />
       <span className={style.articleDate}>
         {props.article.publishedAt}

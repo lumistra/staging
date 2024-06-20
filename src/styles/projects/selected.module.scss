@@ -103,6 +103,7 @@
 }
 
 .projectContainer {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   gap: 26px;
@@ -113,8 +114,13 @@
 
   .projectCover {
     aspect-ratio: 1/1;
+    cursor: none;
     background-color: $gray;
     width: 100%;
+
+    @media screen and (max-width: $tablet) {
+      cursor: initial;
+    }
 
     img {
       object-fit: cover;

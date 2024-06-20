@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import CtaLink from '@/components/elements/CtaLink';
 import Image from '@/components/elements/Image';
 import Link from '@/components/elements/Link';
+import SeeMore from '@/components/elements/SeeMore';
 import useProjects from '@/content/projects';
 import { AnimationType, useAnimations } from '@/hooks/useAnimations';
 import useTranslations from '@/hooks/useTranslations';
@@ -54,12 +55,12 @@ export default function Featured(props: Props) {
     featuredText: {
       animation: AnimationType.fadeUp,
       query: '.featured-text',
-      offset: 200,
+      offset: 0,
     },
     featuredCover: {
       animation: AnimationType.fadeIn,
       query: '.featured-cover',
-      offset: 200,
+      offset: 0,
     },
   });
 
@@ -82,18 +83,7 @@ export default function Featured(props: Props) {
           {getOrderNumber(currentIndex, true)}
         </span>
       </div>
-      <div
-        className={classNames(style.featuredModal, {
-          [style.featuredModalActive]: modalShow,
-        })}
-        style={{
-          position: 'fixed',
-          left: cursorPosition.x,
-          top: cursorPosition.y,
-        }}
-      >
-        <span>{t('globals.see_more')}</span>
-      </div>
+      <SeeMore cursorPosition={cursorPosition} show={modalShow} />
       <Link className="featured-cover" href={routes.project(currentProject.slug)}>
         <Image
           className={style.featuredCover}
