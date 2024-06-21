@@ -11,12 +11,13 @@ import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/projects/selected.module.scss';
 import { routes } from '@/utils';
 import Section from '../Section';
+import type { CursorPosition } from '@/components/elements/SeeMore';
 
 export default function Selected() {
   const { t } = useTranslations();
   const { selected } = useProjects();
   const [modalShow, setModalShow] = useState(false);
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const [cursorPosition, setCursorPosition] = useState<CursorPosition>(null);
 
   useScrollAnimations({
     selectedWrapper: {

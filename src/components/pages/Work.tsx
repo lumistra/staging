@@ -4,6 +4,7 @@ import { map } from 'lodash';
 import Head from 'next/head';
 import Arrow from '@/assets/svg/arrow.svg';
 import useProjects from '@/content/projects';
+import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import useTranslations from '@/hooks/useTranslations';
 import projectStyle from '@/styles/projects/selected.module.scss';
 import style from '@/styles/work.module.scss';
@@ -13,6 +14,8 @@ import Section from '../containers/Section';
 import Image from '../elements/Image';
 import Link from '../elements/Link';
 import SeeMore from '../elements/SeeMore';
+import TextMask from '../elements/TextMask';
+import type { CursorPosition } from '../elements/SeeMore';
 import type { Project } from '@/types/projects';
 
 enum View {
@@ -26,8 +29,16 @@ export default function Work() {
   const [view, setView] = useState(View.grid);
   const [modalShow, setModalShow] = useState(false);
   const [modalProject, setModalProject] = useState<Project | null>();
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const [cursorPosition, setCursorPosition] = useState<CursorPosition>(null);
   const timeoutID = useRef<any>();
+
+  useScrollAnimations({
+    heroTitle: {
+      animation: AnimationType.fadeUp,
+      query: '.hero-animation-title',
+      offset: 0,
+    },
+  });
 
   useEffect(() => {
     const handleMove = ({ x, y }: MouseEvent) => {
@@ -68,7 +79,9 @@ export default function Work() {
         <meta name="transition-title" content={t('routes.work')} />
       </Head>
       <Section containerClassName={style.heroWrapper}>
-        <h1>{t('work.hero')}</h1>
+        <TextMask identifier="hero-animation-title">
+          <h1>{t('work.hero')}</h1>
+        </TextMask>
       </Section>
       <Section containerClassName={classNames(style.gridWrapper, {
         [style.noGap]: View.list === view,
@@ -104,8 +117,10 @@ export default function Work() {
             })}
             style={{
               position: 'fixed',
-              left: cursorPosition.x,
-              top: cursorPosition.y,
+              ...(cursorPosition && {
+                left: cursorPosition.x,
+                top: cursorPosition.y,
+              }),
             }}
           >
             {modalProject && (

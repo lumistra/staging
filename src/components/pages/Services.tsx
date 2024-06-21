@@ -16,6 +16,7 @@ import TextMask from '../elements/TextMask';
 export default function Services() {
   const { t } = useTranslations();
   const { groups } = useServices();
+
   useScrollAnimations({
     heroTitle: {
       animation: AnimationType.fadeUp,

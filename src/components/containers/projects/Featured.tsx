@@ -10,6 +10,7 @@ import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/projects/featured.module.scss';
 import { getOrderNumber, routes } from '@/utils';
 import Section from '../Section';
+import type { CursorPosition } from '@/components/elements/SeeMore';
 
 type Props = {
   className?: string
@@ -20,7 +21,7 @@ export default function Featured(props: Props) {
   const { t } = useTranslations();
   const { projects } = useProjects();
   const [modalShow, setModalShow] = useState(false);
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const [cursorPosition, setCursorPosition] = useState<CursorPosition>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentProject = projects[currentIndex];
 

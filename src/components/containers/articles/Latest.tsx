@@ -11,6 +11,7 @@ import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/articles/latest.module.scss';
 import { routes } from '@/utils';
 import Section from '../Section';
+import type { CursorPosition } from '@/components/elements/SeeMore';
 
 type Props = {
   className?: string
@@ -23,7 +24,7 @@ export default function Latest(props: Props) {
   const { latest } = useArticles();
   const { isTablet } = useScreenSize();
   const [modalShow, setModalShow] = useState(false);
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const [cursorPosition, setCursorPosition] = useState<CursorPosition>(null);
 
   useScrollAnimations({
     latestWrapper: {

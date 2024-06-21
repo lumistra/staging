@@ -122,3 +122,90 @@
 .about-us-cta > * {
   animation-delay: 0.5s !important;
 }
+
+.workflow-animation-container {
+  .workflow-index-mask,
+  .workflow-label-mask {
+    > * {
+      display: inline-block;
+      opacity: 0;
+    }
+  }
+
+  &.animate-in {
+    .workflow-index-mask,
+    .workflow-label-mask {
+      $name: fade-down-mask-#{unique-id()};
+      overflow: hidden;
+
+      > * {
+        animation: $name 1s forwards;
+
+        @keyframes #{$name} {
+          0% {
+            opacity: 0;
+            transform: translateY(-10vh);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  }
+}
+
+.pitch-animation-wrapper {
+  .pitch-index-mask,
+  .pitch-index-title,
+  .pitch-index-paragraph {
+    > * {
+      display: inline-block;
+      opacity: 0;
+    }
+  }
+
+  &.animate-in {
+    .pitch-index-mask,
+    .pitch-index-title {
+      $name: fade-down-mask-#{unique-id()};
+      overflow: hidden;
+
+      > * {
+        animation: $name 1s forwards;
+
+        @keyframes #{$name} {
+          0% {
+            opacity: 0;
+            transform: translateY(-10vh);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+
+    .pitch-index-paragraph {
+      $name: fade-up-mask-#{unique-id()};
+      overflow: hidden;
+
+      > * {
+        animation: $name 1s forwards;
+
+        @keyframes #{$name} {
+          0% {
+            opacity: 0;
+            transform: translateY(10vh);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  }
+}
