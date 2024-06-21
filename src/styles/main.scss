@@ -46,6 +46,12 @@ body {
     height: auto;
   }
 
+  .page-wrapper {
+    background-color: $white;
+    position: relative;
+    z-index: 2;
+  }
+
   .max-content-wrapper {
     display: flex;
     justify-content: center;

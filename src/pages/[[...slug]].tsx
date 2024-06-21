@@ -20,12 +20,14 @@ type Props = {
 export default function Page(props: Props) {
   return (
     <>
-      <Navigation />
-      {props.story ? (
-        <StoryblokStory story={props.story} />
-      ) : (
-        <Main slug={props.slug} />
-      )}
+      <div className="page-wrapper">
+        <Navigation />
+        {props.story ? (
+          <StoryblokStory story={props.story} />
+        ) : (
+          <Main slug={props.slug} />
+        )}
+      </div>
       <Footer />
       <PageTransition />
     </>

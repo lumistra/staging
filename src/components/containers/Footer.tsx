@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import { map } from 'lodash';
 import Icon from '@/assets/svg/icon.svg';
 import Logo from '@/assets/svg/logo.svg';
@@ -13,6 +14,22 @@ import ToTop from '../elements/ToTop';
 export default function Footer() {
   const { t } = useTranslations();
   const { isLaptop } = useScreenSize();
+  const [bottomOffset, setBottomOffset] = useState(0);
+  const footerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!footerRef.current) return;
+
+    const handleFooterSizeChange = () => {
+      if (!footerRef.current) return;
+      const requiredOffset = footerRef.current.clientHeight - window.innerHeight;
+
+      setBottomOffset(requiredOffset < 0 ? 0 : -requiredOffset);
+    };
+
+    handleFooterSizeChange();
+    new ResizeObserver(handleFooterSizeChange).observe(footerRef.current);
+  }, []);
 
   const sitemap = [
     { label: t('routes.home'), value: routes.home },
@@ -24,7 +41,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer>
+    <footer ref={footerRef} style={{ bottom: bottomOffset }}>
       <div className="content-container">
         <div className="identity-wrapper">
           {isLaptop ? (

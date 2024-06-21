@@ -1,9 +1,10 @@
 footer {
   background-color: $black;
+  bottom: 0;
   color: $white;
   display: flex;
   justify-content: center;
-  position: relative;
+  position: sticky;
   width: 100%;
   z-index: 1;
 
