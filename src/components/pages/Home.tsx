@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import Arrow from '@/assets/svg/arrow.svg';
 import Latest from '@/components/containers/articles/Latest';
 import Contact from '@/components/containers/Contact';
+import Process from '@/components/containers/Process';
 import Featured from '@/components/containers/projects/Featured';
 import Selected from '@/components/containers/projects/Selected';
 import Section from '@/components/containers/Section';
@@ -9,14 +9,14 @@ import Selection from '@/components/containers/services/Selection';
 import Workflow from '@/components/containers/Workflow';
 import CtaLink from '@/components/elements/CtaLink';
 import TextMask from '@/components/elements/TextMask';
-import { AnimationType, useAnimations } from '@/hooks/useAnimations';
+import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/home.module.scss';
 import { routes } from '@/utils';
 
 export default function Home() {
   const { t } = useTranslations();
-  useAnimations({
+  useScrollAnimations({
     heroTitle: {
       animation: AnimationType.fadeUp,
       query: '.hero-title',
@@ -25,7 +25,7 @@ export default function Home() {
     aboutUsParagraph: {
       animation: AnimationType.fadeUp,
       query: '.about-us-paragraph',
-      offset: 0,
+      offset: 50,
     },
     aboutUsCTA: {
       animation: AnimationType.fadeUp,
@@ -64,17 +64,7 @@ export default function Home() {
         </div>
       </Section>
       <Selected />
-      <Section
-        className={style.processBackgroundWrapper}
-        containerClassName={style.processWrapper}
-      >
-        <h3>{t('home.process.title')}</h3>
-        <p>{t('home.process.paragraph')}</p>
-        <span>
-          {t('home.process.cta')}
-          <Arrow />
-        </span>
-      </Section>
+      <Process />
       <Selection />
       <Workflow />
       <Latest />

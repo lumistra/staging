@@ -1,3 +1,4 @@
+import { forwardRef } from 'react';
 import classNames from 'classnames';
 
 type Props = {
@@ -9,17 +10,18 @@ type Props = {
   storyblokEditable?: any
 };
 
-export default function Section(props: Props) {
-  return (
-    <section
-      id={props.id}
-      className={classNames('max-content-wrapper', props.className)}
-      {...props.storyblokEditable}
-    >
-      {props.parentChildren}
-      <div className={classNames('max-content-container', props.containerClassName)}>
-        {props.children}
-      </div>
-    </section>
-  );
-}
+const Section = forwardRef((props: Props, ref?: any) => (
+  <section
+    ref={ref}
+    id={props.id}
+    className={classNames('max-content-wrapper', props.className)}
+    {...props.storyblokEditable}
+  >
+    {props.parentChildren}
+    <div className={classNames('max-content-container', props.containerClassName)}>
+      {props.children}
+    </div>
+  </section>
+));
+
+export default Section;

@@ -5,7 +5,6 @@
 
   &.animate-in {
     $name: fade-in-#{unique-id()};
-    overflow: hidden;
 
     > * {
       animation: $name 2s forwards;
@@ -117,7 +116,7 @@
 }
 
 .animation-fade-down {
-  @include fadeUpMask;
+  @include fadeDownMask;
 }
 
 .about-us-cta > * {

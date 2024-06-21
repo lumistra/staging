@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import Arrow from '@/assets/svg/arrow.svg';
 import { email } from '@/content';
+import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/contact.module.scss';
 import Section from './Section';
@@ -14,10 +15,17 @@ type Props = {
 
 export default function Contact(props: Props) {
   const { t } = useTranslations();
+  useScrollAnimations({
+    contactWrapper: {
+      animation: AnimationType.fadeDown,
+      query: '.contact-animation-wrapper',
+      offset: 100,
+    },
+  });
 
   return (
     <Section containerClassName={classNames(style.contactCTAWrapper, props.className)}>
-      <div className={style.contentWrapper}>
+      <div className={classNames('contact-animation-wrapper', style.contentWrapper)}>
         <span className={classNames({
           [style.title]: !props.isSmall,
           [style.titleSmall]: props.isSmall,

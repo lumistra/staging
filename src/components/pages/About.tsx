@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Section from '@/components/containers/Section';
 import { useScreenSize } from '@/hooks/useScreenSize';
+import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/about.module.scss';
 import { routes } from '@/utils';
@@ -10,10 +11,18 @@ import Featured from '../containers/projects/Featured';
 import Pitch from '../containers/services/Pitch';
 import Workflow from '../containers/Workflow';
 import CtaLink from '../elements/CtaLink';
+import TextMask from '../elements/TextMask';
 
 export default function About() {
   const { t } = useTranslations();
   const { isTablet } = useScreenSize();
+  useScrollAnimations({
+    heroTitle: {
+      animation: AnimationType.fadeUp,
+      query: '.hero-animation-title',
+      offset: 0,
+    },
+  });
 
   return (
     <main>
@@ -33,7 +42,9 @@ export default function About() {
           </>
         )}
       >
-        <h1>{t('about.hero')}</h1>
+        <TextMask identifier="hero-animation-title" className={style.heroTitle}>
+          <h1>{t('about.hero')}</h1>
+        </TextMask>
       </Section>
       <Section containerClassName={style.aboutWrapper}>
         <h3>{t('about.bio.title')}</h3>

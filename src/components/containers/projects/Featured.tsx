@@ -5,7 +5,7 @@ import Image from '@/components/elements/Image';
 import Link from '@/components/elements/Link';
 import SeeMore from '@/components/elements/SeeMore';
 import useProjects from '@/content/projects';
-import { AnimationType, useAnimations } from '@/hooks/useAnimations';
+import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/projects/featured.module.scss';
 import { getOrderNumber, routes } from '@/utils';
@@ -51,7 +51,7 @@ export default function Featured(props: Props) {
     };
   }, []);
 
-  useAnimations({
+  useScrollAnimations({
     featuredText: {
       animation: AnimationType.fadeUp,
       query: '.featured-text',

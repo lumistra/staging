@@ -6,6 +6,7 @@ import CtaLink from '@/components/elements/CtaLink';
 import SeeMore from '@/components/elements/SeeMore';
 import useArticles from '@/content/articles';
 import { useScreenSize } from '@/hooks/useScreenSize';
+import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/articles/latest.module.scss';
 import { routes } from '@/utils';
@@ -23,6 +24,14 @@ export default function Latest(props: Props) {
   const { isTablet } = useScreenSize();
   const [modalShow, setModalShow] = useState(false);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+
+  useScrollAnimations({
+    latestWrapper: {
+      animation: AnimationType.fadeDown,
+      query: '.latest-animation-wrapper',
+      offset: 100,
+    },
+  });
 
   useEffect(() => {
     const handleMove = ({ x, y }: MouseEvent) => {
@@ -42,7 +51,7 @@ export default function Latest(props: Props) {
 
   return (
     <Section containerClassName={classNames(style.latestWrapper, props.className)}>
-      <div className={style.latestTextWrapper}>
+      <div className={classNames('latest-animation-wrapper', style.latestTextWrapper)}>
         <span className={style.latestTitle}>
           {t('news.latest.section')}
         </span>

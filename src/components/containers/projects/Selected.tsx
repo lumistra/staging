@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
+import classNames from 'classnames';
 import { map } from 'lodash';
 import CtaLink from '@/components/elements/CtaLink';
 import Image from '@/components/elements/Image';
 import Link from '@/components/elements/Link';
 import SeeMore from '@/components/elements/SeeMore';
 import useProjects from '@/content/projects';
+import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/projects/selected.module.scss';
 import { routes } from '@/utils';
@@ -15,6 +17,14 @@ export default function Selected() {
   const { selected } = useProjects();
   const [modalShow, setModalShow] = useState(false);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+
+  useScrollAnimations({
+    selectedWrapper: {
+      animation: AnimationType.fadeDown,
+      query: '.selected-animation-wrapper',
+      offset: 100,
+    },
+  });
 
   useEffect(() => {
     const handleMove = ({ x, y }: MouseEvent) => {
@@ -34,7 +44,7 @@ export default function Selected() {
 
   return (
     <Section containerClassName={style.selectedWrapper}>
-      <div className={style.selectedTextWrapper}>
+      <div className={classNames('selected-animation-wrapper', style.selectedTextWrapper)}>
         <span className={style.selectedTitle}>
           {t('projects.selected.section')}
         </span>

@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Arrow from '@/assets/svg/arrow.svg';
 import Section from '@/components/containers/Section';
 import useServices from '@/content/services';
+import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/services.module.scss';
 import { routes } from '@/utils';
@@ -10,10 +11,23 @@ import ContactSection from '../containers/Contact';
 import Pitch from '../containers/services/Pitch';
 import Selection from '../containers/services/Selection';
 import CtaLink from '../elements/CtaLink';
+import TextMask from '../elements/TextMask';
 
 export default function Services() {
   const { t } = useTranslations();
   const { groups } = useServices();
+  useScrollAnimations({
+    heroTitle: {
+      animation: AnimationType.fadeUp,
+      query: '.hero-animation-title',
+      offset: 0,
+    },
+    heroCTA: {
+      animation: AnimationType.fadeUp,
+      query: '.hero-cta-animation',
+      offset: 0,
+    },
+  });
 
   return (
     <main>
@@ -22,11 +36,15 @@ export default function Services() {
         <meta name="transition-title" content={t('routes.services')} />
       </Head>
       <Section containerClassName={style.heroWrapper}>
-        <h1>{t('services.hero')}</h1>
-        <span>
-          {t('home.process.cta')}
-          <Arrow />
-        </span>
+        <TextMask identifier="hero-animation-title">
+          <h1>{t('services.hero')}</h1>
+        </TextMask>
+        <TextMask identifier="hero-cta-animation">
+          <span>
+            {t('home.process.cta')}
+            <Arrow />
+          </span>
+        </TextMask>
       </Section>
       <Pitch />
       <Section containerClassName={style.servicesWrapper}>

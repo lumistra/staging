@@ -21,6 +21,7 @@ export default function Navigation() {
       setIsTop(window.scrollY <= 0);
     };
 
+    setIsTop(window.scrollY <= 0);
     window.addEventListener('scroll', handleToggleNavigationVersion);
 
     return () => {

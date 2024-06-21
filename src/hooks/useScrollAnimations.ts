@@ -32,13 +32,11 @@ export const elementInView = (win: Window, element: AnimationItem): boolean => {
   return inRange(win.scrollY + el + element.offset, 0, win.scrollY + win.innerHeight);
 };
 
-export const useAnimations = (classList: ClassList) => {
+const useScrollAnimations = (classList: ClassList, callback?: () => void) => {
   const animationList = useRef(classList);
   const firstLoad = useRef(true);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-
     const list: AnimationsList = reduce(animationList.current, (res: AnimationsList, val, key) => {
       const elements = document.querySelectorAll(val.query);
       const isMultiple = elements.length > 1;
@@ -65,6 +63,7 @@ export const useAnimations = (classList: ClassList) => {
     }, {});
 
     const handleAnimation = () => {
+      if (callback) callback();
       if (isEmpty(list)) return;
 
       forEach(list, (val) => {
@@ -84,5 +83,9 @@ export const useAnimations = (classList: ClassList) => {
     return () => {
       window.removeEventListener('scroll', handleAnimation);
     };
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
+
+export default useScrollAnimations;
