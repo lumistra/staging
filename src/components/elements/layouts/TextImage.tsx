@@ -23,7 +23,7 @@ export default function TextImage(props: Props) {
         [style.alignRight]: props.blok.align === 'right',
       })}
       >
-        {props.blok.text || ''}
+        {props.blok.text}
       </RichText>
       <Lightbox image={props.blok.image}>
         <Image

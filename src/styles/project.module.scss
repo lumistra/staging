@@ -42,6 +42,10 @@
       color: $gray;
       font-size: 48px;
 
+      @media screen and (max-width: $desktop) {
+        font-size: 36px;
+      }
+
       @media screen and (max-width: $tablet) {
         font-size: 21px;
       }

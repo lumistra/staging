@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import classNames from 'classnames';
 import Head from 'next/head';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/privacy-policy.module.scss';
@@ -16,7 +17,7 @@ export default function PrivacyPolicy() {
           <title>{t('privacy-policy.title')}</title>
           <meta name="transition-title" content={t('globals.privacy_policy')} />
         </Head>
-        <section className={style.privacyWrapper}>
+        <section className={classNames('rich-text-wrapper', style.privacyWrapper)}>
           <h1>Privacy Policy for Lumistra</h1>
           <p>At Lumistra, accessible from {host}, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Lumistra and how we use it.</p>
           <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>

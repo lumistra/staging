@@ -1,0 +1,125 @@
+.rich-text-wrapper {
+  :first-child {
+    margin-top: 0;
+  }
+
+  h1 {
+    font-size: 36px;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 24px;
+    }
+  }
+
+  h2 {
+    font-size: 28px;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 21px;
+    }
+  }
+
+  h3 {
+    font-size: 24px;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 18px;
+    }
+  }
+
+  h4 {
+    font-size: 21px;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 18px;
+    }
+  }
+
+  h5 {
+    font-size: 18px;
+    margin: 6px 0;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 14px;
+    }
+  }
+
+  h6 {
+    font-size: 16px;
+    margin: 6px 0;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 12px;
+    }
+  }
+
+  a,
+  p,
+  li,
+  blockquote {
+    font-size: 21px;
+    margin: 6px 0;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 16px;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 20px 0 10px 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  b,
+  strong {
+    font-weight: 500;
+  }
+
+  i {
+    font-style: italic;
+  }
+
+  s {
+    text-decoration: line-through;
+  }
+
+  u {
+    text-decoration: underline;
+  }
+
+  ul {
+    list-style: initial;
+    margin: 20px 0;
+  }
+
+  ol {
+    list-style: upper-roman;
+    margin: 20px 0;
+  }
+
+  li::marker {
+    color: $gray;
+  }
+
+  blockquote {
+    position: relative;
+    padding-left: 10px;
+
+    &::before {
+      background-color: $gray;
+      border-radius: 5px;
+      content: "";
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 5px;
+    }
+  }
+}
