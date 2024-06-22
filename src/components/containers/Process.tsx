@@ -49,10 +49,9 @@ function Process() {
         {map(words, (word, index) => (
           <span
             key={index}
-            style={{
-              transition: '0.2s',
-              opacity: index > wordIndex ? 0.5 : 1,
-            }}
+            className={classNames(style.processWord, {
+              [style.active]: index <= wordIndex,
+            })}
           >
             {word}{' '}
           </span>

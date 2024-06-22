@@ -81,6 +81,15 @@
     font-weight: 500;
   }
 
+  a {
+    opacity: 1;
+    transition: 0.3s;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
   i {
     font-style: italic;
   }

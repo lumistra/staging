@@ -108,7 +108,8 @@
     }
 
     .recommendedCTA {
-      gap: 25px;
+      cursor: pointer;
+      gap: 0 25px;
       font-size: 48px;
       white-space: nowrap;
 
@@ -141,7 +142,13 @@
 
   .recommendedCover {
     aspect-ratio: 16 / 4.5;
+    opacity: 1;
+    transition: 0.5s ease-in-out;
     width: 100%;
+
+    &:hover {
+      opacity: 0.8;
+    }
 
     img {
       object-fit: cover;
