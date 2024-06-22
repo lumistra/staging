@@ -1,17 +1,18 @@
 import Head from 'next/head';
+import Latest from '@/components/containers/articles/Latest';
+import ContactSection from '@/components/containers/Contact';
+import Featured from '@/components/containers/projects/Featured';
 import Section from '@/components/containers/Section';
+import Pitch from '@/components/containers/services/Pitch';
+import Workflow from '@/components/containers/Workflow';
+import CtaLink from '@/components/elements/CtaLink';
+import Gradient from '@/components/elements/Gradient';
+import TextMask from '@/components/elements/TextMask';
 import { useScreenSize } from '@/hooks/useScreenSize';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/about.module.scss';
 import { routes } from '@/utils';
-import Latest from '../containers/articles/Latest';
-import ContactSection from '../containers/Contact';
-import Featured from '../containers/projects/Featured';
-import Pitch from '../containers/services/Pitch';
-import Workflow from '../containers/Workflow';
-import CtaLink from '../elements/CtaLink';
-import TextMask from '../elements/TextMask';
 
 export default function About() {
   const { t } = useTranslations();
@@ -33,14 +34,15 @@ export default function About() {
       <Section
         className={style.heroBackground}
         containerClassName={style.heroWrapper}
-        parentChildren={(
-          <>
-            <div className={style.gradientPoint} />
-            <div className={style.gradientPoint} />
-            <div className={style.gradientPoint} />
-            <div className={style.gradientPoint} />
-          </>
-        )}
+        parentChildren={(<Gradient className={style.gradient} />)}
+        // parentChildren={(
+        //   <>
+        //     <div className={style.gradientPoint} />
+        //     <div className={style.gradientPoint} />
+        //     <div className={style.gradientPoint} />
+        //     <div className={style.gradientPoint} />
+        //   </>
+        // )}
       >
         <TextMask identifier="hero-animation-title" className={style.heroTitle}>
           <h1>{t('about.hero')}</h1>

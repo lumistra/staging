@@ -11,7 +11,7 @@ import TextMask from '../elements/TextMask';
 
 function Workflow() {
   const { t } = useTranslations();
-  const [expanded, setExpanded] = useState(0);
+  const [expanded, setExpanded] = useState(-1);
 
   useScrollAnimations({
     workflowRows: {
@@ -21,7 +21,7 @@ function Workflow() {
   });
 
   const handleToggleExpand = (index: number) => {
-    setExpanded(index);
+    setExpanded((preIndex) => (preIndex === index ? -1 : index));
   };
 
   const steps = [

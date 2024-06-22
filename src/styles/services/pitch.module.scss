@@ -15,8 +15,7 @@
     padding: 20px 0;
 
     @media screen and (max-width: $tablet) {
-      display: flex;
-      flex-direction: row-reverse;
+      grid-template-columns: auto max-content;
       padding: 10px 0;
     }
 
@@ -28,6 +27,11 @@
       color: $gray;
       font-size: 21px;
       font-family: $mono;
+
+      @media screen and (max-width: $tablet) {
+        grid-column: 2;
+        grid-row: 1;
+      }
 
       @media screen and (max-width: $mobile) {
         font-size: 24px;
@@ -43,6 +47,8 @@
 
       @media screen and (max-width: $tablet) {
         gap: 10px;
+        grid-column: 1;
+        grid-row: 1;
         min-height: 200px;
       }
 

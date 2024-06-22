@@ -35,17 +35,15 @@ export default function Pitch() {
     <Section className="pitch-animation-wrapper" containerClassName={style.pitchWrapper}>
       {map(pitch, (item, index) => (
         <div key={index} className={style.pitchItem}>
-          <TextMask identifier="pitch-index-mask">
-            <span className={style.pitchNumber}>
-              {getOrderNumber(index, true)}
-            </span>
+          <TextMask identifier="pitch-index-mask" className={style.pitchNumber}>
+            <span>{getOrderNumber(index, true)}</span>
           </TextMask>
           <div className={style.pitchContent}>
-            <TextMask identifier="pitch-index-title">
-              <span className={style.pitchTitle}>{item.title}</span>
+            <TextMask identifier="pitch-index-title" className={style.pitchTitle}>
+              <span>{item.title}</span>
             </TextMask>
-            <TextMask identifier="pitch-index-paragraph">
-              <p className={style.pitchParagraph}>{item.paragraph}</p>
+            <TextMask identifier="pitch-index-paragraph" className={style.pitchParagraph}>
+              <p>{item.paragraph}</p>
             </TextMask>
           </div>
         </div>
