@@ -1,10 +1,11 @@
 import classNames from 'classnames';
+import { includes, some } from 'lodash';
 import NextImage from 'next/image';
 
 type Props = {
   className?: string,
   src: string,
-  alt: string,
+  alt: string | null,
   storyblokEditable?: any
   onClick?: () => void
   onMouseEnter?: () => void,
@@ -14,6 +15,7 @@ type Props = {
 export default function Image(props: Props) {
   const basePath = (process.env.basePath || '');
   const src = `${basePath}${props.src}`;
+  const isVideo = some(['webm', 'mp4', 'ogg'], (format) => includes(src, `.${format}`));
 
   return (
     <div
@@ -23,7 +25,11 @@ export default function Image(props: Props) {
       onMouseEnter={props.onMouseEnter}
       onMouseLeave={props.onMouseLeave}
     >
-      <NextImage src={src} alt={props.alt} fill />
+      {isVideo ? (
+        <video src={src} muted autoPlay playsInline loop />
+      ) : (
+        <NextImage src={src} alt={props.alt || ''} fill />
+      )}
     </div>
   );
 }

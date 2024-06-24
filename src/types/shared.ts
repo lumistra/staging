@@ -5,7 +5,7 @@ export type Image = {
 
 export type CMSImage = {
   id: number,
-  alt: string,
+  alt: string | null,
   filename: string,
   copyright: string,
   meta_data: {
