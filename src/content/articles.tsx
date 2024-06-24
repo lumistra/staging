@@ -1,26 +1,18 @@
 import { useState } from 'react';
 import { orderBy, take } from 'lodash';
-import useTranslations from '@/hooks/useTranslations';
 import type { Articles } from '@/types/articles';
 
-export const getArticles = (t: Function): Articles => [
+export const getArticles = (): Articles => [
   {
-    slug: 'design-for-digital-age',
-    title: t('articles.article_1.title'),
-    cover: '/assets/svg/placeholder.svg',
+    slug: 'decathlon-rebranded',
+    title: 'In Case You Missed It: Decathlon rebranded',
+    cover: process.env.mockApi ? '/assets/svg/placeholder.svg' : 'https://a.storyblok.com/f/286844/3000x2000/ab033ea4e0/dkt_cs_23_ready_to_play_3000x2000.jpg',
     author: 'Lumistra',
-    publishedAt: '01.01.2024.',
+    publishedAt: '24.06.2024.',
   },
   {
     slug: 'shakespeare',
-    title: t('articles.article_2.title'),
-    cover: '/assets/svg/placeholder.svg',
-    author: 'Lumistra',
-    publishedAt: '01.01.2024.',
-  },
-  {
-    slug: 'matt-willey',
-    title: t('articles.article_3.title'),
+    title: 'Shakespeare in the Parks 2024',
     cover: '/assets/svg/placeholder.svg',
     author: 'Lumistra',
     publishedAt: '01.01.2024.',
@@ -28,8 +20,7 @@ export const getArticles = (t: Function): Articles => [
 ];
 
 function useArticles() {
-  const { t } = useTranslations();
-  const [articles] = useState(getArticles(t));
+  const [articles] = useState(getArticles());
 
   const latest = take(orderBy(articles, (article) => new Date(article.publishedAt).getTime(), 'desc'), 3);
 

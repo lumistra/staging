@@ -55,15 +55,15 @@ export const cmsLinks = {
     'b5e3f8bb-888f-488f-93a3-cbc929d87c47': {
       id: 508449068,
       uuid: 'b5e3f8bb-888f-488f-93a3-cbc929d87c47',
-      slug: 'en/articles/design-for-digital-age',
-      path: 'articles/design-for-digital-age',
+      slug: 'en/articles/decathlon-rebranded',
+      path: 'articles/decathlon-rebranded',
       parent_id: 508449028,
       name: 'Design for digital age',
       is_folder: false,
       published: true,
       is_startpage: false,
       position: 0,
-      real_path: '/articles/design-for-digital-age',
+      real_path: '/articles/decathlon-rebranded',
     },
     'ad699ce7-358e-451e-a6b1-847a2db02229': {
       id: 508449028,
