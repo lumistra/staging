@@ -195,8 +195,8 @@
       }
 
       .processWord {
-        color: $darker;
-        transition: 0.2s;
+        color: $dark;
+        transition: 0.8s ease-in-out;
 
         &.active {
           color: $white;
@@ -221,7 +221,7 @@
       color: $gray;
       display: flex;
       font-size: 21px;
-      gap: 10px;
+      gap: 1ch;
       margin-top: 240px;
 
       @media screen and (max-width: $mobile) {

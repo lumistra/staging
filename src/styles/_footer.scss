@@ -8,6 +8,10 @@ footer {
   width: 100%;
   z-index: 1;
 
+  @media screen and (max-width: $tablet) {
+    position: relative;
+  }
+
   .content-container {
     margin-left: $desktopMinBleedWidth;
     margin-right: $desktopMinBleedWidth;
@@ -114,6 +118,15 @@ footer {
         @media screen and (max-width: $mobile) {
           gap: 10px;
           grid-template-columns: 1fr;
+        }
+
+        .footer-link {
+          color: $white;
+          transition: 0.3s;
+
+          &:hover {
+            color: $dark;
+          }
         }
       }
 

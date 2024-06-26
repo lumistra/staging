@@ -124,6 +124,14 @@
 }
 
 .workflow-animation-container {
+  .workflow-animation-row {
+    &::before,
+    &::after {
+      width: 0;
+    }
+  }
+
+  .workflow-animation-icon,
   .workflow-index-mask,
   .workflow-label-mask {
     > * {
@@ -133,6 +141,40 @@
   }
 
   &.animate-in {
+    .workflow-animation-row {
+      &::before,
+      &:last-of-type::after {
+        $name: fill-left-to-right#{unique-id()};
+        animation: $name 1s forwards;
+
+        @keyframes #{$name} {
+          0% {
+            width: 0;
+          }
+          100% {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .workflow-animation-icon {
+      $name: fade-in-#{unique-id()};
+
+      > * {
+        animation: $name 2s forwards;
+
+        @keyframes #{$name} {
+          0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
     .workflow-index-mask,
     .workflow-label-mask {
       $name: fade-down-mask-#{unique-id()};

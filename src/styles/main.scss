@@ -47,7 +47,7 @@ body {
     height: auto;
   }
 
-  .page-wrapper {
+  #page-wrapper {
     background-color: $white;
     position: relative;
     z-index: 2;
@@ -107,7 +107,7 @@ body {
     .cta-container {
       align-items: center;
       display: flex;
-      gap: 0.5em;
+      gap: 0 1ch;
       transition: transform 0.3s;
     }
 
@@ -126,7 +126,7 @@ body {
     align-items: center;
     cursor: pointer;
     display: flex;
-    gap: 10px;
+    gap: 1ch;
   }
 
   .see-more-modal {

@@ -53,16 +53,12 @@
   "about": {
     "title": "Lumistra - About us",
     "hero": "From spark to light.",
+    "projects": "Featured",
     "bio": {
       "title": "About us",
       "paragraph_1": "Lumistra is an idea. A flare of guidance that leads and motivates. We aim to offer the best possible solutions to those who want to amplify their idea.",
       "paragraph_2": "At Lumistra, we are committed to excel in just that - transforming the initial spark into your next big thing."
     },
-    "projects": "Featured"
-  },
-  "services": {
-    "title": "Lumistra - Services",
-    "hero": "Overview of what we do\nand how can we do it for you.",
     "pitch": {
       "step_1": {
         "title": "Timeless approach",
@@ -75,6 +71,24 @@
       "step_3": {
         "title": "Make a difference",
         "paragraph": "Not every idea is big, but we believe each one can make a difference. Our aim has always been to help you get it out there with a little help from our side."
+      }
+    }
+  },
+  "services": {
+    "title": "Lumistra - Services",
+    "hero": "Overview of what we do\nand how can we do it for you.",
+    "pitch": {
+      "step_1": {
+        "title": "Branding",
+        "paragraph": "Our primary focus is crafting memorable and unique visual identities for passionate brands. We understand the importance of how a future identity represents a company, so we dedicate our time and effort to delivering the best solutions that are both enduring and adaptable to evolving needs."
+      },
+      "step_2": {
+        "title": "Packaging",
+        "paragraph": "In a market brimming with outstanding packaging, your product can stand out too. Through our meticulous attention to detail and rigorous testing, we ensure that our packaging design solutions provide the shelf presence your product deserves."
+      },
+      "step_3": {
+        "title": "Marketing",
+        "paragraph": "To ensure your brand is ready for launch, we address all your marketing needs. If you prefer to create your own content, we offer user-friendly templates, allowing you to focus on what matters most while we handle the rest."
       }
     },
     "bio": {

@@ -13,7 +13,7 @@ import ToTop from '../elements/ToTop';
 
 export default function Footer() {
   const { t } = useTranslations();
-  const { isLaptop } = useScreenSize();
+  const { isTablet, isLaptop } = useScreenSize();
   const [bottomOffset, setBottomOffset] = useState(0);
   const footerRef = useRef<HTMLElement>(null);
 
@@ -41,7 +41,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer ref={footerRef} style={{ bottom: bottomOffset }}>
+    <footer ref={footerRef} style={isTablet ? {} : { bottom: bottomOffset }}>
       <div className="content-container">
         <div className="identity-wrapper">
           {isLaptop ? (

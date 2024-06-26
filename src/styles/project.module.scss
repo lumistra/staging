@@ -144,7 +144,6 @@
 
     .recommendedCTA {
       cursor: pointer;
-      gap: 0 25px;
       font-size: 72px;
       white-space: nowrap;
 
@@ -159,7 +158,6 @@
       @media screen and (max-width: $mobile) {
         align-self: flex-start;
         font-size: 16px;
-        gap: 5px;
       }
 
       svg {

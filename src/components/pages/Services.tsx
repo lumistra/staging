@@ -47,7 +47,7 @@ export default function Services() {
           </span>
         </TextMask>
       </Section>
-      <Pitch />
+      <Pitch namespace="services" />
       <Section containerClassName={style.servicesWrapper}>
         <span className={style.servicesTitle}>{t('services.bio.title')}</span>
         <span className={style.servicesTitle}>{t('services.bio.section')}</span>

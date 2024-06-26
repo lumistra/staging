@@ -6,7 +6,11 @@ import style from '@/styles/services/pitch.module.scss';
 import { getOrderNumber } from '@/utils';
 import Section from '../Section';
 
-export default function Pitch() {
+type Props = {
+  namespace: 'about' | 'services'
+};
+
+export default function Pitch(props: Props) {
   const { t } = useTranslations();
 
   useScrollAnimations({
@@ -18,16 +22,16 @@ export default function Pitch() {
 
   const pitch = [
     {
-      title: t('services.pitch.step_1.title'),
-      paragraph: t('services.pitch.step_1.paragraph'),
+      title: t(`${props.namespace}.pitch.step_1.title`),
+      paragraph: t(`${props.namespace}.pitch.step_1.paragraph`),
     },
     {
-      title: t('services.pitch.step_2.title'),
-      paragraph: t('services.pitch.step_2.paragraph'),
+      title: t(`${props.namespace}.pitch.step_2.title`),
+      paragraph: t(`${props.namespace}.pitch.step_2.paragraph`),
     },
     {
-      title: t('services.pitch.step_3.title'),
-      paragraph: t('services.pitch.step_3.paragraph'),
+      title: t(`${props.namespace}.pitch.step_3.title`),
+      paragraph: t(`${props.namespace}.pitch.step_3.paragraph`),
     },
   ];
 

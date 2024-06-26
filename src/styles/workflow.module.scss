@@ -89,17 +89,30 @@
     }
 
     .row {
-      border-top: 1px solid $white;
       cursor: pointer;
       padding: 20px 0;
+      position: relative;
 
       @media screen and (max-width: 1200px) {
         display: flex;
         flex-direction: row-reverse;
       }
 
-      &:last-of-type {
-        border-bottom: 1px solid $white;
+      &::before,
+      &::after {
+        left: 0;
+        position: absolute;
+        background-color: $white;
+        content: "";
+        height: 1px;
+      }
+
+      &::before {
+        top: 0;
+      }
+
+      &::after {
+        bottom: 0;
       }
 
       .index {

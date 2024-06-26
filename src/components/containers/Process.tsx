@@ -13,7 +13,7 @@ function Process() {
   const [wordIndex, setWordIndex] = useState(-1);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const words = useRef(t('home.process.title').split(' ')).current;
+  const words = t('home.process.title').split(' ');
 
   useScrollAnimations({
     processCTA: {

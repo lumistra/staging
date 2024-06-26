@@ -20,7 +20,7 @@ type Props = {
 export default function Page(props: Props) {
   return (
     <>
-      <div className="page-wrapper">
+      <div id="page-wrapper">
         <Navigation />
         {props.story ? (
           <StoryblokStory story={props.story} />

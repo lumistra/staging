@@ -18,7 +18,7 @@
     width: 100%;
 
     @media screen and (max-width: $tablet) {
-      cursor: initial;
+      cursor: inherit;
     }
 
     img {

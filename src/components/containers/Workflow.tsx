@@ -51,7 +51,7 @@ function Workflow() {
           return (
             <div
               key={step}
-              className={style.row}
+              className={classNames('workflow-animation-row', style.row)}
               onClick={() => handleToggleExpand(index)}
             >
               <TextMask identifier="workflow-index-mask">
@@ -62,7 +62,7 @@ function Workflow() {
                   <TextMask identifier="workflow-label-mask">
                     <span>{t(`workflow.steps.${step}.label`)}</span>
                   </TextMask>
-                  <Plus className={classNames(style.icon, {
+                  <Plus className={classNames('workflow-animation-icon', style.icon, {
                     [style.expanded]: isExpanded,
                   })}
                   />

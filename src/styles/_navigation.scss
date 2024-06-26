@@ -164,6 +164,8 @@
           transition-delay: 0.25s;
 
           &.menu-line-1 {
+            gap: 0;
+            grid-template-columns: auto 50%;
             rotate: -45deg;
             transform: translateY(50%);
           }

@@ -53,16 +53,12 @@
   "about": {
     "title": "Lumistra - O nama",
     "hero": "Od iskre do svijetla.",
+    "projects": "Izdvojeno",
     "bio": {
       "title": "O nama",
       "paragraph_1": "Lumistra je ideja. Svjetlo koji vodi i motivira. Naš cilj je ponuditi najbolja moguća rješenja onima koji žele ojačati svoju ideju.",
       "paragraph_2": "Posvećeni smo pretvaranju inicijalne iskre u tvoju buduću priliku i uspjeh."
     },
-    "projects": "Izdvojeno"
-  },
-  "services": {
-    "title": "Lumistra - Usluge",
-    "hero": "Pregled onoga što radimo\ni kako vam možemo pomoći.",
     "pitch": {
       "step_1": {
         "title": "Fleksibilnost",
@@ -75,6 +71,24 @@
       "step_3": {
         "title": "Napravite razliku",
         "paragraph": "Nije baš svaka ideja revolucionarna, ali vjerujemo da svaka može napraviti razliku. Zato je naš cilj uvijek bio pomoći vam da je ostvarite uz malo naše pomoći."
+      }
+    }
+  },
+  "services": {
+    "title": "Lumistra - Usluge",
+    "hero": "Pregled onoga što radimo\ni kako vam možemo pomoći.",
+    "pitch": {
+      "step_1": {
+        "title": "Branding",
+        "paragraph": "Naš glavni fokus je stvaranje nezaboravnih i jedinstvenih vizualnih identiteta za strastvene brandove. Razumijemo koliko je važno kako će vas vaš budući identitet predstavljati, stoga posvećujemo svoje vrijeme i trud kako bismo isporučili najbolja rješenja koja su trajna i prilagodljiva promjenjivim potrebama."
+      },
+      "step_2": {
+        "title": "Dizajn ambalaže",
+        "paragraph": "Na tržištu prepunom izvrsnih primjera dobrog dizajna, dizajn vašeg proizvoda se također može istaknuti. Kroz pažnju na detalje i neiscrpna testiranja, osiguravamo da naša rješenja pružaju vašem proizvodu prisutnost na polici koju on zaslužuje."
+      },
+      "step_3": {
+        "title": "Marketing",
+        "paragraph": "Kako bismo bili sigurni da je vaš brand spreman za lansiranje, rješavamo sve vaše marketinške potrebe. Ako želite sami kreirati sadržaj, nudimo jednostavne predloške za korištenje, omogućujući vam da se usredotočite na ono što je vama bitno dok mi brinemo za ostalo."
       }
     },
     "bio": {
