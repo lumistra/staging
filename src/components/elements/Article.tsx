@@ -1,3 +1,4 @@
+import { format } from 'date-fns';
 import { defaultLocale } from '@/hooks/useTranslations';
 import style from '@/styles/articles/grid.module.scss';
 import { routes } from '@/utils';
@@ -13,6 +14,8 @@ type Props = {
 };
 
 export default function Article(props: Props) {
+  const publishedAt = new Date(props.article.publishedAt);
+
   return (
     <Link
       className={style.articleContainer}
@@ -27,7 +30,7 @@ export default function Article(props: Props) {
         onMouseLeave={props.onMouseLeave}
       />
       <span className={style.articleDate}>
-        {props.article.publishedAt}
+        {format(publishedAt, 'MMM io yyyy')}
       </span>
       <span
         className={style.articleTitle}
