@@ -1,0 +1,55 @@
+{
+  "consentModal": {
+    "title": "May we use cookies?",
+    "description": "Welcome to Studio Lumistra!<br/><br/>We use cookies to give you the best possible service and user experience.<br/><br/>Once you have completed your selection, you can reopen this window via the \"Cookies\" link at the bottom of the page.",
+    "acceptAllBtn": "Accept all",
+    "acceptNecessaryBtn": "Reject all",
+    "showPreferencesBtn": "Manage preferences"
+  },
+  "preferencesModal": {
+    "title": "Cookie preferences",
+    "acceptAllBtn": "Accept all",
+    "acceptNecessaryBtn": "Reject all",
+    "savePreferencesBtn": "Save preferences",
+    "closeIconLabel": "Close",
+    "sections": [
+      {
+        "title": "Cookie usage",
+        "description": "We use cookies to ensure the basic functionalities of the website and to enhance your online experience..."
+      },
+      {
+        "title": "Strictly necessary cookies",
+        "description": "These cookies are essential in order to remember your cookie preferences",
+        "linkedCategory": "necessary"
+      },
+      {
+        "title": "Performance and Analytics cookies",
+        "description": "These cookies allow the website to remember the choices you have made in the past",
+        "linkedCategory": "analytics",
+        "cookieTable": {
+          "headers": {
+            "name": "Name",
+            "domain": "Service",
+            "description": "Description"
+          },
+          "body": [
+            {
+              "name": "_ga",
+              "domain": "Google Analytics",
+              "description": "Cookie set by <a href=\"https://marketingplatform.google.com/about/analytics/\" target=\"_blank\">Google Analytics</a>."
+            },
+            {
+              "name": "_gid",
+              "domain": "Google Analytics",
+              "description": "Cookie set by <a href=\"https://marketingplatform.google.com/about/analytics/\" target=\"_blank\">Google Analytics</a>"
+            }
+          ]
+        }
+      },
+      {
+        "title": "More information",
+        "description": "For any queries in relation to our policy on cookies and your choices, please <a class=\"cc-link\" href=\"mailto:info@studiolumistra.com\" target=\"_blank\">contact us</a>."
+      }
+    ]
+  }
+}

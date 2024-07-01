@@ -119,7 +119,7 @@ export default function Footer() {
           <Link href={routes.privacyPolicy}>
             {t('globals.privacy_policy')}
           </Link>
-          <span>
+          <span className="cookie-preferences" data-cc="show-preferencesModal">
             {t('globals.cookies')}
           </span>
           <ToTop className="desktop-to-top" />

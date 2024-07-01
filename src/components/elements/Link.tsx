@@ -19,6 +19,7 @@ type Props = {
 export default function Link(props: Props) {
   const router = useRouter();
   const { currentLocale } = useTranslations();
+  const isExternalHref = props.href?.match(/^(https?:)?\/\//);
 
   const getLocale = () => {
     switch (true) {
@@ -32,6 +33,7 @@ export default function Link(props: Props) {
   };
 
   const getHref = () => {
+    if (isExternalHref) return props.href || '';
     if (props.href) {
       return `/${getLocale() + props.href}`.replace('//', '/');
     }
@@ -74,6 +76,7 @@ export default function Link(props: Props) {
       onClick={handleClick}
       onMouseEnter={props.onMouseEnter}
       onMouseLeave={props.onMouseLeave}
+      target={isExternalHref ? '_blank' : '_self'}
     >
       {props.children}
     </NextLink>

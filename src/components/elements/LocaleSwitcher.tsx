@@ -11,6 +11,12 @@ type Props = {
 export default function LocaleSwitcher(props: Props) {
   const { t, currentLocale } = useTranslations();
 
+  const handleClick = (lng: string) => {
+    document.documentElement?.setAttribute('lang', lng);
+
+    if (props.onClick) props.onClick();
+  };
+
   return (
     <div className="locale-wrapper">
       <span className="label">{t('globals.language')}</span>
@@ -25,7 +31,7 @@ export default function LocaleSwitcher(props: Props) {
                 active: locale.value === currentLocale,
               })}
               locale={locale.value}
-              onClick={props.onClick}
+              onClick={() => handleClick(locale.value)}
             >
               {upperCase(locale.value)}
             </Link>

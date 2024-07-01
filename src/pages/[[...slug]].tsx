@@ -3,6 +3,7 @@ import StoryblokStory from '@storyblok/react/story';
 import { includes, reduce, some } from 'lodash';
 import Footer from '@/components/containers/Footer';
 import Navigation from '@/components/containers/navigation/Navigation';
+import CookieConsent from '@/components/elements/CookieConsent';
 import PageTransition from '@/components/elements/PageTransition';
 import Main from '@/components/pages/Main';
 import { defaultLocale, locales } from '@/hooks/useTranslations';
@@ -30,6 +31,7 @@ export default function Page(props: Props) {
       </div>
       <Footer />
       <PageTransition />
+      <CookieConsent />
     </>
   );
 }

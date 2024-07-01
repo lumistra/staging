@@ -20,7 +20,8 @@
     "react": "^18",
     "react-dom": "^18",
     "react-textarea-autosize": "^8.5.3",
-    "storyblok-rich-text-react-renderer": "^2.9.2"
+    "storyblok-rich-text-react-renderer": "^2.9.2",
+    "vanilla-cookieconsent": "^3.0.1"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",

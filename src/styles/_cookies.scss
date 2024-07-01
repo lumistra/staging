@@ -1,0 +1,49 @@
+#cc-main {
+  color-scheme: light;
+
+  --cc-font-family: "Geist";
+  --cc-modal-border-radius: 20px;
+  --cc-btn-border-radius: 10px;
+  --cc-modal-transition-duration: 0.25s;
+  --cc-modal-margin: 20px;
+  --cc-z-index: 999;
+
+  --cc-bg: #f7f7f7;
+  --cc-primary-color: #19192b;
+  --cc-secondary-color: #19192b;
+
+  --cc-btn-primary-bg: #0000e8;
+  --cc-btn-primary-color: var(--cc-bg);
+  --cc-btn-primary-hover-bg: #0000e8;
+  --cc-btn-primary-hover-color: var(--cc-bg);
+  --cc-btn-primary-border-color: #0000e8;
+  --cc-btn-primary-hover-border-color: #0000e8;
+
+  --cc-btn-secondary-bg: #e2e2e2;
+  --cc-btn-secondary-color: var(--cc-secondary-color);
+  --cc-btn-secondary-hover-bg: #e2e2e2;
+  --cc-btn-secondary-hover-color: var(--cc-secondary-color);
+  --cc-btn-secondary-border-color: #e2e2e2;
+  --cc-btn-secondary-hover-border-color: #e2e2e2;
+
+  --cc-cookie-category-block-bg: #e2e2e2;
+  --cc-cookie-category-block-border: #e2e2e2;
+  --cc-cookie-category-block-hover-bg: #e2e2e2;
+  --cc-cookie-category-block-hover-border: #e2e2e2;
+  --cc-cookie-category-expanded-block-bg: #e2e2e2;
+  --cc-cookie-category-expanded-block-hover-bg: #e2e2e2;
+
+  --cc-toggle-on-bg: var(--cc-bg);
+  --cc-toggle-off-bg: var(--cc-bg);
+  --cc-toggle-readonly-bg: #e2e2e2;
+  --cc-toggle-on-knob-bg: #0000e8;
+  --cc-toggle-off-knob-bg: #0000e8;
+  --cc-toggle-readonly-knob-bg: #0000e8;
+
+  --cc-separator-border-color: #f7f7f7;
+
+  --cc-footer-border-color: #f7f7f7;
+  --cc-footer-bg: var(--cc-bg);
+
+  --cc-overlay-bg: rgba(83, 86, 91, 0.5) !important;
+}

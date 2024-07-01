@@ -1,0 +1,55 @@
+{
+  "consentModal": {
+    "title": "Smijemo li koristiti kolačiće?",
+    "description": "Dobrodošli na Studio Lumistra!<br/><br/>Koristimo kolačiće kako bismo vam pružili najbolju moguću uslugu i korisničko iskustvo.<br/><br/>Nakon što završite s odabirom, možete ponovo otvoriti ovaj prozor putem poveznice \"Kolačići\" na dnu stranice.",
+    "acceptAllBtn": "Prihvati sve",
+    "acceptNecessaryBtn": "Odbij sve",
+    "showPreferencesBtn": "Upravljanje postavkama"
+  },
+  "preferencesModal": {
+    "title": "Postavke kolačića",
+    "acceptAllBtn": "Prihvati sve",
+    "acceptNecessaryBtn": "Odbij sve",
+    "savePreferencesBtn": "Spremi postavke",
+    "closeIconLabel": "Zatvori",
+    "sections": [
+      {
+        "title": "Korištenje kolačića",
+        "description": "Koristimo kolačiće kako bismo osigurali osnovne funkcionalnosti web stranice i poboljšali vaše online iskustvo..."
+      },
+      {
+        "title": "Strogo neophodni kolačići",
+        "description": "Ovi su kolačići neophodni kako bismo zapamtili vaše postavke",
+        "linkedCategory": "necessary"
+      },
+      {
+        "title": "Kolačići za analitiku",
+        "description": "Ovi kolačići omogućuju web stranici da zapamti odabire koje ste napravili u prošlosti",
+        "linkedCategory": "analytics",
+        "cookieTable": {
+          "headers": {
+            "name": "Ime",
+            "domain": "Servis",
+            "description": "Opis"
+          },
+          "body": [
+            {
+              "name": "_ga",
+              "domain": "Google Analytics",
+              "description": "Kolačić postavljen za <a href=\"https://marketingplatform.google.com/about/analytics/\" target=\"_blank\">Google Analytics</a>."
+            },
+            {
+              "name": "_gid",
+              "domain": "Google Analytics",
+              "description": "Kolačić postavljen za <a href=\"https://marketingplatform.google.com/about/analytics/\" target=\"_blank\">Google Analytics</a>"
+            }
+          ]
+        }
+      },
+      {
+        "title": "Više informacija",
+        "description": "Za sve upite u vezi s našim pravilima o kolačićima i vašim izborima, molimo<a class=\"cc-link\" href=\"mailto:info@studiolumistra.com\" target=\"_blank\">kontaktirajte nas</a>."
+      }
+    ]
+  }
+}
