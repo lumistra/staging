@@ -38,6 +38,11 @@ jobs:
           STORYBLOK_API_TOKEN: ${{ secrets.STORYBLOK_API_TOKEN }}
           # BASE_PATH: ${{ vars.BASE_PATH }} Not needed with Custom Domain
 
+      - name: Build sitemap
+        run: yarn build:sitemap
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
 

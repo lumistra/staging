@@ -1,9 +1,12 @@
 import { useEffect } from 'react';
 import Script from 'next/script';
-import { run } from 'vanilla-cookieconsent';
+import { run, setLanguage } from 'vanilla-cookieconsent';
+import useTranslations from '@/hooks/useTranslations';
 import 'vanilla-cookieconsent/dist/cookieconsent.css';
 
 export default function CookieConsent() {
+  const { currentLocale } = useTranslations();
+
   useEffect(() => {
     run({
       categories: {
@@ -17,14 +20,14 @@ export default function CookieConsent() {
       },
       guiOptions: {
         consentModal: {
-          layout: 'box',
-          position: 'bottom left',
+          layout: 'bar',
+          position: 'bottom',
           equalWeightButtons: false,
         },
         preferencesModal: {
-          layout: 'box',
+          layout: 'bar',
+          position: 'right',
           equalWeightButtons: false,
-          flipButtons: true,
         },
       },
       language: {
@@ -39,6 +42,10 @@ export default function CookieConsent() {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    setLanguage(currentLocale, true);
+  }, [currentLocale]);
 
   if (!process.env.gtmId) return null;
 
