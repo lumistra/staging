@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![logotype](.github/docs/logotype.svg)
 
-## Getting Started
+# Official website of Studio Lumistra
 
-First, run the development server:
+### Creative design studio transforming sparks and ideas into brands and experiences.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Check out the live site at [studiolumistra.com](https://studiolumistra.com)
+
+- Designed by: [Studio Lumistra](https://studiolumistra.com)
+- Developed by: [Dario Dumlijan](https://github.com/dariodumlijan)
+
+----
+
+## Deployment
+
+This project uses [Github Actions](https://github.com/features/actions) to trigger a deployment and is hosted using [GitHub pages](https://pages.github.com/)
+
+The deployment is triggered by manually running the ["Deploy" workflow](https://github.com/lumistra/lumistra/actions/workflows/deploy.yml)
+
+----
+
+## Development
+
+###### Developed using [Next.js](https://nextjs.org) & [TypeScript](https://www.typescriptlang.org)
+
+### Requirements
+
+| Dependency | Version  |
+| ------------------ | -------- |
+| [Node.js](https://nodejs.org/en) | `>=20` |
+| [yarn](https://yarnpkg.com) | `>=1.22.22` |
+| [Storyblok](https://www.storyblok.com) | `N/A` |
+
+### Commands
+
+To install & setup dependencies:
+```sh
+yarn (install)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run the DEV server for local development in the browser:
+```sh
+yarn dev
+```
+The application will be available at [`localhost:3000`](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To build the application for production:
+```sh
+yarn build
+yarn build:sitemap
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Run tests & linters
+```sh
+yarn tsc
 
-## Learn More
+yarn lint
 
-To learn more about Next.js, take a look at the following resources:
+yarn test
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Get test coverage report:
+```sh
+yarn test:coverage
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Project .env variables
+```sh
+STORYBLOK_API_TOKEN="<secret>" # Required
+GTM_ID="<secret>"
+SITE_URL="https://studiolumistra.com"
+BASE_PATH="lumistra" # Not required with a custom domain
+MOCK_API="true" # To minimise API calls in development
+```
