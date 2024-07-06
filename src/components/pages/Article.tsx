@@ -1,6 +1,7 @@
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react';
 import { format } from 'date-fns';
 import { get, isArray, map } from 'lodash';
+import { useRouter } from 'next/router';
 import useTranslations, { defaultLocale } from '@/hooks/useTranslations';
 import style from '@/styles/article.module.scss';
 import { routes } from '@/utils';
@@ -18,6 +19,7 @@ type Props = {
 
 export default function Article(props: Props) {
   const { t } = useTranslations();
+  const router = useRouter();
   const recommended = isArray(props.blok.recommended)
     ? props.blok.recommended[0]
     : props.blok.recommended;
@@ -29,7 +31,17 @@ export default function Article(props: Props) {
   return (
     <main {...storyblokEditable(props.blok)}>
       {map(article.meta, (meta: SbBlokData) => (
-        <StoryblokComponent key={meta._uid} blok={meta} />
+        <StoryblokComponent
+          key={meta._uid}
+          blok={
+          {
+            ...meta,
+            article: {
+              ...headline,
+              path: router.asPath,
+            },
+          }}
+        />
       ))}
 
       <Section containerClassName={style.heroWrapper}>

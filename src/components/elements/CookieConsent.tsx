@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Script from 'next/script';
 import { run, setLanguage } from 'vanilla-cookieconsent';
 import useTranslations from '@/hooks/useTranslations';
@@ -6,8 +6,12 @@ import 'vanilla-cookieconsent/dist/cookieconsent.css';
 
 export default function CookieConsent() {
   const { currentLocale } = useTranslations();
+  const [addTrackers, setAddTrackers] = useState(false);
 
   useEffect(() => {
+    if (window.location !== window.parent.location) return;
+    setAddTrackers(true);
+
     run({
       categories: {
         necessary: {
@@ -47,7 +51,7 @@ export default function CookieConsent() {
     setLanguage(currentLocale, true);
   }, [currentLocale]);
 
-  if (!process.env.gtmId) return null;
+  if (!process.env.gtmId || !addTrackers) return null;
 
   return (
     <>
