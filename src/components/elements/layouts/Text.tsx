@@ -1,5 +1,6 @@
 import { storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
+import Section from '@/components/containers/Section';
 import style from '@/styles/layouts.module.scss';
 import RichText from '../RichText';
 import type { ISbRichtext, SbBlokData } from '@storyblok/react';
@@ -13,7 +14,7 @@ type Props = {
 
 export default function Text(props: Props) {
   return (
-    <div className={style.textWrapper} {...storyblokEditable(props.blok)}>
+    <Section containerClassName={style.textWrapper} storyblokEditable={storyblokEditable(props.blok)}>
       <RichText className={classNames({
         [style.alignLeft]: props.blok.align === 'left',
         [style.alignRight]: props.blok.align === 'right',
@@ -21,6 +22,6 @@ export default function Text(props: Props) {
       >
         {props.blok.text}
       </RichText>
-    </div>
+    </Section>
   );
 }

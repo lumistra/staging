@@ -1,20 +1,16 @@
+import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
-import Arrow from '@/assets/svg/arrow.svg';
-import { email } from '@/content';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
-import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/contact.module.scss';
 import Section from './Section';
+import CtaLink from '../elements/CtaLink';
+import type { ContactData } from '@/types/components';
 
 type Props = {
-  className?: string
-  ctaClassName?: string
-  title?: string
-  isSmall?: boolean
+  blok: SbBlokData & ContactData
 };
 
 export default function Contact(props: Props) {
-  const { t } = useTranslations();
   useScrollAnimations({
     contactWrapper: {
       animation: AnimationType.fadeDown,
@@ -24,33 +20,31 @@ export default function Contact(props: Props) {
   });
 
   return (
-    <Section containerClassName={classNames(style.contactCTAWrapper, props.className)}>
+    <Section
+      containerClassName={classNames(style.contactCTAWrapper, {
+        [style.noBorderContact]: props.blok.noBorder,
+      })}
+      storyblokEditable={storyblokEditable(props.blok)}
+    >
       <div className={classNames('contact-animation-wrapper', style.contentWrapper)}>
         <span className={classNames({
-          [style.title]: !props.isSmall,
-          [style.titleSmall]: props.isSmall,
+          [style.title]: !props.blok.small,
+          [style.titleSmall]: props.blok.small,
         })}
         >
-          {props.title || t('contact.cta.title')}
+          {props.blok.title}
         </span>
       </div>
-      <a
-        className={classNames('cta-link', props.ctaClassName, {
-          [style.action]: !props.isSmall,
-          [style.actionSmall]: props.isSmall,
+      <CtaLink
+        className={classNames({
+          [style.action]: !props.blok.small,
+          [style.actionSmall]: props.blok.small,
+          [style.mobileInvertColors]: props.blok.mobileInvertColors,
         })}
-        href={`mailto:${email}`}
-        target="_blank"
+        link={props.blok.cta[0].link}
       >
-        <div className="cta-container initial-container">
-          {t('contact.cta.action')}
-          <Arrow />
-        </div>
-        <div className="cta-container hover-container">
-          {t('contact.cta.action')}
-          <Arrow />
-        </div>
-      </a>
+        {props.blok.cta[0].text}
+      </CtaLink>
     </Section>
   );
 }

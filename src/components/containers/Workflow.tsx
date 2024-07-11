@@ -1,16 +1,21 @@
 import { useState } from 'react';
+import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
 import { map } from 'lodash';
 import Plus from '@/assets/svg/plus.svg';
 import useScrollAnimations from '@/hooks/useScrollAnimations';
-import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/workflow.module.scss';
 import { getOrderNumber } from '@/utils';
 import Section from './Section';
+import RichText from '../elements/RichText';
 import TextMask from '../elements/TextMask';
+import type { WorkflowData } from '@/types/components';
 
-function Workflow() {
-  const { t } = useTranslations();
+type Props = {
+  blok: SbBlokData & WorkflowData
+};
+
+function Workflow(props: Props) {
   const [expanded, setExpanded] = useState(-1);
 
   useScrollAnimations({
@@ -24,33 +29,24 @@ function Workflow() {
     setExpanded((preIndex) => (preIndex === index ? -1 : index));
   };
 
-  const steps = [
-    'discovery',
-    'strategy_development',
-    'magic_phase',
-    'check_in',
-    'review',
-    'ta_daa_moment',
-    'partnership_support',
-  ];
-
   return (
     <Section
       id="workflow"
       className={style.backgroundWrapper}
       containerClassName={style.wrapper}
+      storyblokEditable={storyblokEditable(props.blok)}
     >
       <div className={style.header}>
-        <span className={style.title}>{t('workflow.title')}</span>
-        <p className={style.paragraph}>{t('workflow.paragraph')}</p>
+        <span className={style.title}>{props.blok.title}</span>
+        <RichText className={style.paragraph}>{props.blok.paragraph}</RichText>
       </div>
       <div className="workflow-animation-container">
-        {map(steps, (step, index) => {
+        {map(props.blok.steps, (step, index) => {
           const isExpanded = expanded === index;
 
           return (
             <div
-              key={step}
+              key={`${step.title}-${index}`}
               className={classNames('workflow-animation-row', style.row)}
               onClick={() => handleToggleExpand(index)}
             >
@@ -60,7 +56,7 @@ function Workflow() {
               <div className={style.column}>
                 <div className={style.heading}>
                   <TextMask identifier="workflow-label-mask">
-                    <span>{t(`workflow.steps.${step}.label`)}</span>
+                    <span>{step.title}</span>
                   </TextMask>
                   <Plus className={classNames('workflow-animation-icon', style.icon, {
                     [style.expanded]: isExpanded,
@@ -71,7 +67,7 @@ function Workflow() {
                   [style.columnParagraphExpanded]: isExpanded,
                 })}
                 >
-                  {t(`workflow.steps.${step}.paragraph`)}
+                  {step.paragraph}
                 </p>
               </div>
             </div>

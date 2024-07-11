@@ -1,0 +1,123 @@
+@import "./colors";
+@import "./sizes";
+
+.heroWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  min-height: 400px;
+  padding-bottom: 120px;
+  padding-top: 120px;
+
+  @media screen and (max-width: $tablet) {
+    min-height: auto;
+    padding-bottom: 180px;
+    padding-top: 0;
+  }
+
+  &.spacingBottom {
+    padding-bottom: 400px;
+
+    @media screen and (max-width: $tablet) {
+      padding-bottom: 180px;
+    }
+  }
+
+  .heroTitle {
+    display: flex;
+    font-size: 86px;
+    white-space: pre-wrap;
+
+    @media screen and (max-width: 1500px) {
+      white-space: normal;
+    }
+
+    @media screen and (max-width: $desktop) {
+      font-size: 60px;
+    }
+
+    @media screen and (max-width: $laptop) {
+      font-size: 48px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      font-size: 32px;
+    }
+  }
+
+  .heroFootnote {
+    align-items: center;
+    color: $gray;
+    display: flex;
+    font-size: 21px;
+    gap: 10px;
+    margin-top: 25vh;
+    padding-bottom: 160px;
+
+    @media screen and (max-width: $tablet) {
+      padding-bottom: 0;
+    }
+
+    @media screen and (max-width: $mobile) {
+      display: none;
+    }
+
+    svg {
+      height: 16px;
+      rotate: 90deg;
+      width: 16px;
+
+      * {
+        stroke: $gray !important;
+      }
+    }
+  }
+}
+
+.heroGradientBackground {
+  height: 100%;
+  margin-top: -110px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  .gradient {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+
+  .heroGradientWrapper {
+    display: flex;
+    min-height: 900px;
+    padding-bottom: 160px;
+    padding-top: 230px;
+
+    @media screen and (max-width: $tablet) {
+      min-height: 400px;
+      padding-bottom: 80px;
+      padding-top: 110px;
+    }
+
+    .heroGradientTitle {
+      color: $white;
+      display: flex;
+      font-size: 86px;
+      height: fit-content;
+      width: fit-content;
+      z-index: 10;
+
+      @media screen and (max-width: $desktop) {
+        font-size: 60px;
+      }
+
+      @media screen and (max-width: $laptop) {
+        font-size: 48px;
+      }
+
+      @media screen and (max-width: $mobile) {
+        font-size: 32px;
+      }
+    }
+  }
+}

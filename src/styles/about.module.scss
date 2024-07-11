@@ -1,158 +1,6 @@
 @import "./colors";
 @import "./sizes";
 
-.heroBackground {
-  height: 100%;
-  margin-top: -110px;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  // background-image: url("/assets/svg/gradient.svg");
-  // background-position: center;
-  // background-repeat: no-repeat;
-  // background-size: cover;
-
-  // &::after {
-  //   backdrop-filter: blur(100px);
-  //   content: "";
-  //   height: 100%;
-  //   position: absolute;
-  //   width: 100%;
-  //   z-index: 5;
-  // }
-
-  // .gradientPoint {
-  //   border-radius: 50%;
-  //   position: absolute;
-  //   transform: translate(-50%, -50%);
-  //   transition: 2s;
-
-  //   &:nth-of-type(1) {
-  //     background-color: $black;
-  //     box-shadow: 0px 0px 200px 100px $black;
-  //     height: 80%;
-  //     left: 0;
-  //     top: 0;
-  //     width: 80%;
-  //     z-index: 1;
-  //   }
-
-  //   &:nth-of-type(4) {
-  //     background-color: $white;
-  //     box-shadow: 0px 0px 200px 100px $white;
-  //     height: 80%;
-  //     left: 100%;
-  //     top: 100%;
-  //     width: 80%;
-  //     z-index: 2;
-  //   }
-
-  //   &:nth-of-type(2) {
-  //     animation: gradientMove1 25s ease-in-out infinite;
-  //     background-color: $secondary;
-  //     box-shadow: 0px 0px 200px 100px $secondary;
-  //     height: 100%;
-  //     width: 80%;
-  //     z-index: 2;
-
-  //     @keyframes gradientMove1 {
-  //       0% {
-  //         left: 70%;
-  //         top: 0%;
-  //       }
-  //       30% {
-  //         left: 70%;
-  //         top: 5%;
-  //       }
-  //       50% {
-  //         left: 70%;
-  //         top: 0%;
-  //       }
-  //       70% {
-  //         left: 65%;
-  //         top: 0%;
-  //       }
-  //       100% {
-  //         left: 70%;
-  //         top: 0%;
-  //       }
-  //     }
-  //   }
-
-  //   &:nth-of-type(3) {
-  //     animation: gradientMove2 20s ease-in-out infinite;
-  //     background-color: $primary;
-  //     box-shadow: 0px 0px 200px 100px $primary;
-  //     height: 80%;
-  //     width: 80%;
-  //     z-index: 3;
-
-  //     @keyframes gradientMove2 {
-  //       0% {
-  //         left: 20%;
-  //         top: 100%;
-  //       }
-  //       25% {
-  //         left: 25%;
-  //         top: 100%;
-  //       }
-  //       50% {
-  //         left: 20%;
-  //         top: 95%;
-  //       }
-  //       75% {
-  //         left: 15%;
-  //         top: 100%;
-  //       }
-  //       100% {
-  //         left: 20%;
-  //         top: 100%;
-  //       }
-  //     }
-  //   }
-  // }
-
-  .gradient {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-  }
-
-  .heroWrapper {
-    display: flex;
-    min-height: 900px;
-    padding-bottom: 160px;
-    padding-top: 230px;
-
-    @media screen and (max-width: $tablet) {
-      min-height: 400px;
-      padding-bottom: 80px;
-      padding-top: 110px;
-    }
-
-    .heroTitle {
-      color: $white;
-      display: flex;
-      font-size: 86px;
-      height: fit-content;
-      width: fit-content;
-      z-index: 10;
-
-      @media screen and (max-width: $desktop) {
-        font-size: 60px;
-      }
-
-      @media screen and (max-width: $laptop) {
-        font-size: 48px;
-      }
-
-      @media screen and (max-width: $mobile) {
-        font-size: 32px;
-      }
-    }
-  }
-}
-
 .aboutWrapper {
   display: flex;
   flex-direction: column;
@@ -181,62 +29,27 @@
     }
   }
 
-  p {
-    display: grid;
-    font-size: 21px;
-    grid-template-columns: repeat(3, 1fr);
+  .aboutParagraph {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 
-    @media screen and (max-width: 1600px) {
-      grid-template-columns: 2fr 1fr;
+    > * {
+      display: grid;
+      font-size: 21px;
+      grid-template-columns: repeat(3, 1fr);
+
+      @media screen and (max-width: 1600px) {
+        grid-template-columns: 2fr 1fr;
+      }
+
+      @media screen and (max-width: $tablet) {
+        display: block;
+      }
+
+      @media screen and (max-width: $mobile) {
+        font-size: 16px;
+      }
     }
-
-    @media screen and (max-width: $tablet) {
-      display: block;
-    }
-
-    @media screen and (max-width: $mobile) {
-      font-size: 16px;
-    }
-  }
-}
-
-.projectsWrapper {
-  align-items: flex-end;
-  display: flex;
-  gap: 20px;
-  justify-content: space-between;
-  margin-bottom: 60px;
-  margin-top: 20px;
-
-  @media screen and (max-width: $mobile) {
-    margin-top: 10px;
-  }
-
-  h3 {
-    font-size: 72px;
-
-    @media screen and (max-width: $desktop) {
-      font-size: 52px;
-    }
-
-    @media screen and (max-width: $laptop) {
-      font-size: 36px;
-    }
-
-    @media screen and (max-width: $mobile) {
-      font-size: 24px;
-    }
-  }
-
-  a {
-    display: none;
-  }
-}
-
-.featuredWrapper {
-  margin-bottom: 390px;
-
-  @media screen and (max-width: $mobile) {
-    margin-bottom: 120px;
   }
 }

@@ -1,5 +1,5 @@
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react';
-import { get, isArray, map } from 'lodash';
+import { get, map } from 'lodash';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/project.module.scss';
 import { routes } from '@/utils';
@@ -16,9 +16,7 @@ type Props = {
 
 export default function Project(props: Props) {
   const { t } = useTranslations();
-  const recommended = isArray(props.blok.recommended)
-    ? props.blok.recommended[0]
-    : props.blok.recommended;
+  const { recommended } = props.blok;
   const recommendedProject = get(recommended, 'content.overview[0]', null) as OverviewData | null;
   const project = props.blok;
 
@@ -32,11 +30,11 @@ export default function Project(props: Props) {
         <StoryblokComponent key={overview._uid} blok={overview} />
       ))}
 
-      <Section containerClassName={style.projectWrapper}>
+      <div className={style.projectWrapper}>
         {map(project.body, (component) => (
           <StoryblokComponent key={component._uid} blok={component} />
         ))}
-      </Section>
+      </div>
 
       {recommended && recommendedProject && (
         <Section containerClassName={style.recommendedWrapper}>
@@ -46,7 +44,7 @@ export default function Project(props: Props) {
               {t('globals.next_project')}
             </CtaLink>
           </div>
-          <Link href={routes.project(project.recommended.slug)}>
+          <Link href={routes.project(recommended.slug)}>
             <Image
               className={style.recommendedCover}
               src={recommendedProject.cover.filename}

@@ -88,8 +88,6 @@
     border-top: 1px solid $gray;
     display: none;
     justify-content: flex-end;
-    margin-left: $mobileMinBleedWidth;
-    margin-right: $mobileMinBleedWidth;
     padding-top: 10px;
     width: auto;
 
@@ -100,6 +98,8 @@
 
     @media screen and (max-width: $mobile) {
       grid-column: 1;
+      margin-left: $mobileMinBleedWidth;
+      margin-right: $mobileMinBleedWidth;
     }
   }
 }

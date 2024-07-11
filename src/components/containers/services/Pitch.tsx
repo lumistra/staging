@@ -1,18 +1,17 @@
+import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import { map } from 'lodash';
 import TextMask from '@/components/elements/TextMask';
 import useScrollAnimations from '@/hooks/useScrollAnimations';
-import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/services/pitch.module.scss';
 import { getOrderNumber } from '@/utils';
 import Section from '../Section';
+import type { PitchData } from '@/types/components';
 
 type Props = {
-  namespace: 'about' | 'services'
+  blok: SbBlokData & PitchData
 };
 
 export default function Pitch(props: Props) {
-  const { t } = useTranslations();
-
   useScrollAnimations({
     pitchItems: {
       query: '.pitch-animation-wrapper',
@@ -20,24 +19,13 @@ export default function Pitch(props: Props) {
     },
   });
 
-  const pitch = [
-    {
-      title: t(`${props.namespace}.pitch.step_1.title`),
-      paragraph: t(`${props.namespace}.pitch.step_1.paragraph`),
-    },
-    {
-      title: t(`${props.namespace}.pitch.step_2.title`),
-      paragraph: t(`${props.namespace}.pitch.step_2.paragraph`),
-    },
-    {
-      title: t(`${props.namespace}.pitch.step_3.title`),
-      paragraph: t(`${props.namespace}.pitch.step_3.paragraph`),
-    },
-  ];
-
   return (
-    <Section className="pitch-animation-wrapper" containerClassName={style.pitchWrapper}>
-      {map(pitch, (item, index) => (
+    <Section
+      className="pitch-animation-wrapper"
+      containerClassName={style.pitchWrapper}
+      storyblokEditable={storyblokEditable(props.blok)}
+    >
+      {map(props.blok.items, (item, index) => (
         <div key={index} className={style.pitchItem}>
           <TextMask identifier="pitch-index-mask" className={style.pitchNumber}>
             <span>{getOrderNumber(index, true)}</span>

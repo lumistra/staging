@@ -1,36 +1,6 @@
 @import "./colors";
 @import "./sizes";
 
-.heroWrapper {
-  display: flex;
-  min-height: 400px;
-  padding-bottom: 400px;
-  padding-top: 120px;
-
-  @media screen and (max-width: $tablet) {
-    min-height: auto;
-    padding-bottom: 180px;
-    padding-top: 0;
-  }
-
-  h1 {
-    display: flex;
-    font-size: 86px;
-
-    @media screen and (max-width: $desktop) {
-      font-size: 60px;
-    }
-
-    @media screen and (max-width: $laptop) {
-      font-size: 48px;
-    }
-
-    @media screen and (max-width: $mobile) {
-      font-size: 32px;
-    }
-  }
-}
-
 .contactCTAWrapper {
   align-items: flex-start;
   border-top: 1px solid $gray;
@@ -53,6 +23,26 @@
     margin-left: 0 !important;
     margin-right: 0 !important;
     padding: 0;
+  }
+
+  &.noBorderContact {
+    border: none;
+    margin-bottom: 120px;
+    margin-top: 120px;
+
+    @media screen and (max-width: $laptop) {
+      margin-bottom: 0;
+      margin-top: 0;
+
+      .ctaAction {
+        background-color: $white !important;
+        color: $black !important;
+
+        svg path {
+          stroke: $primary !important;
+        }
+      }
+    }
   }
 
   .contentWrapper {
@@ -193,6 +183,17 @@
       @media screen and (max-width: $mobile) {
         height: 20px;
         width: 20px;
+      }
+    }
+  }
+
+  .mobileInvertColors {
+    @media screen and (max-width: $laptop) {
+      background-color: $white !important;
+      color: $black !important;
+
+      svg * {
+        stroke: $primary !important;
       }
     }
   }

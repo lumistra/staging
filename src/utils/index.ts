@@ -1,24 +1,29 @@
-import Parser from 'html-react-parser';
 import {
-  compact, filter, flatten, forEach, includes, isEmpty, isString, map, replace, split,
+  compact, forEach, includes, map, split,
 } from 'lodash';
 import { defaultLocale, locales } from '@/hooks/useTranslations';
 
 export const isProd = process.env.NODE_ENV === 'production';
 
 export const routes = {
-  home: '/',
-  work: '/work',
-  project: (slug: string) => `/work/${slug}`,
-  about: '/about',
-  contact: '/contact',
-  services: '/services',
-  articles: '/articles',
-  article: (slug: string) => `/articles/${slug}`,
+  mocks: {
+    home: '/',
+    news: '/news',
+    work: '/work',
+    about: '/about',
+    contact: '/contact',
+    services: '/services',
+  },
+  expected: {
+    news: '/news',
+    work: '/work',
+    articles: '/articles',
+    projects: '/projects',
+  },
   privacyPolicy: '/privacy-policy',
+  article: (slug: string) => `/articles/${slug}`,
+  project: (slug: string) => `/projects/${slug}`,
 };
-
-const sitemap = filter(routes, isString);
 
 export const getRawPath = (path: string, stripLocale: boolean = true) => {
   let newPath = path;
@@ -40,18 +45,7 @@ export const getRawPath = (path: string, stripLocale: boolean = true) => {
 export const generateStaticPaths = (cmsLinks: string[]) => {
   const defaultLocaleMatch = `/${defaultLocale}`;
 
-  const staticLinks = flatten(map(sitemap, (route) => map(locales, (locale) => {
-    const slug = compact(split(route, '/'));
-    let slugPath;
-    if (locale.default) {
-      slugPath = isEmpty(slug) ? [''] : slug;
-    } else {
-      slugPath = [locale.value, ...slug];
-    }
-
-    return { params: { slug: slugPath } };
-  })),
-  );
+  const staticLinks = [{ params: { slug: ['privacy-policy'] } }];
 
   const dynamicLinks = map(cmsLinks, (link) => {
     const isDefaultLocaleRoute = includes(link, defaultLocaleMatch);
@@ -69,12 +63,4 @@ export const getOrderNumber = (index: number, brackets?: boolean): string => {
   if (brackets) return '(' + number + ')';
 
   return number;
-};
-
-export const parseMarkdown = (markdown: string) => {
-  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
-  let input = markdown;
-  input = replace(input, linkRegex, '<a href="$2" target="_blank">$1</a>');
-
-  return Parser(input);
 };

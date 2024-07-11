@@ -118,11 +118,12 @@
 
   .recommendedHeader {
     align-items: flex-start;
-    display: flex;
+    display: grid;
     gap: 20px 120px;
-    justify-content: space-between;
+    grid-template-columns: auto max-content;
 
     @media screen and (max-width: $mobile) {
+      display: flex;
       flex-direction: column-reverse;
     }
 

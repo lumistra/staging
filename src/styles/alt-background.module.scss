@@ -1,0 +1,132 @@
+@import "./colors";
+@import "./sizes";
+
+.altBackgroundWrapper {
+  &.darkBackground {
+    background-color: $black;
+    color: $white;
+  }
+
+  &.primaryBackground {
+    background-color: $primary;
+    color: $white;
+  }
+
+  .altBackgroundContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin: 260px 0;
+
+    @media screen and (max-width: $desktop) {
+      margin: 180px 0;
+    }
+
+    @media screen and (max-width: $laptop) {
+      margin: 100px 0;
+    }
+
+    @media screen and (max-width: $mobile) {
+      gap: 40px;
+      margin: 80px 0;
+    }
+
+    .altBackgroundTitle {
+      font-size: 86px;
+      white-space: pre-wrap;
+
+      @media screen and (max-width: 1500px) {
+        white-space: normal;
+      }
+
+      @media screen and (max-width: $desktop) {
+        font-size: 60px;
+      }
+
+      @media screen and (max-width: $laptop) {
+        font-size: 48px;
+      }
+
+      @media screen and (max-width: $mobile) {
+        font-size: 32px;
+      }
+
+      .altBackgroundWord {
+        color: $dark;
+        transition: 0.8s ease-in-out;
+
+        &.active {
+          color: $white;
+        }
+      }
+    }
+
+    .altBackgroundParagraph {
+      font-size: 48px;
+
+      @media screen and (max-width: $desktop) {
+        font-size: 36px;
+      }
+
+      @media screen and (max-width: $mobile) {
+        font-size: 24px;
+      }
+
+      &.gridParagraph {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        @media screen and (max-width: 1200px) {
+          display: block;
+        }
+      }
+    }
+
+    .altBackgroundCTA {
+      align-items: center;
+      color: $white;
+      display: flex;
+      font-size: 21px;
+      gap: 0 1ch;
+      margin-top: 240px;
+
+      @media screen and (max-width: $mobile) {
+        font-size: 16px;
+        margin-top: 160px;
+      }
+
+      svg {
+        height: 16px;
+        width: 16px;
+
+        * {
+          stroke: $white !important;
+        }
+      }
+    }
+
+    .altBackgroundFootnote {
+      align-items: center;
+      color: $gray;
+      display: flex;
+      font-size: 21px;
+      gap: 0 1ch;
+      margin-top: 240px;
+
+      @media screen and (max-width: $mobile) {
+        font-size: 16px;
+        margin-top: 160px;
+      }
+
+      svg {
+        height: 16px;
+        rotate: 90deg;
+        width: 16px;
+
+        * {
+          stroke: $gray !important;
+        }
+      }
+    }
+  }
+}

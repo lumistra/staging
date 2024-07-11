@@ -1,9 +1,4 @@
-export type Image = {
-  src: string,
-  alt: string,
-};
-
-export type CMSImage = {
+export type ImageData = {
   id: number,
   alt: string | null,
   filename: string,
@@ -14,4 +9,22 @@ export type CMSImage = {
     source: string,
     copyright: string
   },
+};
+
+export type CMSLink = {
+  url: string,
+  email: string,
+  linktype: 'url' | 'email',
+  target?: '_self' | '_blank',
+};
+
+export type LinkData = {
+  label: string,
+  icon: 'instagram' | 'facebook' | 'linkedin',
+  link: CMSLink,
+};
+
+export type CTALinkData = {
+  text: string,
+  link: CMSLink,
 };

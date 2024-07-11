@@ -4,12 +4,14 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import useTranslations, { defaultLocale } from '@/hooks/useTranslations';
 import { getRawPath, routes } from '@/utils';
+import type { CMSLink } from '@/types/shared';
 
 type Props = {
   children: any
   className?: string,
   href?: string,
   locale?: string,
+  link?: CMSLink
   addActiveFlag?: boolean,
   onClick?: () => void,
   onMouseEnter?: () => void,
@@ -19,7 +21,7 @@ type Props = {
 export default function Link(props: Props) {
   const router = useRouter();
   const { currentLocale } = useTranslations();
-  const isExternalHref = props.href?.match(/^(https?:)?\/\//);
+  const isExternalHref = props.link?.target === '_blank' || props.href?.match(/^(https?:)?\/\//);
 
   const getLocale = () => {
     switch (true) {
@@ -33,9 +35,10 @@ export default function Link(props: Props) {
   };
 
   const getHref = () => {
-    if (isExternalHref) return props.href || '';
-    if (props.href) {
-      return `/${getLocale() + props.href}`.replace('//', '/');
+    if (props.link?.linktype === 'email') return `mailto:${props.link.url}`;
+    if (isExternalHref) return props.link?.url || props.href || '';
+    if (props.href || props.link) {
+      return `/${getLocale() + (props.link?.url || props.href)}`.replace('//', '/');
     }
 
     return `/${getLocale() + getRawPath(router.asPath)}`.replace('//', '/');
@@ -50,11 +53,12 @@ export default function Link(props: Props) {
   };
 
   const handleClick = (e: any) => {
+    if (props.link?.linktype === 'email') return;
     e.preventDefault();
 
     const transitionTitleMask = document.getElementById('page-transition-title');
     const transitionMask = document.getElementById('page-transition');
-    if (isSameRoute || !transitionTitleMask || !transitionMask || !includes(getRawPath(trueHref), `${routes.work}/`)) {
+    if (isSameRoute || !transitionTitleMask || !transitionMask || !includes(getRawPath(trueHref), `${routes.expected.projects}/`)) {
       handleGoTo();
 
       return;

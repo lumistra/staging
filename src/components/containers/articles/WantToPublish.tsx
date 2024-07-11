@@ -1,27 +1,29 @@
+import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
-import useTranslations from '@/hooks/useTranslations';
+import RichText from '@/components/elements/RichText';
 import style from '@/styles/news.module.scss';
-import { parseMarkdown } from '@/utils';
 import Section from '../Section';
+import type { WantToPublishData } from '@/types/components';
 
 type Props = {
-  className?: string
-  altBackground?: boolean
+  blok: SbBlokData & WantToPublishData
 };
 
 export default function WantToPublish(props: Props) {
-  const { t } = useTranslations();
-
   return (
     <Section
-      className={classNames(props.className, {
-        [style.backgroundBlack]: !props.altBackground,
-        [style.backgroundGray]: props.altBackground,
+      className={classNames({
+        [style.backgroundBlack]: props.blok.background === 'dark',
+        [style.backgroundGray]: props.blok.background === 'gray',
+        [style.spacingTop]: props.blok.spacingTop,
       })}
       containerClassName={style.wantToPublishWrapper}
+      storyblokEditable={storyblokEditable(props.blok)}
     >
-      <h3>{t('news.cta.title')}</h3>
-      <p>{parseMarkdown(t('news.cta.paragraph'))}</p>
+      <h3>{props.blok.title}</h3>
+      <RichText className={style.wtpParagraph}>
+        {props.blok.paragraph}
+      </RichText>
     </Section>
   );
 }

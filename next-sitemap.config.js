@@ -8,6 +8,7 @@ const privatePages = [
 module.exports = {
   siteUrl: process.env.SITE_URL,
   exclude: privatePages,
+  changefreq: 'monthly',
   generateIndexSitemap: false,
   generateRobotsTxt: true,
   robotsTxtOptions: {

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import { floor, map } from 'lodash';
 import Icon from '@/assets/svg/icon.svg';
 import Logo from '@/assets/svg/logo.svg';
@@ -10,10 +11,15 @@ import { routes } from '@/utils';
 import Link from '../elements/Link';
 import LocaleSwitcher from '../elements/LocaleSwitcher';
 import ToTop from '../elements/ToTop';
+import type { FooterData } from '@/types/globals';
+
+type Props = {
+  blok: SbBlokData & FooterData
+};
 
 const parallaxPercentage = 25;
 
-export default function Footer() {
+export default function Footer(props: Props) {
   const { t } = useTranslations();
   const { isTablet, isLaptop } = useScreenSize();
   const [animationOffset, setAnimationOffset] = useState(parallaxPercentage);
@@ -53,15 +59,6 @@ export default function Footer() {
     };
   }, [isTablet]);
 
-  const sitemap = [
-    { label: t('routes.home'), value: routes.home },
-    { label: t('routes.work'), value: routes.work },
-    { label: t('routes.services'), value: routes.services },
-    { label: t('routes.about'), value: routes.about },
-    { label: t('routes.contact'), value: routes.contact },
-    { label: t('routes.articles'), value: routes.articles },
-  ];
-
   return (
     <footer
       ref={footerRef}
@@ -69,6 +66,7 @@ export default function Footer() {
         bottom: bottomOffset,
         transform: `translateY(${animationOffset}%)`,
       }}
+      {...storyblokEditable(props.blok)}
     >
       <div className="content-container">
         <div className="identity-wrapper">
@@ -84,11 +82,11 @@ export default function Footer() {
         <hr className="divider" />
         <div className="cta-wrapper">
           <div className="sitemap-wrapper">
-            {map(sitemap, (route) => (
+            {map(props.blok.sitemap, (route) => (
               <Link
                 className="footer-link"
-                key={route.value}
-                href={route.value}
+                key={route.link.url}
+                link={route.link}
               >
                 {route.label}
               </Link>
@@ -96,16 +94,16 @@ export default function Footer() {
           </div>
           <LocaleSwitcher />
           <div className="socials-wrapper">
-            <span className="label">{t('globals.socials')}</span>
+            <span className="label">{props.blok.socialsLabel}</span>
             <div className="socials">
-              {map(socials, (link) => (
+              {map(props.blok.socialsLinks, (link) => (
                 <a
                   className="social-icon"
-                  key={link.value}
-                  href={link.value}
+                  key={link.link.url}
+                  href={link.link.url}
                   target="_blank"
                 >
-                  {link.icon}
+                  {socials[link.icon]}
                 </a>
               ))}
             </div>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
 import { map } from 'lodash';
 import Icon from '@/assets/svg/icon.svg';
@@ -6,12 +7,14 @@ import Logo from '@/assets/svg/logo.svg';
 import Link from '@/components/elements/Link';
 import Menu from '@/components/elements/Menu';
 import { useScreenSize } from '@/hooks/useScreenSize';
-import useTranslations from '@/hooks/useTranslations';
-import { routes } from '@/utils';
 import Sidenav from './Sidenav';
+import type { NavigationData } from '@/types/globals';
 
-export default function Navigation() {
-  const { t } = useTranslations();
+type Props = {
+  blok: SbBlokData & NavigationData
+};
+
+export default function Navigation(props: Props) {
   const { isDesktop } = useScreenSize();
   const [isTop, setIsTop] = useState(true);
   const [isSidenavOpen, setIsSidenavOpen] = useState(false);
@@ -33,15 +36,9 @@ export default function Navigation() {
     setIsSidenavOpen(!isSidenavOpen);
   };
 
-  const navigation = [
-    { label: t('routes.work'), value: routes.work },
-    { label: t('routes.about'), value: routes.about },
-    { label: t('routes.contact'), value: routes.contact },
-  ];
-
   return (
     <>
-      <nav className="navigation-wrapper">
+      <nav className="navigation-wrapper" {...storyblokEditable(props.blok)}>
         <div className="navigation-container animate-in">
           <Link href="/">
             {isTop && isDesktop ? (
@@ -62,10 +59,10 @@ export default function Navigation() {
             minimized: !isTop,
           })}
           >
-            {isTop && map(navigation, (link) => (
+            {isTop && map(props.blok.links, (link) => (
               <Link
-                key={link.value}
-                href={link.value}
+                key={link.link.url}
+                link={link.link}
                 className={classNames('nav-link', {
                   'nav-visible': !isSidenavOpen,
                   'nav-hidden': isSidenavOpen,
@@ -84,7 +81,7 @@ export default function Navigation() {
           </div>
         </div>
       </nav>
-      <Sidenav isOpen={isSidenavOpen} onClose={handleSideMenuToggle} />
+      <Sidenav data={props.blok.sidenav[0]} isOpen={isSidenavOpen} onClose={handleSideMenuToggle} />
     </>
   );
 }

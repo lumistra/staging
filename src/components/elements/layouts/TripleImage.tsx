@@ -1,15 +1,16 @@
 import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import { map } from 'lodash';
+import Section from '@/components/containers/Section';
 import style from '@/styles/layouts.module.scss';
 import Image from '../Image';
 import Lightbox from '../Lightbox';
-import type { CMSImage } from '@/types/shared';
+import type { ImageData } from '@/types/shared';
 
 type Props = {
   blok: SbBlokData & {
-    firstImage: CMSImage
-    secondImage: CMSImage
-    thirdImage: CMSImage
+    firstImage: ImageData
+    secondImage: ImageData
+    thirdImage: ImageData
   }
 };
 
@@ -17,7 +18,7 @@ export default function TripleImage(props: Props) {
   const images = [props.blok.firstImage, props.blok.secondImage, props.blok.thirdImage];
 
   return (
-    <div className={style.tripleImageWrapper} {...storyblokEditable(props.blok)}>
+    <Section containerClassName={style.tripleImageWrapper} storyblokEditable={storyblokEditable(props.blok)}>
       {map(images, (image, index) => (
         <Lightbox key={index} image={image}>
           <Image
@@ -27,6 +28,6 @@ export default function TripleImage(props: Props) {
           />
         </Lightbox>
       ))}
-    </div>
+    </Section>
   );
 }

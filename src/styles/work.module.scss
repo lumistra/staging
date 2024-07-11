@@ -1,36 +1,6 @@
 @import "./colors";
 @import "./sizes";
 
-.heroWrapper {
-  display: flex;
-  min-height: 400px;
-  padding-bottom: 300px;
-  padding-top: 120px;
-
-  @media screen and (max-width: $tablet) {
-    min-height: auto;
-    padding-bottom: 180px;
-    padding-top: 0;
-  }
-
-  h1 {
-    display: flex;
-    font-size: 86px;
-
-    @media screen and (max-width: $desktop) {
-      font-size: 60px;
-    }
-
-    @media screen and (max-width: $laptop) {
-      font-size: 48px;
-    }
-
-    @media screen and (max-width: $mobile) {
-      font-size: 32px;
-    }
-  }
-}
-
 .gridWrapper {
   display: grid;
   gap: 20px;

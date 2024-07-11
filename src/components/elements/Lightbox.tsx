@@ -1,10 +1,10 @@
 import { cloneElement, useRef } from 'react';
 import Close from '@/assets/svg/close.svg';
 import Image from './Image';
-import type { CMSImage } from '@/types/shared';
+import type { ImageData } from '@/types/shared';
 
 type Props = {
-  image: CMSImage
+  image: ImageData
   children: any
 };
 

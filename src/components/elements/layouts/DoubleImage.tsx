@@ -1,14 +1,15 @@
 import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import { map } from 'lodash';
+import Section from '@/components/containers/Section';
 import style from '@/styles/layouts.module.scss';
 import Image from '../Image';
 import Lightbox from '../Lightbox';
-import type { CMSImage } from '@/types/shared';
+import type { ImageData } from '@/types/shared';
 
 type Props = {
   blok: SbBlokData & {
-    firstImage: CMSImage
-    secondImage: CMSImage
+    firstImage: ImageData
+    secondImage: ImageData
   }
 };
 
@@ -16,7 +17,7 @@ export default function DoubleImage(props: Props) {
   const images = [props.blok.firstImage, props.blok.secondImage];
 
   return (
-    <div className={style.doubleImageWrapper} {...storyblokEditable(props.blok)}>
+    <Section containerClassName={style.doubleImageWrapper} storyblokEditable={storyblokEditable(props.blok)}>
       {map(images, (image, index) => (
         <Lightbox key={index} image={image}>
           <Image
@@ -26,6 +27,6 @@ export default function DoubleImage(props: Props) {
           />
         </Lightbox>
       ))}
-    </div>
+    </Section>
   );
 }

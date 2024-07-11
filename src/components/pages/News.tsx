@@ -1,21 +1,21 @@
 import { useEffect, useState } from 'react';
+import { StoryblokComponent, storyblokEditable } from '@storyblok/react';
 import { map } from 'lodash';
-import Head from 'next/head';
-import useArticles from '@/content/articles';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
-import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/news.module.scss';
-import Latest from '../containers/articles/Latest';
-import WantToPublish from '../containers/articles/WantToPublish';
 import Section from '../containers/Section';
 import Article from '../elements/Article';
 import SeeMore from '../elements/SeeMore';
 import TextMask from '../elements/TextMask';
 import type { CursorPosition } from '../elements/SeeMore';
+import type { NewsData } from '@/types/articles';
+import type { SbBlokData } from '@storyblok/react';
 
-export default function News() {
-  const { t } = useTranslations();
-  const { articles } = useArticles();
+type Props = {
+  blok: SbBlokData & NewsData
+};
+
+export default function News(props: Props) {
   const [modalShow, setModalShow] = useState(false);
   const [cursorPosition, setCursorPosition] = useState<CursorPosition>(null);
 
@@ -44,20 +44,27 @@ export default function News() {
   };
 
   return (
-    <main>
-      <Head>
-        <title>{t('news.title')}</title>
-        <meta name="transition-title" content={t('routes.articles')} />
-      </Head>
-      <Latest className={style.latestWrapper} minHeight={120} hideCTA />
+    <main {...storyblokEditable(props.blok)}>
+      {map(props.blok.meta, (meta: SbBlokData) => (
+        <StoryblokComponent key={meta._uid} blok={meta} />
+      ))}
+
+      {map(props.blok.latest, (blok: SbBlokData) => (
+        <StoryblokComponent
+          key={blok._uid}
+          blok={blok}
+          className={style.latestWrapper}
+          minHeight={120}
+          hideCTA
+        />
+      ))}
+
       <Section containerClassName={style.articlesWrapper}>
         <TextMask identifier="animation-sub-title" className={style.articlesTitle}>
-          <h2>
-            {t('news.sub_title')}
-          </h2>
+          <h2>{props.blok.subTitle}</h2>
         </TextMask>
         <SeeMore cursorPosition={cursorPosition} show={modalShow} />
-        {map(articles, (article) => (
+        {map(props.blok.articles, (article) => (
           <Article
             key={article.slug}
             article={article}
@@ -67,7 +74,10 @@ export default function News() {
           />
         ))}
       </Section>
-      <WantToPublish className={style.spacingTop} altBackground />
+
+      {map(props.blok.wantToPublish, (blok: SbBlokData) => (
+        <StoryblokComponent key={blok._uid} blok={blok} />
+      ))}
     </main>
   );
 }

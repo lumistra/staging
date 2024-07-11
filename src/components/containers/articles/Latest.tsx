@@ -1,27 +1,25 @@
 import { useEffect, useState } from 'react';
+import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
 import { map } from 'lodash';
 import Article from '@/components/elements/Article';
 import CtaLink from '@/components/elements/CtaLink';
 import SeeMore from '@/components/elements/SeeMore';
-import useArticles from '@/content/articles';
 import { useScreenSize } from '@/hooks/useScreenSize';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
-import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/articles/latest.module.scss';
-import { routes } from '@/utils';
 import Section from '../Section';
 import type { CursorPosition } from '@/components/elements/SeeMore';
+import type { LatestData } from '@/types/articles';
 
 type Props = {
+  blok: SbBlokData & LatestData
   className?: string
   minHeight?: number
   hideCTA?: boolean
 };
 
 export default function Latest(props: Props) {
-  const { t } = useTranslations();
-  const { latest } = useArticles();
   const { isTablet } = useScreenSize();
   const [modalShow, setModalShow] = useState(false);
   const [cursorPosition, setCursorPosition] = useState<CursorPosition>(null);
@@ -51,25 +49,25 @@ export default function Latest(props: Props) {
   };
 
   return (
-    <Section containerClassName={classNames(style.latestWrapper, props.className)}>
+    <Section containerClassName={classNames(style.latestWrapper, props.className)} storyblokEditable={storyblokEditable(props.blok)}>
       <div className={classNames('latest-animation-wrapper', style.latestTextWrapper)}>
         <span className={style.latestTitle}>
-          {t('news.latest.section')}
+          {props.blok.section}
         </span>
         <div className={style.latestColumn}>
           <span className={style.latestTitle}>
-            {t('news.latest.title')}
+            {props.blok.title}
           </span>
           {!props.hideCTA && (
-            <CtaLink className={style.latestDesktopCTA} href={routes.articles}>
-              {t('globals.read_all')}
+            <CtaLink className={style.latestDesktopCTA} link={props.blok.cta[0].link}>
+              {props.blok.cta[0].text}
             </CtaLink>
           )}
         </div>
       </div>
       <SeeMore cursorPosition={cursorPosition} show={modalShow} />
       <div className={style.articlesWrapper}>
-        {map(latest, (article) => (
+        {map(props.blok.articles, (article) => (
           <Article
             key={article.slug}
             article={article}
@@ -79,8 +77,8 @@ export default function Latest(props: Props) {
           />
         ))}
         {!props.hideCTA && (
-          <CtaLink className={style.latestMobileCTA} href={routes.articles}>
-            {t('globals.read_all')}
+          <CtaLink className={style.latestMobileCTA} link={props.blok.cta[0].link}>
+            {props.blok.cta[0].text}
           </CtaLink>
         )}
       </div>

@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import Head from 'next/head';
-import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/privacy-policy.module.scss';
 import Section from '../containers/Section';
 
 export default function PrivacyPolicy() {
-  const { t } = useTranslations();
   const [host, setHost] = useState('');
   useEffect(() => setHost(window.location.host), []);
 
@@ -14,8 +12,7 @@ export default function PrivacyPolicy() {
     <main>
       <Section>
         <Head>
-          <title>{t('privacy-policy.title')}</title>
-          <meta name="transition-title" content={t('globals.privacy_policy')} />
+          <title>Lumistra - Privacy Policy</title>
         </Head>
         <section className={classNames('rich-text-wrapper', style.privacyWrapper)}>
           <h1>Privacy Policy for Lumistra</h1>

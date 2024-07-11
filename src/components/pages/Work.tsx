@@ -1,36 +1,32 @@
 import { useEffect, useRef, useState } from 'react';
+import { StoryblokComponent, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
 import { map } from 'lodash';
-import Head from 'next/head';
 import Arrow from '@/assets/svg/arrow.svg';
-import useProjects from '@/content/projects';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
-import useTranslations from '@/hooks/useTranslations';
 import projectStyle from '@/styles/projects/selected.module.scss';
 import style from '@/styles/work.module.scss';
+import { View } from '@/types/projects';
 import { routes } from '@/utils';
-import Contact from '../containers/Contact';
 import Section from '../containers/Section';
 import Image from '../elements/Image';
 import Link from '../elements/Link';
 import SeeMore from '../elements/SeeMore';
-import TextMask from '../elements/TextMask';
 import type { CursorPosition } from '../elements/SeeMore';
-import type { Project } from '@/types/projects';
+import type { ProjectData, WorkData } from '@/types/projects';
+import type { ISbStoryData, SbBlokData } from '@storyblok/react';
 
-enum View {
-  grid,
-  list,
-}
+type Props = {
+  blok: SbBlokData & WorkData
+};
 
-export default function Work() {
-  const { t } = useTranslations();
-  const { projects } = useProjects();
-  const [view, setView] = useState(View.grid);
+export default function Work(props: Props) {
+  const [view, setView] = useState(props.blok.defaultView);
   const [modalShow, setModalShow] = useState(false);
-  const [modalProject, setModalProject] = useState<Project | null>();
+  const [modalProject, setModalProject] = useState<ISbStoryData<ProjectData> | null>();
   const [cursorPosition, setCursorPosition] = useState<CursorPosition>(null);
   const timeoutID = useRef<any>();
+  const [modalProjectOverview] = modalProject?.content.overview || [];
 
   useScrollAnimations({
     heroTitle: {
@@ -57,7 +53,7 @@ export default function Work() {
     setView(option);
   };
 
-  const handleModalChange = (project: Project | null) => {
+  const handleModalChange = (project: ISbStoryData<ProjectData> | null) => {
     if (timeoutID.current) clearTimeout(timeoutID.current);
 
     const willShowModal = !!project;
@@ -73,22 +69,21 @@ export default function Work() {
   };
 
   return (
-    <main>
-      <Head>
-        <title>{t('work.title')}</title>
-        <meta name="transition-title" content={t('routes.work')} />
-      </Head>
-      <Section containerClassName={style.heroWrapper}>
-        <TextMask identifier="hero-animation-title">
-          <h1>{t('work.hero')}</h1>
-        </TextMask>
-      </Section>
+    <main {...storyblokEditable(props.blok)}>
+      {map(props.blok.meta, (meta: SbBlokData) => (
+        <StoryblokComponent key={meta._uid} blok={meta} />
+      ))}
+
+      {map(props.blok.hero, (hero: SbBlokData) => (
+        <StoryblokComponent key={hero._uid} blok={hero} />
+      ))}
+
       <Section containerClassName={classNames(style.gridWrapper, {
         [style.noGap]: View.list === view,
       })}
       >
         <div className={style.viewModeWrapper}>
-          <span>{t('work.view-mode.label')}</span>
+          <span>{props.blok.viewModeLabel}</span>
           <div className={style.viewModeSelect}>
             <span
               className={classNames(style.viewModeOption, {
@@ -96,7 +91,7 @@ export default function Work() {
               })}
               onClick={() => handleViewChange(View.list)}
             >
-              {t('work.view-mode.list')}
+              {props.blok.listLabel}
             </span>
             <span className={style.viewModeSplitter}>/</span>
             <span
@@ -105,7 +100,7 @@ export default function Work() {
               })}
               onClick={() => handleViewChange(View.grid)}
             >
-              {t('work.view-mode.grid')}
+              {props.blok.gridLabel}
             </span>
           </div>
         </div>
@@ -123,11 +118,11 @@ export default function Work() {
               }),
             }}
           >
-            {modalProject && (
+            {modalProjectOverview && (
               <Image
                 className={style.projectModalCover}
-                src={modalProject.cover}
-                alt={modalProject.title}
+                src={modalProjectOverview.cover.filename}
+                alt={modalProjectOverview.cover.alt}
               />
             )}
           </div>
@@ -135,38 +130,49 @@ export default function Work() {
         {View.grid === view && modalProject && (
           <SeeMore cursorPosition={cursorPosition} show={modalShow} />
         )}
-        {View.list === view && map(projects, (project) => (
-          <Link
-            key={project.slug}
-            className={style.projectListItem}
-            href={routes.project(project.slug)}
-            onMouseEnter={() => handleModalChange(project)}
-            onMouseLeave={() => handleModalChange(null)}
-          >
-            <span>{project.title}</span>
-            {modalProject?.slug === project.slug && (
-              <Arrow className={style.projectListArrow} />
-            )}
-          </Link>
-        ))}
-        {View.grid === view && map(projects, (project) => (
-          <Link
-            key={project.slug}
-            className={classNames(style.gridProject, projectStyle.projectContainer)}
-            href={routes.project(project.slug)}
-          >
-            <Image
-              className={classNames(style.gridCover, projectStyle.projectCover)}
-              src={project.cover}
-              alt={project.title}
+        {View.list === view && map(props.blok.projects, (project) => {
+          const [projectOverview] = project.content.overview;
+
+          return (
+            <Link
+              key={project.slug}
+              className={style.projectListItem}
+              href={routes.project(project.slug)}
               onMouseEnter={() => handleModalChange(project)}
               onMouseLeave={() => handleModalChange(null)}
-            />
-            <span className={classNames(projectStyle.projectTitle, projectStyle.projectTitleMin)}>{project.title}</span>
-          </Link>
-        ))}
+            >
+              <span>{projectOverview.title}</span>
+              {modalProject?.slug === project.slug && (
+                <Arrow className={style.projectListArrow} />
+              )}
+            </Link>
+          );
+        })}
+        {View.grid === view && map(props.blok.projects, (project) => {
+          const [projectOverview] = project.content.overview;
+
+          return (
+            <Link
+              key={project.slug}
+              className={classNames(style.gridProject, projectStyle.projectContainer)}
+              href={routes.project(project.slug)}
+            >
+              <Image
+                className={classNames(style.gridCover, projectStyle.projectCover)}
+                src={projectOverview.cover.filename}
+                alt={projectOverview.cover.alt}
+                onMouseEnter={() => handleModalChange(project)}
+                onMouseLeave={() => handleModalChange(null)}
+              />
+              <span className={classNames(projectStyle.projectTitle, projectStyle.projectTitleMin)}>{projectOverview.title}</span>
+            </Link>
+          );
+        })}
       </Section>
-      <Contact title={t('contact.cta.title-alt')} />
+
+      {map(props.blok.contact, (contact: SbBlokData) => (
+        <StoryblokComponent key={contact._uid} blok={contact} />
+      ))}
     </main>
   );
 }

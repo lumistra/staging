@@ -70,13 +70,7 @@
 
       a {
         border-bottom: 1px solid $gray;
-        opacity: 1;
         padding-bottom: 2px;
-        transition: 0.3s;
-
-        &:hover {
-          opacity: 0.5;
-        }
       }
     }
   }
@@ -131,13 +125,7 @@
 
       a {
         border-bottom: 1px solid $gray;
-        opacity: 1;
         padding-bottom: 2px;
-        transition: 0.3s;
-
-        &:hover {
-          opacity: 0.5;
-        }
       }
     }
   }

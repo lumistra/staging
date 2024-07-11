@@ -1,16 +1,15 @@
 import { useRef, useState } from 'react';
 import type { ChangeEvent, KeyboardEvent } from 'react';
 import ReactTextareaAutosize from 'react-textarea-autosize';
+import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
 import {
-  filter, first, isEmpty, map, some, startsWith, toLower,
+  filter, first, isEmpty, map, some, split, startsWith, toLower,
 } from 'lodash';
-import useServices from '@/content/services';
-import useTranslations from '@/hooks/useTranslations';
+import RichText from '@/components/elements/RichText';
 import style from '@/styles/services/selection.module.scss';
-import { parseMarkdown, routes } from '@/utils';
-import Link from '../../elements/Link';
 import Section from '../Section';
+import type { SelectionData } from '@/types/components';
 
 enum State {
   idle = 'idle',
@@ -19,30 +18,29 @@ enum State {
 }
 
 type Props = {
-  hideHero?: boolean
+  blok: SbBlokData & SelectionData
 };
 
 export default function Selection(props: Props) {
-  const { t } = useTranslations();
-  const { services } = useServices();
   const [showResults, setShowResults] = useState(false);
   const [state, setState] = useState(State.idle);
   const [value, setValue] = useState('');
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
+  const services = split(props.blok.services, '\n');
   const filteredServices = filter(services, (service) => startsWith(toLower(service), value));
   const responses = {
     [State.idle]: {
-      title: t('services.prompts.idle.title'),
-      paragraph: t('services.prompts.idle.paragraph'),
+      title: props.blok.idleTitle,
+      paragraph: props.blok.idleParagraph,
     },
     [State.positive]: {
-      title: t('services.prompts.positive.title'),
-      paragraph: parseMarkdown(t('services.prompts.positive.paragraph')),
+      title: props.blok.positiveTitle,
+      paragraph: props.blok.positiveParagraph,
     },
     [State.negative]: {
-      title: t('services.prompts.negative.title'),
-      paragraph: parseMarkdown(t('services.prompts.negative.paragraph')),
+      title: props.blok.negativeTitle,
+      paragraph: props.blok.negativeParagraph,
     },
   };
 
@@ -82,30 +80,28 @@ export default function Selection(props: Props) {
   };
 
   return (
-    <Section containerClassName={classNames(style.servicesWrapper, {
-      [style.breakLine]: props.hideHero,
-    })}
+    <Section
+      containerClassName={classNames(style.servicesWrapper, {
+        [style.breakLine]: props.blok.heroHide,
+      })}
+      storyblokEditable={storyblokEditable(props.blok)}
     >
-      {!props.hideHero && (
+      {!props.blok.heroHide && (
         <div className={style.heroWrapper}>
-          <span className={style.heroTitle}>{t('home.services.title')}</span>
-          <p className={style.heroParagraph}>
-            {t('home.services.paragraph_1')}
-            <Link href={routes.services}>{t('home.services.link')}</Link>
-            {t('home.services.paragraph_2')}
-          </p>
+          <span className={style.heroTitle}>{props.blok.heroTitle}</span>
+          <RichText className={style.heroParagraph}>{props.blok.heroParagraph}</RichText>
         </div>
       )}
       <div className={style.promptWrapper}>
         <span className={style.promptTitle}>{responses[state].title}</span>
-        <p className={style.promptParagraph}>{responses[state].paragraph}</p>
+        <RichText className={style.promptParagraph}>{responses[state].paragraph}</RichText>
       </div>
       <div className={style.inputWrapper}>
-        <span>{t('services.prompts.input.start')}</span>
+        <span>{props.blok.inputStartText}</span>
         <div className={style.inputContainer}>
           <ReactTextareaAutosize
             ref={inputRef}
-            placeholder={t('services.prompts.input.placeholder')}
+            placeholder={props.blok.inputPlaceholder}
             value={value}
             onChange={handleChange}
             onKeyDown={handleEnter}
@@ -132,7 +128,7 @@ export default function Selection(props: Props) {
               ))}
               {filteredServices.length === 0 && (
               <span className={classNames(style.searchItem, style.searchItemNoResults)}>
-                {t('services.prompts.input.no_results')}
+                {props.blok.inputNoResults}
               </span>
               )}
             </div>

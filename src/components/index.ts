@@ -1,4 +1,21 @@
+import AboutSection from '@/components/containers/AboutSection';
+import AltBackgroundSection from '@/components/containers/AltBackgroundSection';
+import AnimatedLineSection from '@/components/containers/AnimatedLineSection';
+import Headline from '@/components/containers/articles/Headline';
+import Latest from '@/components/containers/articles/Latest';
+import WantToPublish from '@/components/containers/articles/WantToPublish';
+import Contact from '@/components/containers/Contact';
+import Footer from '@/components/containers/Footer';
+import Hero from '@/components/containers/Hero';
+import Navigation from '@/components/containers/navigation/Navigation';
+import Sidenav from '@/components/containers/navigation/Sidenav';
+import Featured from '@/components/containers/projects/Featured';
 import Overview from '@/components/containers/projects/Overview';
+import Selected from '@/components/containers/projects/Selected';
+import Pitch from '@/components/containers/services/Pitch';
+import Selection from '@/components/containers/services/Selection';
+import WhatWeDo from '@/components/containers/services/WhatWeDo';
+import Workflow from '@/components/containers/Workflow';
 import DoubleImage from '@/components/elements/layouts/DoubleImage';
 import SingleImage from '@/components/elements/layouts/SingleImage';
 import Text from '@/components/elements/layouts/Text';
@@ -6,20 +23,46 @@ import TextImage from '@/components/elements/layouts/TextImage';
 import TripleImage from '@/components/elements/layouts/TripleImage';
 import Meta from '@/components/elements/Meta';
 import Article from '@/components/pages/Article';
-import Main from '@/components/pages/Main';
+import News from '@/components/pages/News';
+import Page from '@/components/pages/Page';
 import Project from '@/components/pages/Project';
+import Work from '@/components/pages/Work';
 
 const components = {
-  page: Main,
+  // Content-Type blocks
+  navigation: Navigation,
+  footer: Footer,
+  page: Page,
+  work: Work,
+  news: News,
   article: Article,
   project: Project,
+
+  // Nested blocks
+  sidenav: Sidenav,
   meta: Meta,
-  text: Text,
-  textImage: TextImage,
+  hero: Hero,
+  featured: Featured,
+  selected: Selected,
+  latest: Latest,
+  selection: Selection,
+  workflow: Workflow,
+  pitch: Pitch,
+  whatWeDo: WhatWeDo,
+  wantToPublish: WantToPublish,
+  animatedLineSection: AnimatedLineSection,
+  altBackgroundSection: AltBackgroundSection,
+  aboutSection: AboutSection,
+  contact: Contact,
+
+  // Projects & Articles blocks
+  overview: Overview,
+  headline: Headline,
   singleImage: SingleImage,
   doubleImage: DoubleImage,
   tripleImage: TripleImage,
-  overview: Overview,
+  textImage: TextImage,
+  text: Text,
 };
 
 export default components;

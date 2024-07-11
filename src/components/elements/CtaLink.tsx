@@ -1,12 +1,14 @@
 import classNames from 'classnames';
 import Arrow from '@/assets/svg/arrow.svg';
 import Link from './Link';
+import type { CMSLink } from '@/types/shared';
 
 type Props = {
   children: string
   className?: string,
   href?: string,
   locale?: string,
+  link?: CMSLink
   onClick?: () => void,
 };
 
@@ -40,6 +42,7 @@ export default function CtaLink(props: Props) {
   return (
     <Link
       className={classNames('cta-link', props.className)}
+      link={props.link}
       href={props.href}
       locale={props.locale}
     >

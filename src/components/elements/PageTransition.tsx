@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames';
-import { includes } from 'lodash';
+import { includes, some } from 'lodash';
 import { useRouter } from 'next/router';
 import { getRawPath, routes } from '@/utils';
 
@@ -10,7 +10,7 @@ export default function PageTransition() {
   const path = getRawPath(router.asPath, false);
 
   useEffect(() => {
-    if (!includes(path, `${routes.work}/`)) return;
+    if (!includes(path, `${routes.expected.projects}/`)) return;
 
     const timeoutId = setTimeout(() => {
       const transitionTitle = document.querySelector('meta[name="transition-title"]')?.getAttribute('content') || 'Lumistra';
@@ -37,7 +37,10 @@ export default function PageTransition() {
     <div
       id="page-transition"
       className={classNames({
-        hide: !includes(getRawPath(router.asPath), `${routes.work}/`),
+        hide: some([
+          `${routes.expected.work}/`,
+          `${routes.expected.projects}/`,
+        ], (slug) => !includes(getRawPath(router.asPath), slug)),
       })}
     >
       <div id="page-transition-title" className="animate-in">

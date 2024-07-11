@@ -24,7 +24,7 @@ export default function Overview(props: Props) {
         />
       </Lightbox>
       <div className={style.heroContentWrapper}>
-        <span className={style.heroLabel}>{t('projects.overview')}</span>
+        <span className={style.heroLabel}>{t('globals.overview')}</span>
         <div className={style.heroContent}>
           <h1 className={style.heroTitle}>{props.blok.title}</h1>
           <RichText className={style.heroParagraph}>{props.blok.paragraph}</RichText>

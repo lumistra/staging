@@ -57,11 +57,21 @@
 .backgroundBlack {
   background-color: $black;
   color: $white;
+
+  a {
+    border-bottom: 1px solid $white;
+    padding-bottom: 2px;
+  }
 }
 
 .backgroundGray {
   background-color: $whitish;
   color: $black;
+
+  a {
+    border-bottom: 1px solid $black;
+    padding-bottom: 2px;
+  }
 }
 
 .spacingTop {
@@ -113,7 +123,7 @@
     }
   }
 
-  p {
+  .wtpParagraph {
     font-size: 21px;
     line-height: 36px;
     grid-column-start: 3;
@@ -129,17 +139,6 @@
     @media screen and (max-width: $mobile) {
       font-size: 16px;
       line-height: 26px;
-    }
-
-    a {
-      border-bottom: 1px solid $gray;
-      opacity: 1;
-      padding-bottom: 2px;
-      transition: 0.3s;
-
-      &:hover {
-        opacity: 0.5;
-      }
     }
   }
 }

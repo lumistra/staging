@@ -4,17 +4,18 @@ import style from '@/styles/articles/grid.module.scss';
 import { routes } from '@/utils';
 import Image from './Image';
 import Link from './Link';
-import type { Article as ArticleType } from '@/types/articles';
+import type { ArticleData } from '@/types/articles';
+import type { ISbStoryData } from '@storyblok/react';
 
 type Props = {
-  article: ArticleType
+  article: ISbStoryData<ArticleData>
   minHeight?: number
   onMouseEnter?: () => void,
   onMouseLeave?: () => void,
 };
 
 export default function Article(props: Props) {
-  const publishedAt = new Date(props.article.publishedAt);
+  const [headline] = props.article.content.headline;
 
   return (
     <Link
@@ -24,19 +25,19 @@ export default function Article(props: Props) {
     >
       <Image
         className={style.articleCover}
-        src={props.article.cover}
-        alt={props.article.title}
+        src={headline.cover.filename}
+        alt={headline.cover.alt}
         onMouseEnter={props.onMouseEnter}
         onMouseLeave={props.onMouseLeave}
       />
       <span className={style.articleDate}>
-        {format(publishedAt, 'MMM io yyyy')}
+        {format(new Date(headline.publishedAt), 'MMM io yyyy')}
       </span>
       <span
         className={style.articleTitle}
         style={{ minHeight: props.minHeight || 400 }}
       >
-        {props.article.title}
+        {headline.title}
       </span>
     </Link>
   );
