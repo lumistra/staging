@@ -24,6 +24,10 @@
       margin-right: $mobileMinBleedWidth;
     }
 
+    &.wrapperHideBorder {
+      border-top: none;
+    }
+
     .selectedColumn {
       align-items: flex-end;
       display: flex;

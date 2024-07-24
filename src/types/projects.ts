@@ -29,6 +29,7 @@ export type SelectedData = {
   section: string
   cta: [CTALinkData]
   projects: ISbStoryData<ProjectData>[]
+  hideTopBorder: boolean
 };
 
 export enum View {

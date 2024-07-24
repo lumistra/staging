@@ -47,7 +47,10 @@ export default function Selected(props: Props) {
 
   return (
     <Section containerClassName={style.selectedWrapper} storyblokEditable={storyblokEditable(props.blok)}>
-      <div className={classNames('selected-animation-wrapper', style.selectedTextWrapper)}>
+      <div className={classNames('selected-animation-wrapper', style.selectedTextWrapper, {
+        [style.wrapperHideBorder]: props.blok.hideTopBorder,
+      })}
+      >
         <span className={style.selectedTitle}>
           {props.blok.section}
         </span>
