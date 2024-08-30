@@ -4,7 +4,7 @@ import ReactTextareaAutosize from 'react-textarea-autosize';
 import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
 import {
-  filter, first, isEmpty, map, some, split, startsWith, toLower,
+  filter, first, isEmpty, map, some, split, startsWith, toLower, uniq,
 } from 'lodash';
 import RichText from '@/components/elements/RichText';
 import style from '@/styles/services/selection.module.scss';
@@ -27,7 +27,7 @@ export default function Selection(props: Props) {
   const [value, setValue] = useState('');
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
-  const services = split(props.blok.services, '\n');
+  const services = uniq(split(props.blok.services, '\n'));
   const filteredServices = filter(services, (service) => startsWith(toLower(service), value));
   const responses = {
     [State.idle]: {
