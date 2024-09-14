@@ -1,6 +1,5 @@
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react';
 import { get, map } from 'lodash';
-import { useRouter } from 'next/router';
 import useTranslations, { defaultLocale } from '@/hooks/useTranslations';
 import style from '@/styles/article.module.scss';
 import { routes } from '@/utils';
@@ -17,7 +16,6 @@ type Props = {
 
 export default function Article(props: Props) {
   const { t } = useTranslations();
-  const router = useRouter();
   const { recommended } = props.blok;
   const recommendedArticle = get(recommended, 'content.headline[0]', null) as HeadlineData | null;
   const article = props.blok;
@@ -28,14 +26,7 @@ export default function Article(props: Props) {
       {map(article.meta, (meta: SbBlokData) => (
         <StoryblokComponent
           key={meta._uid}
-          blok={
-          {
-            ...meta,
-            article: {
-              ...headline,
-              path: router.asPath,
-            },
-          }}
+          blok={{ ...meta, article: headline }}
         />
       ))}
 
