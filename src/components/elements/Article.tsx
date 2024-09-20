@@ -31,7 +31,7 @@ export default function Article(props: Props) {
         onMouseLeave={props.onMouseLeave}
       />
       <span className={style.articleDate}>
-        {format(new Date(headline.publishedAt), 'MMM io yyyy')}
+        {format(new Date(headline.publishedAt), 'MMM do yyyy')}
       </span>
       <span
         className={style.articleTitle}

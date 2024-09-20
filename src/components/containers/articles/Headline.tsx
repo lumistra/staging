@@ -17,7 +17,7 @@ function Headline(props: Props) {
     <Section containerClassName={style.heroWrapper} storyblokEditable={storyblokEditable(props.blok)}>
       <h1 className={style.heroTitle}>{props.blok.title}</h1>
       <span className={style.heroDate}>
-        Written by {props.blok.author} on {format(publishedAt, 'MMM io yyyy')}
+        Written by {props.blok.author} on {format(publishedAt, 'MMM do yyyy')}
       </span>
       <Lightbox image={props.blok.cover}>
         <Image
