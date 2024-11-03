@@ -28,14 +28,21 @@
     }
   }
 
-  .heroDate {
+  .heroCredentials {
     color: $gray;
+    display: flex;
+    flex-wrap: wrap;
     font-size: 21px;
+    gap: 0 0.5ch;
     margin-bottom: 20px;
 
     @media screen and (max-width: $mobile) {
       font-size: 16px;
       margin-bottom: 10px;
+    }
+
+    .heroDate {
+      margin-right: 1.5ch;
     }
   }
 

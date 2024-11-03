@@ -28,7 +28,7 @@ export default function Pitch(props: Props) {
       {map(props.blok.items, (item, index) => (
         <div key={index} className={style.pitchItem}>
           <TextMask identifier="pitch-index-mask" className={style.pitchNumber}>
-            <span>{getOrderNumber(index, true)}</span>
+            <span>{getOrderNumber(index)}</span>
           </TextMask>
           <div className={style.pitchContent}>
             <TextMask identifier="pitch-index-title" className={style.pitchTitle}>

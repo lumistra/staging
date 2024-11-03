@@ -9431,7 +9431,7 @@ export const home = {
             _editable: '<!--#storyblok#{"name": "workflowStep", "space": "286844", "uid": "10b61c18-de33-464c-bd82-fa1b0ae936cd", "id": "519687689"}-->',
           },
         ],
-        title: 'Workflow blueprint',
+        title: 'Blueprint',
         component: 'workflow',
         paragraph: {
           type: 'doc',

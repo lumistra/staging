@@ -54,11 +54,11 @@
 
       .title {
         font-size: 72px;
-        grid-column-end: 3;
-        grid-column-start: 1;
+        grid-column: 2;
 
         @media screen and (max-width: $desktop) {
           font-size: 52px;
+          grid-column: 1;
         }
 
         @media screen and (max-width: $laptop) {
@@ -74,9 +74,19 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         font-size: 21px;
+        grid-column: 2;
         grid-row: 2;
 
         @media screen and (max-width: 1500px) {
+          grid-template-columns: 1fr;
+        }
+
+        @media screen and (max-width: $desktop) {
+          grid-column: 1;
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media screen and (max-width: $tablet) {
           grid-template-columns: 1fr;
         }
 

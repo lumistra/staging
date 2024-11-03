@@ -34,7 +34,7 @@ export default function Article(props: Props) {
         <StoryblokComponent key={blok._uid} blok={blok} />
       ))}
 
-      <div className={style.articleWrapper}>
+      <div id="article-content" className={style.articleWrapper}>
         {map(article.body, (component) => (
           <StoryblokComponent key={component._uid} blok={component} />
         ))}

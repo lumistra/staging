@@ -15,7 +15,7 @@
     padding: 20px 0;
 
     @media screen and (max-width: $tablet) {
-      grid-template-columns: auto max-content;
+      grid-template-columns: auto;
       padding: 10px 0;
     }
 
@@ -25,16 +25,15 @@
 
     .pitchNumber {
       color: $gray;
-      font-size: 21px;
+      font-size: 48px;
       font-family: $mono;
 
-      @media screen and (max-width: $tablet) {
-        grid-column: 2;
-        grid-row: 1;
+      @media screen and (max-width: $desktop) {
+        font-size: 36px;
       }
 
-      @media screen and (max-width: $mobile) {
-        font-size: 24px;
+      @media screen and (max-width: $tablet) {
+        display: none;
       }
     }
 

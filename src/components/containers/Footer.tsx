@@ -6,7 +6,7 @@ import Logo from '@/assets/svg/logo.svg';
 import Logotype from '@/assets/svg/logotype.svg';
 import { socials } from '@/content';
 import { useScreenSize } from '@/hooks/useScreenSize';
-import useTranslations from '@/hooks/useTranslations';
+import useTranslations, { defaultLocale } from '@/hooks/useTranslations';
 import { routes } from '@/utils';
 import Link from '../elements/Link';
 import LocaleSwitcher from '../elements/LocaleSwitcher';
@@ -112,15 +112,24 @@ export default function Footer(props: Props) {
         <ToTop className="mobile-to-top" />
         <div className="legal-wrapper">
           <span className="copyright">
-            Copyright &copy; {new Date().getFullYear()} Lumistra
+            Copyright &copy; {new Date().getFullYear()} Studio Lumistra
           </span>
-          <Link href={routes.privacyPolicy}>
+          <Link href={routes.privacyPolicy} locale={defaultLocale}>
             {t('globals.privacy_policy')}
           </Link>
           <span className="cookie-preferences" data-cc="show-preferencesModal">
             {t('globals.cookies')}
           </span>
           <ToTop className="desktop-to-top" />
+        </div>
+        <div className="company-details-wrapper">
+          <div className="company-details">
+            <span>Studio Lumistra,</span>
+            <span>VAT ID: HR52391551302;</span>
+            <span>IBAN: HR2723400091160777694;</span>
+            <span>SWIFT CODE: PBZGHR2X;</span>
+            <span>Bank: Privredna banka Zagreb d.d.</span>
+          </div>
         </div>
       </div>
     </footer>

@@ -3,7 +3,7 @@
   "name": "Lumistra",
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#19192b",
+  "theme_color": "#101010",
   "background_color": "#f7f7f7",
   "icons": [
     {

@@ -16,7 +16,7 @@ footer {
     margin-left: $desktopMinBleedWidth;
     margin-right: $desktopMinBleedWidth;
     max-width: $maxContentWidth;
-    padding-bottom: 140px;
+    padding-bottom: 70px;
     padding-top: 230px;
     width: 100%;
 
@@ -35,7 +35,7 @@ footer {
     }
 
     @media screen and (max-width: $mobile) {
-      padding-bottom: 80px;
+      padding-bottom: 20px;
       padding-top: 120px;
     }
 
@@ -247,6 +247,34 @@ footer {
 
       .cookie-preferences {
         cursor: pointer;
+      }
+    }
+
+    .company-details-wrapper {
+      color: $dark;
+      display: grid;
+      font-size: 21px;
+      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 20px;
+
+      @media screen and (max-width: 1200px) {
+        grid-template-columns: 1fr;
+      }
+
+      @media screen and (max-width: $mobile) {
+        font-size: 16px;
+      }
+
+      .company-details {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 1ch;
+
+        @media screen and (max-width: 1200px) {
+          flex-direction: column;
+          flex-wrap: nowrap;
+        }
       }
     }
 
