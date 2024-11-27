@@ -24,18 +24,19 @@ export type FeaturedData = {
   projects: ISbStoryData<ProjectData>[]
 };
 
+export enum View {
+  grid = 'grid',
+  list = 'list',
+}
+
 export type SelectedData = {
   title: string
   section: string
   cta: [CTALinkData]
   projects: ISbStoryData<ProjectData>[]
   hideTopBorder: boolean
+  view: keyof typeof View
 };
-
-export enum View {
-  grid = 'grid',
-  list = 'list',
-}
 
 export type WorkData = {
   meta: [MetaData]

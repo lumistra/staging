@@ -1,17 +1,21 @@
-import { useEffect, useState } from 'react';
-import { type SbBlokData, storyblokEditable } from '@storyblok/react';
+import { useEffect, useRef, useState } from 'react';
+import { storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
 import { map } from 'lodash';
+import Arrow from '@/assets/svg/arrow.svg';
 import CtaLink from '@/components/elements/CtaLink';
 import Image from '@/components/elements/Image';
 import Link from '@/components/elements/Link';
 import SeeMore from '@/components/elements/SeeMore';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import style from '@/styles/projects/selected.module.scss';
+import workStyle from '@/styles/work.module.scss';
+import { View } from '@/types/projects';
 import { routes } from '@/utils';
 import Section from '../Section';
 import type { CursorPosition } from '@/components/elements/SeeMore';
-import type { SelectedData } from '@/types/projects';
+import type { ProjectData, SelectedData } from '@/types/projects';
+import type { ISbStoryData, SbBlokData } from '@storyblok/react';
 
 type Props = {
   blok: SbBlokData & SelectedData
@@ -19,7 +23,10 @@ type Props = {
 
 export default function Selected(props: Props) {
   const [modalShow, setModalShow] = useState(false);
+  const [modalProject, setModalProject] = useState<ISbStoryData<ProjectData> | null>();
   const [cursorPosition, setCursorPosition] = useState<CursorPosition>(null);
+  const timeoutID = useRef<any>();
+  const [modalProjectOverview] = modalProject?.content.overview || [];
 
   useScrollAnimations({
     selectedWrapper: {
@@ -45,6 +52,21 @@ export default function Selected(props: Props) {
     setModalShow(shouldShow);
   };
 
+  const handleModalChange = (project: ISbStoryData<ProjectData> | null) => {
+    if (timeoutID.current) clearTimeout(timeoutID.current);
+
+    const willShowModal = !!project;
+    if (willShowModal) {
+      setModalProject(project);
+    } else {
+      timeoutID.current = setTimeout(() => {
+        setModalProject(project);
+      }, 500);
+    }
+
+    handleShowModal(willShowModal);
+  };
+
   return (
     <Section containerClassName={style.selectedWrapper} storyblokEditable={storyblokEditable(props.blok)}>
       <div className={classNames('selected-animation-wrapper', style.selectedTextWrapper, {
@@ -63,32 +85,79 @@ export default function Selected(props: Props) {
           </CtaLink>
         </div>
       </div>
-      <SeeMore cursorPosition={cursorPosition} show={modalShow} />
-      <div className={style.projectsWrapper}>
-        {map(props.blok.projects, (project) => {
-          const projectOverview = project.content.overview[0];
+      {View.list === props.blok.view ? (
+        <>
+          <div
+            className={classNames(workStyle.projectModal, workStyle.projectModalList, {
+              [workStyle.projectModalActive]: modalShow,
+            })}
+            style={{
+              position: 'fixed',
+              ...(cursorPosition && {
+                left: cursorPosition.x,
+                top: cursorPosition.y,
+              }),
+            }}
+          >
+            {modalProjectOverview && (
+            <Image
+              className={workStyle.projectModalCover}
+              src={modalProjectOverview.cover.filename}
+              alt={modalProjectOverview.cover.alt}
+            />
+            )}
+          </div>
+          <div className={classNames(style.projectsWrapper, style.listWrapper)}>
+            {map(props.blok.projects, (project) => {
+              const [projectOverview] = project.content.overview;
 
-          return (
-            <Link
-              key={project.slug}
-              className={style.projectContainer}
-              href={routes.project(project.slug)}
-            >
-              <Image
-                className={style.projectCover}
-                src={projectOverview.cover.filename}
-                alt={projectOverview.cover.alt}
-                onMouseEnter={() => handleShowModal(true)}
-                onMouseLeave={() => handleShowModal(false)}
-              />
-              <span className={style.projectTitle}>{projectOverview.title}</span>
-            </Link>
-          );
-        })}
-        <CtaLink className={style.selectedMobileCTA} link={props.blok.cta[0].link}>
-          {props.blok.cta[0].text}
-        </CtaLink>
-      </div>
+              return (
+                <Link
+                  key={project.slug}
+                  className={workStyle.projectListItem}
+                  href={routes.project(project.slug)}
+                  onMouseEnter={() => handleModalChange(project)}
+                  onMouseLeave={() => handleModalChange(null)}
+                >
+                  <span>{projectOverview.title}</span>
+                  {modalProject?.slug === project.slug && (
+                  <Arrow className={workStyle.projectListArrow} />
+                  )}
+                </Link>
+              );
+            })}
+          </div>
+        </>
+      ) : (
+        <>
+          <SeeMore cursorPosition={cursorPosition} show={modalShow} />
+          <div className={style.projectsWrapper}>
+            {map(props.blok.projects, (project) => {
+              const projectOverview = project.content.overview[0];
+
+              return (
+                <Link
+                  key={project.slug}
+                  className={style.projectContainer}
+                  href={routes.project(project.slug)}
+                >
+                  <Image
+                    className={style.projectCover}
+                    src={projectOverview.cover.filename}
+                    alt={projectOverview.cover.alt}
+                    onMouseEnter={() => handleShowModal(true)}
+                    onMouseLeave={() => handleShowModal(false)}
+                  />
+                  <span className={style.projectTitle}>{projectOverview.title}</span>
+                </Link>
+              );
+            })}
+            <CtaLink className={style.selectedMobileCTA} link={props.blok.cta[0].link}>
+              {props.blok.cta[0].text}
+            </CtaLink>
+          </div>
+        </>
+      )}
     </Section>
   );
 }

@@ -106,8 +106,7 @@ export default function Work(props: Props) {
         </div>
         {View.list === view && (
           <div
-            className={classNames(style.projectModal, {
-              [style.projectModalList]: View.list === view,
+            className={classNames(style.projectModal, style.projectModalList, {
               [style.projectModalActive]: modalShow,
             })}
             style={{

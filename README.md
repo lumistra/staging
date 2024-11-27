@@ -7,7 +7,7 @@
 Check out the live site at [studiolumistra.com](https://studiolumistra.com)
 
 - Designed by: [Studio Lumistra](https://studiolumistra.com)
-- Developed by: [Dario Dumlijan](https://github.com/dariodumlijan)
+- Developed by: [Dario Dumlijan](https://dariodumlijan.com)
 
 ----
 
@@ -53,9 +53,7 @@ yarn build:sitemap
 Run tests & linters
 ```sh
 yarn tsc
-
 yarn lint
-
 yarn test
 ```
 
@@ -67,8 +65,8 @@ yarn test:coverage
 ### Project .env variables
 ```sh
 STORYBLOK_API_TOKEN="<secret>" # Required
-GTM_ID="<secret>"
 SITE_URL="https://studiolumistra.com"
+GTM_ID="<secret>"
 BASE_PATH="lumistra" # Not required with a custom domain
 MOCK_API="true" # To minimise API calls in development
 ```

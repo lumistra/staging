@@ -19,7 +19,7 @@
       grid-template-columns: 1fr;
     }
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: $mobile) {
       margin-left: $mobileMinBleedWidth;
       margin-right: $mobileMinBleedWidth;
     }
@@ -77,6 +77,11 @@
     grid-template-columns: repeat(3, 1fr);
     margin-bottom: 300px;
     margin-top: 60px;
+
+    &.listWrapper {
+      gap: 0 20px;
+      grid-template-columns: 1fr;
+    }
 
     @media screen and (max-width: $mobile) {
       gap: 60px;

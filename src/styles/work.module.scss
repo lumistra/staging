@@ -88,88 +88,88 @@
       }
     }
   }
+}
 
-  .projectListItem {
-    align-items: center;
-    border-top: 1px solid $gray;
-    cursor: none !important;
-    display: flex;
-    font-size: 48px;
-    grid-column-end: 4;
-    grid-column-start: 1;
-    justify-content: space-between;
-    padding: 40px 0;
+.projectListItem {
+  align-items: center;
+  border-top: 1px solid $gray;
+  cursor: none !important;
+  display: flex;
+  font-size: 48px;
+  grid-column-end: 4;
+  grid-column-start: 1;
+  justify-content: space-between;
+  padding: 40px 0;
 
-    @media screen and (max-width: $desktop) {
-      font-size: 36px;
-    }
+  @media screen and (max-width: $desktop) {
+    font-size: 36px;
+  }
 
-    @media screen and (max-width: $tablet) {
-      cursor: inherit !important;
-    }
+  @media screen and (max-width: $tablet) {
+    cursor: inherit !important;
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: 24px;
+    margin: 0 $mobileMinBleedWidth;
+    padding: 20px 0;
+  }
+
+  &:last-of-type {
+    border-bottom: 1px solid $gray;
+  }
+
+  .projectListArrow {
+    height: 40px;
+    width: 40px;
 
     @media screen and (max-width: $mobile) {
-      font-size: 24px;
-      margin: 0 $mobileMinBleedWidth;
-      padding: 20px 0;
+      height: 20px;
+      width: 20px;
     }
 
-    &:last-of-type {
-      border-bottom: 1px solid $gray;
+    * {
+      stroke: $gray !important;
+      stroke-width: 1 !important;
     }
+  }
+}
 
-    .projectListArrow {
-      height: 40px;
-      width: 40px;
+.projectModal {
+  align-items: center;
+  display: flex;
+  height: 0;
+  justify-content: center;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: 0s;
+  width: 0;
+  z-index: 1;
 
-      @media screen and (max-width: $mobile) {
-        height: 20px;
-        width: 20px;
-      }
+  @media screen and (max-width: $tablet) {
+    display: none;
+  }
 
-      * {
-        stroke: $gray !important;
-        stroke-width: 1 !important;
-      }
+  &.projectModalList {
+    aspect-ratio: 1/1;
+    background-color: $dark;
+    transition:
+      height 0.2s ease-in-out,
+      width 0.2s ease-in-out;
+
+    &.projectModalActive {
+      height: 310px;
+      width: 310px;
     }
   }
 
-  .projectModal {
-    align-items: center;
-    display: flex;
-    height: 0;
-    justify-content: center;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: 0s;
-    width: 0;
-    z-index: 1;
+  .projectModalCover {
+    height: 100%;
+    width: 100%;
 
-    @media screen and (max-width: $tablet) {
-      display: none;
-    }
-
-    &.projectModalList {
-      aspect-ratio: 1/1;
-      background-color: $dark;
-      transition:
-        height 0.2s ease-in-out,
-        width 0.2s ease-in-out;
-
-      &.projectModalActive {
-        height: 310px;
-        width: 310px;
-      }
-    }
-
-    .projectModalCover {
-      height: 100%;
-      width: 100%;
-
-      img {
-        object-fit: cover;
-        object-position: center;
-      }
+    img {
+      object-fit: cover;
+      object-position: center;
     }
   }
 }

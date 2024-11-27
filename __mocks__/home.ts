@@ -5535,6 +5535,7 @@ export const home = {
         _uid: '2fa6d732-3534-410b-8fac-33a180cf1502',
         title: 'Selected work',
         section: 'Projects',
+        view: 'list',
         projects: [
           {
             name: 'Apiar',

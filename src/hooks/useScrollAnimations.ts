@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import {
   first, forEach, inRange, isEmpty, reduce,
 } from 'lodash';
@@ -36,7 +36,7 @@ const useScrollAnimations = (classList: ClassList, callback?: () => void) => {
   const animationList = useRef(classList);
   const firstLoad = useRef(true);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const list: AnimationsList = reduce(animationList.current, (res: AnimationsList, val, key) => {
       const elements = document.querySelectorAll(val.query);
       const isMultiple = elements.length > 1;
