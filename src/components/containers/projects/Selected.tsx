@@ -7,6 +7,7 @@ import CtaLink from '@/components/elements/CtaLink';
 import Image from '@/components/elements/Image';
 import Link from '@/components/elements/Link';
 import SeeMore from '@/components/elements/SeeMore';
+import { useScreenSize } from '@/hooks/useScreenSize';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import style from '@/styles/projects/selected.module.scss';
 import workStyle from '@/styles/work.module.scss';
@@ -22,6 +23,7 @@ type Props = {
 };
 
 export default function Selected(props: Props) {
+  const { isTablet } = useScreenSize();
   const [modalShow, setModalShow] = useState(false);
   const [modalProject, setModalProject] = useState<ISbStoryData<ProjectData> | null>();
   const [cursorPosition, setCursorPosition] = useState<CursorPosition>(null);
@@ -85,7 +87,7 @@ export default function Selected(props: Props) {
           </CtaLink>
         </div>
       </div>
-      {View.list === props.blok.view ? (
+      {!isTablet && View.list === props.blok.view ? (
         <>
           <div
             className={classNames(workStyle.projectModal, workStyle.projectModalList, {
