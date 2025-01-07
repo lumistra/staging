@@ -13,6 +13,7 @@ function AboutSection(props: Props) {
     <Section
       componentId={props.blok.component}
       containerClassName={style.aboutWrapper}
+      style={props.blok.styling}
       storyblokEditable={storyblokEditable(props.blok)}
     >
       <h3>{props.blok.title}</h3>

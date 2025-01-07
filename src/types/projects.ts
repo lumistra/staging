@@ -1,5 +1,5 @@
 import type { ContactData, HeroData, MetaData } from '@/types/components';
-import type { CTALinkData, MediaData } from '@/types/shared';
+import type { CTALinkData, MediaData, StylingData } from '@/types/shared';
 import type { ISbRichtext, ISbStoryData, SbBlokData } from '@storyblok/react';
 
 export type OverviewData = {
@@ -22,7 +22,7 @@ export type FeaturedData = {
   textPosition?: 'top' | 'bottom'
   projectCTA: string,
   projects: ISbStoryData<ProjectData>[]
-};
+} & StylingData;
 
 export enum View {
   grid = 'grid',
@@ -36,7 +36,7 @@ export type SelectedData = {
   projects: ISbStoryData<ProjectData>[]
   hideTopBorder: boolean
   view: keyof typeof View
-};
+} & StylingData;
 
 export type WorkData = {
   meta: [MetaData]

@@ -24,6 +24,7 @@ export default function Pitch(props: Props) {
       componentId={props.blok.component}
       className="animation-base pitch-animation-wrapper"
       containerClassName={style.pitchWrapper}
+      style={props.blok.styling}
       storyblokEditable={storyblokEditable(props.blok)}
     >
       {map(props.blok.items, (item, index) => (

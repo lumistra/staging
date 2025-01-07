@@ -1,3 +1,5 @@
+import type { SbBlokData } from '@storyblok/react';
+
 export type MediaData = {
   id: number,
   alt: string | null,
@@ -27,4 +29,10 @@ export type LinkData = {
 export type CTALinkData = {
   text: string,
   link: CMSLink,
+};
+
+export type StyleData = { css?: string } & SbBlokData;
+
+export type StylingData = {
+  styling?: [StyleData]
 };

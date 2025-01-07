@@ -85,6 +85,7 @@ export default function Selection(props: Props) {
       containerClassName={classNames(style.servicesWrapper, {
         [style.breakLine]: props.blok.heroHide,
       })}
+      style={props.blok.styling}
       storyblokEditable={storyblokEditable(props.blok)}
     >
       {!props.blok.heroHide && (

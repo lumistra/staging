@@ -19,6 +19,7 @@ export default function WantToPublish(props: Props) {
         [style.spacingTop]: props.blok.spacingTop,
       })}
       containerClassName={style.wantToPublishWrapper}
+      style={props.blok.styling}
       storyblokEditable={storyblokEditable(props.blok)}
     >
       <h3>{props.blok.title}</h3>

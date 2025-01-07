@@ -73,6 +73,7 @@ export default function Selected(props: Props) {
     <Section
       componentId={props.blok.component}
       containerClassName={style.selectedWrapper}
+      style={props.blok.styling}
       storyblokEditable={storyblokEditable(props.blok)}
     >
       <div className={classNames('animation-base selected-animation-wrapper', style.selectedTextWrapper, {

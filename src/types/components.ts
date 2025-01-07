@@ -1,5 +1,5 @@
 import type { HeadlineData } from '@/types/articles';
-import type { CTALinkData } from '@/types/shared';
+import type { CTALinkData, StylingData } from '@/types/shared';
 import type { ISbRichtext } from '@storyblok/react';
 
 export type MetaData = {
@@ -19,19 +19,19 @@ export type HeroData = {
   footnoteCTA?: string
   gradient: boolean
   spacingBottom: boolean
-};
+} & StylingData;
 
 export type AboutSectionData = {
   title: string
   paragraph: ISbRichtext
-};
+} & StylingData;
 
 export type AnimatedLineData = {
   titleBefore: string
   titleAfter: string
   paragraph: string
   cta: [CTALinkData]
-};
+} & StylingData;
 
 export type AltBackgroundSectionData = {
   title: string
@@ -41,7 +41,7 @@ export type AltBackgroundSectionData = {
   background: 'dark' | 'primary'
   gridParagraph: boolean
   animated: boolean
-};
+} & StylingData;
 
 export type SelectionData = {
   heroHide: boolean
@@ -57,7 +57,7 @@ export type SelectionData = {
   inputPlaceholder: string
   inputNoResults: string
   services: string
-};
+} & StylingData;
 
 type WorkflowStepData = {
   title: string
@@ -68,7 +68,7 @@ export type WorkflowData = {
   title: string
   paragraph: ISbRichtext
   steps: WorkflowStepData[]
-};
+} & StylingData;
 
 type PitchItemData = {
   title: string
@@ -77,14 +77,14 @@ type PitchItemData = {
 
 export type PitchData = {
   items: PitchItemData[]
-};
+} & StylingData;
 
 export type WantToPublishData = {
   background: 'dark' | 'gray'
   spacingTop: boolean
   title: string
   paragraph: ISbRichtext
-};
+} & StylingData;
 
 type Serviceitem = {
   title: string,
@@ -96,7 +96,7 @@ export type WhatWeDoData = {
   section: string
   paragraph: string
   services: Serviceitem[]
-};
+} & StylingData;
 
 export type ContactData = {
   small: boolean
@@ -104,4 +104,4 @@ export type ContactData = {
   mobileInvertColors: boolean
   title: string
   cta: [CTALinkData]
-};
+} & StylingData;

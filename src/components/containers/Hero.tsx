@@ -27,6 +27,7 @@ function Hero(props: Props) {
         componentId={props.blok.component}
         className={style.heroGradientBackground}
         containerClassName={style.heroGradientWrapper}
+        style={props.blok.styling}
         parentChildren={(<Gradient className={style.gradient} />)}
         storyblokEditable={storyblokEditable(props.blok)}
       >
@@ -43,6 +44,7 @@ function Hero(props: Props) {
       containerClassName={classNames(style.heroWrapper, {
         [style.spacingBottom]: props.blok.spacingBottom,
       })}
+      style={props.blok.styling}
       storyblokEditable={storyblokEditable(props.blok)}
     >
       <TextMask animationClass="animation-base hero-animation-text" className={style.heroTitle}>

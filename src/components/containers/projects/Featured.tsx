@@ -91,6 +91,7 @@ export default function Featured(props: Props) {
           [style.featuredTop]: props.blok.textPosition === 'top' || (!props.blok.textPosition && isTablet),
           [style.featuredBottom]: props.blok.textPosition === 'bottom' || (!props.blok.textPosition && !isTablet),
         })}
+        style={props.blok.styling}
         storyblokEditable={storyblokEditable(props.blok)}
       >
         <div className={classNames('animation-base featured-text', style.featuredTextWrapper)}>

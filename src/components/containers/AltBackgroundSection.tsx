@@ -55,6 +55,7 @@ function AltBackgroundSection(props: Props) {
         [style.primaryBackground]: props.blok.background === 'primary',
       })}
       containerClassName={style.altBackgroundContainer}
+      style={props.blok.styling}
       storyblokEditable={storyblokEditable(props.blok)}
     >
       <h3 ref={titleRef} className={style.altBackgroundTitle}>

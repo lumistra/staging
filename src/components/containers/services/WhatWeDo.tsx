@@ -13,6 +13,7 @@ export default function WhatWeDo(props: Props) {
     <Section
       componentId={props.blok.component}
       containerClassName={style.servicesWrapper}
+      style={props.blok.styling}
       storyblokEditable={storyblokEditable(props.blok)}
     >
       <span className={style.servicesTitle}>{props.blok.title}</span>

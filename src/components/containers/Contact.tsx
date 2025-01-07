@@ -25,6 +25,7 @@ export default function Contact(props: Props) {
       containerClassName={classNames(style.contactCTAWrapper, {
         [style.noBorderContact]: props.blok.noBorder,
       })}
+      style={props.blok.styling}
       storyblokEditable={storyblokEditable(props.blok)}
     >
       <div className={classNames('animation-base contact-animation-wrapper', style.contentWrapper)}>

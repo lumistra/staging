@@ -27,7 +27,7 @@ export default function Latest(props: Props) {
   useScrollAnimations({
     latestWrapper: {
       animation: AnimationType.fadeDown,
-      query: '.animation-base latest-animation-wrapper',
+      query: '.latest-animation-wrapper',
       offset: 100,
     },
   });
@@ -52,6 +52,7 @@ export default function Latest(props: Props) {
     <Section
       componentId={props.blok.component}
       containerClassName={classNames(style.latestWrapper, props.className)}
+      style={props.blok.styling}
       storyblokEditable={storyblokEditable(props.blok)}
     >
       <div className={classNames('animation-base latest-animation-wrapper', style.latestTextWrapper)}>

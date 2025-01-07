@@ -35,6 +35,7 @@ function Workflow(props: Props) {
       componentId={props.blok.component}
       className={style.backgroundWrapper}
       containerClassName={style.wrapper}
+      style={props.blok.styling}
       storyblokEditable={storyblokEditable(props.blok)}
     >
       <div className={style.header}>

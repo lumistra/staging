@@ -6,6 +6,10 @@
 
   img,
   video {
+    background-image: url("/assets/svg/placeholder.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100%;
     object-fit: cover;
     object-position: center;
@@ -72,6 +76,10 @@
 
     img,
     video {
+      background-image: url("/assets/svg/placeholder.svg");
+      background-position: top;
+      background-repeat: no-repeat;
+      background-size: contain;
       height: 100%;
       object-fit: contain;
       object-position: top;

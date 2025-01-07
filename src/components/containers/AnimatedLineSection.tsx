@@ -28,6 +28,7 @@ function AnimatedLineSection(props: Props) {
     <Section
       componentId={props.blok.component}
       containerClassName={style.aboutUsWrapper}
+      style={props.blok.styling}
       storyblokEditable={storyblokEditable(props.blok)}
     >
       <h5>
