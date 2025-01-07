@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from 'react';
 import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import { format } from 'date-fns';
 import round from 'lodash/round';
-import Image from '@/components/elements/Image';
+import Section from '@/components/containers/Section';
 import Lightbox from '@/components/elements/Lightbox';
+import Media from '@/components/elements/Media';
 import style from '@/styles/article.module.scss';
-import Section from '../Section';
 import type { HeadlineData } from '@/types/articles';
 
 type Props = {
@@ -40,7 +40,11 @@ function Headline(props: Props) {
   }, []);
 
   return (
-    <Section containerClassName={style.heroWrapper} storyblokEditable={storyblokEditable(props.blok)}>
+    <Section
+      componentId={props.blok.component}
+      containerClassName={style.heroWrapper}
+      storyblokEditable={storyblokEditable(props.blok)}
+    >
       <h1 className={style.heroTitle}>{props.blok.title}</h1>
       <span className={style.heroCredentials}>
         <span className={style.heroAuthor}>Written by {props.blok.author}</span>
@@ -48,7 +52,7 @@ function Headline(props: Props) {
         <span className={style.heroReadTime}>Read time: {readTime}</span>
       </span>
       <Lightbox image={props.blok.cover}>
-        <Image
+        <Media
           className={style.heroCover}
           src={props.blok.cover.filename}
           alt={props.blok.cover.alt}

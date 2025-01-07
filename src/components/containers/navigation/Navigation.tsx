@@ -4,10 +4,10 @@ import classNames from 'classnames';
 import { map } from 'lodash';
 import Icon from '@/assets/svg/icon.svg';
 import Logo from '@/assets/svg/logo.svg';
+import Sidenav from '@/components/containers/navigation/Sidenav';
 import Link from '@/components/elements/Link';
 import Menu from '@/components/elements/Menu';
 import { useScreenSize } from '@/hooks/useScreenSize';
-import Sidenav from './Sidenav';
 import type { NavigationData } from '@/types/globals';
 
 type Props = {

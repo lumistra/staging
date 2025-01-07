@@ -3,16 +3,15 @@ import { StoryblokComponent, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
 import { map } from 'lodash';
 import Arrow from '@/assets/svg/arrow.svg';
-import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
+import Section from '@/components/containers/Section';
+import Link from '@/components/elements/Link';
+import Media from '@/components/elements/Media';
+import SeeMore from '@/components/elements/SeeMore';
 import projectStyle from '@/styles/projects/selected.module.scss';
 import style from '@/styles/work.module.scss';
 import { View } from '@/types/projects';
 import { routes } from '@/utils';
-import Section from '../containers/Section';
-import Image from '../elements/Image';
-import Link from '../elements/Link';
-import SeeMore from '../elements/SeeMore';
-import type { CursorPosition } from '../elements/SeeMore';
+import type { CursorPosition } from '@/components/elements/SeeMore';
 import type { ProjectData, WorkData } from '@/types/projects';
 import type { ISbStoryData, SbBlokData } from '@storyblok/react';
 
@@ -27,14 +26,6 @@ export default function Work(props: Props) {
   const [cursorPosition, setCursorPosition] = useState<CursorPosition>(null);
   const timeoutID = useRef<any>();
   const [modalProjectOverview] = modalProject?.content.overview || [];
-
-  useScrollAnimations({
-    heroTitle: {
-      animation: AnimationType.fadeUp,
-      query: '.hero-animation-title',
-      offset: 0,
-    },
-  });
 
   useEffect(() => {
     const handleMove = ({ x, y }: MouseEvent) => {
@@ -78,9 +69,11 @@ export default function Work(props: Props) {
         <StoryblokComponent key={hero._uid} blok={hero} />
       ))}
 
-      <Section containerClassName={classNames(style.gridWrapper, {
-        [style.noGap]: View.list === view,
-      })}
+      <Section
+        componentId={props.blok.component}
+        containerClassName={classNames(style.gridWrapper, {
+          [style.noGap]: View.list === view,
+        })}
       >
         <div className={style.viewModeWrapper}>
           <span>{props.blok.viewModeLabel}</span>
@@ -118,7 +111,7 @@ export default function Work(props: Props) {
             }}
           >
             {modalProjectOverview && (
-              <Image
+              <Media
                 className={style.projectModalCover}
                 src={modalProjectOverview.cover.filename}
                 alt={modalProjectOverview.cover.alt}
@@ -156,7 +149,7 @@ export default function Work(props: Props) {
               className={classNames(style.gridProject, projectStyle.projectContainer)}
               href={routes.project(project.slug)}
             >
-              <Image
+              <Media
                 className={classNames(style.gridCover, projectStyle.projectCover)}
                 src={projectOverview.cover.filename}
                 alt={projectOverview.cover.alt}

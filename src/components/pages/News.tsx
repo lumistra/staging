@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react';
 import { map } from 'lodash';
+import Section from '@/components/containers/Section';
+import Article from '@/components/elements/Article';
+import SeeMore from '@/components/elements/SeeMore';
+import TextMask from '@/components/elements/TextMask';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import style from '@/styles/news.module.scss';
-import Section from '../containers/Section';
-import Article from '../elements/Article';
-import SeeMore from '../elements/SeeMore';
-import TextMask from '../elements/TextMask';
-import type { CursorPosition } from '../elements/SeeMore';
+import type { CursorPosition } from '@/components/elements/SeeMore';
 import type { NewsData } from '@/types/articles';
 import type { SbBlokData } from '@storyblok/react';
 
@@ -59,8 +59,11 @@ export default function News(props: Props) {
         />
       ))}
 
-      <Section containerClassName={style.articlesWrapper}>
-        <TextMask identifier="animation-sub-title" className={style.articlesTitle}>
+      <Section
+        componentId={props.blok.component}
+        containerClassName={style.articlesWrapper}
+      >
+        <TextMask animationClass="animation-base animation-sub-title" className={style.articlesTitle}>
           <h2>{props.blok.subTitle}</h2>
         </TextMask>
         <SeeMore cursorPosition={cursorPosition} show={modalShow} />

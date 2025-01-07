@@ -1,6 +1,6 @@
 import { MARK_LINK, render } from 'storyblok-rich-text-react-renderer';
 import classNames from 'classnames';
-import Link from './Link';
+import Link from '@/components/elements/Link';
 import type { ISbRichtext } from '@storyblok/react';
 
 type Props = {

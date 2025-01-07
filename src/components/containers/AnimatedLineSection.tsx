@@ -1,9 +1,9 @@
 import { type SbBlokData, storyblokEditable } from '@storyblok/react';
+import Section from '@/components/containers/Section';
+import CtaLink from '@/components/elements/CtaLink';
+import TextMask from '@/components/elements/TextMask';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import style from '@/styles/home.module.scss';
-import Section from './Section';
-import CtaLink from '../elements/CtaLink';
-import TextMask from '../elements/TextMask';
 import type { AnimatedLineData } from '@/types/components';
 
 type Props = {
@@ -26,6 +26,7 @@ function AnimatedLineSection(props: Props) {
 
   return (
     <Section
+      componentId={props.blok.component}
       containerClassName={style.aboutUsWrapper}
       storyblokEditable={storyblokEditable(props.blok)}
     >
@@ -35,10 +36,10 @@ function AnimatedLineSection(props: Props) {
       </h5>
       <h5>{props.blok.titleAfter}</h5>
       <div className={style.aboutUsContentWrapper}>
-        <TextMask identifier="animated-line-section-paragraph">
+        <TextMask animationClass="animation-base animated-line-section-paragraph">
           <p>{props.blok.paragraph}</p>
         </TextMask>
-        <TextMask identifier="animated-line-section-cta">
+        <TextMask animationClass="animation-base animated-line-section-cta">
           <CtaLink link={props.blok.cta[0].link}>
             {props.blok.cta[0].text}
           </CtaLink>

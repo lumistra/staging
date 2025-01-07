@@ -3,6 +3,7 @@ import classNames from 'classnames';
 
 type Props = {
   id?: string,
+  componentId?: string,
   className?: string,
   containerClassName?: string,
   children: any
@@ -15,6 +16,7 @@ const Section = forwardRef((props: Props, ref?: any) => (
     ref={ref}
     id={props.id}
     className={classNames('max-content-wrapper', props.className)}
+    data-component-id={props.componentId}
     {...props.storyblokEditable}
   >
     {props.parentChildren}

@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import Arrow from '@/assets/svg/arrow.svg';
-import Link from './Link';
+import Link from '@/components/elements/Link';
 import type { CMSLink } from '@/types/shared';
 
 type Props = {

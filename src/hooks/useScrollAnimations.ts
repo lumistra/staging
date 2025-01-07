@@ -67,9 +67,13 @@ const useScrollAnimations = (classList: ClassList, callback?: () => void) => {
       if (isEmpty(list)) return;
 
       forEach(list, (val) => {
-        if (val.animation) val.element.classList.add(`animation-${val.animation}`);
+        if (val.animation) {
+          val.element.classList.add(`animation-${val.animation}`);
+          val.element.classList.remove('animation-base');
+        }
         if (!elementInView(window, val)) return;
 
+        val.element.classList.remove('animation-base');
         val.element.classList.add('animate-in');
       });
     };

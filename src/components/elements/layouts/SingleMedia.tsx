@@ -1,21 +1,24 @@
 import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import Section from '@/components/containers/Section';
+import Lightbox from '@/components/elements/Lightbox';
+import Media from '@/components/elements/Media';
 import style from '@/styles/layouts.module.scss';
-import Image from '../Image';
-import Lightbox from '../Lightbox';
-import type { ImageData } from '@/types/shared';
+import type { MediaData } from '@/types/shared';
 
 type Props = {
   blok: SbBlokData & {
-    image: ImageData
+    image: MediaData
   }
 };
 
-export default function SingleImage(props: Props) {
+export default function SingleMedia(props: Props) {
   return (
-    <Section storyblokEditable={storyblokEditable(props.blok)}>
+    <Section
+      componentId={props.blok.component}
+      storyblokEditable={storyblokEditable(props.blok)}
+    >
       <Lightbox image={props.blok.image}>
-        <Image
+        <Media
           className={style.singleImage}
           src={props.blok.image.filename}
           alt={props.blok.image.alt}

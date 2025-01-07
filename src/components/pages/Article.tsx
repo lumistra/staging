@@ -1,12 +1,12 @@
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react';
 import { get, map } from 'lodash';
+import Section from '@/components/containers/Section';
+import CtaLink from '@/components/elements/CtaLink';
+import Link from '@/components/elements/Link';
+import Media from '@/components/elements/Media';
 import useTranslations, { defaultLocale } from '@/hooks/useTranslations';
 import style from '@/styles/article.module.scss';
 import { routes } from '@/utils';
-import Section from '../containers/Section';
-import CtaLink from '../elements/CtaLink';
-import Image from '../elements/Image';
-import Link from '../elements/Link';
 import type { ArticleData, HeadlineData } from '@/types/articles';
 import type { SbBlokData } from '@storyblok/react';
 
@@ -41,7 +41,10 @@ export default function Article(props: Props) {
       </div>
 
       {recommended && recommendedArticle && (
-        <Section containerClassName={style.recommendedWrapper}>
+        <Section
+          componentId={props.blok.component}
+          containerClassName={style.recommendedWrapper}
+        >
           <div className={style.recommendedHeader}>
             <span className={style.recommendedTitle}>{recommendedArticle.title}</span>
             <CtaLink className={style.recommendedCTA} href={routes.article(recommended.slug)} locale={defaultLocale}>
@@ -49,7 +52,7 @@ export default function Article(props: Props) {
             </CtaLink>
           </div>
           <Link href={routes.article(recommended.slug)} locale={defaultLocale}>
-            <Image
+            <Media
               className={style.recommendedCover}
               src={recommendedArticle.cover.filename}
               alt={recommendedArticle.cover.alt}

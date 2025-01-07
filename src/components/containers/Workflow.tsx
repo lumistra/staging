@@ -3,12 +3,12 @@ import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
 import { map } from 'lodash';
 import Plus from '@/assets/svg/plus.svg';
+import Section from '@/components/containers/Section';
+import RichText from '@/components/elements/RichText';
+import TextMask from '@/components/elements/TextMask';
 import useScrollAnimations from '@/hooks/useScrollAnimations';
 import style from '@/styles/workflow.module.scss';
 import { getOrderNumber } from '@/utils';
-import Section from './Section';
-import RichText from '../elements/RichText';
-import TextMask from '../elements/TextMask';
 import type { WorkflowData } from '@/types/components';
 
 type Props = {
@@ -32,6 +32,7 @@ function Workflow(props: Props) {
   return (
     <Section
       id="workflow"
+      componentId={props.blok.component}
       className={style.backgroundWrapper}
       containerClassName={style.wrapper}
       storyblokEditable={storyblokEditable(props.blok)}
@@ -40,7 +41,7 @@ function Workflow(props: Props) {
         <span className={style.title}>{props.blok.title}</span>
         <RichText className={style.paragraph}>{props.blok.paragraph}</RichText>
       </div>
-      <div className="workflow-animation-container">
+      <div className="animation-base workflow-animation-container">
         {map(props.blok.steps, (step, index) => {
           const isExpanded = expanded === index;
 
@@ -50,12 +51,12 @@ function Workflow(props: Props) {
               className={classNames('workflow-animation-row', style.row)}
               onClick={() => handleToggleExpand(index)}
             >
-              <TextMask identifier="workflow-index-mask">
+              <TextMask animationClass="workflow-index-mask">
                 <span className={style.index}>{getOrderNumber(index)}</span>
               </TextMask>
               <div className={style.column}>
                 <div className={style.heading}>
-                  <TextMask identifier="workflow-label-mask">
+                  <TextMask animationClass="workflow-label-mask">
                     <span>{step.title}</span>
                   </TextMask>
                   <Plus className={classNames('workflow-animation-icon', style.icon, {

@@ -6,9 +6,9 @@ import classNames from 'classnames';
 import {
   filter, first, isEmpty, map, some, split, startsWith, toLower, uniq,
 } from 'lodash';
+import Section from '@/components/containers/Section';
 import RichText from '@/components/elements/RichText';
 import style from '@/styles/services/selection.module.scss';
-import Section from '../Section';
 import type { SelectionData } from '@/types/components';
 
 enum State {
@@ -81,6 +81,7 @@ export default function Selection(props: Props) {
 
   return (
     <Section
+      componentId={props.blok.component}
       containerClassName={classNames(style.servicesWrapper, {
         [style.breakLine]: props.blok.heroHide,
       })}

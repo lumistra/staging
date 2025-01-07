@@ -1,8 +1,8 @@
 import { Fragment } from 'react';
 import classNames from 'classnames';
 import { map, upperCase } from 'lodash';
+import Link from '@/components/elements/Link';
 import useTranslations, { locales } from '@/hooks/useTranslations';
-import Link from './Link';
 
 type Props = {
   onClick?: () => void

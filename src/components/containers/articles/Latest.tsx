@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
 import { map } from 'lodash';
+import Section from '@/components/containers/Section';
 import Article from '@/components/elements/Article';
 import CtaLink from '@/components/elements/CtaLink';
 import SeeMore from '@/components/elements/SeeMore';
 import { useScreenSize } from '@/hooks/useScreenSize';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import style from '@/styles/articles/latest.module.scss';
-import Section from '../Section';
 import type { CursorPosition } from '@/components/elements/SeeMore';
 import type { LatestData } from '@/types/articles';
 
@@ -27,7 +27,7 @@ export default function Latest(props: Props) {
   useScrollAnimations({
     latestWrapper: {
       animation: AnimationType.fadeDown,
-      query: '.latest-animation-wrapper',
+      query: '.animation-base latest-animation-wrapper',
       offset: 100,
     },
   });
@@ -49,8 +49,12 @@ export default function Latest(props: Props) {
   };
 
   return (
-    <Section containerClassName={classNames(style.latestWrapper, props.className)} storyblokEditable={storyblokEditable(props.blok)}>
-      <div className={classNames('latest-animation-wrapper', style.latestTextWrapper)}>
+    <Section
+      componentId={props.blok.component}
+      containerClassName={classNames(style.latestWrapper, props.className)}
+      storyblokEditable={storyblokEditable(props.blok)}
+    >
+      <div className={classNames('animation-base latest-animation-wrapper', style.latestTextWrapper)}>
         <span className={style.latestTitle}>
           {props.blok.section}
         </span>

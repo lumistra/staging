@@ -1,9 +1,9 @@
 import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
+import Section from '@/components/containers/Section';
+import CtaLink from '@/components/elements/CtaLink';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import style from '@/styles/contact.module.scss';
-import Section from './Section';
-import CtaLink from '../elements/CtaLink';
 import type { ContactData } from '@/types/components';
 
 type Props = {
@@ -21,12 +21,13 @@ export default function Contact(props: Props) {
 
   return (
     <Section
+      componentId={props.blok.component}
       containerClassName={classNames(style.contactCTAWrapper, {
         [style.noBorderContact]: props.blok.noBorder,
       })}
       storyblokEditable={storyblokEditable(props.blok)}
     >
-      <div className={classNames('contact-animation-wrapper', style.contentWrapper)}>
+      <div className={classNames('animation-base contact-animation-wrapper', style.contentWrapper)}>
         <span className={classNames({
           [style.title]: !props.blok.small,
           [style.titleSmall]: props.blok.small,

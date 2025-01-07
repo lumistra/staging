@@ -16,11 +16,11 @@ import Pitch from '@/components/containers/services/Pitch';
 import Selection from '@/components/containers/services/Selection';
 import WhatWeDo from '@/components/containers/services/WhatWeDo';
 import Workflow from '@/components/containers/Workflow';
-import DoubleImage from '@/components/elements/layouts/DoubleImage';
-import SingleImage from '@/components/elements/layouts/SingleImage';
+import DoubleMedia from '@/components/elements/layouts/DoubleMedia';
+import SingleMedia from '@/components/elements/layouts/SingleMedia';
 import Text from '@/components/elements/layouts/Text';
-import TextImage from '@/components/elements/layouts/TextImage';
-import TripleImage from '@/components/elements/layouts/TripleImage';
+import TextMedia from '@/components/elements/layouts/TextMedia';
+import TripleMedia from '@/components/elements/layouts/TripleMedia';
 import Meta from '@/components/elements/Meta';
 import Article from '@/components/pages/Article';
 import News from '@/components/pages/News';
@@ -58,10 +58,10 @@ const components = {
   // Projects & Articles blocks
   overview: Overview,
   headline: Headline,
-  singleImage: SingleImage,
-  doubleImage: DoubleImage,
-  tripleImage: TripleImage,
-  textImage: TextImage,
+  singleImage: SingleMedia,
+  doubleImage: DoubleMedia,
+  tripleImage: TripleMedia,
+  textImage: TextMedia,
   text: Text,
 };
 

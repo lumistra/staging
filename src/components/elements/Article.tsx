@@ -1,9 +1,9 @@
 import { format } from 'date-fns';
+import Link from '@/components/elements/Link';
+import Media from '@/components/elements/Media';
 import { defaultLocale } from '@/hooks/useTranslations';
 import style from '@/styles/articles/grid.module.scss';
 import { routes } from '@/utils';
-import Image from './Image';
-import Link from './Link';
 import type { ArticleData } from '@/types/articles';
 import type { ISbStoryData } from '@storyblok/react';
 
@@ -23,7 +23,7 @@ export default function Article(props: Props) {
       href={routes.article(props.article.slug)}
       locale={defaultLocale}
     >
-      <Image
+      <Media
         className={style.articleCover}
         src={headline.cover.filename}
         alt={headline.cover.alt}

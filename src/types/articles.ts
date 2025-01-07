@@ -1,12 +1,12 @@
-import type { MetaData, WantToPublishData } from './components';
-import type { CTALinkData, ImageData } from './shared';
+import type { MetaData, WantToPublishData } from '@/types/components';
+import type { CTALinkData, MediaData } from '@/types/shared';
 import type { ISbStoryData, SbBlokData } from '@storyblok/react';
 
 export type HeadlineData = {
   title: string
   author: string
   publishedAt: string
-  cover: ImageData
+  cover: MediaData
 };
 
 export type ArticleData = {

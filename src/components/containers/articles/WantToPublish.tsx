@@ -1,8 +1,8 @@
 import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
+import Section from '@/components/containers/Section';
 import RichText from '@/components/elements/RichText';
 import style from '@/styles/news.module.scss';
-import Section from '../Section';
 import type { WantToPublishData } from '@/types/components';
 
 type Props = {
@@ -12,6 +12,7 @@ type Props = {
 export default function WantToPublish(props: Props) {
   return (
     <Section
+      componentId={props.blok.component}
       className={classNames({
         [style.backgroundBlack]: props.blok.background === 'dark',
         [style.backgroundGray]: props.blok.background === 'gray',

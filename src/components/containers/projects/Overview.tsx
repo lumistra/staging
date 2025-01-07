@@ -1,10 +1,10 @@
 import { type SbBlokData, storyblokEditable } from '@storyblok/react';
-import Image from '@/components/elements/Image';
+import Section from '@/components/containers/Section';
 import Lightbox from '@/components/elements/Lightbox';
+import Media from '@/components/elements/Media';
 import RichText from '@/components/elements/RichText';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/project.module.scss';
-import Section from '../Section';
 import type { OverviewData } from '@/types/projects';
 
 type Props = {
@@ -15,9 +15,13 @@ export default function Overview(props: Props) {
   const { t } = useTranslations();
 
   return (
-    <Section containerClassName={style.heroWrapper} storyblokEditable={storyblokEditable(props.blok)}>
+    <Section
+      componentId={props.blok.component}
+      containerClassName={style.heroWrapper}
+      storyblokEditable={storyblokEditable(props.blok)}
+    >
       <Lightbox image={props.blok.cover}>
-        <Image
+        <Media
           className={style.heroCover}
           src={props.blok.cover.filename}
           alt={props.blok.cover.alt}

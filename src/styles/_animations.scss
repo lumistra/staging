@@ -107,6 +107,10 @@
   }
 }
 
+.animation-base > * {
+  opacity: 0;
+}
+
 .animation-fade-in {
   @include fadeIn;
 }

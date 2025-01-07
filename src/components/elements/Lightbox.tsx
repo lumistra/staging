@@ -1,10 +1,10 @@
 import { cloneElement, useRef } from 'react';
 import Close from '@/assets/svg/close.svg';
-import Image from './Image';
-import type { ImageData } from '@/types/shared';
+import Media from '@/components/elements/Media';
+import type { MediaData } from '@/types/shared';
 
 type Props = {
-  image: ImageData
+  image: MediaData
   children: any
 };
 
@@ -26,7 +26,7 @@ export default function Lightbox(props: Props) {
       })}
       <dialog ref={dialogRef} className="lightbox-wrapper">
         <Close className="close-icon" onClick={handleLightboxToggle} />
-        <Image src={props.image.filename} alt={props.image.alt} />
+        <Media src={props.image.filename} alt={props.image.alt} />
       </dialog>
     </>
   );

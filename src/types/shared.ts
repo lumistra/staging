@@ -1,4 +1,4 @@
-export type ImageData = {
+export type MediaData = {
   id: number,
   alt: string | null,
   filename: string,

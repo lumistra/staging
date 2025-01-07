@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import Head from 'next/head';
+import Section from '@/components/containers/Section';
 import style from '@/styles/privacy-policy.module.scss';
-import Section from '../containers/Section';
 
 export default function PrivacyPolicy() {
   const [host, setHost] = useState('');

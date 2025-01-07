@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
+import Section from '@/components/containers/Section';
 import CtaLink from '@/components/elements/CtaLink';
-import Image from '@/components/elements/Image';
 import Link from '@/components/elements/Link';
+import Media from '@/components/elements/Media';
 import SeeMore from '@/components/elements/SeeMore';
 import { useScreenSize } from '@/hooks/useScreenSize';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import style from '@/styles/projects/featured.module.scss';
 import { getOrderNumber, routes } from '@/utils';
-import Section from '../Section';
 import type { CursorPosition } from '@/components/elements/SeeMore';
 import type { FeaturedData } from '@/types/projects';
 
@@ -72,7 +72,10 @@ export default function Featured(props: Props) {
   return (
     <>
       {props.blok.show && (
-        <Section containerClassName={style.featuredHeaderWrapper}>
+        <Section
+          componentId={props.blok.component}
+          containerClassName={style.featuredHeaderWrapper}
+        >
           <h3>{props.blok.title}</h3>
           {props.blok.sectionCTA && (
             <CtaLink link={props.blok.sectionCTA[0].link}>
@@ -82,6 +85,7 @@ export default function Featured(props: Props) {
         </Section>
       )}
       <Section
+        componentId={props.blok.component}
         containerClassName={classNames(style.featuredWrapper, {
           [style.featuredGapBottom]: props.blok.show,
           [style.featuredTop]: props.blok.textPosition === 'top' || (!props.blok.textPosition && isTablet),
@@ -89,7 +93,7 @@ export default function Featured(props: Props) {
         })}
         storyblokEditable={storyblokEditable(props.blok)}
       >
-        <div className={classNames('featured-text', style.featuredTextWrapper)}>
+        <div className={classNames('animation-base featured-text', style.featuredTextWrapper)}>
           <span>{currentProjectOverview.title}</span>
           <CtaLink className={style.desktopCTA} href={routes.project(currentProject.slug)}>
             {props.blok.projectCTA}
@@ -99,8 +103,8 @@ export default function Featured(props: Props) {
           </span>
         </div>
         <SeeMore cursorPosition={cursorPosition} show={modalShow} />
-        <Link className="featured-cover" href={routes.project(currentProject.slug)}>
-          <Image
+        <Link className="animation-base featured-cover" href={routes.project(currentProject.slug)}>
+          <Media
             className={style.featuredCover}
             src={currentProjectOverview.cover.filename}
             alt={currentProjectOverview.cover.alt}

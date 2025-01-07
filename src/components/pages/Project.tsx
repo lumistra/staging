@@ -1,12 +1,12 @@
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react';
 import { get, map } from 'lodash';
+import Section from '@/components/containers/Section';
+import CtaLink from '@/components/elements/CtaLink';
+import Link from '@/components/elements/Link';
+import Media from '@/components/elements/Media';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/project.module.scss';
 import { routes } from '@/utils';
-import Section from '../containers/Section';
-import CtaLink from '../elements/CtaLink';
-import Image from '../elements/Image';
-import Link from '../elements/Link';
 import type { OverviewData, ProjectData } from '@/types/projects';
 import type { SbBlokData } from '@storyblok/react';
 
@@ -37,7 +37,10 @@ export default function Project(props: Props) {
       </div>
 
       {recommended && recommendedProject && (
-        <Section containerClassName={style.recommendedWrapper}>
+        <Section
+          componentId={props.blok.component}
+          containerClassName={style.recommendedWrapper}
+        >
           <div className={style.recommendedHeader}>
             <span className={style.recommendedTitle}>{recommendedProject.title}</span>
             <CtaLink className={style.recommendedCTA} href={routes.project(recommended.slug)}>
@@ -45,7 +48,7 @@ export default function Project(props: Props) {
             </CtaLink>
           </div>
           <Link href={routes.project(recommended.slug)}>
-            <Image
+            <Media
               className={style.recommendedCover}
               src={recommendedProject.cover.filename}
               alt={recommendedProject.cover.alt}

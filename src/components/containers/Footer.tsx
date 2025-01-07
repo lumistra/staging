@@ -4,13 +4,13 @@ import { floor, map } from 'lodash';
 import Icon from '@/assets/svg/icon.svg';
 import Logo from '@/assets/svg/logo.svg';
 import Logotype from '@/assets/svg/logotype.svg';
+import Link from '@/components/elements/Link';
+import LocaleSwitcher from '@/components/elements/LocaleSwitcher';
+import ToTop from '@/components/elements/ToTop';
 import { socials } from '@/content';
 import { useScreenSize } from '@/hooks/useScreenSize';
 import useTranslations, { defaultLocale } from '@/hooks/useTranslations';
 import { routes } from '@/utils';
-import Link from '../elements/Link';
-import LocaleSwitcher from '../elements/LocaleSwitcher';
-import ToTop from '../elements/ToTop';
 import type { FooterData } from '@/types/globals';
 
 type Props = {

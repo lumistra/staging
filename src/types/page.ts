@@ -1,4 +1,4 @@
-import type { MetaData } from './components';
+import type { MetaData } from '@/types/components';
 import type { SbBlokData } from '@storyblok/react';
 
 export type PageData = {

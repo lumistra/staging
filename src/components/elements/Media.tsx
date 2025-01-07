@@ -12,7 +12,7 @@ type Props = {
   onMouseLeave?: () => void,
 };
 
-export default function Image(props: Props) {
+export default function Media(props: Props) {
   const basePath = (process.env.basePath || '');
   const src = `${basePath}${props.src}`;
   const isVideo = some(['webm', 'mp4', 'ogg'], (format) => includes(src, `.${format}`));

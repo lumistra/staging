@@ -1,9 +1,9 @@
-import type { ContactData, HeroData, MetaData } from './components';
-import type { CTALinkData, ImageData } from './shared';
+import type { ContactData, HeroData, MetaData } from '@/types/components';
+import type { CTALinkData, MediaData } from '@/types/shared';
 import type { ISbRichtext, ISbStoryData, SbBlokData } from '@storyblok/react';
 
 export type OverviewData = {
-  cover: ImageData
+  cover: MediaData
   title: string
   paragraph: ISbRichtext
 };

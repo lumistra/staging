@@ -3,9 +3,10 @@ import { storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
 import { map } from 'lodash';
 import Arrow from '@/assets/svg/arrow.svg';
+import Section from '@/components/containers/Section';
 import CtaLink from '@/components/elements/CtaLink';
-import Image from '@/components/elements/Image';
 import Link from '@/components/elements/Link';
+import Media from '@/components/elements/Media';
 import SeeMore from '@/components/elements/SeeMore';
 import { useScreenSize } from '@/hooks/useScreenSize';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
@@ -13,7 +14,6 @@ import style from '@/styles/projects/selected.module.scss';
 import workStyle from '@/styles/work.module.scss';
 import { View } from '@/types/projects';
 import { routes } from '@/utils';
-import Section from '../Section';
 import type { CursorPosition } from '@/components/elements/SeeMore';
 import type { ProjectData, SelectedData } from '@/types/projects';
 import type { ISbStoryData, SbBlokData } from '@storyblok/react';
@@ -70,8 +70,12 @@ export default function Selected(props: Props) {
   };
 
   return (
-    <Section containerClassName={style.selectedWrapper} storyblokEditable={storyblokEditable(props.blok)}>
-      <div className={classNames('selected-animation-wrapper', style.selectedTextWrapper, {
+    <Section
+      componentId={props.blok.component}
+      containerClassName={style.selectedWrapper}
+      storyblokEditable={storyblokEditable(props.blok)}
+    >
+      <div className={classNames('animation-base selected-animation-wrapper', style.selectedTextWrapper, {
         [style.wrapperHideBorder]: props.blok.hideTopBorder,
       })}
       >
@@ -102,7 +106,7 @@ export default function Selected(props: Props) {
             }}
           >
             {modalProjectOverview && (
-            <Image
+            <Media
               className={workStyle.projectModalCover}
               src={modalProjectOverview.cover.filename}
               alt={modalProjectOverview.cover.alt}
@@ -143,7 +147,7 @@ export default function Selected(props: Props) {
                   className={style.projectContainer}
                   href={routes.project(project.slug)}
                 >
-                  <Image
+                  <Media
                     className={style.projectCover}
                     src={projectOverview.cover.filename}
                     alt={projectOverview.cover.alt}

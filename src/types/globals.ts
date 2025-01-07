@@ -1,4 +1,4 @@
-import type { CMSLink, LinkData } from './shared';
+import type { CMSLink, LinkData } from '@/types/shared';
 
 export type SidenavData = {
   sitemap: LinkData[]

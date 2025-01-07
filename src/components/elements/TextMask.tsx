@@ -1,14 +1,14 @@
 import classNames from 'classnames';
 
 type Props = {
-  identifier: string
+  animationClass: string
   children: JSX.Element | JSX.Element[]
   className?: string
 };
 
 function TextMask(props: Props) {
   return (
-    <div className={classNames(props.identifier, props.className)}>
+    <div className={classNames(props.animationClass, props.className)}>
       {props.children}
     </div>
   );

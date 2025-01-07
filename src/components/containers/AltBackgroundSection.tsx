@@ -5,11 +5,11 @@ import {
   floor, get, isEmpty, map,
 } from 'lodash';
 import Arrow from '@/assets/svg/arrow.svg';
+import Section from '@/components/containers/Section';
+import CtaLink from '@/components/elements/CtaLink';
+import TextMask from '@/components/elements/TextMask';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import style from '@/styles/alt-background.module.scss';
-import Section from './Section';
-import CtaLink from '../elements/CtaLink';
-import TextMask from '../elements/TextMask';
 import type { AltBackgroundSectionData } from '@/types/components';
 
 type Props = {
@@ -49,6 +49,7 @@ function AltBackgroundSection(props: Props) {
   return (
     <Section
       ref={containerRef}
+      componentId={props.blok.component}
       className={classNames(style.altBackgroundWrapper, {
         [style.darkBackground]: props.blok.background === 'dark',
         [style.primaryBackground]: props.blok.background === 'primary',
@@ -90,7 +91,7 @@ function AltBackgroundSection(props: Props) {
         </CtaLink>
       )}
       {props.blok.footnoteCTA && (
-        <TextMask identifier="alt-background-animation">
+        <TextMask animationClass="animation-base alt-background-animation">
           <span className={style.altBackgroundFootnote}>
             {props.blok.footnoteCTA}
             <Arrow />

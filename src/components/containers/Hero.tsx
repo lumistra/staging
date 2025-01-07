@@ -1,11 +1,11 @@
 import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
 import Arrow from '@/assets/svg/arrow.svg';
+import Section from '@/components/containers/Section';
+import Gradient from '@/components/elements/Gradient';
+import TextMask from '@/components/elements/TextMask';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import style from '@/styles/hero.module.scss';
-import Section from './Section';
-import Gradient from '../elements/Gradient';
-import TextMask from '../elements/TextMask';
 import type { HeroData } from '@/types/components';
 
 type Props = {
@@ -24,12 +24,13 @@ function Hero(props: Props) {
   if (props.blok.gradient) {
     return (
       <Section
+        componentId={props.blok.component}
         className={style.heroGradientBackground}
         containerClassName={style.heroGradientWrapper}
         parentChildren={(<Gradient className={style.gradient} />)}
         storyblokEditable={storyblokEditable(props.blok)}
       >
-        <TextMask identifier="hero-animation-text" className={style.heroGradientTitle}>
+        <TextMask animationClass="animation-base hero-animation-text" className={style.heroGradientTitle}>
           <h1>{props.blok.title}</h1>
         </TextMask>
       </Section>
@@ -38,16 +39,17 @@ function Hero(props: Props) {
 
   return (
     <Section
+      componentId={props.blok.component}
       containerClassName={classNames(style.heroWrapper, {
         [style.spacingBottom]: props.blok.spacingBottom,
       })}
       storyblokEditable={storyblokEditable(props.blok)}
     >
-      <TextMask identifier="hero-animation-text" className={style.heroTitle}>
+      <TextMask animationClass="animation-base hero-animation-text" className={style.heroTitle}>
         <h1>{props.blok.title}</h1>
       </TextMask>
       {props.blok.footnoteCTA && (
-        <TextMask identifier="hero-animation-text">
+        <TextMask animationClass="animation-base hero-animation-text">
           <span className={style.heroFootnote}>
             {props.blok.footnoteCTA}
             <Arrow />

@@ -1,5 +1,5 @@
-import type { HeadlineData } from './articles';
-import type { CTALinkData } from './shared';
+import type { HeadlineData } from '@/types/articles';
+import type { CTALinkData } from '@/types/shared';
 import type { ISbRichtext } from '@storyblok/react';
 
 export type MetaData = {
