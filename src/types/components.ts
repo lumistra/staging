@@ -36,7 +36,7 @@ export type AnimatedLineData = {
 export type AltBackgroundSectionData = {
   title: string
   paragraph: string
-  cta?: [CTALinkData]
+  cta?: [CTALinkData] | []
   footnoteCTA?: string
   background: 'dark' | 'primary'
   gridParagraph: boolean

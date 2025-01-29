@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
+import { get, isEmpty } from 'lodash';
 import Section from '@/components/containers/Section';
 import CtaLink from '@/components/elements/CtaLink';
 import Link from '@/components/elements/Link';
@@ -77,9 +78,9 @@ export default function Featured(props: Props) {
           containerClassName={style.featuredHeaderWrapper}
         >
           <h3>{props.blok.title}</h3>
-          {props.blok.sectionCTA && (
-            <CtaLink link={props.blok.sectionCTA[0].link}>
-              {props.blok.sectionCTA[0].text}
+          {!isEmpty(props.blok.sectionCTA) && (
+            <CtaLink link={get(props.blok.sectionCTA, '[0].link')}>
+              {get(props.blok.sectionCTA, '[0].text', '')}
             </CtaLink>
           )}
         </Section>
