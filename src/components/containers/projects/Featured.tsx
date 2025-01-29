@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
-import { get, isEmpty } from 'lodash';
+import { get, includes, isEmpty } from 'lodash';
 import Section from '@/components/containers/Section';
 import CtaLink from '@/components/elements/CtaLink';
 import Link from '@/components/elements/Link';
@@ -97,9 +97,11 @@ export default function Featured(props: Props) {
       >
         <div className={classNames('animation-base featured-text', style.featuredTextWrapper)}>
           <span>{currentProjectOverview.title}</span>
-          <CtaLink className={style.desktopCTA} href={routes.project(currentProject.slug)}>
-            {props.blok.projectCTA}
-          </CtaLink>
+          {includes(['all', 'desktop', undefined], props.blok.showProjectCTA) && props.blok.projectCTA && (
+            <CtaLink className={style.desktopCTA} href={routes.project(currentProject.slug)}>
+              {props.blok.projectCTA}
+            </CtaLink>
+          )}
           <span className={style.featuredIndex}>
             {getOrderNumber(currentIndex, true)}
           </span>
@@ -114,9 +116,11 @@ export default function Featured(props: Props) {
             onMouseLeave={() => handleShowModal(false)}
           />
         </Link>
-        <CtaLink className={style.mobileCTA} href={routes.project(currentProject.slug)}>
-          {props.blok.projectCTA}
-        </CtaLink>
+        {includes(['all', 'mobile', undefined], props.blok.showProjectCTA) && props.blok.projectCTA && (
+          <CtaLink className={style.mobileCTA} href={routes.project(currentProject.slug)}>
+            {props.blok.projectCTA}
+          </CtaLink>
+        )}
       </Section>
     </>
   );

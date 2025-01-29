@@ -20,7 +20,8 @@ export type FeaturedData = {
   title?: string,
   sectionCTA?: [CTALinkData] | [],
   textPosition?: 'top' | 'bottom'
-  projectCTA: string,
+  projectCTA?: string,
+  showProjectCTA?: 'all' | 'desktop' | 'mobile' | 'none',
   projects: ISbStoryData<ProjectData>[]
 } & StylingData;
 
