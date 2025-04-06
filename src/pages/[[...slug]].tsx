@@ -1,3 +1,4 @@
+import fs from 'fs';
 import { getStoryblokApi } from '@storyblok/react';
 import StoryblokStory from '@storyblok/react/story';
 import { includes, reduce, some } from 'lodash';
@@ -5,7 +6,8 @@ import CookieConsent from '@/components/elements/CookieConsent';
 import PageTransition from '@/components/elements/PageTransition';
 import PrivacyPolicy from '@/components/pages/PrivacyPolicy';
 import { defaultLocale, locales } from '@/hooks/useTranslations';
-import { generateStaticPaths, routes } from '@/utils';
+import { routes, storyVersion } from '@/utils';
+import { generateGlobals, generateStaticPaths } from '@/utils/build';
 import { about } from '@mocks/about';
 import { article } from '@mocks/article';
 import { contact } from '@mocks/contact';
@@ -49,8 +51,6 @@ type StaticProps = {
   }
 };
 
-const storyVersion: 'published' | 'draft' = 'published';
-
 export async function getStaticProps(props: StaticProps) {
   const storyblokApi = getStoryblokApi();
 
@@ -61,6 +61,9 @@ export async function getStaticProps(props: StaticProps) {
   const slug = props.params.slug ? props.params.slug.join('/') : '';
   const slugPath = slug ? `/${slug}` : '';
   const apiPath = isSlugLocale ? slugPath : `${defaultLocale}${slugPath}`;
+
+  const header = process.env.mockApi ? headerMock : JSON.parse(fs.readFileSync(`${process.cwd()}/tmp/${locale}/header.json`, 'utf-8'));
+  const footer = process.env.mockApi ? footerMock : JSON.parse(fs.readFileSync(`${process.cwd()}/tmp/${locale}/footer.json`, 'utf-8'));
 
   if (process.env.mockApi) {
     let page = null;
@@ -96,17 +99,12 @@ export async function getStaticProps(props: StaticProps) {
 
     return {
       props: {
-        header: headerMock,
-        footer: footerMock,
+        header,
+        footer,
         page,
       },
     };
   }
-
-  const [{ data: header }, { data: footer }] = await Promise.all([
-    storyblokApi.get(`cdn/stories/${locale}/global/header`, { version: storyVersion }),
-    storyblokApi.get(`cdn/stories/${locale}/global/footer`, { version: storyVersion }),
-  ]);
 
   const { data: page } = slugPath === routes.privacyPolicy
     ? { data: { story: null } }
@@ -125,8 +123,8 @@ export async function getStaticProps(props: StaticProps) {
 
   return {
     props: {
-      header: header.story,
-      footer: footer.story,
+      header,
+      footer,
       page: page.story,
     },
   };
@@ -135,6 +133,7 @@ export async function getStaticProps(props: StaticProps) {
 export async function getStaticPaths() {
   const storyblokApi = getStoryblokApi();
   const { data } = process.env.mockApi ? { data: cmsLinks } : await storyblokApi.get('cdn/links', { version: storyVersion, per_page: 1000 });
+  await generateGlobals(storyblokApi);
 
   const links = reduce(data.links, (res, link) => {
     if (link.is_folder) return res;
