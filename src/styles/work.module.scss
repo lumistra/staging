@@ -82,9 +82,11 @@
 
     .gridCover {
       cursor: none !important;
+      user-select: none !important;
 
       @media screen and (max-width: $tablet) {
         cursor: inherit !important;
+        user-select: inherit !important;
       }
     }
   }
@@ -100,6 +102,7 @@
   grid-column-start: 1;
   justify-content: space-between;
   padding: 40px 0;
+  user-select: none !important;
 
   @media screen and (max-width: $desktop) {
     font-size: 36px;
@@ -107,6 +110,7 @@
 
   @media screen and (max-width: $tablet) {
     cursor: inherit !important;
+    user-select: inherit !important;
   }
 
   @media screen and (max-width: $mobile) {

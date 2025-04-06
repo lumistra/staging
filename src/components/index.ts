@@ -4,6 +4,7 @@ import WantToPublish from '@/components/containers/articles/WantToPublish';
 import Contact from '@/components/containers/main/Contact';
 import Footer from '@/components/containers/main/Footer';
 import Hero from '@/components/containers/main/Hero';
+import Stats from '@/components/containers/main/Stats';
 import Workflow from '@/components/containers/main/Workflow';
 import AboutSplit from '@/components/containers/misc/AboutSplit';
 import AboutSection from '@/components/containers/misc/AboutTextarea';
@@ -56,6 +57,7 @@ const components = {
   aboutSection: AboutSection,
   aboutSplit: AboutSplit,
   contact: Contact,
+  stats: Stats,
 
   // Projects & Articles blocks
   overview: Overview,

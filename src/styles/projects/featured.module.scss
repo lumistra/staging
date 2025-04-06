@@ -96,10 +96,12 @@
     aspect-ratio: 16 / 9;
     background-color: $gray;
     cursor: none;
+    user-select: none;
     width: 100%;
 
     @media screen and (max-width: $tablet) {
       cursor: inherit;
+      user-select: inherit;
     }
 
     @media screen and (max-width: $mobile) {

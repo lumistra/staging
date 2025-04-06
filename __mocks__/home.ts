@@ -5493,27 +5493,6 @@ export const home = {
         textPosition: 'top',
         _editable: '<!--#storyblok#{"name": "featured", "space": "286844", "uid": "fc6ef7d4-b5df-4ac5-9cd9-7f728934c6a4", "id": "519687689"}-->',
       },
-      {
-        cta: [
-          {
-            _uid: '79f066c8-11b5-40ad-8455-f4bb6cded905',
-            link: {
-              id: '',
-              url: '/about',
-              linktype: 'url',
-              fieldtype: 'multilink',
-              cached_url: '/about',
-            },
-            text: 'About us',
-            component: 'ctaLink',
-            _editable: '<!--#storyblok#{"name": "ctaLink", "space": "286844", "uid": "79f066c8-11b5-40ad-8455-f4bb6cded905", "id": "519687689"}-->',
-          },
-        ],
-        _uid: 'f63aec68-d5e2-4fbd-b3d9-d234140ab03e',
-        component: 'aboutSplit',
-        firstLine: 'Brands are shaped by perception, not pixels.',
-        secondLine: 'We design for impact, and not for decoration.',
-      },
       // {
       //   cta: [
       //     {
@@ -5537,6 +5516,50 @@ export const home = {
       //   titleBefore: 'One step further',
       //   _editable: '<!--#storyblok#{"name": "animatedLineSection", "space": "286844", "uid": "f63aec68-d5e2-4fbd-b3d9-d234140ab03e", "id": "519687689"}-->',
       // },
+      {
+        cta: [
+          {
+            _uid: '79f066c8-11b5-40ad-8455-f4bb6cded905',
+            link: {
+              id: '',
+              url: '/about',
+              linktype: 'url',
+              fieldtype: 'multilink',
+              cached_url: '/about',
+            },
+            text: 'About us',
+            component: 'ctaLink',
+            _editable: '<!--#storyblok#{"name": "ctaLink", "space": "286844", "uid": "79f066c8-11b5-40ad-8455-f4bb6cded905", "id": "519687689"}-->',
+          },
+        ],
+        _uid: 'test-aboutSplit-1234',
+        component: 'aboutSplit',
+        firstLine: 'Brands are shaped by perception, not pixels.',
+        secondLine: 'We design for impact, and not for decoration.',
+      },
+      {
+        _uid: 'test-stats-1234',
+        component: 'stats',
+        lineTop: true,
+        cta: 'Next',
+        stats: [
+          {
+            statistic: '55%',
+            paragraph: 'Of brand first impressions are visual.',
+            bottom: 'SOURCE: US CHAMBER OF COMMERCE',
+          },
+          {
+            statistic: '94%',
+            paragraph: 'Of customers recommend brands they connect with emotionally.',
+            bottom: 'SOURCE: GITNUX',
+          },
+          {
+            statistic: '42%',
+            paragraph: 'Of online shoppers base their opinion of a website based on the overall design alone.',
+            bottom: 'SOURCE: TINTUP',
+          },
+        ],
+      },
       {
         cta: [
           {

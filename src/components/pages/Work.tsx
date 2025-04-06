@@ -4,14 +4,14 @@ import classNames from 'classnames';
 import { map } from 'lodash';
 import Arrow from '@/assets/svg/arrow.svg';
 import Section from '@/components/containers/Section';
+import CursorTracker from '@/components/elements/CursorTracker';
 import Link from '@/components/elements/Link';
 import Media from '@/components/elements/Media';
-import SeeMore from '@/components/elements/SeeMore';
 import projectStyle from '@/styles/projects/selected.module.scss';
 import style from '@/styles/work.module.scss';
 import { View } from '@/types/projects';
 import { routes } from '@/utils';
-import type { CursorPosition } from '@/components/elements/SeeMore';
+import type { CursorPosition } from '@/components/elements/CursorTracker';
 import type { ProjectData, WorkData } from '@/types/projects';
 import type { ISbStoryData, SbBlokData } from '@storyblok/react';
 
@@ -120,7 +120,7 @@ export default function Work(props: Props) {
           </div>
         )}
         {View.grid === view && modalProject && (
-          <SeeMore cursorPosition={cursorPosition} show={modalShow} />
+          <CursorTracker cursorPosition={cursorPosition} show={modalShow} />
         )}
         {View.list === view && map(props.blok.projects, (project) => {
           const [projectOverview] = project.content.overview;

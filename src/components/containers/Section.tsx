@@ -12,6 +12,9 @@ type Props = {
   children: any
   parentChildren?: any
   storyblokEditable?: any
+  onClick?: () => void
+  onMouseEnter?: () => void,
+  onMouseLeave?: () => void,
 };
 
 const Section = forwardRef((props: Props, ref?: any) => {
@@ -24,6 +27,9 @@ const Section = forwardRef((props: Props, ref?: any) => {
       id={classNames(props.id, componentId)}
       className={classNames('max-content-wrapper', props.className)}
       data-component-id={props.componentId}
+      onClick={props.onClick}
+      onMouseEnter={props.onMouseEnter}
+      onMouseLeave={props.onMouseLeave}
       {...props.storyblokEditable}
     >
       {componentId && style.css && (

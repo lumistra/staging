@@ -1,0 +1,66 @@
+@import "../colors";
+@import "../sizes";
+
+.statsWrapper {
+  cursor: none;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 200px;
+  padding-top: 100px;
+  user-select: none;
+
+  &.line {
+    border-top: 1px solid $gray;
+  }
+
+  @media screen and (max-width: $tablet) {
+    cursor: inherit;
+    user-select: inherit;
+  }
+
+  @media screen and (max-width: $mobile) {
+    gap: 40px;
+    grid-template-columns: auto;
+  }
+
+  .stat {
+    font-size: 260px;
+    line-height: 195px;
+
+    @media screen and (max-width: $desktop) {
+      font-size: 200px;
+      line-height: 155px;
+    }
+
+    @media screen and (max-width: $tablet) {
+      font-size: 140px;
+      line-height: 110px;
+    }
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: space-between;
+    min-height: 200px;
+
+    p {
+      font-size: 36px;
+
+      @media screen and (max-width: $tablet) {
+        font-size: 32px;
+      }
+    }
+
+    span {
+      color: $gray;
+      font-size: 21px;
+
+      @media screen and (max-width: $tablet) {
+        font-size: 16px;
+      }
+    }
+  }
+}

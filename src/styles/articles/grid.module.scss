@@ -13,12 +13,14 @@
 
   .articleCover {
     aspect-ratio: 1/1;
-    cursor: none;
     background-color: $gray;
+    cursor: none;
+    user-select: none;
     width: 100%;
 
     @media screen and (max-width: $tablet) {
       cursor: inherit;
+      user-select: inherit;
     }
 
     img {

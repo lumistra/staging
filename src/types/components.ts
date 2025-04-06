@@ -76,6 +76,18 @@ export type WorkflowData = {
   steps: WorkflowStepData[]
 } & StylingData;
 
+export type StatData = {
+  statistic: string
+  paragraph: string
+  bottom?: string
+};
+
+export type StatsData = {
+  cta?: string
+  lineTop: boolean
+  stats: StatData[]
+} & StylingData;
+
 type PitchItemData = {
   title: string
   paragraph: string
