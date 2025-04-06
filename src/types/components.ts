@@ -26,6 +26,12 @@ export type AboutSectionData = {
   paragraph: ISbRichtext
 } & StylingData;
 
+export type AboutSplitData = {
+  firstLine: string
+  secondLine: string
+  cta?: [CTALinkData]
+} & StylingData;
+
 export type AnimatedLineData = {
   titleBefore: string
   titleAfter: string

@@ -1,12 +1,14 @@
-import AboutSection from '@/components/containers/AboutSection';
-import AltBackgroundSection from '@/components/containers/AltBackgroundSection';
-import AnimatedLineSection from '@/components/containers/AnimatedLineSection';
 import Headline from '@/components/containers/articles/Headline';
 import Latest from '@/components/containers/articles/Latest';
 import WantToPublish from '@/components/containers/articles/WantToPublish';
-import Contact from '@/components/containers/Contact';
-import Footer from '@/components/containers/Footer';
-import Hero from '@/components/containers/Hero';
+import Contact from '@/components/containers/main/Contact';
+import Footer from '@/components/containers/main/Footer';
+import Hero from '@/components/containers/main/Hero';
+import Workflow from '@/components/containers/main/Workflow';
+import AboutSplit from '@/components/containers/misc/AboutSplit';
+import AboutSection from '@/components/containers/misc/AboutTextarea';
+import AltBackgroundSection from '@/components/containers/misc/AltBackgroundSection';
+import AnimatedLineSection from '@/components/containers/misc/AnimatedLineSection';
 import Navigation from '@/components/containers/navigation/Navigation';
 import Sidenav from '@/components/containers/navigation/Sidenav';
 import Featured from '@/components/containers/projects/Featured';
@@ -15,7 +17,6 @@ import Selected from '@/components/containers/projects/Selected';
 import Pitch from '@/components/containers/services/Pitch';
 import Selection from '@/components/containers/services/Selection';
 import WhatWeDo from '@/components/containers/services/WhatWeDo';
-import Workflow from '@/components/containers/Workflow';
 import DoubleMedia from '@/components/elements/layouts/DoubleMedia';
 import SingleMedia from '@/components/elements/layouts/SingleMedia';
 import Text from '@/components/elements/layouts/Text';
@@ -53,6 +54,7 @@ const components = {
   animatedLineSection: AnimatedLineSection,
   altBackgroundSection: AltBackgroundSection,
   aboutSection: AboutSection,
+  aboutSplit: AboutSplit,
   contact: Contact,
 
   // Projects & Articles blocks

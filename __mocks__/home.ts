@@ -5510,12 +5510,33 @@ export const home = {
           },
         ],
         _uid: 'f63aec68-d5e2-4fbd-b3d9-d234140ab03e',
-        component: 'animatedLineSection',
-        paragraph: 'We strongly believe that every idea is a spark with potential. Through strategic collaboration and bold branding initiatives, together we are transforming that spark into your next big thing.',
-        titleAfter: 'always.',
-        titleBefore: 'One step further',
-        _editable: '<!--#storyblok#{"name": "animatedLineSection", "space": "286844", "uid": "f63aec68-d5e2-4fbd-b3d9-d234140ab03e", "id": "519687689"}-->',
+        component: 'aboutSplit',
+        firstLine: 'Brands are shaped by perception, not pixels.',
+        secondLine: 'We design for impact, and not for decoration.',
       },
+      // {
+      //   cta: [
+      //     {
+      //       _uid: '79f066c8-11b5-40ad-8455-f4bb6cded905',
+      //       link: {
+      //         id: '',
+      //         url: '/about',
+      //         linktype: 'url',
+      //         fieldtype: 'multilink',
+      //         cached_url: '/about',
+      //       },
+      //       text: 'About us',
+      //       component: 'ctaLink',
+      //       _editable: '<!--#storyblok#{"name": "ctaLink", "space": "286844", "uid": "79f066c8-11b5-40ad-8455-f4bb6cded905", "id": "519687689"}-->',
+      //     },
+      //   ],
+      //   _uid: 'f63aec68-d5e2-4fbd-b3d9-d234140ab03e',
+      //   component: 'animatedLineSection',
+      //   paragraph: 'We strongly believe that every idea is a spark with potential. Through strategic collaboration and bold branding initiatives, together we are transforming that spark into your next big thing.',
+      //   titleAfter: 'always.',
+      //   titleBefore: 'One step further',
+      //   _editable: '<!--#storyblok#{"name": "animatedLineSection", "space": "286844", "uid": "f63aec68-d5e2-4fbd-b3d9-d234140ab03e", "id": "519687689"}-->',
+      // },
       {
         cta: [
           {
