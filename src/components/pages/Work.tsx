@@ -8,7 +8,7 @@ import CursorTracker from '@/components/elements/CursorTracker';
 import Link from '@/components/elements/Link';
 import Media from '@/components/elements/Media';
 import projectStyle from '@/styles/projects/selected.module.scss';
-import style from '@/styles/work.module.scss';
+import style from '@/styles/projects/work.module.scss';
 import { View } from '@/types/projects';
 import { routes } from '@/utils';
 import type { CursorPosition } from '@/components/elements/CursorTracker';

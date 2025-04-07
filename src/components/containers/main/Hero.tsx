@@ -5,7 +5,7 @@ import Section from '@/components/containers/Section';
 import Gradient from '@/components/elements/Gradient';
 import TextMask from '@/components/elements/TextMask';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
-import style from '@/styles/hero.module.scss';
+import style from '@/styles/misc/hero.module.scss';
 import type { HeroData } from '@/types/components';
 
 type Props = {

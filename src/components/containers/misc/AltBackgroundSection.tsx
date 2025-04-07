@@ -9,7 +9,7 @@ import Section from '@/components/containers/Section';
 import CtaLink from '@/components/elements/CtaLink';
 import TextMask from '@/components/elements/TextMask';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
-import style from '@/styles/alt-background.module.scss';
+import style from '@/styles/misc/alt-background.module.scss';
 import type { AltBackgroundSectionData } from '@/types/components';
 
 type Props = {

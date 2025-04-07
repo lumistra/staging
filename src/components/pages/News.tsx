@@ -6,7 +6,7 @@ import Article from '@/components/elements/Article';
 import CursorTracker from '@/components/elements/CursorTracker';
 import TextMask from '@/components/elements/TextMask';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
-import style from '@/styles/news.module.scss';
+import style from '@/styles/articles/news.module.scss';
 import type { CursorPosition } from '@/components/elements/CursorTracker';
 import type { NewsData } from '@/types/articles';
 import type { SbBlokData } from '@storyblok/react';

@@ -1,7 +1,7 @@
 import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import Section from '@/components/containers/Section';
 import RichText from '@/components/elements/RichText';
-import style from '@/styles/about.module.scss';
+import style from '@/styles/misc/about.module.scss';
 import type { AboutSectionData } from '@/types/components';
 
 type Props = {

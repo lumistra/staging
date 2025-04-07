@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { nth } from 'lodash';
 import Section from '@/components/containers/Section';
 import CursorTracker from '@/components/elements/CursorTracker';
-import style from '@/styles/misc/stats.module.scss';
+import style from '@/styles/main/stats.module.scss';
 import type { CursorPosition } from '@/components/elements/CursorTracker';
 import type { StatData, StatsData } from '@/types/components';
 

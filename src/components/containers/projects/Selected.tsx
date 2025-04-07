@@ -11,7 +11,7 @@ import Media from '@/components/elements/Media';
 import { useScreenSize } from '@/hooks/useScreenSize';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import style from '@/styles/projects/selected.module.scss';
-import workStyle from '@/styles/work.module.scss';
+import workStyle from '@/styles/projects/work.module.scss';
 import { View } from '@/types/projects';
 import { routes } from '@/utils';
 import type { CursorPosition } from '@/components/elements/CursorTracker';

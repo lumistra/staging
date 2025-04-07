@@ -4,7 +4,7 @@ import Lightbox from '@/components/elements/Lightbox';
 import Media from '@/components/elements/Media';
 import RichText from '@/components/elements/RichText';
 import useTranslations from '@/hooks/useTranslations';
-import style from '@/styles/project.module.scss';
+import style from '@/styles/projects/project.module.scss';
 import type { OverviewData } from '@/types/projects';
 
 type Props = {

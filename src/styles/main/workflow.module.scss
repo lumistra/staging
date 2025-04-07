@@ -1,6 +1,6 @@
-@use "colors";
-@use "./fonts";
-@use "sizes";
+@use "../colors";
+@use "../fonts";
+@use "../sizes";
 
 .backgroundWrapper {
   background-color: colors.$primary;
