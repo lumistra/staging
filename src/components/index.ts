@@ -1,6 +1,7 @@
 import Headline from '@/components/containers/articles/Headline';
 import Latest from '@/components/containers/articles/Latest';
 import WantToPublish from '@/components/containers/articles/WantToPublish';
+import Bento from '@/components/containers/main/Bento';
 import Contact from '@/components/containers/main/Contact';
 import Footer from '@/components/containers/main/Footer';
 import Hero from '@/components/containers/main/Hero';
@@ -58,6 +59,7 @@ const components = {
   aboutSplit: AboutSplit,
   contact: Contact,
   stats: Stats,
+  bento: Bento,
 
   // Projects & Articles blocks
   overview: Overview,

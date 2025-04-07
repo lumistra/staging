@@ -1,5 +1,5 @@
 import type { HeadlineData } from '@/types/articles';
-import type { CTALinkData, StylingData } from '@/types/shared';
+import type { CMSLink, CTALinkData, StylingData } from '@/types/shared';
 import type { ISbRichtext } from '@storyblok/react';
 
 export type MetaData = {
@@ -85,6 +85,17 @@ export type StatsData = {
   cta?: string
   lineTop: boolean
   stats: StatData[]
+} & StylingData;
+
+export type FrameData = {
+  title: string
+  tags: { tag: string }[],
+  link: CMSLink,
+};
+
+export type GridData = {
+  headline: ISbRichtext
+  frames: FrameData
 } & StylingData;
 
 type PitchItemData = {
