@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { getStoryblokApi } from '@storyblok/react';
-import StoryblokStory from '@storyblok/react/story';
+import { StoryblokStory } from '@storyblok/react/rsc';
 import { includes, reduce, some } from 'lodash';
 import CookieConsent from '@/components/elements/CookieConsent';
 import PageTransition from '@/components/elements/PageTransition';
