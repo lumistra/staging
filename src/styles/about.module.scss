@@ -1,5 +1,5 @@
-@import "./colors";
-@import "./sizes";
+@use "colors";
+@use "sizes";
 
 .aboutWrapper {
   display: flex;
@@ -8,7 +8,7 @@
   margin-bottom: 420px;
   margin-top: 130px;
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: sizes.$mobile) {
     margin-bottom: 120px;
     margin-top: 40px;
   }
@@ -16,15 +16,15 @@
   h3 {
     font-size: 72px;
 
-    @media screen and (max-width: $desktop) {
+    @media screen and (max-width: sizes.$desktop) {
       font-size: 52px;
     }
 
-    @media screen and (max-width: $laptop) {
+    @media screen and (max-width: sizes.$laptop) {
       font-size: 36px;
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: sizes.$mobile) {
       font-size: 24px;
     }
   }
@@ -43,11 +43,11 @@
         grid-template-columns: 2fr 1fr;
       }
 
-      @media screen and (max-width: $tablet) {
+      @media screen and (max-width: sizes.$tablet) {
         display: block;
       }
 
-      @media screen and (max-width: $mobile) {
+      @media screen and (max-width: sizes.$mobile) {
         font-size: 16px;
       }
     }

@@ -1,3 +1,6 @@
+@use "colors";
+@use "sizes";
+
 .sidenav-wrapper {
   background-color: rgba(#000, 1);
   display: flex;
@@ -34,7 +37,7 @@
   }
 
   .sidenav-background-container {
-    background-color: $whitish;
+    background-color: colors.$whitish;
     height: 100%;
     overflow-y: auto;
     transform: translateY(-100%);
@@ -61,15 +64,15 @@
       display: flex;
       flex-direction: column;
       height: 100%;
-      margin: 0 $desktopMinBleedWidth;
-      max-width: $maxContentWidth;
+      margin: 0 sizes.$desktopMinBleedWidth;
+      max-width: sizes.$maxContentWidth;
 
       @media screen and (max-width: 1200px) {
-        margin: 0 $laptopMinBleedWidth;
+        margin: 0 sizes.$laptopMinBleedWidth;
       }
 
-      @media screen and (max-width: $tablet) {
-        margin: 0 $mobileMinBleedWidth;
+      @media screen and (max-width: sizes.$tablet) {
+        margin: 0 sizes.$mobileMinBleedWidth;
       }
 
       .top-container {
@@ -93,21 +96,21 @@
         margin: auto 0;
         padding-bottom: 110px;
 
-        @media screen and (max-width: $laptop) {
+        @media screen and (max-width: sizes.$laptop) {
           display: flex;
           flex-direction: column-reverse;
           gap: 160px;
           margin: 0;
         }
 
-        @media screen and (max-width: $mobile) {
+        @media screen and (max-width: sizes.$mobile) {
           gap: 60px;
         }
 
         .label {
           font-size: 21px;
 
-          @media screen and (max-width: $mobile) {
+          @media screen and (max-width: sizes.$mobile) {
             font-size: 16px;
           }
         }
@@ -118,12 +121,12 @@
           justify-content: space-between;
           margin-right: 40px;
 
-          @media screen and (max-width: $laptop) {
+          @media screen and (max-width: sizes.$laptop) {
             gap: 160px;
             margin-right: 0;
           }
 
-          @media screen and (max-width: $mobile) {
+          @media screen and (max-width: sizes.$mobile) {
             gap: 60px;
           }
 
@@ -134,21 +137,21 @@
 
             .locales {
               align-items: center;
-              color: $gray;
+              color: colors.$gray;
               display: flex;
               font-size: 48px;
               gap: 10px;
 
-              @media screen and (max-width: $desktop) {
+              @media screen and (max-width: sizes.$desktop) {
                 font-size: 36px;
               }
 
-              @media screen and (max-width: $mobile) {
+              @media screen and (max-width: sizes.$mobile) {
                 font-size: 24px;
               }
 
               .splitter {
-                color: $black;
+                color: colors.$black;
               }
 
               .locale {
@@ -156,7 +159,7 @@
 
                 &.active,
                 &:hover {
-                  color: $black;
+                  color: colors.$black;
                 }
               }
             }
@@ -168,7 +171,7 @@
               width: fit-content;
 
               &:after {
-                background-color: $black;
+                background-color: colors.$black;
                 bottom: -5px;
                 content: "";
                 height: 1.5px;
@@ -190,7 +193,7 @@
             gap: 30px 50px;
             margin-bottom: 100px;
 
-            @media screen and (max-width: $laptop) {
+            @media screen and (max-width: sizes.$laptop) {
               margin-bottom: 30px;
             }
           }
@@ -202,15 +205,15 @@
           font-size: 72px;
           gap: 30px;
 
-          @media screen and (max-width: $desktop) {
+          @media screen and (max-width: sizes.$desktop) {
             font-size: 52px;
           }
 
-          @media screen and (max-width: $laptop) {
+          @media screen and (max-width: sizes.$laptop) {
             font-size: 36px;
           }
 
-          @media screen and (max-width: $mobile) {
+          @media screen and (max-width: sizes.$mobile) {
             font-size: 24px;
             gap: 20px;
           }
@@ -219,7 +222,7 @@
             position: relative;
 
             &::after {
-              border-bottom: 1px solid $gray;
+              border-bottom: 1px solid colors.$gray;
               bottom: -15px;
               content: "";
               left: 0;
@@ -227,7 +230,7 @@
               transition: 0.3s;
               width: 0;
 
-              @media screen and (max-width: $mobile) {
+              @media screen and (max-width: sizes.$mobile) {
                 bottom: -10px;
               }
             }

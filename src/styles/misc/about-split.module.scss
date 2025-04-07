@@ -1,5 +1,5 @@
-@import "../colors";
-@import "../sizes";
+@use "../colors";
+@use "../sizes";
 
 .aboutSplitWrapper {
   display: grid;
@@ -8,7 +8,7 @@
   margin-bottom: 200px;
   margin-top: 100px;
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: sizes.$tablet) {
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -17,11 +17,11 @@
   .text {
     max-width: 800px;
 
-    @media screen and (max-width: $desktop) {
+    @media screen and (max-width: sizes.$desktop) {
       max-width: 600px;
     }
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: sizes.$tablet) {
       max-width: none;
     }
 
@@ -30,11 +30,11 @@
       font-weight: 400 !important;
       margin: 0;
 
-      @media screen and (max-width: $desktop) {
+      @media screen and (max-width: sizes.$desktop) {
         font-size: 48px !important;
       }
 
-      @media screen and (max-width: $tablet) {
+      @media screen and (max-width: sizes.$tablet) {
         font-size: 32px !important;
       }
     }

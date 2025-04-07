@@ -1,5 +1,5 @@
-@import "../colors";
-@import "../sizes";
+@use "../colors";
+@use "../sizes";
 
 .articleContainer {
   cursor: pointer;
@@ -7,18 +7,18 @@
   flex-direction: column;
   gap: 6px;
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: sizes.$mobile) {
     margin-bottom: 60px;
   }
 
   .articleCover {
     aspect-ratio: 1/1;
-    background-color: $gray;
+    background-color: colors.$gray;
     cursor: none;
     user-select: none;
     width: 100%;
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: sizes.$tablet) {
       cursor: inherit;
       user-select: inherit;
     }
@@ -30,24 +30,24 @@
   }
 
   .articleDate {
-    color: $gray;
+    color: colors.$gray;
     font-size: 21px;
     margin-top: 16px;
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: sizes.$mobile) {
       font-size: 16px;
-      margin-left: $mobileMinBleedWidth;
-      margin-right: $mobileMinBleedWidth;
+      margin-left: sizes.$mobileMinBleedWidth;
+      margin-right: sizes.$mobileMinBleedWidth;
     }
   }
 
   .articleTitle {
     font-size: 21px;
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: sizes.$mobile) {
       font-size: 16px;
-      margin-left: $mobileMinBleedWidth;
-      margin-right: $mobileMinBleedWidth;
+      margin-left: sizes.$mobileMinBleedWidth;
+      margin-right: sizes.$mobileMinBleedWidth;
       min-height: auto !important;
     }
   }

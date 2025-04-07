@@ -1,5 +1,5 @@
-@import "../colors";
-@import "../sizes";
+@use "../colors";
+@use "../sizes";
 
 .statsWrapper {
   cursor: none;
@@ -11,15 +11,15 @@
   user-select: none;
 
   &.line {
-    border-top: 1px solid $gray;
+    border-top: 1px solid colors.$gray;
   }
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: sizes.$tablet) {
     cursor: inherit;
     user-select: inherit;
   }
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: sizes.$mobile) {
     gap: 40px;
     grid-template-columns: auto;
   }
@@ -28,12 +28,12 @@
     font-size: 260px;
     line-height: 195px;
 
-    @media screen and (max-width: $desktop) {
+    @media screen and (max-width: sizes.$desktop) {
       font-size: 200px;
       line-height: 155px;
     }
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: sizes.$tablet) {
       font-size: 140px;
       line-height: 110px;
     }
@@ -49,16 +49,16 @@
     p {
       font-size: 36px;
 
-      @media screen and (max-width: $tablet) {
+      @media screen and (max-width: sizes.$tablet) {
         font-size: 32px;
       }
     }
 
     span {
-      color: $gray;
+      color: colors.$gray;
       font-size: 21px;
 
-      @media screen and (max-width: $tablet) {
+      @media screen and (max-width: sizes.$tablet) {
         font-size: 16px;
       }
     }
