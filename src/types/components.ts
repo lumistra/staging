@@ -27,8 +27,7 @@ export type AboutSectionData = {
 } & StylingData;
 
 export type AboutSplitData = {
-  firstLine: string
-  secondLine: string
+  text: ISbRichtext
   cta?: [CTALinkData]
 } & StylingData;
 

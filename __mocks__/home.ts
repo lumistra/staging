@@ -5534,8 +5534,43 @@ export const home = {
         ],
         _uid: 'test-aboutSplit-1234',
         component: 'aboutSplit',
-        firstLine: 'Brands are shaped by perception, not pixels.',
-        secondLine: 'We design for impact, and not for decoration.',
+        text: {
+          type: 'doc',
+          content: [
+            {
+              type: 'heading',
+              attrs: {
+                level: 3,
+              },
+              content: [
+                {
+                  text: 'Brands are shaped by perception, not pixels.',
+                  type: 'text',
+                },
+              ],
+            },
+            {
+              type: 'heading',
+              attrs: {
+                level: 3,
+              },
+              content: [
+                {
+                  text: 'We design for impact, and not for decoration.',
+                  type: 'text',
+                  marks: [
+                    {
+                      type: 'textStyle',
+                      attrs: {
+                        color: '#98989A',
+                      },
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
       },
       {
         _uid: 'test-stats-1234',
@@ -5577,6 +5612,7 @@ export const home = {
           },
         ],
         _uid: '2fa6d732-3534-410b-8fac-33a180cf1502',
+        hideTopBorder: true,
         title: 'Selected work',
         section: 'Projects',
         view: 'list',

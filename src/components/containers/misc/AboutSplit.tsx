@@ -2,6 +2,7 @@ import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import { get, isEmpty } from 'lodash';
 import Section from '@/components/containers/Section';
 import CtaLink from '@/components/elements/CtaLink';
+import RichText from '@/components/elements/RichText';
 import style from '@/styles/misc/about-split.module.scss';
 import type { AboutSplitData } from '@/types/components';
 
@@ -17,10 +18,7 @@ function AboutSplit(props: Props) {
       style={props.blok.styling}
       storyblokEditable={storyblokEditable(props.blok)}
     >
-      <div className={style.text}>
-        <h3>{props.blok.firstLine}</h3>
-        <h3>{props.blok.secondLine}</h3>
-      </div>
+      <RichText className={style.text}>{props.blok.text}</RichText>
       {!isEmpty(props.blok.cta) && (
         <CtaLink link={get(props.blok.cta, '[0].link')}>
           {get(props.blok.cta, '[0].text', '')}
