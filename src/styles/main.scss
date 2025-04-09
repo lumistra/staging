@@ -12,6 +12,11 @@
 
 @font-face {
   font-family: fonts.$regular;
+  src: url("../fonts/UntitledSans.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: fonts.$regular_fallback;
   src: url("../fonts/Geist.woff2") format("woff2");
 }
 
@@ -35,7 +40,7 @@ html,
 body {
   background-color: colors.$white;
   color: colors.$black;
-  font-family: fonts.$regular, Arial, sans-serif;
+  font-family: fonts.$regular, fonts.$regular_fallback, Arial, sans-serif;
   font-size: 21px;
   font-weight: 400;
   height: auto;
