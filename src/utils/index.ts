@@ -2,7 +2,7 @@ import { forEach } from 'lodash';
 import { locales } from '@/hooks/useTranslations';
 
 export const isProd = process.env.NODE_ENV === 'production';
-export const storyVersion: 'published' | 'draft' = 'published';
+export const storyVersion: 'published' | 'draft' = process.env.environment === 'production' ? 'published' : 'draft';
 export const routes = {
   mocks: {
     home: '/',

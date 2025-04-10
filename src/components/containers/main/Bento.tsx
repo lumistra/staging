@@ -1,14 +1,14 @@
 import { type SbBlokData, storyblokEditable } from '@storyblok/react';
-import { map, uniq } from 'lodash';
+import { map, split, uniq } from 'lodash';
 import Arrow from '@/assets/svg/arrow.svg';
 import Section from '@/components/containers/Section';
 import Link from '@/components/elements/Link';
 import RichText from '@/components/elements/RichText';
 import style from '@/styles/main/bento.module.scss';
-import type { FrameData, GridData } from '@/types/components';
+import type { BentoData, BentoItemData } from '@/types/components';
 
 type Props = {
-  blok: SbBlokData & GridData
+  blok: SbBlokData & BentoData
 };
 
 function Bento(props: Props) {
@@ -21,7 +21,7 @@ function Bento(props: Props) {
     >
       <RichText className={style.headline}>{props.blok.headline}</RichText>
       <div className={style.frames}>
-        {map(props.blok.frames, (frame: FrameData, fi: number) => (
+        {map(props.blok.frames, (frame: BentoItemData, fi: number) => (
           <Link
             key={`frame-${frame.title}-${fi}`}
             className={style.frame}
@@ -32,7 +32,7 @@ function Bento(props: Props) {
               <Arrow className={style.arrow} />
             </div>
             <div className={style.tags}>
-              {map(uniq(frame.tags), ({ tag }, ti: number) => (
+              {map(uniq(split(frame.tags, '\n')), (tag, ti: number) => (
                 <span key={`tag-${tag}-${ti}`} className={style.tag}>{tag}</span>
               ))}
             </div>

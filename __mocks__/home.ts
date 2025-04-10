@@ -9357,11 +9357,7 @@ export const home = {
         frames: [
           {
             title: 'Branding',
-            tags: [
-              { tag: 'Visual identity' },
-              { tag: 'Motion design' },
-              { tag: 'Packaging' },
-            ],
+            tags: 'Visual identity\nMotion design\nPackaging',
             link: {
               id: '',
               url: '/services',
@@ -9372,11 +9368,7 @@ export const home = {
           },
           {
             title: 'Strategy',
-            tags: [
-              { tag: 'Brand image' },
-              { tag: 'Brand positioning' },
-              { tag: 'Research and analysis' },
-            ],
+            tags: 'Brand image\nBrand positioning\nResearch and analysis',
             link: {
               id: '',
               url: '/services',
@@ -9387,11 +9379,7 @@ export const home = {
           },
           {
             title: 'Digital',
-            tags: [
-              { tag: 'UX/UI design' },
-              { tag: 'Digital strategy' },
-              { tag: 'Ad creative' },
-            ],
+            tags: 'UX/UI design\nDigital strategy\nAd creative',
             link: {
               id: '',
               url: '/services',

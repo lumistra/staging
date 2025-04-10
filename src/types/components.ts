@@ -87,15 +87,15 @@ export type StatsData = {
   stats: StatData[]
 } & StylingData;
 
-export type FrameData = {
+export type BentoItemData = {
   title: string
-  tags: { tag: string }[],
+  tags: string,
   link: CMSLink,
 };
 
-export type GridData = {
+export type BentoData = {
   headline: ISbRichtext
-  frames: FrameData
+  frames: BentoItemData
 } & StylingData;
 
 type PitchItemData = {

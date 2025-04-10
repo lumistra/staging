@@ -1,7 +1,9 @@
 import fs from 'fs';
 import { getStoryblokApi } from '@storyblok/react';
 import { StoryblokStory } from '@storyblok/react/rsc';
-import { includes, reduce, some } from 'lodash';
+import {
+  flatten, includes, reduce, some,
+} from 'lodash';
 import CookieConsent from '@/components/elements/CookieConsent';
 import PageTransition from '@/components/elements/PageTransition';
 import PrivacyPolicy from '@/components/pages/PrivacyPolicy';
@@ -132,10 +134,10 @@ export async function getStaticProps(props: StaticProps) {
 
 export async function getStaticPaths() {
   const storyblokApi = getStoryblokApi();
-  const { data } = process.env.mockApi ? { data: cmsLinks } : await storyblokApi.get('cdn/links', { version: storyVersion, per_page: 1000 });
+  const response = process.env.mockApi ? [{ data: cmsLinks }] : await storyblokApi.getAll('cdn/links', { version: storyVersion });
   await generateGlobals(storyblokApi);
 
-  const links = reduce(data.links, (res, link) => {
+  const links = reduce(flatten(response), (res, link) => {
     if (link.is_folder) return res;
     if (includes(link.slug, '/global')) return res;
     res.push(link.real_path as string);
