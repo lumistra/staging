@@ -1,46 +1,51 @@
-@import "./reset";
-@import "./colors";
-@import "./fonts";
-@import "./sizes";
-@import "./media";
-@import "./richtext";
-@import "./animations";
-@import "./navigation";
-@import "./sidenav";
-@import "./footer";
-@import "./cookies";
+@use "colors";
+@use "sizes";
+@use "fonts";
+@use "animations";
+@forward "reset";
+@forward "cookies";
+@forward "footer";
+@forward "media";
+@forward "navigation";
+@forward "richtext";
+@forward "sidenav";
 
 @font-face {
-  font-family: $regular;
+  font-family: fonts.$regular;
+  src: url("../fonts/UntitledSans.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: fonts.$regular_fallback;
   src: url("../fonts/Geist.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: $mono;
+  font-family: fonts.$mono;
   src: url("../fonts/GeistMono.woff2") format("woff2");
 }
 
 ::-moz-selection {
   /* Code for Firefox */
-  color: $white;
-  background: $primary;
+  color: colors.$white;
+  background: colors.$primary;
 }
 
 ::selection {
-  color: $white;
-  background: $primary;
+  color: colors.$white;
+  background: colors.$primary;
 }
 
 html,
 body {
-  background-color: $white;
-  color: $black;
-  font-family: $regular, Arial, sans-serif;
+  background-color: colors.$white;
+  color: colors.$black;
+  font-family: fonts.$regular, fonts.$regular_fallback, Arial, sans-serif;
   font-size: 21px;
   font-weight: 400;
   height: auto;
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: sizes.$mobile) {
     font-size: 16px;
   }
 
@@ -49,7 +54,7 @@ body {
   }
 
   #page-wrapper {
-    background-color: $white;
+    background-color: colors.$white;
     position: relative;
     z-index: 2;
   }
@@ -60,19 +65,19 @@ body {
     width: 100%;
 
     .max-content-container {
-      margin-left: $desktopMinBleedWidth;
-      margin-right: $desktopMinBleedWidth;
-      max-width: $maxContentWidth;
+      margin-left: sizes.$desktopMinBleedWidth;
+      margin-right: sizes.$desktopMinBleedWidth;
+      max-width: sizes.$maxContentWidth;
       width: 100%;
 
       @media screen and (max-width: 1200px) {
-        margin-left: $laptopMinBleedWidth;
-        margin-right: $laptopMinBleedWidth;
+        margin-left: sizes.$laptopMinBleedWidth;
+        margin-right: sizes.$laptopMinBleedWidth;
       }
 
-      @media screen and (max-width: $tablet) {
-        margin-left: $mobileMinBleedWidth;
-        margin-right: $mobileMinBleedWidth;
+      @media screen and (max-width: sizes.$tablet) {
+        margin-left: sizes.$mobileMinBleedWidth;
+        margin-right: sizes.$mobileMinBleedWidth;
       }
     }
   }
@@ -89,7 +94,7 @@ body {
       transform: translateY(-100%);
     }
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: sizes.$tablet) {
       height: auto;
 
       &:hover .cta-container {
@@ -101,7 +106,7 @@ body {
       }
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: sizes.$mobile) {
       font-size: 16px;
     }
 
@@ -116,7 +121,7 @@ body {
       height: 16px;
       width: 16px;
 
-      @media screen and (max-width: $mobile) {
+      @media screen and (max-width: sizes.$mobile) {
         height: 12px;
         width: 12px;
       }
@@ -130,11 +135,11 @@ body {
     gap: 1ch;
   }
 
-  .see-more-modal {
+  .cursor-tracker-modal {
     align-items: center;
-    background-color: $primary;
+    background-color: colors.$primary;
     border-radius: 100%;
-    color: $white;
+    color: colors.$white;
     display: none;
     height: 140px;
     justify-content: center;
@@ -149,7 +154,7 @@ body {
       display: flex;
       opacity: 1;
 
-      @media screen and (max-width: $tablet) {
+      @media screen and (max-width: sizes.$tablet) {
         display: none;
       }
     }
@@ -182,7 +187,7 @@ body {
     }
 
     &:after {
-      background-color: $white;
+      background-color: colors.$white;
       content: "";
       height: 100%;
       left: 0;
@@ -208,31 +213,32 @@ body {
     }
 
     #page-transition-title {
-      @include fadeUpDownMask;
       font-size: 100px;
       font-weight: 500;
       margin-top: -20vh;
-      padding: 0 $desktopMinBleedWidth;
+      padding: 0 sizes.$desktopMinBleedWidth;
       text-align: center;
       width: 100%;
       word-break: break-word;
       z-index: 1;
 
+      @include animations.fadeUpDownMask;
+
       @media screen and (max-width: 1200px) {
-        padding: 0 $laptopMinBleedWidth;
+        padding: 0 sizes.$laptopMinBleedWidth;
       }
 
-      @media screen and (max-width: $laptop) {
+      @media screen and (max-width: sizes.$laptop) {
         font-size: 72px;
       }
 
-      @media screen and (max-width: $tablet) {
+      @media screen and (max-width: sizes.$tablet) {
         font-size: 48px;
       }
 
-      @media screen and (max-width: $mobile) {
+      @media screen and (max-width: sizes.$mobile) {
         font-size: 36px;
-        padding: 0 $mobileMinBleedWidth;
+        padding: 0 sizes.$mobileMinBleedWidth;
       }
     }
   }

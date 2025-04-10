@@ -1,5 +1,5 @@
-@import "./colors";
-@import "./sizes";
+@use "colors";
+@use "sizes";
 
 .aboutUsWrapper {
   align-items: flex-start;
@@ -10,7 +10,7 @@
   padding-bottom: 280px;
   padding-top: 280px;
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: sizes.$mobile) {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -26,11 +26,11 @@
     white-space: nowrap;
     grid-column: 2;
 
-    @media screen and (max-width: $desktop) {
+    @media screen and (max-width: sizes.$desktop) {
       font-size: 36px;
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: sizes.$mobile) {
       align-items: flex-start;
       display: flex;
       flex-direction: column;
@@ -53,7 +53,7 @@
         grid-column: 4 / 5;
       }
 
-      @media screen and (max-width: $mobile) {
+      @media screen and (max-width: sizes.$mobile) {
         align-items: flex-end;
       }
     }
@@ -61,8 +61,8 @@
 
   .aboutUsLineWrapper {
     animation: scroll 1.2s ease-in-out infinite;
-    background: linear-gradient(to right, $primary, $primary);
-    background-color: $light;
+    background: linear-gradient(to right, colors.$primary, colors.$primary);
+    background-color: colors.$light;
     background-size: 20%;
     background-repeat: repeat-y;
     background-position: -25% 0;
@@ -81,12 +81,12 @@
       }
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: sizes.$mobile) {
       height: 1px;
     }
 
     &::after {
-      background-color: $white;
+      background-color: colors.$white;
       content: "";
       height: 200%;
       position: absolute;
@@ -109,7 +109,7 @@
       grid-column-start: 3;
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: sizes.$mobile) {
       font-size: 16px;
       margin-top: 60px;
     }

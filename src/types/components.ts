@@ -1,5 +1,5 @@
 import type { HeadlineData } from '@/types/articles';
-import type { CTALinkData, StylingData } from '@/types/shared';
+import type { CMSLink, CTALinkData, StylingData } from '@/types/shared';
 import type { ISbRichtext } from '@storyblok/react';
 
 export type MetaData = {
@@ -24,6 +24,11 @@ export type HeroData = {
 export type AboutSectionData = {
   title: string
   paragraph: ISbRichtext
+} & StylingData;
+
+export type AboutSplitData = {
+  text: ISbRichtext
+  cta?: [CTALinkData]
 } & StylingData;
 
 export type AnimatedLineData = {
@@ -68,6 +73,29 @@ export type WorkflowData = {
   title: string
   paragraph: ISbRichtext
   steps: WorkflowStepData[]
+} & StylingData;
+
+export type StatData = {
+  statistic: string
+  paragraph: string
+  bottom?: string
+};
+
+export type StatsData = {
+  cta?: string
+  lineTop: boolean
+  stats: StatData[]
+} & StylingData;
+
+export type BentoItemData = {
+  title: string
+  tags: string,
+  link: CMSLink,
+};
+
+export type BentoData = {
+  headline: ISbRichtext
+  frames: BentoItemData
 } & StylingData;
 
 type PitchItemData = {

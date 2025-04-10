@@ -1,16 +1,16 @@
-@import "./colors";
-@import "./sizes";
+@use "../colors";
+@use "../sizes";
 
 .latestWrapper {
   margin-top: 120px;
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: sizes.$tablet) {
     margin-top: 0;
   }
 }
 
 .articlesWrapper {
-  border-top: 1px solid $gray;
+  border-top: 1px solid colors.$gray;
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(3, 1fr);
@@ -18,7 +18,7 @@
   margin-top: 120px;
   padding-top: 20px;
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: sizes.$mobile) {
     border: none;
     grid-template-columns: 1fr;
     margin-left: 0 !important;
@@ -34,42 +34,42 @@
     grid-column-start: 1;
     margin-bottom: 40px;
 
-    @media screen and (max-width: $desktop) {
+    @media screen and (max-width: sizes.$desktop) {
       font-size: 52px;
     }
 
-    @media screen and (max-width: $laptop) {
+    @media screen and (max-width: sizes.$laptop) {
       font-size: 36px;
     }
 
-    @media screen and (max-width: $mobile) {
-      border-top: 1px solid $gray;
+    @media screen and (max-width: sizes.$mobile) {
+      border-top: 1px solid colors.$gray;
       font-size: 24px;
       grid-column: 1;
       margin-bottom: 20px;
-      margin-left: $mobileMinBleedWidth;
-      margin-right: $mobileMinBleedWidth;
+      margin-left: sizes.$mobileMinBleedWidth;
+      margin-right: sizes.$mobileMinBleedWidth;
       padding-top: 10px;
     }
   }
 }
 
 .backgroundBlack {
-  background-color: $black;
-  color: $white;
+  background-color: colors.$black;
+  color: colors.$white;
 
   a {
-    border-bottom: 1px solid $white;
+    border-bottom: 1px solid colors.$white;
     padding-bottom: 2px;
   }
 }
 
 .backgroundGray {
-  background-color: $whitish;
-  color: $black;
+  background-color: colors.$whitish;
+  color: colors.$black;
 
   a {
-    border-bottom: 1px solid $black;
+    border-bottom: 1px solid colors.$black;
     padding-bottom: 2px;
   }
 }
@@ -89,11 +89,11 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: sizes.$tablet) {
     grid-template-columns: 1fr;
   }
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: sizes.$mobile) {
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -110,15 +110,15 @@
       grid-column: 2;
     }
 
-    @media screen and (max-width: $desktop) {
+    @media screen and (max-width: sizes.$desktop) {
       font-size: 36px;
     }
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: sizes.$tablet) {
       grid-column: 1;
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: sizes.$mobile) {
       font-size: 24px;
     }
   }
@@ -132,11 +132,11 @@
       grid-column: 2;
     }
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: sizes.$tablet) {
       grid-column: 1;
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: sizes.$mobile) {
       font-size: 16px;
       line-height: 26px;
     }

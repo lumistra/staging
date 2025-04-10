@@ -2,7 +2,7 @@ import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
 import Section from '@/components/containers/Section';
 import RichText from '@/components/elements/RichText';
-import style from '@/styles/news.module.scss';
+import style from '@/styles/articles/news.module.scss';
 import type { WantToPublishData } from '@/types/components';
 
 type Props = {

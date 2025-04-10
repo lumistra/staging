@@ -1,3 +1,6 @@
+@use "colors";
+@use "sizes";
+
 .rich-text-wrapper {
   :first-child {
     margin-top: 0;
@@ -6,7 +9,7 @@
   h1 {
     font-size: 36px;
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: sizes.$mobile) {
       font-size: 24px;
     }
   }
@@ -14,7 +17,7 @@
   h2 {
     font-size: 28px;
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: sizes.$mobile) {
       font-size: 21px;
     }
   }
@@ -22,7 +25,7 @@
   h3 {
     font-size: 24px;
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: sizes.$mobile) {
       font-size: 18px;
     }
   }
@@ -30,7 +33,7 @@
   h4 {
     font-size: 21px;
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: sizes.$mobile) {
       font-size: 18px;
     }
   }
@@ -39,7 +42,7 @@
     font-size: 18px;
     margin: 6px 0;
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: sizes.$mobile) {
       font-size: 14px;
     }
   }
@@ -48,7 +51,7 @@
     font-size: 16px;
     margin: 6px 0;
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: sizes.$mobile) {
       font-size: 12px;
     }
   }
@@ -60,7 +63,7 @@
     font-size: 21px;
     margin: 6px 0;
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: sizes.$mobile) {
       font-size: 16px;
     }
   }
@@ -113,7 +116,7 @@
   }
 
   li::marker {
-    color: $gray;
+    color: colors.$gray;
   }
 
   blockquote {
@@ -121,7 +124,7 @@
     padding-left: 10px;
 
     &::before {
-      background-color: $gray;
+      background-color: colors.$gray;
       border-radius: 5px;
       content: "";
       height: 100%;

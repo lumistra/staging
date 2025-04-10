@@ -15,8 +15,9 @@ const nextConfig = {
   ...conditionalConfig,
   env: {
     ...conditionalConfig,
-    gtmId: process.env.GTM_ID,
+    environment: process.env.ENVIRONMENT,
     storyblokApiToken: process.env.STORYBLOK_API_TOKEN,
+    gtmId: process.env.GTM_ID,
     siteUrl: process.env.SITE_URL,
     mockApi: process.env.MOCK_API,
   },

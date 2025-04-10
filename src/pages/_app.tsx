@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content={process.env.environment === 'production' ? 'index, follow' : 'noindex, nofollow'} />
         <link rel="icon" sizes="any" type="image/svg+xml" href="/favicon.svg" />
 
         {/* HTML Meta Tags */}

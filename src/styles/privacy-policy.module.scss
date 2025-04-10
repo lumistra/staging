@@ -1,8 +1,8 @@
-@import "./sizes";
+@use "sizes";
 
 .privacyWrapper {
   margin: 0 auto;
-  max-width: $tablet;
+  max-width: sizes.$tablet;
   padding-bottom: 200px;
   padding-top: 20px;
 }

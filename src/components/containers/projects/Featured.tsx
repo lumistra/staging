@@ -4,14 +4,14 @@ import classNames from 'classnames';
 import { get, includes, isEmpty } from 'lodash';
 import Section from '@/components/containers/Section';
 import CtaLink from '@/components/elements/CtaLink';
+import CursorTracker from '@/components/elements/CursorTracker';
 import Link from '@/components/elements/Link';
 import Media from '@/components/elements/Media';
-import SeeMore from '@/components/elements/SeeMore';
 import { useScreenSize } from '@/hooks/useScreenSize';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import style from '@/styles/projects/featured.module.scss';
 import { getOrderNumber, routes } from '@/utils';
-import type { CursorPosition } from '@/components/elements/SeeMore';
+import type { CursorPosition } from '@/components/elements/CursorTracker';
 import type { FeaturedData } from '@/types/projects';
 
 type Props = {
@@ -106,7 +106,7 @@ export default function Featured(props: Props) {
             {getOrderNumber(currentIndex, true)}
           </span>
         </div>
-        <SeeMore cursorPosition={cursorPosition} show={modalShow} />
+        <CursorTracker cursorPosition={cursorPosition} show={modalShow} />
         <Link className="animation-base featured-cover" href={routes.project(currentProject.slug)}>
           <Media
             className={style.featuredCover}

@@ -1,10 +1,8 @@
-import {
-  compact, forEach, includes, map, split,
-} from 'lodash';
-import { defaultLocale, locales } from '@/hooks/useTranslations';
+import { forEach } from 'lodash';
+import { locales } from '@/hooks/useTranslations';
 
 export const isProd = process.env.NODE_ENV === 'production';
-
+export const storyVersion: 'published' | 'draft' = process.env.environment === 'production' ? 'published' : 'draft';
 export const routes = {
   mocks: {
     home: '/',
@@ -40,21 +38,6 @@ export const getRawPath = (path: string, stripLocale: boolean = true) => {
   }
 
   return newPath;
-};
-
-export const generateStaticPaths = (cmsLinks: string[]) => {
-  const defaultLocaleMatch = `/${defaultLocale}`;
-
-  const staticLinks = [{ params: { slug: ['privacy-policy'] } }];
-
-  const dynamicLinks = map(cmsLinks, (link) => {
-    const isDefaultLocaleRoute = includes(link, defaultLocaleMatch);
-    const slugPath = getRawPath(link, isDefaultLocaleRoute);
-
-    return { params: { slug: compact(split(slugPath, '/')) } };
-  });
-
-  return [...staticLinks, ...dynamicLinks];
 };
 
 export const getOrderNumber = (index: number, brackets?: boolean): string => {

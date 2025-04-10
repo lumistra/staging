@@ -1,14 +1,14 @@
-@import "../colors";
-@import "../sizes";
+@use "../colors";
+@use "../sizes";
 
 .selectedWrapper {
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: sizes.$mobile) {
     margin: 0 !important;
   }
 
   .selectedTextWrapper {
     align-items: flex-end;
-    border-top: 1px solid $gray;
+    border-top: 1px solid colors.$gray;
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(2, 1fr);
@@ -19,9 +19,9 @@
       grid-template-columns: 1fr;
     }
 
-    @media screen and (max-width: $mobile) {
-      margin-left: $mobileMinBleedWidth;
-      margin-right: $mobileMinBleedWidth;
+    @media screen and (max-width: sizes.$mobile) {
+      margin-left: sizes.$mobileMinBleedWidth;
+      margin-right: sizes.$mobileMinBleedWidth;
     }
 
     &.wrapperHideBorder {
@@ -48,15 +48,15 @@
         display: none;
       }
 
-      @media screen and (max-width: $desktop) {
+      @media screen and (max-width: sizes.$desktop) {
         font-size: 52px;
       }
 
-      @media screen and (max-width: $laptop) {
+      @media screen and (max-width: sizes.$laptop) {
         font-size: 36px;
       }
 
-      @media screen and (max-width: $mobile) {
+      @media screen and (max-width: sizes.$mobile) {
         font-size: 24px;
       }
     }
@@ -65,7 +65,7 @@
       justify-self: flex-end;
       margin-bottom: 15px;
 
-      @media screen and (max-width: $tablet) {
+      @media screen and (max-width: sizes.$tablet) {
         display: none;
       }
     }
@@ -83,7 +83,7 @@
       grid-template-columns: 1fr;
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: sizes.$mobile) {
       gap: 60px;
       grid-template-columns: 1fr;
       margin-bottom: 120px;
@@ -91,21 +91,21 @@
     }
 
     .selectedMobileCTA {
-      border-top: 1px solid $gray;
+      border-top: 1px solid colors.$gray;
       display: none;
       justify-content: flex-end;
       padding-top: 10px;
       width: auto;
 
-      @media screen and (max-width: $tablet) {
+      @media screen and (max-width: sizes.$tablet) {
         grid-column: 1 / 4;
         display: flex;
       }
 
-      @media screen and (max-width: $mobile) {
+      @media screen and (max-width: sizes.$mobile) {
         grid-column: 1;
-        margin-left: $mobileMinBleedWidth;
-        margin-right: $mobileMinBleedWidth;
+        margin-left: sizes.$mobileMinBleedWidth;
+        margin-right: sizes.$mobileMinBleedWidth;
       }
     }
   }
@@ -117,18 +117,20 @@
   flex-direction: column;
   gap: 26px;
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: sizes.$mobile) {
     gap: 22px;
   }
 
   .projectCover {
     aspect-ratio: 1/1;
     cursor: none;
-    background-color: $gray;
+    background-color: colors.$gray;
+    user-select: none;
     width: 100%;
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: sizes.$tablet) {
       cursor: initial;
+      user-select: inherit;
     }
 
     img {
@@ -140,11 +142,11 @@
   .projectTitle {
     font-size: 21px;
 
-    @media screen and (max-width: $tablet) {
-      margin: 0 $mobileMinBleedWidth;
+    @media screen and (max-width: sizes.$tablet) {
+      margin: 0 sizes.$mobileMinBleedWidth;
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: sizes.$mobile) {
       font-size: 16px;
     }
   }
@@ -152,7 +154,7 @@
   .projectTitleMin {
     min-height: 120px;
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: sizes.$mobile) {
       min-height: auto;
     }
   }

@@ -1,3 +1,7 @@
+@use "animations";
+@use "colors";
+@use "sizes";
+
 @mixin blendMode {
   mix-blend-mode: difference;
 }
@@ -14,21 +18,22 @@
   z-index: 999;
 
   .navigation-container {
-    @include fadeDownMask;
     align-items: center;
     display: flex;
     height: 100%;
     justify-content: space-between;
-    margin: 0 $desktopMinBleedWidth;
-    max-width: $maxContentWidth;
+    margin: 0 sizes.$desktopMinBleedWidth;
+    max-width: sizes.$maxContentWidth;
     width: 100%;
 
+    @include animations.fadeDownMask;
+
     @media screen and (max-width: 1200px) {
-      margin: 0 $laptopMinBleedWidth;
+      margin: 0 sizes.$laptopMinBleedWidth;
     }
 
-    @media screen and (max-width: $tablet) {
-      margin: 0 $mobileMinBleedWidth;
+    @media screen and (max-width: sizes.$tablet) {
+      margin: 0 sizes.$mobileMinBleedWidth;
     }
 
     .nav-visible {
@@ -56,7 +61,7 @@
       }
 
       path {
-        fill: $white !important;
+        fill: colors.$white !important;
       }
     }
 
@@ -70,19 +75,19 @@
         grid-template-columns: auto;
       }
 
-      @media screen and (max-width: $laptop) {
+      @media screen and (max-width: sizes.$laptop) {
         grid-template-columns: auto;
       }
 
       .nav-link {
         @include blendMode;
-        color: $white;
+        color: colors.$white;
         font-size: 21px;
         position: relative;
         width: fit-content;
 
         &:after {
-          background-color: $white;
+          background-color: colors.$white;
           bottom: -5px;
           content: "";
           height: 1.5px;
@@ -96,11 +101,11 @@
           width: 100%;
         }
 
-        @media screen and (max-width: $laptop) {
+        @media screen and (max-width: sizes.$laptop) {
           display: none;
         }
 
-        @media screen and (max-width: $mobile) {
+        @media screen and (max-width: sizes.$mobile) {
           font-size: 16px;
         }
       }
@@ -128,7 +133,7 @@
         }
 
         .menu-line {
-          background-color: $white;
+          background-color: colors.$white;
           height: 3px;
           width: 100%;
 

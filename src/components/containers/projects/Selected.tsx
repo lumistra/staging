@@ -5,16 +5,16 @@ import { map } from 'lodash';
 import Arrow from '@/assets/svg/arrow.svg';
 import Section from '@/components/containers/Section';
 import CtaLink from '@/components/elements/CtaLink';
+import CursorTracker from '@/components/elements/CursorTracker';
 import Link from '@/components/elements/Link';
 import Media from '@/components/elements/Media';
-import SeeMore from '@/components/elements/SeeMore';
 import { useScreenSize } from '@/hooks/useScreenSize';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import style from '@/styles/projects/selected.module.scss';
-import workStyle from '@/styles/work.module.scss';
+import workStyle from '@/styles/projects/work.module.scss';
 import { View } from '@/types/projects';
 import { routes } from '@/utils';
-import type { CursorPosition } from '@/components/elements/SeeMore';
+import type { CursorPosition } from '@/components/elements/CursorTracker';
 import type { ProjectData, SelectedData } from '@/types/projects';
 import type { ISbStoryData, SbBlokData } from '@storyblok/react';
 
@@ -27,7 +27,7 @@ export default function Selected(props: Props) {
   const [modalShow, setModalShow] = useState(false);
   const [modalProject, setModalProject] = useState<ISbStoryData<ProjectData> | null>();
   const [cursorPosition, setCursorPosition] = useState<CursorPosition>(null);
-  const timeoutID = useRef<any>();
+  const timeoutID = useRef<NodeJS.Timeout>(undefined);
   const [modalProjectOverview] = modalProject?.content.overview || [];
 
   useScrollAnimations({
@@ -107,11 +107,11 @@ export default function Selected(props: Props) {
             }}
           >
             {modalProjectOverview && (
-            <Media
-              className={workStyle.projectModalCover}
-              src={modalProjectOverview.cover.filename}
-              alt={modalProjectOverview.cover.alt}
-            />
+              <Media
+                className={workStyle.projectModalCover}
+                src={modalProjectOverview.cover.filename}
+                alt={modalProjectOverview.cover.alt}
+              />
             )}
           </div>
           <div className={classNames(style.projectsWrapper, style.listWrapper)}>
@@ -128,7 +128,7 @@ export default function Selected(props: Props) {
                 >
                   <span>{projectOverview.title}</span>
                   {modalProject?.slug === project.slug && (
-                  <Arrow className={workStyle.projectListArrow} />
+                    <Arrow className={workStyle.projectListArrow} />
                   )}
                 </Link>
               );
@@ -137,7 +137,7 @@ export default function Selected(props: Props) {
         </>
       ) : (
         <>
-          <SeeMore cursorPosition={cursorPosition} show={modalShow} />
+          <CursorTracker cursorPosition={cursorPosition} show={modalShow} />
           <div className={style.projectsWrapper}>
             {map(props.blok.projects, (project) => {
               const projectOverview = project.content.overview[0];

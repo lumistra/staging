@@ -1,10 +1,12 @@
+@use "sass:string";
+
 @mixin fadeIn() {
   > * {
     opacity: 0;
   }
 
   &.animate-in {
-    $name: fade-in-#{unique-id()};
+    $name: fade-in-#{string.unique-id()};
 
     > * {
       animation: $name 2s forwards;
@@ -27,7 +29,7 @@
   }
 
   &.animate-in {
-    $name: fade-up-mask-#{unique-id()};
+    $name: fade-up-mask-#{string.unique-id()};
     overflow: hidden;
 
     > * {
@@ -53,7 +55,7 @@
   }
 
   &.animate-in {
-    $name: fade-down-mask-#{unique-id()};
+    $name: fade-down-mask-#{string.unique-id()};
     overflow: hidden;
 
     > * {
@@ -79,7 +81,7 @@
   }
 
   &.animate-in {
-    $name: fade-up-down-mask-#{unique-id()};
+    $name: fade-up-down-mask-#{string.unique-id()};
     overflow: hidden;
 
     > * {
@@ -148,7 +150,7 @@
     .workflow-animation-row {
       &::before,
       &:last-of-type::after {
-        $name: fill-left-to-right#{unique-id()};
+        $name: fill-left-to-right#{string.unique-id()};
         animation: $name 1s forwards;
 
         @keyframes #{$name} {
@@ -163,7 +165,7 @@
     }
 
     .workflow-animation-icon {
-      $name: fade-in-#{unique-id()};
+      $name: fade-in-#{string.unique-id()};
 
       > * {
         animation: $name 2s forwards;
@@ -181,7 +183,7 @@
 
     .workflow-index-mask,
     .workflow-label-mask {
-      $name: fade-down-mask-#{unique-id()};
+      $name: fade-down-mask-#{string.unique-id()};
       overflow: hidden;
 
       > * {
@@ -215,7 +217,7 @@
   &.animate-in {
     .pitch-index-mask,
     .pitch-index-title {
-      $name: fade-down-mask-#{unique-id()};
+      $name: fade-down-mask-#{string.unique-id()};
       overflow: hidden;
 
       > * {
@@ -235,7 +237,7 @@
     }
 
     .pitch-index-paragraph {
-      $name: fade-up-mask-#{unique-id()};
+      $name: fade-up-mask-#{string.unique-id()};
       overflow: hidden;
 
       > * {

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import Section from '@/components/containers/Section';
 import CtaLink from '@/components/elements/CtaLink';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
-import style from '@/styles/contact.module.scss';
+import style from '@/styles/main/contact.module.scss';
 import type { ContactData } from '@/types/components';
 
 type Props = {

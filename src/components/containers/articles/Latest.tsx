@@ -5,11 +5,11 @@ import { map } from 'lodash';
 import Section from '@/components/containers/Section';
 import Article from '@/components/elements/Article';
 import CtaLink from '@/components/elements/CtaLink';
-import SeeMore from '@/components/elements/SeeMore';
+import CursorTracker from '@/components/elements/CursorTracker';
 import { useScreenSize } from '@/hooks/useScreenSize';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import style from '@/styles/articles/latest.module.scss';
-import type { CursorPosition } from '@/components/elements/SeeMore';
+import type { CursorPosition } from '@/components/elements/CursorTracker';
 import type { LatestData } from '@/types/articles';
 
 type Props = {
@@ -70,7 +70,7 @@ export default function Latest(props: Props) {
           )}
         </div>
       </div>
-      <SeeMore cursorPosition={cursorPosition} show={modalShow} />
+      <CursorTracker cursorPosition={cursorPosition} show={modalShow} />
       <div className={style.articlesWrapper}>
         {map(props.blok.articles, (article) => (
           <Article

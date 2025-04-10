@@ -5,7 +5,7 @@ import CtaLink from '@/components/elements/CtaLink';
 import Link from '@/components/elements/Link';
 import Media from '@/components/elements/Media';
 import useTranslations from '@/hooks/useTranslations';
-import style from '@/styles/project.module.scss';
+import style from '@/styles/projects/project.module.scss';
 import { routes } from '@/utils';
 import type { OverviewData, ProjectData } from '@/types/projects';
 import type { SbBlokData } from '@storyblok/react';

@@ -5493,6 +5493,29 @@ export const home = {
         textPosition: 'top',
         _editable: '<!--#storyblok#{"name": "featured", "space": "286844", "uid": "fc6ef7d4-b5df-4ac5-9cd9-7f728934c6a4", "id": "519687689"}-->',
       },
+      // {
+      //   cta: [
+      //     {
+      //       _uid: '79f066c8-11b5-40ad-8455-f4bb6cded905',
+      //       link: {
+      //         id: '',
+      //         url: '/about',
+      //         linktype: 'url',
+      //         fieldtype: 'multilink',
+      //         cached_url: '/about',
+      //       },
+      //       text: 'About us',
+      //       component: 'ctaLink',
+      //       _editable: '<!--#storyblok#{"name": "ctaLink", "space": "286844", "uid": "79f066c8-11b5-40ad-8455-f4bb6cded905", "id": "519687689"}-->',
+      //     },
+      //   ],
+      //   _uid: 'f63aec68-d5e2-4fbd-b3d9-d234140ab03e',
+      //   component: 'animatedLineSection',
+      //   paragraph: 'We strongly believe that every idea is a spark with potential. Through strategic collaboration and bold branding initiatives, together we are transforming that spark into your next big thing.',
+      //   titleAfter: 'always.',
+      //   titleBefore: 'One step further',
+      //   _editable: '<!--#storyblok#{"name": "animatedLineSection", "space": "286844", "uid": "f63aec68-d5e2-4fbd-b3d9-d234140ab03e", "id": "519687689"}-->',
+      // },
       {
         cta: [
           {
@@ -5509,12 +5532,68 @@ export const home = {
             _editable: '<!--#storyblok#{"name": "ctaLink", "space": "286844", "uid": "79f066c8-11b5-40ad-8455-f4bb6cded905", "id": "519687689"}-->',
           },
         ],
-        _uid: 'f63aec68-d5e2-4fbd-b3d9-d234140ab03e',
-        component: 'animatedLineSection',
-        paragraph: 'We strongly believe that every idea is a spark with potential. Through strategic collaboration and bold branding initiatives, together we are transforming that spark into your next big thing.',
-        titleAfter: 'always.',
-        titleBefore: 'One step further',
-        _editable: '<!--#storyblok#{"name": "animatedLineSection", "space": "286844", "uid": "f63aec68-d5e2-4fbd-b3d9-d234140ab03e", "id": "519687689"}-->',
+        _uid: 'test-aboutSplit-1234',
+        component: 'aboutSplit',
+        text: {
+          type: 'doc',
+          content: [
+            {
+              type: 'heading',
+              attrs: {
+                level: 3,
+              },
+              content: [
+                {
+                  text: 'Brands are shaped by perception, not pixels.',
+                  type: 'text',
+                },
+              ],
+            },
+            {
+              type: 'heading',
+              attrs: {
+                level: 3,
+              },
+              content: [
+                {
+                  text: 'We design for impact, and not for decoration.',
+                  type: 'text',
+                  marks: [
+                    {
+                      type: 'textStyle',
+                      attrs: {
+                        color: '#98989A',
+                      },
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      },
+      {
+        _uid: 'test-stats-1234',
+        component: 'stats',
+        lineTop: true,
+        cta: 'Next',
+        stats: [
+          {
+            statistic: '55%',
+            paragraph: 'Of brand first impressions are visual.',
+            bottom: 'SOURCE: US CHAMBER OF COMMERCE',
+          },
+          {
+            statistic: '94%',
+            paragraph: 'Of customers recommend brands they connect with emotionally.',
+            bottom: 'SOURCE: GITNUX',
+          },
+          {
+            statistic: '42%',
+            paragraph: 'Of online shoppers base their opinion of a website based on the overall design alone.',
+            bottom: 'SOURCE: TINTUP',
+          },
+        ],
       },
       {
         cta: [
@@ -5533,6 +5612,7 @@ export const home = {
           },
         ],
         _uid: '2fa6d732-3534-410b-8fac-33a180cf1502',
+        hideTopBorder: true,
         title: 'Selected work',
         section: 'Projects',
         view: 'list',
@@ -9243,62 +9323,130 @@ export const home = {
         _editable: '<!--#storyblok#{"name": "selected", "space": "286844", "uid": "2fa6d732-3534-410b-8fac-33a180cf1502", "id": "519687689"}-->',
       },
       {
-        cta: [],
-        _uid: 'cda7ee90-ba85-400e-a93c-5901aef9c450',
-        title: "When you're part of the process, you're invested in the outcome.",
-        animated: true,
-        footnote: true,
-        component: 'altBackgroundSection',
-        paragraph: "That's why we believe in building together.",
-        background: 'dark',
-        _editable: '<!--#storyblok#{"name": "altBackgroundSection", "space": "286844", "uid": "cda7ee90-ba85-400e-a93c-5901aef9c450", "id": "519687689"}-->',
-      },
-      {
-        _uid: '185bfaa7-0cd7-48cd-a6e6-64f3e5fbe601',
-        title: 'What we do',
-        section: 'Services',
-        services: [
+        _uid: 'test-bento-1234',
+        component: 'bento',
+        headline: {
+          type: 'doc',
+          content: [
+            {
+              type: 'heading',
+              attrs: {
+                level: 3,
+              },
+              content: [
+                {
+                  text: 'Future-focused design ',
+                  type: 'text',
+                },
+                {
+                  text: 'for today’s challenges.',
+                  type: 'text',
+                  marks: [
+                    {
+                      type: 'textStyle',
+                      attrs: {
+                        color: '#98989A',
+                      },
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        frames: [
           {
-            _uid: '9af543db-d2e0-49f5-90f2-46e00f127d4c',
-            list: 'Research & analisys\nBrand positioning\nBrand narrative\nCommunication\nContent strategy\nDesign strategy\nDigital strategy\nSocial media strategy\nNaming',
-            title: 'Brand strategy',
-            component: 'whatWeDoItem',
-            _editable: '<!--#storyblok#{"name": "whatWeDoItem", "space": "286844", "uid": "9af543db-d2e0-49f5-90f2-46e00f127d4c", "id": "519687768"}-->',
+            title: 'Branding',
+            tags: 'Visual identity\nMotion design\nPackaging',
+            link: {
+              id: '',
+              url: '/services',
+              linktype: 'url',
+              fieldtype: 'multilink',
+              cached_url: '/services',
+            },
           },
           {
-            _uid: '313b6657-f023-4e67-8621-7fc14262c9d8',
-            list: 'Visual identity\nVerbal identity\nMotion design\nPackaging & label\nPublications\nTypography\nIllustration\nBrand guidelines\nArt & illustration',
-            title: 'Brand design',
-            component: 'whatWeDoItem',
-            _editable: '<!--#storyblok#{"name": "whatWeDoItem", "space": "286844", "uid": "313b6657-f023-4e67-8621-7fc14262c9d8", "id": "519687768"}-->',
+            title: 'Strategy',
+            tags: 'Brand image\nBrand positioning\nResearch and analysis',
+            link: {
+              id: '',
+              url: '/services',
+              linktype: 'url',
+              fieldtype: 'multilink',
+              cached_url: '/services',
+            },
           },
           {
-            _uid: '2d97134f-44e0-460a-a6d2-28905ff23105',
-            list: 'UX/UI design\nInteraction design\nDigital design systems\nDigital prototyping\nWebsite design\nMarketing materials\nAd creative\nApp design\nSocial media creative\nPresentation design',
-            title: 'Digital design',
-            component: 'whatWeDoItem',
-            _editable: '<!--#storyblok#{"name": "whatWeDoItem", "space": "286844", "uid": "2d97134f-44e0-460a-a6d2-28905ff23105", "id": "519687768"}-->',
-          },
-          {
-            _uid: 'b3991465-a5c0-4ed5-927f-fef869cf8ad5',
-            list: 'Brand story\nAdvertising\nMerchandise\nEditorial Design\nSocial media\nSignage',
-            title: 'Brand communication',
-            component: 'whatWeDoItem',
-            _editable: '<!--#storyblok#{"name": "whatWeDoItem", "space": "286844", "uid": "b3991465-a5c0-4ed5-927f-fef869cf8ad5", "id": "519687768"}-->',
+            title: 'Digital',
+            tags: 'UX/UI design\nDigital strategy\nAd creative',
+            link: {
+              id: '',
+              url: '/services',
+              linktype: 'url',
+              fieldtype: 'multilink',
+              cached_url: '/services',
+            },
           },
         ],
-        styling: [
-          {
-            css: 'section_id {\n  margin-top: 260px;\n}\n\n@media screen and (max-width: 1400px) {\n  section_id {\n    margin-top: 180px;\n  }\n}\n\n@media screen and (max-width: 1100px) {\n  section_id {\n    margin-top: 100px;\n  }\n}\n@media screen and (max-width: 679px) {\n  section_id {\n    margin-top: 80px;\n  }\n}',
-            _uid: '4ae95f9f-dd1c-4904-a600-d17d49598b5b',
-            component: 'styling',
-            _editable: '<!--#storyblok#{"name": "styling", "space": "286844", "uid": "4ae95f9f-dd1c-4904-a600-d17d49598b5b", "id": "522005679"}-->',
-          },
-        ],
-        component: 'whatWeDo',
-        paragraph: 'Our range of services cover almost everything you might need for your next project. If you can’t find it from the list, you can always scroll down and type in the service you need to see if we can help you.',
-        _editable: '<!--#storyblok#{"name": "whatWeDo", "space": "286844", "uid": "185bfaa7-0cd7-48cd-a6e6-64f3e5fbe601", "id": "519687768"}-->',
       },
+      // {
+      //   cta: [],
+      //   _uid: 'cda7ee90-ba85-400e-a93c-5901aef9c450',
+      //   title: "When you're part of the process, you're invested in the outcome.",
+      //   animated: true,
+      //   footnote: true,
+      //   component: 'altBackgroundSection',
+      //   paragraph: "That's why we believe in building together.",
+      //   background: 'dark',
+      //   _editable: '<!--#storyblok#{"name": "altBackgroundSection", "space": "286844", "uid": "cda7ee90-ba85-400e-a93c-5901aef9c450", "id": "519687689"}-->',
+      // },
+      // {
+      //   _uid: '185bfaa7-0cd7-48cd-a6e6-64f3e5fbe601',
+      //   title: 'What we do',
+      //   section: 'Services',
+      //   services: [
+      //     {
+      //       _uid: '9af543db-d2e0-49f5-90f2-46e00f127d4c',
+      //       list: 'Research & analisys\nBrand positioning\nBrand narrative\nCommunication\nContent strategy\nDesign strategy\nDigital strategy\nSocial media strategy\nNaming',
+      //       title: 'Brand strategy',
+      //       component: 'whatWeDoItem',
+      //       _editable: '<!--#storyblok#{"name": "whatWeDoItem", "space": "286844", "uid": "9af543db-d2e0-49f5-90f2-46e00f127d4c", "id": "519687768"}-->',
+      //     },
+      //     {
+      //       _uid: '313b6657-f023-4e67-8621-7fc14262c9d8',
+      //       list: 'Visual identity\nVerbal identity\nMotion design\nPackaging & label\nPublications\nTypography\nIllustration\nBrand guidelines\nArt & illustration',
+      //       title: 'Brand design',
+      //       component: 'whatWeDoItem',
+      //       _editable: '<!--#storyblok#{"name": "whatWeDoItem", "space": "286844", "uid": "313b6657-f023-4e67-8621-7fc14262c9d8", "id": "519687768"}-->',
+      //     },
+      //     {
+      //       _uid: '2d97134f-44e0-460a-a6d2-28905ff23105',
+      //       list: 'UX/UI design\nInteraction design\nDigital design systems\nDigital prototyping\nWebsite design\nMarketing materials\nAd creative\nApp design\nSocial media creative\nPresentation design',
+      //       title: 'Digital design',
+      //       component: 'whatWeDoItem',
+      //       _editable: '<!--#storyblok#{"name": "whatWeDoItem", "space": "286844", "uid": "2d97134f-44e0-460a-a6d2-28905ff23105", "id": "519687768"}-->',
+      //     },
+      //     {
+      //       _uid: 'b3991465-a5c0-4ed5-927f-fef869cf8ad5',
+      //       list: 'Brand story\nAdvertising\nMerchandise\nEditorial Design\nSocial media\nSignage',
+      //       title: 'Brand communication',
+      //       component: 'whatWeDoItem',
+      //       _editable: '<!--#storyblok#{"name": "whatWeDoItem", "space": "286844", "uid": "b3991465-a5c0-4ed5-927f-fef869cf8ad5", "id": "519687768"}-->',
+      //     },
+      //   ],
+      //   styling: [
+      //     {
+      //       css: 'section_id {\n  margin-top: 260px;\n}\n\n@media screen and (max-width: 1400px) {\n  section_id {\n    margin-top: 180px;\n  }\n}\n\n@media screen and (max-width: 1100px) {\n  section_id {\n    margin-top: 100px;\n  }\n}\n@media screen and (max-width: 679px) {\n  section_id {\n    margin-top: 80px;\n  }\n}',
+      //       _uid: '4ae95f9f-dd1c-4904-a600-d17d49598b5b',
+      //       component: 'styling',
+      //       _editable: '<!--#storyblok#{"name": "styling", "space": "286844", "uid": "4ae95f9f-dd1c-4904-a600-d17d49598b5b", "id": "522005679"}-->',
+      //     },
+      //   ],
+      //   component: 'whatWeDo',
+      //   paragraph: 'Our range of services cover almost everything you might need for your next project. If you can’t find it from the list, you can always scroll down and type in the service you need to see if we can help you.',
+      //   _editable: '<!--#storyblok#{"name": "whatWeDo", "space": "286844", "uid": "185bfaa7-0cd7-48cd-a6e6-64f3e5fbe601", "id": "519687768"}-->',
+      // },
       {
         _uid: 'd48f53b2-b187-4358-986b-b2f88d1b2f1d',
         steps: [

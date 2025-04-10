@@ -7,7 +7,7 @@ import Section from '@/components/containers/Section';
 import RichText from '@/components/elements/RichText';
 import TextMask from '@/components/elements/TextMask';
 import useScrollAnimations from '@/hooks/useScrollAnimations';
-import style from '@/styles/workflow.module.scss';
+import style from '@/styles/main/workflow.module.scss';
 import { getOrderNumber } from '@/utils';
 import type { WorkflowData } from '@/types/components';
 

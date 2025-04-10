@@ -1,7 +1,7 @@
 import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import { map, split } from 'lodash';
 import Section from '@/components/containers/Section';
-import style from '@/styles/services.module.scss';
+import style from '@/styles/services/services.module.scss';
 import type { WhatWeDoData } from '@/types/components';
 
 type Props = {

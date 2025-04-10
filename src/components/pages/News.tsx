@@ -3,11 +3,11 @@ import { StoryblokComponent, storyblokEditable } from '@storyblok/react';
 import { map } from 'lodash';
 import Section from '@/components/containers/Section';
 import Article from '@/components/elements/Article';
-import SeeMore from '@/components/elements/SeeMore';
+import CursorTracker from '@/components/elements/CursorTracker';
 import TextMask from '@/components/elements/TextMask';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
-import style from '@/styles/news.module.scss';
-import type { CursorPosition } from '@/components/elements/SeeMore';
+import style from '@/styles/articles/news.module.scss';
+import type { CursorPosition } from '@/components/elements/CursorTracker';
 import type { NewsData } from '@/types/articles';
 import type { SbBlokData } from '@storyblok/react';
 
@@ -66,7 +66,7 @@ export default function News(props: Props) {
         <TextMask animationClass="animation-base animation-sub-title" className={style.articlesTitle}>
           <h2>{props.blok.subTitle}</h2>
         </TextMask>
-        <SeeMore cursorPosition={cursorPosition} show={modalShow} />
+        <CursorTracker cursorPosition={cursorPosition} show={modalShow} />
         {map(props.blok.articles, (article) => (
           <Article
             key={article.slug}

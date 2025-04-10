@@ -34,12 +34,14 @@ jobs:
       - name: Build application
         run: yarn build
         env:
-          GTM_ID: ${{ secrets.GTM_ID }}
+          ENVIRONMENT: ${{ vars.ENVIRONMENT }}
           STORYBLOK_API_TOKEN: ${{ secrets.STORYBLOK_API_TOKEN }}
+          BASE_PATH: ${{ vars.BASE_PATH }}
           SITE_URL: ${{ vars.SITE_URL }}
-          # BASE_PATH: ${{ vars.BASE_PATH }} Not needed with Custom Domain
+          GTM_ID: ${{ secrets.GTM_ID }}
 
       - name: Build sitemap
+        if: ${{ vars.ENVIRONMENT }} == 'production'
         run: yarn build:sitemap
         env:
           SITE_URL: ${{ vars.SITE_URL }}
@@ -56,7 +58,6 @@ jobs:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
-
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

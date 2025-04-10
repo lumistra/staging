@@ -5,7 +5,7 @@ import round from 'lodash/round';
 import Section from '@/components/containers/Section';
 import Lightbox from '@/components/elements/Lightbox';
 import Media from '@/components/elements/Media';
-import style from '@/styles/article.module.scss';
+import style from '@/styles/articles/article.module.scss';
 import type { HeadlineData } from '@/types/articles';
 
 type Props = {
@@ -17,7 +17,7 @@ const WPM = 238;
 
 function Headline(props: Props) {
   const [readTime, setReadTime] = useState('Calculating...');
-  const intervalID = useRef<NodeJS.Timeout>();
+  const intervalID = useRef<NodeJS.Timeout>(undefined);
   const publishedAt = new Date(props.blok.publishedAt);
 
   useEffect(() => {

@@ -1,5 +1,5 @@
-@import "./colors";
-@import "./sizes";
+@use "../colors";
+@use "../sizes";
 
 .heroWrapper {
   display: flex;
@@ -9,7 +9,7 @@
   padding-bottom: 120px;
   padding-top: 120px;
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: sizes.$tablet) {
     min-height: auto;
     padding-bottom: 180px;
     padding-top: 0;
@@ -18,7 +18,7 @@
   &.spacingBottom {
     padding-bottom: 400px;
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: sizes.$tablet) {
       padding-bottom: 180px;
     }
   }
@@ -32,33 +32,33 @@
       white-space: normal;
     }
 
-    @media screen and (max-width: $desktop) {
+    @media screen and (max-width: sizes.$desktop) {
       font-size: 60px;
     }
 
-    @media screen and (max-width: $laptop) {
+    @media screen and (max-width: sizes.$laptop) {
       font-size: 48px;
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: sizes.$mobile) {
       font-size: 32px;
     }
   }
 
   .heroFootnote {
     align-items: center;
-    color: $gray;
+    color: colors.$gray;
     display: flex;
     font-size: 21px;
     gap: 10px;
     margin-top: 25vh;
     padding-bottom: 160px;
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: sizes.$tablet) {
       padding-bottom: 0;
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: sizes.$mobile) {
       display: none;
     }
 
@@ -68,7 +68,7 @@
       width: 16px;
 
       * {
-        stroke: $gray !important;
+        stroke: colors.$gray !important;
       }
     }
   }
@@ -93,29 +93,29 @@
     padding-bottom: 160px;
     padding-top: 230px;
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: sizes.$tablet) {
       min-height: 400px;
       padding-bottom: 80px;
       padding-top: 110px;
     }
 
     .heroGradientTitle {
-      color: $white;
+      color: colors.$white;
       display: flex;
       font-size: 86px;
       height: fit-content;
       width: fit-content;
       z-index: 10;
 
-      @media screen and (max-width: $desktop) {
+      @media screen and (max-width: sizes.$desktop) {
         font-size: 60px;
       }
 
-      @media screen and (max-width: $laptop) {
+      @media screen and (max-width: sizes.$laptop) {
         font-size: 48px;
       }
 
-      @media screen and (max-width: $mobile) {
+      @media screen and (max-width: sizes.$mobile) {
         font-size: 32px;
       }
     }

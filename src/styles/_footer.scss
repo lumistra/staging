@@ -1,21 +1,24 @@
+@use "colors";
+@use "sizes";
+
 footer {
-  background-color: $black;
+  background-color: colors.$black;
   bottom: 0;
-  color: $white;
+  color: colors.$white;
   display: flex;
   justify-content: center;
   position: sticky;
   width: 100%;
   z-index: 1;
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: sizes.$tablet) {
     position: relative;
   }
 
   .content-container {
-    margin-left: $desktopMinBleedWidth;
-    margin-right: $desktopMinBleedWidth;
-    max-width: $maxContentWidth;
+    margin-left: sizes.$desktopMinBleedWidth;
+    margin-right: sizes.$desktopMinBleedWidth;
+    max-width: sizes.$maxContentWidth;
     padding-bottom: 70px;
     padding-top: 230px;
     width: 100%;
@@ -25,16 +28,16 @@ footer {
     }
 
     @media screen and (max-width: 1200px) {
-      margin-left: $laptopMinBleedWidth;
-      margin-right: $laptopMinBleedWidth;
+      margin-left: sizes.$laptopMinBleedWidth;
+      margin-right: sizes.$laptopMinBleedWidth;
     }
 
-    @media screen and (max-width: $tablet) {
-      margin-left: $mobileMinBleedWidth;
-      margin-right: $mobileMinBleedWidth;
+    @media screen and (max-width: sizes.$tablet) {
+      margin-left: sizes.$mobileMinBleedWidth;
+      margin-right: sizes.$mobileMinBleedWidth;
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: sizes.$mobile) {
       padding-bottom: 20px;
       padding-top: 120px;
     }
@@ -50,18 +53,18 @@ footer {
         padding-bottom: 180px;
       }
 
-      @media screen and (max-width: $laptop) {
+      @media screen and (max-width: sizes.$laptop) {
         display: flex;
         padding-bottom: 60px;
       }
 
       .logo {
-        @media screen and (max-width: $laptop) {
+        @media screen and (max-width: sizes.$laptop) {
           width: 100%;
         }
 
         > * {
-          fill: $white;
+          fill: colors.$white;
         }
 
         &.logo-icon {
@@ -76,7 +79,7 @@ footer {
     }
 
     .divider {
-      background-color: $gray;
+      background-color: colors.$gray;
       border: none;
       height: 1px;
       width: 100%;
@@ -95,7 +98,7 @@ footer {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      @media screen and (max-width: $mobile) {
+      @media screen and (max-width: sizes.$mobile) {
         display: flex;
         flex-direction: column;
         font-size: 24px;
@@ -115,17 +118,17 @@ footer {
           grid-column-end: 3;
         }
 
-        @media screen and (max-width: $mobile) {
+        @media screen and (max-width: sizes.$mobile) {
           gap: 10px;
           grid-template-columns: 1fr;
         }
 
         .footer-link {
-          color: $white;
+          color: colors.$white;
           transition: 0.3s;
 
           &:hover {
-            color: $dark;
+            color: colors.$dark;
           }
         }
       }
@@ -135,28 +138,28 @@ footer {
         flex-direction: column;
         gap: 32px;
 
-        @media screen and (max-width: $mobile) {
+        @media screen and (max-width: sizes.$mobile) {
           gap: 10px;
           justify-content: flex-end;
         }
 
         .locales {
           align-items: center;
-          color: $dark;
+          color: colors.$dark;
           display: flex;
           font-size: 48px;
           gap: 10px;
 
-          @media screen and (max-width: $desktop) {
+          @media screen and (max-width: sizes.$desktop) {
             font-size: 36px;
           }
 
-          @media screen and (max-width: $mobile) {
+          @media screen and (max-width: sizes.$mobile) {
             font-size: 32px;
           }
 
           .splitter {
-            color: $white;
+            color: colors.$white;
           }
 
           .locale {
@@ -164,7 +167,7 @@ footer {
 
             &.active,
             &:hover {
-              color: $white;
+              color: colors.$white;
             }
           }
         }
@@ -182,7 +185,7 @@ footer {
           grid-column-start: 2;
         }
 
-        @media screen and (max-width: $mobile) {
+        @media screen and (max-width: sizes.$mobile) {
           gap: 10px;
           justify-content: flex-end;
         }
@@ -192,7 +195,7 @@ footer {
           display: flex;
           gap: 40px;
 
-          @media screen and (max-width: $mobile) {
+          @media screen and (max-width: sizes.$mobile) {
             gap: 20px;
           }
 
@@ -203,18 +206,18 @@ footer {
             justify-content: center;
             width: 40px;
 
-            @media screen and (max-width: $mobile) {
+            @media screen and (max-width: sizes.$mobile) {
               height: 24px;
               width: 24px;
             }
 
             svg > * {
               transition: 0.3s;
-              fill: $dark;
+              fill: colors.$dark;
             }
 
             &:hover svg > * {
-              fill: $white;
+              fill: colors.$white;
             }
           }
         }
@@ -228,15 +231,15 @@ footer {
       grid-template-columns: repeat(6, 1fr);
 
       @media screen and (max-width: 1200px) {
-        border-top: 1px solid $gray;
-        color: $gray;
+        border-top: 1px solid colors.$gray;
+        color: colors.$gray;
         display: flex;
         flex-direction: column;
         gap: 5px;
         padding-top: 20px;
       }
 
-      @media screen and (max-width: $mobile) {
+      @media screen and (max-width: sizes.$mobile) {
         font-size: 16px;
       }
 
@@ -251,7 +254,7 @@ footer {
     }
 
     .company-details-wrapper {
-      color: $dark;
+      color: colors.$dark;
       display: grid;
       font-size: 21px;
       gap: 20px;
@@ -262,7 +265,7 @@ footer {
         grid-template-columns: 1fr;
       }
 
-      @media screen and (max-width: $mobile) {
+      @media screen and (max-width: sizes.$mobile) {
         font-size: 16px;
       }
 
@@ -279,7 +282,7 @@ footer {
     }
 
     .to-top {
-      color: $white;
+      color: colors.$white;
       margin-left: auto;
 
       &.desktop-to-top {
@@ -304,13 +307,13 @@ footer {
         rotate: -90deg;
         width: 18px;
 
-        @media screen and (max-width: $mobile) {
+        @media screen and (max-width: sizes.$mobile) {
           height: 14px;
           width: 14px;
         }
 
         * {
-          stroke: $white !important;
+          stroke: colors.$white !important;
         }
       }
     }

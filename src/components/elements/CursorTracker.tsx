@@ -6,15 +6,16 @@ export type CursorPosition = { x: number, y: number } | null;
 type Props = {
   className?: string
   cursorPosition: CursorPosition
+  keyword?: string
   show: boolean
 };
 
-export default function SeeMore(props: Props) {
+export default function CursorTracker(props: Props) {
   const { t } = useTranslations();
 
   return (
     <div
-      className={classNames('see-more-modal', props.className, {
+      className={classNames('cursor-tracker-modal', props.className, {
         active: props.show,
       })}
       style={{
@@ -25,7 +26,7 @@ export default function SeeMore(props: Props) {
         }),
       }}
     >
-      <span>{t('globals.see_more')}</span>
+      <span>{props.keyword || t('globals.see_more')}</span>
     </div>
   );
 }
