@@ -64,9 +64,10 @@ yarn test:coverage
 
 ### Project .env variables
 ```sh
-STORYBLOK_API_TOKEN="<secret>" # Required
-SITE_URL="https://studiolumistra.com"
+ENVIRONMENT="production"|"staging" # <- required
+STORYBLOK_API_TOKEN="<secret>" # <- required
 GTM_ID="<secret>"
-BASE_PATH="lumistra" # Not required with a custom domain
-MOCK_API="true" # To minimise API calls in development
+SITE_URL="https://studiolumistra.com"
+BASE_PATH="lumistra" # <- not required with a custom domain
+MOCK_API="true" # <- to minimise API calls in development
 ```
