@@ -22,7 +22,7 @@ export type CMSLink = {
 
 export type LinkData = {
   label: string,
-  icon: 'instagram' | 'facebook' | 'linkedin',
+  icon: 'instagram' | 'facebook' | 'linkedin' | 'email' | 'chat' | 'geometry' | 'rocket',
   link: CMSLink,
 };
 

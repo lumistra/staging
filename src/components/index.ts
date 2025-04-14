@@ -5,6 +5,7 @@ import Bento from '@/components/containers/main/Bento';
 import Contact from '@/components/containers/main/Contact';
 import Footer from '@/components/containers/main/Footer';
 import Hero from '@/components/containers/main/Hero';
+import Shelf from '@/components/containers/main/Shelf';
 import Stats from '@/components/containers/main/Stats';
 import Workflow from '@/components/containers/main/Workflow';
 import AboutSplit from '@/components/containers/misc/AboutSplit';
@@ -60,6 +61,7 @@ const components = {
   contact: Contact,
   stats: Stats,
   bento: Bento,
+  shelf: Shelf,
 
   // Projects & Articles blocks
   overview: Overview,

@@ -1,5 +1,7 @@
 import type { HeadlineData } from '@/types/articles';
-import type { CMSLink, CTALinkData, StylingData } from '@/types/shared';
+import type {
+  CMSLink, CTALinkData, LinkData, StylingData,
+} from '@/types/shared';
 import type { ISbRichtext } from '@storyblok/react';
 
 export type MetaData = {
@@ -96,6 +98,11 @@ export type BentoItemData = {
 export type BentoData = {
   headline: ISbRichtext
   frames: BentoItemData
+} & StylingData;
+
+export type ShelfData = {
+  headline: ISbRichtext
+  steps: LinkData[]
 } & StylingData;
 
 type PitchItemData = {
