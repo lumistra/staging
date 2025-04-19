@@ -59,13 +59,12 @@
     background-repeat: repeat-x;
     background-size: 100% 1px;
     display: grid;
-    grid-auto-columns: 430px;
+    grid-auto-columns: minmax(340px, 1fr);
     grid-auto-flow: column;
     height: 340px;
-    width: max-content;
+    width: 100%;
 
     @media screen and (max-width: sizes.$tablet) {
-      grid-auto-columns: 340px;
       height: 280px;
     }
 

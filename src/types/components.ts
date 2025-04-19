@@ -1,6 +1,6 @@
 import type { HeadlineData } from '@/types/articles';
 import type {
-  CMSLink, CTALinkData, LinkData, StylingData,
+  CMSLink, CTALinkData, Icons, MediaData, StylingData,
 } from '@/types/shared';
 import type { ISbRichtext } from '@storyblok/react';
 
@@ -100,9 +100,26 @@ export type BentoData = {
   frames: BentoItemData
 } & StylingData;
 
+export type ShelfItemData = {
+  label: string,
+  icon: keyof typeof Icons,
+  link: CMSLink,
+};
+
 export type ShelfData = {
   headline: ISbRichtext
-  steps: LinkData[]
+  steps: ShelfItemData[]
+} & StylingData;
+
+export type GrowItemData = {
+  title: string
+  paragraph: ISbRichtext
+  cta: CTALinkData
+  gallery: MediaData[]
+};
+
+export type GrowData = {
+  blocks: [GrowItemData, GrowItemData]
 } & StylingData;
 
 type PitchItemData = {

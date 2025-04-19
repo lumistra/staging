@@ -1,5 +1,15 @@
 import type { SbBlokData } from '@storyblok/react';
 
+export enum Icons {
+  instagram = 'instagram',
+  facebook = 'facebook',
+  linkedin = 'linkedin',
+  email = 'email',
+  chat = 'chat',
+  geometry = 'geometry',
+  rocket = 'rocket',
+}
+
 export type MediaData = {
   id: number,
   alt: string | null,
@@ -14,15 +24,15 @@ export type MediaData = {
 };
 
 export type CMSLink = {
-  url: string,
-  email: string,
+  url?: string,
+  email?: string,
   linktype: 'url' | 'email',
   target?: '_self' | '_blank',
 };
 
 export type LinkData = {
   label: string,
-  icon: 'instagram' | 'facebook' | 'linkedin' | 'email' | 'chat' | 'geometry' | 'rocket',
+  icon: keyof typeof Icons,
   link: CMSLink,
 };
 

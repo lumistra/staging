@@ -52,7 +52,11 @@ function Stats(props: Props) {
       onMouseLeave={() => handleShowModal(false)}
       storyblokEditable={storyblokEditable(props.blok)}
     >
-      <CursorTracker keyword={props.blok.cta} cursorPosition={cursorPosition} show={modalShow} />
+      <CursorTracker
+        keyword={props.blok.cta}
+        cursorPosition={cursorPosition}
+        show={modalShow}
+      />
       <div className={style.stat}>
         <h3>{current.statistic}</h3>
       </div>

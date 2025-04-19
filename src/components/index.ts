@@ -4,6 +4,7 @@ import WantToPublish from '@/components/containers/articles/WantToPublish';
 import Bento from '@/components/containers/main/Bento';
 import Contact from '@/components/containers/main/Contact';
 import Footer from '@/components/containers/main/Footer';
+import Grow from '@/components/containers/main/Grow';
 import Hero from '@/components/containers/main/Hero';
 import Shelf from '@/components/containers/main/Shelf';
 import Stats from '@/components/containers/main/Stats';
@@ -62,6 +63,7 @@ const components = {
   stats: Stats,
   bento: Bento,
   shelf: Shelf,
+  grow: Grow,
 
   // Projects & Articles blocks
   overview: Overview,

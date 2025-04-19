@@ -1,7 +1,7 @@
-import { useEffect, useRef } from 'react';
+import { Fragment, useEffect, useRef } from 'react';
 import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
-import { map } from 'lodash';
+import { isEmpty, map } from 'lodash';
 import Section from '@/components/containers/Section';
 import Link from '@/components/elements/Link';
 import RichText from '@/components/elements/RichText';
@@ -51,15 +51,24 @@ function Shelf(props: Props) {
       <div ref={scrollRef} className={style.scroll}>
         <div className={style.container}>
           {map(props.blok.steps, (step, index) => (
-            <Link
-              key={`step-${step.label}-${index}`}
-              className={classNames(style.step, { [style.primary]: index === 0 })}
-              link={step.link}
-            >
-              <span className={style.number}>{getOrderNumber(index)}.</span>
-              <span className={style.label}>{step.label}</span>
-              {socials[step.icon]}
-            </Link>
+            <Fragment key={`step-${step.label}-${index}`}>
+              {isEmpty(step.link) || isEmpty(step.link.url) || isEmpty(step.link.email) ? (
+                <div className={classNames(style.step, { [style.primary]: index === 0 })}>
+                  <span className={style.number}>{getOrderNumber(index)}.</span>
+                  <span className={style.label}>{step.label}</span>
+                  {socials[step.icon]}
+                </div>
+              ) : (
+                <Link
+                  className={classNames(style.step, { [style.primary]: index === 0 })}
+                  link={step.link}
+                >
+                  <span className={style.number}>{getOrderNumber(index)}.</span>
+                  <span className={style.label}>{step.label}</span>
+                  {socials[step.icon]}
+                </Link>
+              )}
+            </Fragment>
           ))}
         </div>
       </div>
