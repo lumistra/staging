@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { includes } from 'lodash';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import useTranslations, { defaultLocale } from '@/hooks/useTranslations';
+import useNavigation from '@/hooks/useNavigation';
 import { getRawPath, routes } from '@/utils';
 import type { CMSLink } from '@/types/shared';
 
@@ -20,36 +20,16 @@ type Props = {
 
 export default function Link(props: Props) {
   const router = useRouter();
-  const { currentLocale } = useTranslations();
-  const isExternalHref = props.link?.target === '_blank' || props.href?.match(/^(https?:)?\/\//);
+  const { getHref, isExternalHref, navigate } = useNavigation(props.locale);
 
-  const getLocale = () => {
-    switch (true) {
-      case props.locale && props.locale === defaultLocale:
-        return '';
-      case !props.locale && currentLocale === defaultLocale:
-        return '';
-      default:
-        return props.locale || currentLocale;
-    }
-  };
-
-  const getHref = () => {
-    if (props.link?.linktype === 'email') return `mailto:${props.link.url}`;
-    if (isExternalHref) return props.link?.url || props.href || '';
-    if (props.href || props.link) {
-      return `/${getLocale() + (props.link?.url || props.href)}`.replace('//', '/');
-    }
-
-    return `/${getLocale() + getRawPath(router.asPath)}`.replace('//', '/');
-  };
-
-  const trueHref = getHref();
+  const linkProp = { href: props.href, link: props.link };
+  const isExternal = isExternalHref(linkProp);
+  const trueHref = getHref(linkProp);
   const isSameRoute = getRawPath(router.asPath) === getRawPath(trueHref);
 
   const handleGoTo = () => {
     if (props.onClick) props.onClick();
-    router.push(trueHref);
+    navigate({}, trueHref);
   };
 
   const handleClick = (e: any) => {
@@ -80,7 +60,7 @@ export default function Link(props: Props) {
       onClick={handleClick}
       onMouseEnter={props.onMouseEnter}
       onMouseLeave={props.onMouseLeave}
-      target={isExternalHref ? '_blank' : '_self'}
+      target={isExternal ? '_blank' : '_self'}
     >
       {props.children}
     </NextLink>

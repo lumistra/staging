@@ -1,21 +1,25 @@
 import { useState } from 'react';
 import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
-import { map } from 'lodash';
+import { isEmpty, map } from 'lodash';
+import Arrow from '@/assets/svg/arrow.svg';
 import Plus from '@/assets/svg/plus.svg';
 import Section from '@/components/containers/Section';
 import RichText from '@/components/elements/RichText';
 import TextMask from '@/components/elements/TextMask';
+import useNavigation from '@/hooks/useNavigation';
 import useScrollAnimations from '@/hooks/useScrollAnimations';
 import style from '@/styles/main/workflow.module.scss';
 import { getOrderNumber } from '@/utils';
 import type { WorkflowData } from '@/types/components';
+import type { CMSLink } from '@/types/shared';
 
 type Props = {
   blok: SbBlokData & WorkflowData
 };
 
 function Workflow(props: Props) {
+  const { navigate } = useNavigation();
   const [expanded, setExpanded] = useState(-1);
 
   useScrollAnimations({
@@ -25,20 +29,32 @@ function Workflow(props: Props) {
     },
   });
 
-  const handleToggleExpand = (index: number) => {
-    setExpanded((preIndex) => (preIndex === index ? -1 : index));
+  const handleToggleExpand = (index: number, link?: CMSLink) => {
+    if (isEmpty(link?.url)) {
+      setExpanded((preIndex) => (preIndex === index ? -1 : index));
+
+      return;
+    }
+
+    navigate({ link });
   };
 
   return (
     <Section
       id="workflow"
       componentId={props.blok.component}
-      className={style.backgroundWrapper}
+      className={classNames(style.backgroundWrapper, {
+        [style.primary]: props.blok.background === 'primary' || isEmpty(props.blok.background),
+        [style.white]: props.blok.background === 'white',
+      })}
       containerClassName={style.wrapper}
       style={props.blok.styling}
       storyblokEditable={storyblokEditable(props.blok)}
     >
-      <div className={style.header}>
+      <div className={classNames(style.header, {
+        [style.hidden]: isEmpty(props.blok.title) && isEmpty(props.blok.paragraph),
+      })}
+      >
         <span className={style.title}>{props.blok.title}</span>
         <RichText className={style.paragraph}>{props.blok.paragraph}</RichText>
       </div>
@@ -50,7 +66,7 @@ function Workflow(props: Props) {
             <div
               key={`${step.title}-${index}`}
               className={classNames('workflow-animation-row', style.row)}
-              onClick={() => handleToggleExpand(index)}
+              onClick={() => handleToggleExpand(index, step.link)}
             >
               <TextMask animationClass="workflow-index-mask">
                 <span className={style.index}>{getOrderNumber(index)}</span>
@@ -60,10 +76,14 @@ function Workflow(props: Props) {
                   <TextMask animationClass="workflow-label-mask">
                     <span>{step.title}</span>
                   </TextMask>
-                  <Plus className={classNames('workflow-animation-icon', style.icon, {
-                    [style.expanded]: isExpanded,
-                  })}
-                  />
+                  {isEmpty(step.link?.url) ? (
+                    <Plus className={classNames('workflow-animation-icon', style.icon, {
+                      [style.expanded]: isExpanded,
+                    })}
+                    />
+                  ) : (
+                    <Arrow className={classNames('workflow-animation-icon', style.icon)} />
+                  )}
                 </div>
                 <p className={classNames(style.columnParagraph, {
                   [style.columnParagraphExpanded]: isExpanded,

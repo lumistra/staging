@@ -1,5 +1,6 @@
 import { MARK_LINK, render } from 'storyblok-rich-text-react-renderer';
 import classNames from 'classnames';
+import { isEmpty } from 'lodash';
 import Link from '@/components/elements/Link';
 import type { ISbRichtext } from '@storyblok/react';
 
@@ -9,6 +10,8 @@ type Props = {
 };
 
 export default function RichText(props: Props) {
+  if (isEmpty(props.children)) return;
+
   return (
     <div className={classNames('rich-text-wrapper', props.className)}>
       {render(props.children, {

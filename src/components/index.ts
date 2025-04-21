@@ -47,6 +47,7 @@ const components = {
   sidenav: Sidenav,
   meta: Meta,
   hero: Hero,
+  heroAlt: Hero,
   featured: Featured,
   selected: Selected,
   latest: Latest,

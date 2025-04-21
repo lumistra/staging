@@ -17,7 +17,7 @@ export type MetaData = {
 };
 
 export type HeroData = {
-  title: string
+  title: ISbRichtext | string
   footnoteCTA?: string
   gradient: boolean
   spacingBottom: boolean
@@ -68,13 +68,15 @@ export type SelectionData = {
 
 type WorkflowStepData = {
   title: string
-  paragraph: string
+  paragraph?: string
+  link?: CMSLink
 };
 
 export type WorkflowData = {
-  title: string
-  paragraph: ISbRichtext
+  title?: string
+  paragraph?: ISbRichtext
   steps: WorkflowStepData[]
+  background?: 'primary' | 'white'
 } & StylingData;
 
 export type StatData = {

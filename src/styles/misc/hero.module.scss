@@ -25,23 +25,23 @@
 
   .heroTitle {
     display: flex;
-    font-size: 86px;
-    white-space: pre-wrap;
+    font-size: 86px !important;
+    white-space: pre-wrap !important;
 
     @media screen and (max-width: 1500px) {
-      white-space: normal;
+      white-space: normal !important;
     }
 
     @media screen and (max-width: sizes.$desktop) {
-      font-size: 60px;
+      font-size: 60px !important;
     }
 
     @media screen and (max-width: sizes.$laptop) {
-      font-size: 48px;
+      font-size: 48px !important;
     }
 
     @media screen and (max-width: sizes.$mobile) {
-      font-size: 32px;
+      font-size: 32px !important;
     }
   }
 
@@ -102,22 +102,27 @@
     .heroGradientTitle {
       color: colors.$white;
       display: flex;
-      font-size: 86px;
+      font-size: 86px !important;
       height: fit-content;
       width: fit-content;
       z-index: 10;
 
       @media screen and (max-width: sizes.$desktop) {
-        font-size: 60px;
+        font-size: 60px !important;
       }
 
       @media screen and (max-width: sizes.$laptop) {
-        font-size: 48px;
+        font-size: 48px !important;
       }
 
       @media screen and (max-width: sizes.$mobile) {
-        font-size: 32px;
+        font-size: 32px !important;
       }
     }
   }
+}
+
+.heroRichText > * {
+  font-size: inherit !important;
+  margin: initial !important;
 }

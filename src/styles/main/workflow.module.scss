@@ -3,8 +3,40 @@
 @use "../sizes";
 
 .backgroundWrapper {
-  background-color: colors.$primary;
-  color: colors.$white;
+  &.primary {
+    background-color: colors.$primary;
+    color: colors.$white;
+
+    .row {
+      &::before,
+      &::after {
+        background-color: colors.$white;
+      }
+
+      .icon * {
+        stroke: colors.$white !important;
+      }
+    }
+  }
+
+  &.white {
+    color: colors.$black;
+
+    .row {
+      &::before,
+      &::after {
+        background-color: colors.$gray;
+      }
+
+      .index {
+        color: colors.$gray;
+      }
+
+      .icon * {
+        stroke: colors.$gray !important;
+      }
+    }
+  }
 
   .wrapper {
     margin-bottom: 300px;
@@ -50,6 +82,10 @@
         flex-direction: column;
         gap: 10px;
         margin-bottom: 60px;
+      }
+
+      &.hidden {
+        display: none;
       }
 
       .title {
@@ -112,7 +148,6 @@
       &::after {
         left: 0;
         position: absolute;
-        background-color: colors.$white;
         content: "";
         height: 1px;
       }
@@ -128,6 +163,7 @@
       .index {
         font-family: fonts.$mono;
         font-size: 48px;
+        font-weight: 300;
 
         @media screen and (max-width: sizes.$desktop) {
           display: none;

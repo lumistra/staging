@@ -8,12 +8,110 @@ export const services = {
     _uid: '824d2440-291a-4f7e-8e5f-04d39f35dfbe',
     body: [
       {
-        _uid: '155b1109-d53b-4ad5-82f0-b5f7f8e5cf57',
-        title: 'Overview of what we do\nand how can we do it for you.',
-        footnote: true,
+        _uid: 'a7017320-27b8-4561-9eb6-2a0732db19df',
+        title: {
+          type: 'doc',
+          content: [
+            {
+              type: 'heading',
+              attrs: {
+                level: 1,
+              },
+              content: [
+                {
+                  text: 'Let’s define your goals.',
+                  type: 'text',
+                  marks: [
+                    {
+                      type: 'textStyle',
+                      attrs: {
+                        color: '#98989A',
+                      },
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              type: 'heading',
+              attrs: {
+                level: 1,
+              },
+              content: [
+                {
+                  text: 'From strategy to implementation.',
+                  type: 'text',
+                },
+              ],
+            },
+          ],
+        },
+        styling: [],
         gradient: false,
-        component: 'hero',
-        _editable: '<!--#storyblok#{"name": "hero", "space": "286844", "uid": "155b1109-d53b-4ad5-82f0-b5f7f8e5cf57", "id": "519687768"}-->',
+        component: 'heroAlt',
+        footnoteCTA: '',
+        spacingBottom: false,
+        _editable: '<!--#storyblok#{"name": "heroAlt", "space": "286844", "uid": "a7017320-27b8-4561-9eb6-2a0732db19df", "id": "658228665"}-->',
+      },
+      {
+        _uid: '0f3e6b92-277c-4e8c-81e6-6384f25594b5',
+        steps: [
+          {
+            _uid: '72bf9685-f108-487c-91b1-4c4612987f1d',
+            link: {
+              id: '',
+              url: '/services#brand_strategy',
+              linktype: 'url',
+              fieldtype: 'multilink',
+              cached_url: '/services#brand_strategy',
+            },
+            title: 'Brand strategy',
+            component: 'workflowStep',
+            paragraph: '',
+            _editable: '<!--#storyblok#{"name": "workflowStep", "space": "286844", "uid": "72bf9685-f108-487c-91b1-4c4612987f1d", "id": "658228665"}-->',
+          },
+          {
+            _uid: 'ace1f0fb-7798-4203-b666-9169c0b0ddd5',
+            link: {
+              id: '',
+              url: '/services#brand_design',
+              linktype: 'url',
+              fieldtype: 'multilink',
+              cached_url: '/services#brand_design',
+            },
+            title: 'Brand design',
+            component: 'workflowStep',
+            paragraph: '',
+            _editable: '<!--#storyblok#{"name": "workflowStep", "space": "286844", "uid": "ace1f0fb-7798-4203-b666-9169c0b0ddd5", "id": "658228665"}-->',
+          },
+          {
+            _uid: '55c9737c-cc8e-4b5a-a538-55db603a994d',
+            link: {
+              id: '',
+              url: '/services#digital_design',
+              linktype: 'url',
+              fieldtype: 'multilink',
+              cached_url: '/services#digital_design',
+            },
+            title: 'Digital design',
+            component: 'workflowStep',
+            paragraph: '',
+            _editable: '<!--#storyblok#{"name": "workflowStep", "space": "286844", "uid": "55c9737c-cc8e-4b5a-a538-55db603a994d", "id": "658228665"}-->',
+          },
+        ],
+        title: '',
+        styling: [],
+        component: 'workflow',
+        paragraph: {
+          type: 'doc',
+          content: [
+            {
+              type: 'paragraph',
+            },
+          ],
+        },
+        background: 'white',
+        _editable: '<!--#storyblok#{"name": "workflow", "space": "286844", "uid": "0f3e6b92-277c-4e8c-81e6-6384f25594b5", "id": "658228665"}-->',
       },
       {
         _uid: 'e7beeba3-2ee6-4626-912c-776815319873',
