@@ -10,7 +10,7 @@ import TextMask from '@/components/elements/TextMask';
 import useNavigation from '@/hooks/useNavigation';
 import useScrollAnimations from '@/hooks/useScrollAnimations';
 import style from '@/styles/main/workflow.module.scss';
-import { getOrderNumber } from '@/utils';
+import { getOrderNumber, hasRichText } from '@/utils';
 import type { WorkflowData } from '@/types/components';
 import type { CMSLink } from '@/types/shared';
 
@@ -39,6 +39,13 @@ function Workflow(props: Props) {
     navigate({ link });
   };
 
+  const isEmptyHeader = (): boolean => {
+    if (!isEmpty(props.blok.title)) return false;
+    if (hasRichText(props.blok.paragraph)) return false;
+
+    return true;
+  };
+
   return (
     <Section
       id="workflow"
@@ -51,10 +58,7 @@ function Workflow(props: Props) {
       style={props.blok.styling}
       storyblokEditable={storyblokEditable(props.blok)}
     >
-      <div className={classNames(style.header, {
-        [style.hidden]: isEmpty(props.blok.title) && isEmpty(props.blok.paragraph),
-      })}
-      >
+      <div className={classNames(style.header, { [style.hidden]: isEmptyHeader() })}>
         <span className={style.title}>{props.blok.title}</span>
         <RichText className={style.paragraph}>{props.blok.paragraph}</RichText>
       </div>

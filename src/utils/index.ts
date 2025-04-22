@@ -1,5 +1,6 @@
-import { forEach } from 'lodash';
+import { forEach, isArray } from 'lodash';
 import { locales } from '@/hooks/useTranslations';
+import type { ISbRichtext } from '@storyblok/react';
 
 export const isProd = process.env.NODE_ENV === 'production';
 export const storyVersion: 'published' | 'draft' = process.env.environment === 'production' ? 'published' : 'draft';
@@ -46,4 +47,12 @@ export const getOrderNumber = (index: number, brackets?: boolean): string => {
   if (brackets) return '(' + number + ')';
 
   return number;
+};
+
+export const hasRichText = (document: ISbRichtext | undefined) => {
+  if (!document?.content) return false;
+
+  for (const item of document.content) {
+    if (isArray(item.content) && item.content.length > 0) return true;
+  }
 };
