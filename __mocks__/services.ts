@@ -114,32 +114,439 @@ export const services = {
         _editable: '<!--#storyblok#{"name": "workflow", "space": "286844", "uid": "0f3e6b92-277c-4e8c-81e6-6384f25594b5", "id": "658228665"}-->',
       },
       {
-        _uid: 'e7beeba3-2ee6-4626-912c-776815319873',
+        _uid: 'e22e75e2-aa17-4392-aada-aeb3a26a0a1c',
         items: [
           {
-            _uid: '929921ea-ef24-4fec-8d2e-0ec2d5dbeb74',
-            title: 'Branding',
-            component: 'pitchItem',
-            paragraph: 'Our primary focus is crafting memorable and unique visual identities for passionate brands. We understand the importance of how a future identity represents a company, so we dedicate our time and effort to delivering the best solutions that are both enduring and adaptable to evolving needs.',
-            _editable: '<!--#storyblok#{"name": "pitchItem", "space": "286844", "uid": "929921ea-ef24-4fec-8d2e-0ec2d5dbeb74", "id": "519687768"}-->',
+            _uid: 'e8c10c20-d777-4f86-a9c4-c5efca7210b3',
+            title: 'Brand strategy',
+            component: 'pitchMoreItem',
+            leftLabel: 'BENEFIT',
+            rightLabel: 'SERVICES',
+            leftParagraph: {
+              type: 'doc',
+              content: [
+                {
+                  type: 'paragraph',
+                  content: [
+                    {
+                      text: 'A clear brand strategy ensures your brand communicates its purpose and values effectively.',
+                      type: 'text',
+                    },
+                  ],
+                },
+              ],
+            },
+            rightParagraph: {
+              type: 'doc',
+              content: [
+                {
+                  type: 'ordered_list',
+                  attrs: {
+                    order: 1,
+                  },
+                  content: [
+                    {
+                      type: 'list_item',
+                      content: [
+                        {
+                          type: 'paragraph',
+                          content: [
+                            {
+                              text: 'Research and analysis',
+                              type: 'text',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: 'list_item',
+                      content: [
+                        {
+                          type: 'paragraph',
+                          content: [
+                            {
+                              text: 'Brand image',
+                              type: 'text',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: 'list_item',
+                      content: [
+                        {
+                          type: 'paragraph',
+                          content: [
+                            {
+                              text: 'Brand story',
+                              type: 'text',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: 'list_item',
+                      content: [
+                        {
+                          type: 'paragraph',
+                          content: [
+                            {
+                              text: 'Brand positioning',
+                              type: 'text',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: 'list_item',
+                      content: [
+                        {
+                          type: 'paragraph',
+                          content: [
+                            {
+                              text: 'Brand architecture',
+                              type: 'text',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: 'list_item',
+                      content: [
+                        {
+                          type: 'paragraph',
+                          content: [
+                            {
+                              text: 'Verbal identity',
+                              type: 'text',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+            _editable: '<!--#storyblok#{"name": "pitchMoreItem", "space": "286844", "uid": "e8c10c20-d777-4f86-a9c4-c5efca7210b3", "id": "658228665"}-->',
           },
           {
-            _uid: 'a7ee2cd3-f312-4e2c-a345-2149a2857c54',
-            title: 'Packaging',
-            component: 'pitchItem',
-            paragraph: 'In a market brimming with outstanding packaging, your product can stand out too. Through our meticulous attention to detail and rigorous testing, we ensure that our packaging design solutions provide the shelf presence your product deserves.',
-            _editable: '<!--#storyblok#{"name": "pitchItem", "space": "286844", "uid": "a7ee2cd3-f312-4e2c-a345-2149a2857c54", "id": "519687768"}-->',
+            _uid: 'bb47429f-01ec-4b3b-883b-ee72c31a38c6',
+            title: 'Brand design',
+            component: 'pitchMoreItem',
+            leftLabel: 'BENEFIT',
+            rightLabel: 'SERVICES',
+            leftParagraph: {
+              type: 'doc',
+              content: [
+                {
+                  type: 'paragraph',
+                  content: [
+                    {
+                      text: 'Thoughtful branding transforms your identity into a visual language that resonates with people.',
+                      type: 'text',
+                    },
+                  ],
+                },
+              ],
+            },
+            rightParagraph: {
+              type: 'doc',
+              content: [
+                {
+                  type: 'ordered_list',
+                  attrs: {
+                    order: 1,
+                  },
+                  content: [
+                    {
+                      type: 'list_item',
+                      content: [
+                        {
+                          type: 'paragraph',
+                          content: [
+                            {
+                              text: 'Visual identity',
+                              type: 'text',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: 'list_item',
+                      content: [
+                        {
+                          type: 'paragraph',
+                          content: [
+                            {
+                              text: 'Storytelling',
+                              type: 'text',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: 'list_item',
+                      content: [
+                        {
+                          type: 'paragraph',
+                          content: [
+                            {
+                              text: 'Design systems',
+                              type: 'text',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: 'list_item',
+                      content: [
+                        {
+                          type: 'paragraph',
+                          content: [
+                            {
+                              text: 'Motion design',
+                              type: 'text',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: 'list_item',
+                      content: [
+                        {
+                          type: 'paragraph',
+                          content: [
+                            {
+                              text: 'Type design',
+                              type: 'text',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: 'list_item',
+                      content: [
+                        {
+                          type: 'paragraph',
+                          content: [
+                            {
+                              text: 'Packaging',
+                              type: 'text',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: 'list_item',
+                      content: [
+                        {
+                          type: 'paragraph',
+                          content: [
+                            {
+                              text: 'Publications',
+                              type: 'text',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: 'list_item',
+                      content: [
+                        {
+                          type: 'paragraph',
+                          content: [
+                            {
+                              text: 'Illustration',
+                              type: 'text',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+            _editable: '<!--#storyblok#{"name": "pitchMoreItem", "space": "286844", "uid": "bb47429f-01ec-4b3b-883b-ee72c31a38c6", "id": "658228665"}-->',
           },
           {
-            _uid: '5f36c35b-5ae2-4b61-80d5-4f3f81e2dd25',
-            title: 'Marketing',
-            component: 'pitchItem',
-            paragraph: 'To ensure your brand is ready for launch, we address all your marketing needs. If you prefer to create your own content, we offer user-friendly templates, allowing you to focus on what matters most while we handle the rest.',
-            _editable: '<!--#storyblok#{"name": "pitchItem", "space": "286844", "uid": "5f36c35b-5ae2-4b61-80d5-4f3f81e2dd25", "id": "519687768"}-->',
+            _uid: '87620e9f-be6a-40ec-8217-3ac67361fc71',
+            title: 'Digital design',
+            component: 'pitchMoreItem',
+            leftLabel: 'BENEFIT',
+            rightLabel: 'SERVICES',
+            leftParagraph: {
+              type: 'doc',
+              content: [
+                {
+                  type: 'paragraph',
+                  content: [
+                    {
+                      text: 'Effective digital design enhances how people interact with your brand online.',
+                      type: 'text',
+                    },
+                  ],
+                },
+              ],
+            },
+            rightParagraph: {
+              type: 'doc',
+              content: [
+                {
+                  type: 'ordered_list',
+                  attrs: {
+                    order: 1,
+                  },
+                  content: [
+                    {
+                      type: 'list_item',
+                      content: [
+                        {
+                          type: 'paragraph',
+                          content: [
+                            {
+                              text: 'Digital strategy',
+                              type: 'text',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: 'list_item',
+                      content: [
+                        {
+                          type: 'paragraph',
+                          content: [
+                            {
+                              text: 'Wireframing',
+                              type: 'text',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: 'list_item',
+                      content: [
+                        {
+                          type: 'paragraph',
+                          content: [
+                            {
+                              text: 'UX/UI design',
+                              type: 'text',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: 'list_item',
+                      content: [
+                        {
+                          type: 'paragraph',
+                          content: [
+                            {
+                              text: 'Ad creative',
+                              type: 'text',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: 'list_item',
+                      content: [
+                        {
+                          type: 'paragraph',
+                          content: [
+                            {
+                              text: 'Frontend/Backend development',
+                              type: 'text',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: 'list_item',
+                      content: [
+                        {
+                          type: 'paragraph',
+                          content: [
+                            {
+                              text: 'Prototyping and testing',
+                              type: 'text',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: 'list_item',
+                      content: [
+                        {
+                          type: 'paragraph',
+                          content: [
+                            {
+                              text: 'Social media templates',
+                              type: 'text',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: 'list_item',
+                      content: [
+                        {
+                          type: 'paragraph',
+                          content: [
+                            {
+                              text: 'Infographic design',
+                              type: 'text',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: 'list_item',
+                      content: [
+                        {
+                          type: 'paragraph',
+                          content: [
+                            {
+                              text: 'Presentation design',
+                              type: 'text',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+            _editable: '<!--#storyblok#{"name": "pitchMoreItem", "space": "286844", "uid": "87620e9f-be6a-40ec-8217-3ac67361fc71", "id": "658228665"}-->',
           },
         ],
-        component: 'pitch',
-        _editable: '<!--#storyblok#{"name": "pitch", "space": "286844", "uid": "e7beeba3-2ee6-4626-912c-776815319873", "id": "519687768"}-->',
+        styling: [],
+        component: 'pitchMore',
+        _editable: '<!--#storyblok#{"name": "pitchMore", "space": "286844", "uid": "e22e75e2-aa17-4392-aada-aeb3a26a0a1c", "id": "658228665"}-->',
       },
       {
         _uid: '185bfaa7-0cd7-48cd-a6e6-64f3e5fbe601',

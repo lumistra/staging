@@ -25,15 +25,21 @@
   src: url("../fonts/GeistMono.woff2") format("woff2");
 }
 
-::-moz-selection {
-  /* Code for Firefox */
-  color: colors.$white;
-  background: colors.$primary;
-}
-
+/* Custom text selection - START */
 ::selection {
   color: colors.$white;
   background: colors.$primary;
+}
+/* Code for Firefox */
+::-moz-selection {
+  color: colors.$white;
+  background: colors.$primary;
+}
+/* Custom text selection - END */
+
+/* Offset hash URL param scroll position */
+:target {
+  scroll-margin-top: 110px;
 }
 
 html,

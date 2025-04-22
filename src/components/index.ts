@@ -19,6 +19,7 @@ import Featured from '@/components/containers/projects/Featured';
 import Overview from '@/components/containers/projects/Overview';
 import Selected from '@/components/containers/projects/Selected';
 import Pitch from '@/components/containers/services/Pitch';
+import PitchMore from '@/components/containers/services/PitchMore';
 import Selection from '@/components/containers/services/Selection';
 import WhatWeDo from '@/components/containers/services/WhatWeDo';
 import DoubleMedia from '@/components/elements/layouts/DoubleMedia';
@@ -54,6 +55,7 @@ const components = {
   selection: Selection,
   workflow: Workflow,
   pitch: Pitch,
+  pitchMore: PitchMore,
   whatWeDo: WhatWeDo,
   wantToPublish: WantToPublish,
   animatedLineSection: AnimatedLineSection,

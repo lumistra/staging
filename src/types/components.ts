@@ -133,6 +133,18 @@ export type PitchData = {
   items: PitchItemData[]
 } & StylingData;
 
+type PitchMoreItemData = {
+  title: string
+  leftLabel?: string
+  leftParagraph?: ISbRichtext
+  rightLabel?: string
+  rightParagraph?: ISbRichtext
+};
+
+export type PitchMoreData = {
+  items: PitchMoreItemData[]
+} & StylingData;
+
 export type WantToPublishData = {
   background: 'dark' | 'gray'
   spacingTop: boolean
