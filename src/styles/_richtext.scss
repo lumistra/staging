@@ -1,4 +1,5 @@
 @use "colors";
+@use "fonts";
 @use "sizes";
 
 .rich-text-wrapper {
@@ -105,14 +106,28 @@
     text-decoration: underline;
   }
 
+  ul,
+  ol {
+    list-style-position: inside;
+
+    li > * {
+      display: initial;
+    }
+  }
+
   ul {
-    list-style: initial;
+    list-style-type: disc;
     margin: 20px 0;
   }
 
   ol {
-    list-style: upper-roman;
+    list-style-type: decimal-leading-zero;
     margin: 20px 0;
+
+    li::marker {
+      font-family: fonts.$regular;
+      font-weight: 300;
+    }
   }
 
   li::marker {

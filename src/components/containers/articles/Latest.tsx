@@ -6,7 +6,6 @@ import Section from '@/components/containers/Section';
 import Article from '@/components/elements/Article';
 import CtaLink from '@/components/elements/CtaLink';
 import CursorTracker from '@/components/elements/CursorTracker';
-import { useScreenSize } from '@/hooks/useScreenSize';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import style from '@/styles/articles/latest.module.scss';
 import type { CursorPosition } from '@/components/elements/CursorTracker';
@@ -15,12 +14,10 @@ import type { LatestData } from '@/types/articles';
 type Props = {
   blok: SbBlokData & LatestData
   className?: string
-  minHeight?: number
   hideCTA?: boolean
 };
 
 export default function Latest(props: Props) {
-  const { isTablet } = useScreenSize();
   const [modalShow, setModalShow] = useState(false);
   const [cursorPosition, setCursorPosition] = useState<CursorPosition>(null);
 
@@ -76,7 +73,6 @@ export default function Latest(props: Props) {
           <Article
             key={article.slug}
             article={article}
-            minHeight={isTablet ? 100 : props.minHeight}
             onMouseEnter={() => handleShowModal(true)}
             onMouseLeave={() => handleShowModal(false)}
           />

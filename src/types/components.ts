@@ -1,5 +1,7 @@
 import type { HeadlineData } from '@/types/articles';
-import type { CMSLink, CTALinkData, StylingData } from '@/types/shared';
+import type {
+  CMSLink, CTALinkData, Icons, MediaData, StylingData,
+} from '@/types/shared';
 import type { ISbRichtext } from '@storyblok/react';
 
 export type MetaData = {
@@ -15,7 +17,7 @@ export type MetaData = {
 };
 
 export type HeroData = {
-  title: string
+  title: ISbRichtext | string
   footnoteCTA?: string
   gradient: boolean
   spacingBottom: boolean
@@ -66,13 +68,16 @@ export type SelectionData = {
 
 type WorkflowStepData = {
   title: string
-  paragraph: string
+  paragraph?: string
+  link?: CMSLink
 };
 
 export type WorkflowData = {
-  title: string
-  paragraph: ISbRichtext
+  title?: string
+  paragraph?: ISbRichtext
   steps: WorkflowStepData[]
+  headerAlign?: 'left' | 'right'
+  background?: 'primary' | 'white'
 } & StylingData;
 
 export type StatData = {
@@ -98,6 +103,28 @@ export type BentoData = {
   frames: BentoItemData
 } & StylingData;
 
+export type ShelfItemData = {
+  label: string,
+  icon: keyof typeof Icons,
+  link: CMSLink,
+};
+
+export type ShelfData = {
+  headline: ISbRichtext
+  steps: ShelfItemData[]
+} & StylingData;
+
+export type GrowItemData = {
+  title: string
+  paragraph: ISbRichtext
+  cta: CTALinkData
+  gallery: MediaData[]
+};
+
+export type GrowData = {
+  blocks: [GrowItemData, GrowItemData]
+} & StylingData;
+
 type PitchItemData = {
   title: string
   paragraph: string
@@ -105,6 +132,20 @@ type PitchItemData = {
 
 export type PitchData = {
   items: PitchItemData[]
+  hideOrderNumber?: boolean
+  hideBottomLine?: boolean
+} & StylingData;
+
+type PitchMoreItemData = {
+  title: string
+  leftLabel?: string
+  leftParagraph?: ISbRichtext
+  rightLabel?: string
+  rightParagraph?: ISbRichtext
+};
+
+export type PitchMoreData = {
+  items: PitchMoreItemData[]
 } & StylingData;
 
 export type WantToPublishData = {

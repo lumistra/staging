@@ -9,7 +9,6 @@ import type { ISbStoryData } from '@storyblok/react';
 
 type Props = {
   article: ISbStoryData<ArticleData>
-  minHeight?: number
   onMouseEnter?: () => void,
   onMouseLeave?: () => void,
 };
@@ -33,10 +32,7 @@ export default function Article(props: Props) {
       <span className={style.articleDate}>
         {format(new Date(headline.publishedAt), 'MMM do yyyy')}
       </span>
-      <span
-        className={style.articleTitle}
-        style={{ minHeight: props.minHeight || 400 }}
-      >
+      <span className={style.articleTitle}>
         {headline.title}
       </span>
     </Link>

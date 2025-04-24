@@ -3,27 +3,44 @@
 @use "../sizes";
 
 .backgroundWrapper {
-  background-color: colors.$primary;
-  color: colors.$white;
+  &.primary {
+    background-color: colors.$primary;
+    color: colors.$white;
+
+    .row {
+      &::before,
+      &::after {
+        background-color: colors.$white;
+      }
+
+      .icon * {
+        stroke: colors.$white !important;
+      }
+    }
+  }
+
+  &.white {
+    color: colors.$black;
+
+    .row {
+      &::before,
+      &::after {
+        background-color: colors.$gray;
+      }
+
+      .index {
+        color: colors.$gray;
+      }
+
+      .icon * {
+        stroke: colors.$gray !important;
+      }
+    }
+  }
 
   .wrapper {
-    margin-bottom: 300px;
-    margin-top: 200px;
-
-    @media screen and (max-width: sizes.$desktop) {
-      margin-bottom: 240px;
-      margin-top: 140px;
-    }
-
-    @media screen and (max-width: sizes.$laptop) {
-      margin-bottom: 180px;
-      margin-top: 100px;
-    }
-
-    @media screen and (max-width: sizes.$mobile) {
-      margin-bottom: 120px;
-      margin-top: 60px;
-    }
+    margin-bottom: 100px;
+    margin-top: 100px;
 
     .header,
     .row {
@@ -43,30 +60,47 @@
     }
 
     .header {
-      margin-bottom: 190px;
+      margin-bottom: 80px;
 
       @media screen and (max-width: sizes.$mobile) {
         display: flex;
         flex-direction: column;
         gap: 10px;
-        margin-bottom: 60px;
+        margin-bottom: 40px;
+      }
+
+      &.hidden {
+        display: none;
+      }
+
+      &.left {
+        .title {
+          grid-column: 1;
+        }
+        .paragraph {
+          grid-column: 1;
+        }
+      }
+
+      &.right {
+        .title {
+          grid-column: 2;
+        }
+        .paragraph {
+          grid-column: 2;
+        }
       }
 
       .title {
         font-size: 72px;
-        grid-column: 2;
 
         @media screen and (max-width: sizes.$desktop) {
           font-size: 52px;
           grid-column: 1;
         }
 
-        @media screen and (max-width: sizes.$laptop) {
-          font-size: 36px;
-        }
-
-        @media screen and (max-width: sizes.$mobile) {
-          font-size: 24px;
+        @media screen and (max-width: sizes.$tablet) {
+          font-size: 48px;
         }
       }
 
@@ -74,7 +108,6 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         font-size: 21px;
-        grid-column: 2;
         grid-row: 2;
 
         @media screen and (max-width: 1500px) {
@@ -112,7 +145,6 @@
       &::after {
         left: 0;
         position: absolute;
-        background-color: colors.$white;
         content: "";
         height: 1px;
       }
@@ -126,8 +158,8 @@
       }
 
       .index {
-        font-family: fonts.$mono;
         font-size: 48px;
+        font-weight: 300;
 
         @media screen and (max-width: sizes.$desktop) {
           display: none;

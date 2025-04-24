@@ -1,4 +1,5 @@
 import { type SbBlokData, storyblokEditable } from '@storyblok/react';
+import classNames from 'classnames';
 import { map } from 'lodash';
 import Section from '@/components/containers/Section';
 import TextMask from '@/components/elements/TextMask';
@@ -28,15 +29,28 @@ export default function Pitch(props: Props) {
       storyblokEditable={storyblokEditable(props.blok)}
     >
       {map(props.blok.items, (item, index) => (
-        <div key={index} className={style.pitchItem}>
-          <TextMask animationClass="pitch-index-mask" className={style.pitchNumber}>
-            <span>{getOrderNumber(index)}</span>
+        <div
+          key={index}
+          className={classNames(style.pitchItem, {
+            [style.withBottomLine]: !props.blok.hideBottomLine,
+          })}
+        >
+          <TextMask
+            animationClass="pitch-index-mask"
+            className={classNames({
+              [style.pitchLabel]: props.blok.hideOrderNumber,
+              [style.pitchNumber]: !props.blok.hideOrderNumber,
+            })}
+          >
+            <span>{props.blok.hideOrderNumber ? item.title : getOrderNumber(index)}</span>
           </TextMask>
           <div className={style.pitchContent}>
-            <TextMask animationClass="pitch-index-title" className={style.pitchTitle}>
-              <span>{item.title}</span>
-            </TextMask>
-            <TextMask animationClass="pitch-index-paragraph" className={style.pitchParagraph}>
+            {!props.blok.hideOrderNumber && (
+              <TextMask animationClass="pitch-title-mask" className={style.pitchTitle}>
+                <span>{item.title}</span>
+              </TextMask>
+            )}
+            <TextMask animationClass="pitch-paragraph-mask" className={style.pitchParagraph}>
               <p>{item.paragraph}</p>
             </TextMask>
           </div>

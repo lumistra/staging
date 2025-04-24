@@ -134,7 +134,7 @@ export async function getStaticProps(props: StaticProps) {
 
 export async function getStaticPaths() {
   const storyblokApi = getStoryblokApi();
-  const response = process.env.mockApi ? [{ data: cmsLinks }] : await storyblokApi.getAll('cdn/links', { version: storyVersion });
+  const response = process.env.mockApi ? cmsLinks : await storyblokApi.getAll('cdn/links', { version: storyVersion });
   await generateGlobals(storyblokApi);
 
   const links = reduce(flatten(response), (res, link) => {

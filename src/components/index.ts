@@ -4,7 +4,9 @@ import WantToPublish from '@/components/containers/articles/WantToPublish';
 import Bento from '@/components/containers/main/Bento';
 import Contact from '@/components/containers/main/Contact';
 import Footer from '@/components/containers/main/Footer';
+import Grow from '@/components/containers/main/Grow';
 import Hero from '@/components/containers/main/Hero';
+import Shelf from '@/components/containers/main/Shelf';
 import Stats from '@/components/containers/main/Stats';
 import Workflow from '@/components/containers/main/Workflow';
 import AboutSplit from '@/components/containers/misc/AboutSplit';
@@ -17,6 +19,7 @@ import Featured from '@/components/containers/projects/Featured';
 import Overview from '@/components/containers/projects/Overview';
 import Selected from '@/components/containers/projects/Selected';
 import Pitch from '@/components/containers/services/Pitch';
+import PitchMore from '@/components/containers/services/PitchMore';
 import Selection from '@/components/containers/services/Selection';
 import WhatWeDo from '@/components/containers/services/WhatWeDo';
 import DoubleMedia from '@/components/elements/layouts/DoubleMedia';
@@ -45,12 +48,14 @@ const components = {
   sidenav: Sidenav,
   meta: Meta,
   hero: Hero,
+  heroAlt: Hero,
   featured: Featured,
   selected: Selected,
   latest: Latest,
   selection: Selection,
   workflow: Workflow,
   pitch: Pitch,
+  pitchMore: PitchMore,
   whatWeDo: WhatWeDo,
   wantToPublish: WantToPublish,
   animatedLineSection: AnimatedLineSection,
@@ -60,6 +65,8 @@ const components = {
   contact: Contact,
   stats: Stats,
   bento: Bento,
+  shelf: Shelf,
+  grow: Grow,
 
   // Projects & Articles blocks
   overview: Overview,

@@ -1,8 +1,10 @@
 import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
+import { isString } from 'lodash';
 import Arrow from '@/assets/svg/arrow.svg';
 import Section from '@/components/containers/Section';
 import Gradient from '@/components/elements/Gradient';
+import RichText from '@/components/elements/RichText';
 import TextMask from '@/components/elements/TextMask';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import style from '@/styles/misc/hero.module.scss';
@@ -21,6 +23,18 @@ function Hero(props: Props) {
     },
   });
 
+  const renderTitle = () => {
+    if (isString(props.blok.title)) {
+      return <h1>{props.blok.title}</h1>;
+    }
+
+    return (
+      <RichText className={style.heroRichText}>
+        {props.blok.title}
+      </RichText>
+    );
+  };
+
   if (props.blok.gradient) {
     return (
       <Section
@@ -32,7 +46,7 @@ function Hero(props: Props) {
         storyblokEditable={storyblokEditable(props.blok)}
       >
         <TextMask animationClass="animation-base hero-animation-text" className={style.heroGradientTitle}>
-          <h1>{props.blok.title}</h1>
+          {renderTitle()}
         </TextMask>
       </Section>
     );
@@ -48,7 +62,7 @@ function Hero(props: Props) {
       storyblokEditable={storyblokEditable(props.blok)}
     >
       <TextMask animationClass="animation-base hero-animation-text" className={style.heroTitle}>
-        <h1>{props.blok.title}</h1>
+        {renderTitle()}
       </TextMask>
       {props.blok.footnoteCTA && (
         <TextMask animationClass="animation-base hero-animation-text">

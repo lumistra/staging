@@ -71,7 +71,6 @@ export default function News(props: Props) {
           <Article
             key={article.slug}
             article={article}
-            minHeight={120}
             onMouseEnter={() => handleShowModal(true)}
             onMouseLeave={() => handleShowModal(false)}
           />

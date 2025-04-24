@@ -17,7 +17,7 @@ const WPM = 238;
 
 function Headline(props: Props) {
   const [readTime, setReadTime] = useState('Calculating...');
-  const intervalID = useRef<NodeJS.Timeout>(undefined);
+  const timeoutID = useRef<NodeJS.Timeout>(undefined);
   const publishedAt = new Date(props.blok.publishedAt);
 
   useEffect(() => {
@@ -30,13 +30,13 @@ function Headline(props: Props) {
       wordCount = wordCount < WPM ? WPM : wordCount;
       setReadTime(round(wordCount / WPM) + 'min');
 
-      clearInterval(intervalID.current);
+      clearTimeout(timeoutID.current);
     };
 
     calculateReadTime();
-    intervalID.current = setInterval(() => calculateReadTime(), 500);
+    timeoutID.current = setTimeout(calculateReadTime, 500);
 
-    return () => clearInterval(intervalID.current);
+    return () => clearTimeout(timeoutID.current);
   }, []);
 
   return (

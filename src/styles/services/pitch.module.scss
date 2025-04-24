@@ -5,6 +5,13 @@
 .pitchWrapper {
   display: flex;
   flex-direction: column;
+  margin-bottom: 100px;
+  margin-top: 100px;
+
+  @media screen and (max-width: sizes.$mobile) {
+    margin-bottom: 80px;
+    margin-top: 80px;
+  }
 
   .pitchItem {
     align-items: flex-start;
@@ -19,14 +26,13 @@
       padding: 10px 0;
     }
 
-    &:last-of-type {
+    &.withBottomLine:last-of-type {
       border-bottom: 1px solid colors.$gray;
     }
 
     .pitchNumber {
       color: colors.$gray;
       font-size: 48px;
-      font-family: fonts.$mono;
 
       @media screen and (max-width: sizes.$desktop) {
         font-size: 36px;
@@ -37,18 +43,27 @@
       }
     }
 
+    .pitchLabel {
+      color: colors.$gray;
+      font-size: 48px;
+
+      @media screen and (max-width: sizes.$desktop) {
+        font-size: 36px;
+      }
+
+      @media screen and (max-width: sizes.$mobile) {
+        font-size: 24px;
+      }
+    }
+
     .pitchContent {
       display: flex;
       flex-direction: column;
       gap: 40px;
-      margin-bottom: 80px;
-      min-height: 320px;
+      margin-bottom: 100px;
 
       @media screen and (max-width: sizes.$tablet) {
         gap: 10px;
-        grid-column: 1;
-        grid-row: 1;
-        min-height: 200px;
       }
 
       .pitchTitle {
