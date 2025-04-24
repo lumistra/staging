@@ -5,11 +5,17 @@
   display: grid;
   gap: 20px;
   grid-template-columns: 1fr 1fr;
+  margin-bottom: 100px;
   margin-top: 100px;
   transition: 0.3s;
 
   @media screen and (max-width: sizes.$tablet) {
     grid-template-columns: 1fr;
+  }
+
+  @media screen and (max-width: sizes.$mobile) {
+    margin-bottom: 80px;
+    margin-top: 80px;
   }
 
   &.growLeft {

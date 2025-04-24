@@ -5,13 +5,18 @@
   display: grid;
   gap: 20px;
   grid-template-columns: auto max-content;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
   margin-top: 100px;
 
   @media screen and (max-width: sizes.$tablet) {
     display: flex;
     flex-direction: column;
     gap: 40px;
+  }
+
+  @media screen and (max-width: sizes.$mobile) {
+    margin-bottom: 80px;
+    margin-top: 80px;
   }
 
   .text {

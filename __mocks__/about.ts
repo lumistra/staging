@@ -30,7 +30,7 @@ export const about = {
         gradient: false,
         component: 'heroAlt',
         footnoteCTA: '',
-        spacingBottom: true,
+        spacingBottom: false,
         _editable: '<!--#storyblok#{"name": "heroAlt", "space": "286844", "uid": "a7017320-27b8-4561-9eb6-2a0732db19df", "id": "658228665"}-->',
       },
       {

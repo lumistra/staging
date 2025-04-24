@@ -5,6 +5,13 @@
 .pitchWrapper {
   display: flex;
   flex-direction: column;
+  margin-bottom: 100px;
+  margin-top: 100px;
+
+  @media screen and (max-width: sizes.$mobile) {
+    margin-bottom: 80px;
+    margin-top: 80px;
+  }
 
   .pitchItem {
     align-items: flex-start;

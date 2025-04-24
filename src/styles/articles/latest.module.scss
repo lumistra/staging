@@ -2,12 +2,14 @@
 @use "../sizes";
 
 .latestWrapper {
-  margin-top: 300px;
+  margin-bottom: 100px;
+  margin-top: 100px;
 
   @media screen and (max-width: sizes.$mobile) {
+    margin-bottom: 80px;
     margin-left: 0 !important;
     margin-right: 0 !important;
-    margin-top: 120px;
+    margin-top: 80px;
   }
 }
 
@@ -75,12 +77,11 @@
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(3, 1fr);
-  margin: 60px 0;
+  margin-top: 60px;
 
   @media screen and (max-width: sizes.$mobile) {
     gap: 20px;
     grid-template-columns: 1fr;
-    margin-bottom: 140px;
     margin-top: 40px;
   }
 
