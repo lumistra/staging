@@ -58,7 +58,12 @@ function Workflow(props: Props) {
       style={props.blok.styling}
       storyblokEditable={storyblokEditable(props.blok)}
     >
-      <div className={classNames(style.header, { [style.hidden]: isEmptyHeader() })}>
+      <div className={classNames(style.header, {
+        [style.hidden]: isEmptyHeader(),
+        [style.left]: props.blok.headerAlign === 'left',
+        [style.right]: props.blok.headerAlign === 'right' || isEmpty(props.blok.headerAlign),
+      })}
+      >
         <span className={style.title}>{props.blok.title}</span>
         <RichText className={style.paragraph}>{props.blok.paragraph}</RichText>
       </div>
@@ -72,8 +77,8 @@ function Workflow(props: Props) {
               className={classNames('workflow-animation-row', style.row)}
               onClick={() => handleToggleExpand(index, step.link)}
             >
-              <TextMask animationClass="workflow-index-mask">
-                <span className={style.index}>{getOrderNumber(index)}</span>
+              <TextMask animationClass="workflow-index-mask" className={style.index}>
+                <span>{getOrderNumber(index)}</span>
               </TextMask>
               <div className={style.column}>
                 <div className={style.heading}>

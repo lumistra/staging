@@ -76,6 +76,7 @@ export type WorkflowData = {
   title?: string
   paragraph?: ISbRichtext
   steps: WorkflowStepData[]
+  headerAlign?: 'left' | 'right'
   background?: 'primary' | 'white'
 } & StylingData;
 
