@@ -15,16 +15,6 @@
   src: url("../fonts/UntitledSans.woff2") format("woff2");
 }
 
-@font-face {
-  font-family: fonts.$regular_fallback;
-  src: url("../fonts/Geist.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: fonts.$mono;
-  src: url("../fonts/GeistMono.woff2") format("woff2");
-}
-
 /* Custom text selection - START */
 ::selection {
   color: colors.$white;

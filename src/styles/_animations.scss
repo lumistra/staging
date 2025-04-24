@@ -206,8 +206,8 @@
 
 .pitch-animation-wrapper {
   .pitch-index-mask,
-  .pitch-index-title,
-  .pitch-index-paragraph {
+  .pitch-title-mask,
+  .pitch-paragraph-mask {
     > * {
       display: inline-block;
       opacity: 0;
@@ -216,7 +216,7 @@
 
   &.animate-in {
     .pitch-index-mask,
-    .pitch-index-title {
+    .pitch-title-mask {
       $name: fade-down-mask-#{string.unique-id()};
       overflow: hidden;
 
@@ -236,7 +236,7 @@
       }
     }
 
-    .pitch-index-paragraph {
+    .pitch-paragraph-mask {
       $name: fade-up-mask-#{string.unique-id()};
       overflow: hidden;
 

@@ -131,6 +131,8 @@ type PitchItemData = {
 
 export type PitchData = {
   items: PitchItemData[]
+  hideOrderNumber?: boolean
+  hideBottomLine?: boolean
 } & StylingData;
 
 type PitchMoreItemData = {
