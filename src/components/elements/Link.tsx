@@ -29,7 +29,7 @@ export default function Link(props: Props) {
 
   const handleGoTo = () => {
     if (props.onClick) props.onClick();
-    navigate({}, trueHref);
+    navigate(linkProp, trueHref);
   };
 
   const handleClick = (e: any) => {

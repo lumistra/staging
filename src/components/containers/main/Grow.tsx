@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
-import { map } from 'lodash';
+import { first, map } from 'lodash';
 import Section from '@/components/containers/Section';
 import CursorTracker from '@/components/elements/CursorTracker';
 import Link from '@/components/elements/Link';
@@ -74,7 +74,7 @@ function Grow(props: Props) {
       storyblokEditable={storyblokEditable(props.blok)}
     >
       <CursorTracker
-        keyword={currentBlock.cta.text}
+        keyword={first(currentBlock.cta).text}
         cursorPosition={cursorPosition}
         show={modalShow}
       />
@@ -84,7 +84,7 @@ function Grow(props: Props) {
           className={classNames(style.block, {
             [style.active]: !isTablet && activeBlock === index,
           })}
-          link={currentBlock.cta.link}
+          link={first(block.cta).link}
           onMouseEnter={() => handleShowModal(true, index)}
           onMouseLeave={() => handleShowModal(false, index)}
         >

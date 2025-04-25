@@ -117,7 +117,7 @@ export type ShelfData = {
 export type GrowItemData = {
   title: string
   paragraph: ISbRichtext
-  cta: CTALinkData
+  cta: [CTALinkData]
   gallery: MediaData[]
 };
 
