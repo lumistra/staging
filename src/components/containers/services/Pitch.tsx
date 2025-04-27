@@ -50,7 +50,13 @@ export default function Pitch(props: Props) {
                 <span>{item.title}</span>
               </TextMask>
             )}
-            <TextMask animationClass="pitch-paragraph-mask" className={style.pitchParagraph}>
+            <TextMask
+              animationClass={classNames({
+                'pitch-paragraph-up-mask': !props.blok.hideOrderNumber,
+                'pitch-paragraph-down-mask': props.blok.hideOrderNumber,
+              })}
+              className={style.pitchParagraph}
+            >
               <p>{item.paragraph}</p>
             </TextMask>
           </div>
