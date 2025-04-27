@@ -99,8 +99,12 @@
           grid-column: 1;
         }
 
-        @media screen and (max-width: sizes.$tablet) {
-          font-size: 48px;
+        @media screen and (max-width: sizes.$laptop) {
+          font-size: 36px;
+        }
+
+        @media screen and (max-width: sizes.$mobile) {
+          font-size: 24px;
         }
       }
 
