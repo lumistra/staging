@@ -103,6 +103,7 @@
       .arrow {
         height: 36px;
         margin-top: 6px;
+        transition: 0.3s;
         width: 36px;
 
         @media screen and (max-width: sizes.$laptop) {
@@ -129,15 +130,28 @@
         gap: 5px;
 
         .tag {
-          color: colors.$gray;
-          padding: 5px 10px;
           border-radius: 100vw;
-          font-size: 16px;
           border: 1px solid colors.$gray;
+          color: colors.$gray;
+          font-size: 16px;
+          padding: 5px 10px;
+          transition: 0.3s;
 
           @media screen and (max-width: sizes.$laptop) {
             font-size: 14px;
           }
+        }
+      }
+
+      &:hover {
+        .arrow {
+          transform: translateX(-20px);
+        }
+
+        .tags .tag {
+          background-color: colors.$black;
+          border-color: colors.$black;
+          color: colors.$white;
         }
       }
     }
