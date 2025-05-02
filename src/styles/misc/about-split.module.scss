@@ -10,7 +10,7 @@
 
   @media screen and (max-width: sizes.$tablet) {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 40px;
   }
 
