@@ -3,30 +3,63 @@
 
 .statsWrapper {
   cursor: none;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 20px;
-  grid-template-columns: 1fr 1fr;
   margin-top: 100px;
-  padding-bottom: 100px;
-  padding-top: 100px;
   user-select: none;
 
   @media screen and (max-width: sizes.$tablet) {
-    cursor: inherit;
+    cursor: pointer;
     user-select: inherit;
   }
 
   @media screen and (max-width: sizes.$mobile) {
-    gap: 40px;
-    grid-template-columns: auto;
     margin-bottom: 80px;
     margin-top: 80px;
-    padding-bottom: 0;
-    padding-top: 80px;
   }
 
-  &.line {
-    border-top: 1px solid colors.$gray;
+  .mobileNav {
+    display: none;
+    gap: 20px;
+    justify-content: space-between;
+
+    @media screen and (max-width: sizes.$tablet) {
+      display: flex;
+    }
+
+    .steps {
+      color: colors.$gray;
+      font-size: 21px;
+
+      @media screen and (max-width: sizes.$tablet) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 100px;
+    padding-top: 100px;
+    user-select: none;
+
+    @media screen and (max-width: sizes.$tablet) {
+      border-top: 1px solid colors.$gray;
+    }
+
+    @media screen and (max-width: sizes.$mobile) {
+      gap: 40px;
+      grid-template-columns: auto;
+      padding-bottom: 0;
+      padding-top: 80px;
+    }
+
+    &.line {
+      border-top: 1px solid colors.$gray;
+    }
   }
 
   .stat {

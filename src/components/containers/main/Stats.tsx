@@ -3,7 +3,9 @@ import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
 import { nth } from 'lodash';
 import Section from '@/components/containers/Section';
+import CtaLink from '@/components/elements/CtaLink';
 import CursorTracker from '@/components/elements/CursorTracker';
+import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/main/stats.module.scss';
 import type { CursorPosition } from '@/components/elements/CursorTracker';
 import type { StatData, StatsData } from '@/types/components';
@@ -13,6 +15,7 @@ type Props = {
 };
 
 function Stats(props: Props) {
+  const { t } = useTranslations();
   const [step, setStep] = useState(0);
   const [modalShow, setModalShow] = useState(false);
   const [cursorPosition, setCursorPosition] = useState<CursorPosition>(null);
@@ -43,9 +46,7 @@ function Stats(props: Props) {
   return (
     <Section
       componentId={props.blok.component}
-      containerClassName={classNames(style.statsWrapper, {
-        [style.line]: props.blok.lineTop,
-      })}
+      containerClassName={style.statsWrapper}
       style={props.blok.styling}
       onClick={handleClick}
       onMouseEnter={() => handleShowModal(true)}
@@ -57,12 +58,23 @@ function Stats(props: Props) {
         cursorPosition={cursorPosition}
         show={modalShow}
       />
-      <div className={style.stat}>
-        <h3>{current.statistic}</h3>
+      <div className={style.mobileNav}>
+        <CtaLink onClick={handleClick}>
+          {props.blok.cta || t('globals.see_more')}
+        </CtaLink>
+        <span className={style.steps}>{'('}{step + 1}/{props.blok.stats.length}{')'}</span>
       </div>
-      <div className={style.info}>
-        <p>{current.paragraph}</p>
-        {current.bottom && <span>{current.bottom}</span>}
+      <div className={classNames(style.container, {
+        [style.line]: props.blok.lineTop,
+      })}
+      >
+        <div className={style.stat}>
+          <h3>{current.statistic}</h3>
+        </div>
+        <div className={style.info}>
+          <p>{current.paragraph}</p>
+          {current.bottom && <span>{current.bottom}</span>}
+        </div>
       </div>
     </Section>
   );
