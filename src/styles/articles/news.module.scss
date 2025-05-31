@@ -10,7 +10,7 @@
 }
 
 .articlesWrapper {
-  border-top: 1px solid colors.$gray;
+  border-top: 1px solid rgb(colors.$gray);
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(3, 1fr);
@@ -43,7 +43,7 @@
     }
 
     @media screen and (max-width: sizes.$mobile) {
-      border-top: 1px solid colors.$gray;
+      border-top: 1px solid rgb(colors.$gray);
       font-size: 24px;
       grid-column: 1;
       margin-bottom: 20px;
@@ -55,21 +55,21 @@
 }
 
 .backgroundBlack {
-  background-color: colors.$black;
-  color: colors.$white;
+  background-color: rgb(colors.$trueBlack);
+  color: rgb(colors.$trueWhite);
 
   a {
-    border-bottom: 1px solid colors.$white;
+    border-bottom: 1px solid rgb(colors.$white);
     padding-bottom: 2px;
   }
 }
 
 .backgroundGray {
-  background-color: colors.$whitish;
-  color: colors.$black;
+  background-color: rgb(colors.$whitish);
+  color: rgb(colors.$black);
 
   a {
-    border-bottom: 1px solid colors.$black;
+    border-bottom: 1px solid rgb(colors.$black);
     padding-bottom: 2px;
   }
 }

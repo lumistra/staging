@@ -7,8 +7,8 @@ type Props = {
   children: string
   className?: string,
   href?: string,
-  locale?: string,
   link?: CMSLink
+  locale?: string,
   onClick?: () => void,
 };
 
@@ -28,6 +28,14 @@ function CtaElement({ children }: { children: string }) {
 }
 
 export default function CtaLink(props: Props) {
+  if (!props.href && !props.link && !props.onClick) {
+    return (
+      <div className={classNames('cta-link', props.className)}>
+        <CtaElement>{props.children}</CtaElement>
+      </div>
+    );
+  }
+
   if (props.onClick) {
     return (
       <div

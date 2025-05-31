@@ -45,7 +45,7 @@
 
     .viewModeSelect {
       align-items: center;
-      color: colors.$dark;
+      color: rgb(colors.$dark);
       display: flex;
       font-size: 48px;
       gap: 10px;
@@ -59,18 +59,18 @@
       }
 
       .viewModeOption {
-        color: colors.$gray;
+        color: rgb(colors.$gray);
         cursor: pointer;
         transition: 0.3s;
 
         &.viewModeActive,
         &:hover {
-          color: colors.$black;
+          color: rgb(colors.$black);
         }
       }
 
       .viewModeSplitter {
-        color: colors.$black;
+        color: rgb(colors.$black);
       }
     }
   }
@@ -94,7 +94,7 @@
 
 .projectListItem {
   align-items: center;
-  border-top: 1px solid colors.$gray;
+  border-top: 1px solid rgb(colors.$gray);
   cursor: none !important;
   display: flex;
   font-size: 48px;
@@ -120,7 +120,7 @@
   }
 
   &:last-of-type {
-    border-bottom: 1px solid colors.$gray;
+    border-bottom: 1px solid rgb(colors.$gray);
   }
 
   .projectListArrow {
@@ -133,7 +133,7 @@
     }
 
     * {
-      stroke: colors.$gray !important;
+      stroke: rgb(colors.$gray) !important;
       stroke-width: 1 !important;
     }
   }
@@ -156,7 +156,7 @@
 
   &.projectModalList {
     aspect-ratio: 1/1;
-    background-color: colors.$dark;
+    background-color: rgb(colors.$trueDark);
     transition:
       height 0.2s ease-in-out,
       width 0.2s ease-in-out;

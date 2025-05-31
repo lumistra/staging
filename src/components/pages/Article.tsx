@@ -41,17 +41,18 @@ export default function Article(props: Props) {
       </div>
 
       {recommended && recommendedArticle && (
-        <Section
-          componentId={props.blok.component}
-          containerClassName={style.recommendedWrapper}
-        >
-          <div className={style.recommendedHeader}>
-            <span className={style.recommendedTitle}>{recommendedArticle.title}</span>
-            <CtaLink className={style.recommendedCTA} href={routes.article(recommended.slug)} locale={defaultLocale}>
-              {t('globals.read_next')}
-            </CtaLink>
-          </div>
-          <Link href={routes.article(recommended.slug)} locale={defaultLocale}>
+        <Section componentId={props.blok.component}>
+          <Link
+            className={style.recommendedWrapper}
+            href={routes.article(recommended.slug)}
+            locale={defaultLocale}
+          >
+            <div className={style.recommendedHeader}>
+              <span className={style.recommendedTitle}>{recommendedArticle.title}</span>
+              <CtaLink className={style.recommendedCTA}>
+                {t('globals.read_next')}
+              </CtaLink>
+            </div>
             <Media
               className={style.recommendedCover}
               src={recommendedArticle.cover.filename}

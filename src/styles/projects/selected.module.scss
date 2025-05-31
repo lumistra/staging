@@ -14,7 +14,7 @@
 
   .selectedTextWrapper {
     align-items: flex-end;
-    border-top: 1px solid colors.$gray;
+    border-top: 1px solid rgb(colors.$gray);
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(2, 1fr);
@@ -96,7 +96,7 @@
     }
 
     .selectedMobileCTA {
-      border-top: 1px solid colors.$gray;
+      border-top: 1px solid rgb(colors.$gray);
       display: none;
       justify-content: flex-end;
       padding-top: 10px;
@@ -129,7 +129,7 @@
   .projectCover {
     aspect-ratio: 1/1;
     cursor: none;
-    background-color: colors.$gray;
+    background-color: rgb(colors.$trueGray);
     user-select: none;
     width: 100%;
 

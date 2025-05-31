@@ -37,7 +37,7 @@
   }
 
   .sidenav-background-container {
-    background-color: colors.$whitish;
+    background-color: rgb(colors.$whitish);
     height: 100%;
     overflow-y: auto;
     transform: translateY(-100%);
@@ -116,13 +116,13 @@
         }
 
         .content-wrapper {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
+          display: grid;
+          gap: 80px;
+          grid-template-columns: 1fr;
           margin-right: 40px;
 
           @media screen and (max-width: sizes.$laptop) {
-            gap: 160px;
+            grid-template-columns: repeat(2, 1fr);
             margin-right: 0;
           }
 
@@ -137,7 +137,7 @@
 
             .locales {
               align-items: center;
-              color: colors.$gray;
+              color: rgb(colors.$gray);
               display: flex;
               font-size: 48px;
               gap: 10px;
@@ -151,7 +151,7 @@
               }
 
               .splitter {
-                color: colors.$black;
+                color: rgb(colors.$black);
               }
 
               .locale {
@@ -159,42 +159,85 @@
 
                 &.active,
                 &:hover {
-                  color: colors.$black;
+                  color: rgb(colors.$black);
                 }
               }
             }
           }
 
           .cta-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            &.socials-wrapper {
+              @media screen and (max-width: sizes.$laptop) {
+                grid-column: 1/3;
+              }
+            }
+
             .label {
               position: relative;
               width: fit-content;
+            }
+          }
 
-              &:after {
-                background-color: colors.$black;
-                bottom: -5px;
-                content: "";
-                height: 1.5px;
-                left: 0;
-                position: absolute;
-                transition: 0.3s;
-                width: 0;
-              }
+          .options {
+            align-items: center;
+            color: rgb(colors.$gray);
+            display: flex;
+            font-size: 48px;
+            gap: 10px;
 
-              &:hover:after {
-                width: 100%;
+            @media screen and (max-width: sizes.$desktop) {
+              font-size: 36px;
+            }
+
+            @media screen and (max-width: sizes.$mobile) {
+              font-size: 24px;
+            }
+
+            .splitter {
+              color: rgb(colors.$black);
+            }
+
+            .option {
+              cursor: pointer;
+              transition: 0.3s;
+
+              &.active,
+              &:hover {
+                color: rgb(colors.$black);
               }
             }
           }
 
           .socials {
+            align-items: center;
             display: flex;
             flex-wrap: wrap;
-            gap: 30px 50px;
-            margin-bottom: 100px;
+            gap: 20px 32px;
 
-            @media screen and (max-width: sizes.$laptop) {
-              margin-bottom: 30px;
+            @media screen and (max-width: sizes.$mobile) {
+              gap: 20px;
+            }
+
+            .social-icon {
+              align-items: center;
+              display: flex;
+              height: 32px;
+              justify-content: center;
+              width: 32px;
+
+              @media screen and (max-width: sizes.$mobile) {
+                height: 24px;
+                width: 24px;
+              }
+
+              svg > * {
+                transition: 0.3s;
+                fill: rgb(colors.$black);
+              }
             }
           }
         }
@@ -222,7 +265,7 @@
             position: relative;
 
             &::after {
-              border-bottom: 1px solid colors.$gray;
+              border-bottom: 1px solid rgb(colors.$gray);
               bottom: -15px;
               content: "";
               left: 0;

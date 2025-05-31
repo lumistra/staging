@@ -3,13 +3,13 @@
 
 .altBackgroundWrapper {
   &.darkBackground {
-    background-color: colors.$black;
-    color: colors.$white;
+    background-color: rgb(colors.$trueBlack);
+    color: rgb(colors.$trueWhite);
   }
 
   &.primaryBackground {
-    background-color: colors.$primary;
-    color: colors.$white;
+    background-color: rgb(colors.$truePrimary);
+    color: rgb(colors.$trueWhite);
   }
 
   .altBackgroundContainer {
@@ -52,11 +52,11 @@
       }
 
       .altBackgroundWord {
-        color: colors.$dark;
+        color: rgb(colors.$dark);
         transition: 0.8s ease-in-out;
 
         &.active {
-          color: colors.$white;
+          color: rgb(colors.$white);
         }
       }
     }
@@ -84,7 +84,7 @@
 
     .altBackgroundCTA {
       align-items: center;
-      color: colors.$white;
+      color: rgb(colors.$white);
       display: flex;
       font-size: 21px;
       gap: 0 1ch;
@@ -100,14 +100,14 @@
         width: 16px;
 
         * {
-          stroke: colors.$white !important;
+          stroke: rgb(colors.$white) !important;
         }
       }
     }
 
     .altBackgroundFootnote {
       align-items: center;
-      color: colors.$gray;
+      color: rgb(colors.$gray);
       display: flex;
       font-size: 21px;
       gap: 0 1ch;
@@ -124,7 +124,7 @@
         width: 16px;
 
         * {
-          stroke: colors.$gray !important;
+          stroke: rgb(colors.$gray) !important;
         }
       }
     }

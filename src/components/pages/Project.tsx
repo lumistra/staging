@@ -37,17 +37,14 @@ export default function Project(props: Props) {
       </div>
 
       {recommended && recommendedProject && (
-        <Section
-          componentId={props.blok.component}
-          containerClassName={style.recommendedWrapper}
-        >
-          <div className={style.recommendedHeader}>
-            <span className={style.recommendedTitle}>{recommendedProject.title}</span>
-            <CtaLink className={style.recommendedCTA} href={routes.project(recommended.slug)}>
-              {t('globals.next_project')}
-            </CtaLink>
-          </div>
-          <Link href={routes.project(recommended.slug)}>
+        <Section componentId={props.blok.component}>
+          <Link className={style.recommendedWrapper} href={routes.project(recommended.slug)}>
+            <div className={style.recommendedHeader}>
+              <span className={style.recommendedTitle}>{recommendedProject.title}</span>
+              <CtaLink className={style.recommendedCTA}>
+                {t('globals.next_project')}
+              </CtaLink>
+            </div>
             <Media
               className={style.recommendedCover}
               src={recommendedProject.cover.filename}

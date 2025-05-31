@@ -61,7 +61,7 @@
       }
 
       path {
-        fill: colors.$white !important;
+        fill: rgb(colors.$trueWhite) !important;
       }
     }
 
@@ -81,13 +81,13 @@
 
       .nav-link {
         @include blendMode;
-        color: colors.$white;
+        color: rgb(colors.$trueWhite);
         font-size: 21px;
         position: relative;
         width: fit-content;
 
         &:after {
-          background-color: colors.$white;
+          background-color: rgb(colors.$trueWhite);
           bottom: -5px;
           content: "";
           height: 1.5px;
@@ -133,7 +133,7 @@
         }
 
         .menu-line {
-          background-color: colors.$white;
+          background-color: rgb(colors.$trueWhite);
           height: 3px;
           width: 100%;
 

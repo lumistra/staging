@@ -1,3 +1,4 @@
+@use "theme";
 @use "colors";
 @use "sizes";
 @use "fonts";
@@ -17,13 +18,13 @@
 
 /* Custom text selection - START */
 ::selection {
-  color: colors.$white;
-  background: colors.$primary;
+  color: rgb(colors.$white);
+  background: rgb(colors.$primary);
 }
 /* Code for Firefox */
 ::-moz-selection {
-  color: colors.$white;
-  background: colors.$primary;
+  color: rgb(colors.$white);
+  background: rgb(colors.$primary);
 }
 /* Custom text selection - END */
 
@@ -34,8 +35,8 @@
 
 html,
 body {
-  background-color: colors.$white;
-  color: colors.$black;
+  background-color: rgb(colors.$white);
+  color: rgb(colors.$black);
   font-family: fonts.$regular, fonts.$regular_fallback, Arial, sans-serif;
   font-size: 21px;
   font-weight: 400;
@@ -50,7 +51,7 @@ body {
   }
 
   #page-wrapper {
-    background-color: colors.$white;
+    background-color: rgb(colors.$white);
     position: relative;
     z-index: 2;
   }
@@ -121,6 +122,10 @@ body {
         height: 12px;
         width: 12px;
       }
+
+      * {
+        stroke: rgb(colors.$primary) !important;
+      }
     }
   }
 
@@ -133,9 +138,9 @@ body {
 
   .cursor-tracker-modal {
     align-items: center;
-    background-color: colors.$primary;
+    background-color: rgb(colors.$primary);
     border-radius: 100%;
-    color: colors.$white;
+    color: rgb(colors.$white);
     display: none;
     height: 140px;
     justify-content: center;
@@ -183,7 +188,7 @@ body {
     }
 
     &:after {
-      background-color: colors.$white;
+      background-color: rgb(colors.$white);
       content: "";
       height: 100%;
       left: 0;

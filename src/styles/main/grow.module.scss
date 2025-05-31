@@ -27,7 +27,7 @@
   }
 
   .block {
-    border: 1px solid colors.$gray;
+    border: 1px solid rgb(colors.$gray);
     cursor: none;
     display: flex;
     flex-direction: column;
@@ -48,7 +48,7 @@
     }
 
     .title {
-      color: colors.$gray;
+      color: rgb(colors.$gray);
       font-size: 36px;
 
       @media screen and (max-width: sizes.$laptop) {

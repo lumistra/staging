@@ -4,36 +4,36 @@
 
 .backgroundWrapper {
   &.primary {
-    background-color: colors.$primary;
-    color: colors.$white;
+    background-color: rgb(colors.$primary);
+    color: rgb(colors.$white);
 
     .row {
       &::before,
       &::after {
-        background-color: colors.$white;
+        background-color: rgb(colors.$white);
       }
 
       .icon * {
-        stroke: colors.$white !important;
+        stroke: rgb(colors.$white) !important;
       }
     }
   }
 
   &.white {
-    color: colors.$black;
+    color: rgb(colors.$black);
 
     .row {
       &::before,
       &::after {
-        background-color: colors.$gray;
+        background-color: rgb(colors.$gray);
       }
 
       .index {
-        color: colors.$gray;
+        color: rgb(colors.$gray);
       }
 
       .icon * {
-        stroke: colors.$gray !important;
+        stroke: rgb(colors.$gray) !important;
       }
     }
   }

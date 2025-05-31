@@ -131,7 +131,7 @@
   }
 
   li::marker {
-    color: colors.$gray;
+    color: rgb(colors.$gray);
   }
 
   blockquote {
@@ -139,7 +139,7 @@
     padding-left: 10px;
 
     &::before {
-      background-color: colors.$gray;
+      background-color: rgb(colors.$gray);
       border-radius: 5px;
       content: "";
       height: 100%;

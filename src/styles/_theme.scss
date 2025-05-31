@@ -1,0 +1,55 @@
+html {
+  // reference colors
+  --black: #101010;
+  --danger: #df3d30;
+  --dark: #53565b;
+  --gray: #98989a;
+  --info: #eacfa0;
+  --light: #d8d9d4;
+  --primary: #0000e8;
+  --secondary: #59efc8;
+  --warning: #fca100;
+  --whitish: #e2e2e2;
+  --white: #f7f7f7;
+
+  // reference colors invert
+  --black-invert: #f7f7f7;
+  --dark-invert: #e2e2e2;
+  --gray-invert: #53565b;
+  --light-invert: #98989a;
+  --primary-invert: #f7f7f7;
+  --whitish-invert: #101010;
+  --white-invert: #101010;
+
+  // theme colors
+  --lumistra-black: 16, 16, 16;
+  --lumistra-danger: 223, 61, 48;
+  --lumistra-dark: 83, 86, 91;
+  --lumistra-gray: 152, 152, 154;
+  --lumistra-info: 234, 207, 160;
+  --lumistra-light: 216, 217, 212;
+  --lumistra-primary: 0, 0, 232;
+  --lumistra-secondary: 89, 239, 200;
+  --lumistra-warning: 252, 161, 0;
+  --lumistra-whitish: 226, 226, 226;
+  --lumistra-white: 247, 247, 247;
+
+  // colors not influences by light/dark theme
+  --lumistra-true-black: 16, 16, 16;
+  --lumistra-true-dark: 83, 86, 91;
+  --lumistra-true-gray: 152, 152, 154;
+  --lumistra-true-light: 216, 217, 212;
+  --lumistra-true-primary: 0, 0, 232;
+  --lumistra-true-whitish: 226, 226, 226;
+  --lumistra-true-white: 247, 247, 247;
+
+  &.dark {
+    --lumistra-black: 247, 247, 247;
+    --lumistra-dark: 226, 226, 226;
+    --lumistra-gray: 83, 86, 91;
+    --lumistra-light: 152, 152, 154;
+    --lumistra-primary: 247, 247, 247;
+    --lumistra-whitish: 16, 16, 16;
+    --lumistra-white: 16, 16, 16;
+  }
+}

@@ -82,13 +82,13 @@
       gap: 10px;
 
       @media screen and (max-width: sizes.$mobile) {
-        border-top: 1px solid colors.$gray;
+        border-top: 1px solid rgb(colors.$gray);
         font-size: 16px;
         padding-top: 10px;
       }
 
       .servicesColumnLabel {
-        color: colors.$gray;
+        color: rgb(colors.$gray);
       }
     }
   }

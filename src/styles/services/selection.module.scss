@@ -22,7 +22,7 @@
 
   &.breakLine {
     padding-top: 20px;
-    border-top: 1px solid colors.$gray;
+    border-top: 1px solid rgb(colors.$gray);
   }
 
   .heroWrapper {
@@ -69,7 +69,7 @@
       }
 
       a {
-        border-bottom: 1px solid colors.$gray;
+        border-bottom: 1px solid rgb(colors.$gray);
         padding-bottom: 2px;
       }
     }
@@ -90,7 +90,7 @@
     }
 
     .promptTitle {
-      color: colors.$primary;
+      color: rgb(colors.$primary);
       display: flex;
       font-size: 48px;
       grid-column-end: 3;
@@ -124,7 +124,7 @@
       }
 
       a {
-        border-bottom: 1px solid colors.$gray;
+        border-bottom: 1px solid rgb(colors.$gray);
         padding-bottom: 2px;
       }
     }
@@ -175,7 +175,7 @@
 
       textarea::placeholder,
       .inputSuggestion {
-        color: colors.$gray;
+        color: rgb(colors.$gray);
       }
 
       .inputSuggestionsWrapper {
@@ -227,19 +227,19 @@
 
         /* Track */
         &::-webkit-scrollbar-track {
-          border: 1px solid colors.$light;
+          border: 1px solid rgb(colors.$light);
           border-radius: 100vw;
         }
 
         /* Handle */
         &::-webkit-scrollbar-thumb {
-          background: colors.$primary;
+          background: rgb(colors.$primary);
           border-radius: 100vw;
           cursor: pointer;
         }
 
         .searchItem {
-          border-bottom: 1px solid colors.$light;
+          border-bottom: 1px solid rgb(colors.$light);
           cursor: pointer;
           hyphens: auto;
           padding: 10px 0;
@@ -247,7 +247,7 @@
           word-break: break-word;
 
           &.searchItemNoResults {
-            color: colors.$gray;
+            color: rgb(colors.$gray);
           }
 
           &:last-of-type {

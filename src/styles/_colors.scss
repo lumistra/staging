@@ -1,11 +1,20 @@
-$black: #101010;
-$danger: #df3d30;
-$dark: #53565b;
-$gray: #98989a;
-$info: #eacfa0;
-$light: #d8d9d4;
-$primary: #0000e8;
-$secondary: #59efc8;
-$warning: #fca100;
-$whitish: #e2e2e2;
-$white: #f7f7f7;
+$black: var(--lumistra-black);
+$danger: var(--lumistra-danger);
+$dark: var(--lumistra-dark);
+$gray: var(--lumistra-gray);
+$info: var(--lumistra-info);
+$light: var(--lumistra-light);
+$primary: var(--lumistra-primary);
+$secondary: var(--lumistra-secondary);
+$warning: var(--lumistra-warning);
+$whitish: var(--lumistra-whitish);
+$white: var(--lumistra-white);
+
+// colors not influences by light/dark theme
+$trueBlack: var(--lumistra-true-black);
+$trueDark: var(--lumistra-true-dark);
+$trueGray: var(--lumistra-true-gray);
+$trueLight: var(--lumistra-true-light);
+$truePrimary: var(--lumistra-true-primary);
+$trueWhitish: var(--lumistra-true-whitish);
+$trueWhite: var(--lumistra-true-white);

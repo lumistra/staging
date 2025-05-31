@@ -15,7 +15,7 @@
 
   .pitchItem {
     align-items: flex-start;
-    border-top: 1px solid colors.$gray;
+    border-top: 1px solid rgb(colors.$gray);
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(2, 1fr);
@@ -27,11 +27,11 @@
     }
 
     &.withBottomLine:last-of-type {
-      border-bottom: 1px solid colors.$gray;
+      border-bottom: 1px solid rgb(colors.$gray);
     }
 
     .pitchNumber {
-      color: colors.$gray;
+      color: rgb(colors.$gray);
       font-size: 48px;
 
       @media screen and (max-width: sizes.$desktop) {
@@ -44,7 +44,7 @@
     }
 
     .pitchLabel {
-      color: colors.$gray;
+      color: rgb(colors.$gray);
       font-size: 48px;
 
       @media screen and (max-width: sizes.$desktop) {

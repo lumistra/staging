@@ -50,8 +50,8 @@
   .container {
     background-image: repeating-linear-gradient(
       90deg,
-      colors.$gray,
-      colors.$gray 12px,
+      rgb(colors.$gray),
+      rgb(colors.$gray) 12px,
       transparent 12px,
       transparent 24px
     );
@@ -74,7 +74,7 @@
     }
 
     .step {
-      border-left: 1px solid colors.$gray;
+      border-left: 1px solid rgb(colors.$gray);
       display: flex;
       flex-direction: column;
       gap: 40px;
@@ -115,13 +115,13 @@
         }
 
         * {
-          fill: colors.$black !important;
+          fill: rgb(colors.$black) !important;
         }
       }
 
       &.primary {
         .label::after {
-          background-color: colors.$primary;
+          background-color: rgb(colors.$primary);
           bottom: -5px;
           content: "";
           height: 3px;
@@ -131,7 +131,7 @@
         }
 
         svg * {
-          fill: colors.$primary !important;
+          fill: rgb(colors.$primary) !important;
         }
       }
     }

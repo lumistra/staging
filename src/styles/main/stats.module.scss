@@ -29,7 +29,7 @@
     }
 
     .steps {
-      color: colors.$gray;
+      color: rgb(colors.$gray);
       font-size: 21px;
 
       @media screen and (max-width: sizes.$tablet) {
@@ -47,7 +47,7 @@
     user-select: none;
 
     @media screen and (max-width: sizes.$tablet) {
-      border-top: 1px solid colors.$gray;
+      border-top: 1px solid rgb(colors.$gray);
     }
 
     @media screen and (max-width: sizes.$mobile) {
@@ -58,7 +58,7 @@
     }
 
     &.line {
-      border-top: 1px solid colors.$gray;
+      border-top: 1px solid rgb(colors.$gray);
     }
   }
 
@@ -93,7 +93,7 @@
     }
 
     span {
-      color: colors.$gray;
+      color: rgb(colors.$gray);
       font-size: 21px;
 
       @media screen and (max-width: sizes.$tablet) {

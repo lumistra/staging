@@ -2,9 +2,9 @@
 @use "sizes";
 
 footer {
-  background-color: colors.$black;
+  background-color: rgb(colors.$trueBlack);
   bottom: 0;
-  color: colors.$white;
+  color: rgb(colors.$trueWhite);
   display: flex;
   justify-content: center;
   position: sticky;
@@ -64,7 +64,7 @@ footer {
         }
 
         > * {
-          fill: colors.$white;
+          fill: rgb(colors.$trueWhite);
         }
 
         &.logo-icon {
@@ -79,7 +79,7 @@ footer {
     }
 
     .divider {
-      background-color: colors.$gray;
+      background-color: rgb(colors.$trueGray);
       border: none;
       height: 1px;
       width: 100%;
@@ -124,11 +124,11 @@ footer {
         }
 
         .footer-link {
-          color: colors.$white;
+          color: rgb(colors.$trueWhite);
           transition: 0.3s;
 
           &:hover {
-            color: colors.$dark;
+            color: rgb(colors.$trueDark);
           }
         }
       }
@@ -145,7 +145,7 @@ footer {
 
         .locales {
           align-items: center;
-          color: colors.$dark;
+          color: rgb(colors.$trueDark);
           display: flex;
           font-size: 48px;
           gap: 10px;
@@ -159,7 +159,7 @@ footer {
           }
 
           .splitter {
-            color: colors.$white;
+            color: rgb(colors.$trueWhite);
           }
 
           .locale {
@@ -167,7 +167,7 @@ footer {
 
             &.active,
             &:hover {
-              color: colors.$white;
+              color: rgb(colors.$trueWhite);
             }
           }
         }
@@ -213,11 +213,11 @@ footer {
 
             svg > * {
               transition: 0.3s;
-              fill: colors.$dark;
+              fill: rgb(colors.$trueDark);
             }
 
             &:hover svg > * {
-              fill: colors.$white;
+              fill: rgb(colors.$trueWhite);
             }
           }
         }
@@ -231,8 +231,8 @@ footer {
       grid-template-columns: repeat(6, 1fr);
 
       @media screen and (max-width: 1200px) {
-        border-top: 1px solid colors.$gray;
-        color: colors.$gray;
+        border-top: 1px solid rgb(colors.$trueGray);
+        color: rgb(colors.$trueGray);
         display: flex;
         flex-direction: column;
         gap: 5px;
@@ -254,7 +254,7 @@ footer {
     }
 
     .company-details-wrapper {
-      color: colors.$dark;
+      color: rgb(colors.$trueDark);
       display: grid;
       font-size: 21px;
       gap: 20px;
@@ -282,7 +282,7 @@ footer {
     }
 
     .to-top {
-      color: colors.$white;
+      color: rgb(colors.$trueWhite);
       margin-left: auto;
 
       &.desktop-to-top {
@@ -313,7 +313,7 @@ footer {
         }
 
         * {
-          stroke: colors.$white !important;
+          stroke: rgb(colors.$trueWhite) !important;
         }
       }
     }

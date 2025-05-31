@@ -13,7 +13,7 @@
 
   .articleCover {
     aspect-ratio: 1/1;
-    background-color: colors.$gray;
+    background-color: rgb(colors.$gray);
     cursor: none;
     user-select: none;
     width: 100%;
@@ -30,7 +30,7 @@
   }
 
   .articleDate {
-    color: colors.$gray;
+    color: rgb(colors.$gray);
     font-size: 21px;
     margin-top: 16px;
 

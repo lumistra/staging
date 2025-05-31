@@ -47,7 +47,7 @@
 
   .heroFootnote {
     align-items: center;
-    color: colors.$gray;
+    color: rgb(colors.$gray);
     display: flex;
     font-size: 21px;
     gap: 10px;
@@ -68,7 +68,7 @@
       width: 16px;
 
       * {
-        stroke: colors.$gray !important;
+        stroke: rgb(colors.$gray) !important;
       }
     }
   }
@@ -100,7 +100,7 @@
     }
 
     .heroGradientTitle {
-      color: colors.$white;
+      color: rgb(colors.$white);
       display: flex;
       font-size: 86px !important;
       height: fit-content;

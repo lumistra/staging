@@ -3,7 +3,7 @@
 
 .contactCTAWrapper {
   align-items: flex-start;
-  border-top: 1px solid colors.$gray;
+  border-top: 1px solid rgb(colors.$gray);
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(2, 1fr);
@@ -40,11 +40,11 @@
       margin-top: 80px;
 
       .ctaAction {
-        background-color: colors.$white !important;
-        color: colors.$black !important;
+        background-color: rgb(colors.$white) !important;
+        color: rgb(colors.$black) !important;
 
         svg path {
-          stroke: colors.$primary !important;
+          stroke: rgb(colors.$primary) !important;
         }
       }
     }
@@ -96,8 +96,8 @@
     }
 
     @media screen and (max-width: sizes.$laptop) {
-      background-color: colors.$primary;
-      color: colors.$white;
+      background-color: rgb(colors.$truePrimary);
+      color: rgb(colors.$trueWhite);
       font-size: 36px;
       height: auto !important;
       padding: 40px sizes.$mobileMinBleedWidth;
@@ -127,7 +127,7 @@
 
       @media screen and (max-width: sizes.$laptop) {
         * {
-          stroke: colors.$white !important;
+          stroke: rgb(colors.$trueWhite) !important;
         }
       }
 
@@ -150,8 +150,8 @@
     }
 
     @media screen and (max-width: sizes.$laptop) {
-      background-color: colors.$primary;
-      color: colors.$white;
+      background-color: rgb(colors.$truePrimary);
+      color: rgb(colors.$trueWhite);
       gap: 10px;
       height: auto !important;
       padding: 40px sizes.$mobileMinBleedWidth;
@@ -181,7 +181,7 @@
 
       @media screen and (max-width: sizes.$laptop) {
         * {
-          stroke: colors.$white !important;
+          stroke: rgb(colors.$trueWhite) !important;
         }
       }
 
@@ -194,11 +194,11 @@
 
   .mobileInvertColors {
     @media screen and (max-width: sizes.$laptop) {
-      background-color: colors.$white !important;
-      color: colors.$black !important;
+      background-color: rgb(colors.$white) !important;
+      color: rgb(colors.$black) !important;
 
       svg * {
-        stroke: colors.$primary !important;
+        stroke: rgb(colors.$primary) !important;
       }
     }
   }

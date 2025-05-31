@@ -14,7 +14,7 @@
   }
 
   .pitchItem {
-    border-top: 1px solid colors.$gray;
+    border-top: 1px solid rgb(colors.$gray);
     display: grid;
     gap: 100px 20px;
     grid-template-columns: 1fr 1fr;
@@ -76,7 +76,7 @@
     }
 
     .pitchLabel {
-      color: colors.$gray;
+      color: rgb(colors.$gray);
       font-size: 16px;
 
       @media screen and (max-width: sizes.$laptop) {

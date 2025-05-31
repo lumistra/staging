@@ -39,7 +39,7 @@
     }
 
     .heroLabel {
-      color: colors.$gray;
+      color: rgb(colors.$gray);
       font-size: 48px;
 
       @media screen and (max-width: sizes.$desktop) {
@@ -103,7 +103,7 @@
 }
 
 .recommendedWrapper {
-  border-top: 1px solid colors.$gray;
+  border-top: 1px solid rgb(colors.$gray);
   display: flex;
   flex-direction: column;
   gap: 100px;
