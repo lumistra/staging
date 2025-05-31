@@ -96,8 +96,8 @@
     }
 
     @media screen and (max-width: sizes.$laptop) {
-      background-color: rgb(colors.$truePrimary);
-      color: rgb(colors.$trueWhite);
+      background-color: rgb(colors.$primary);
+      color: rgb(colors.$white);
       font-size: 36px;
       height: auto !important;
       padding: 40px sizes.$mobileMinBleedWidth;
@@ -127,7 +127,7 @@
 
       @media screen and (max-width: sizes.$laptop) {
         * {
-          stroke: rgb(colors.$trueWhite) !important;
+          stroke: rgb(colors.$white) !important;
         }
       }
 
@@ -150,8 +150,8 @@
     }
 
     @media screen and (max-width: sizes.$laptop) {
-      background-color: rgb(colors.$truePrimary);
-      color: rgb(colors.$trueWhite);
+      background-color: rgb(colors.$primary);
+      color: rgb(colors.$white);
       gap: 10px;
       height: auto !important;
       padding: 40px sizes.$mobileMinBleedWidth;
@@ -181,7 +181,7 @@
 
       @media screen and (max-width: sizes.$laptop) {
         * {
-          stroke: rgb(colors.$trueWhite) !important;
+          stroke: rgb(colors.$white) !important;
         }
       }
 
