@@ -6,6 +6,11 @@
   display: revert;
 }
 
+svg {
+  height: 100%;
+  width: 100%;
+}
+
 /* Preferred box-sizing value */
 *,
 *::before,
