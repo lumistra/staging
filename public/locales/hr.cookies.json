@@ -18,37 +18,52 @@
         "description": "Koristimo kolačiće kako bismo osigurali osnovne funkcionalnosti web stranice i poboljšali vaše online iskustvo..."
       },
       {
-        "title": "Strogo neophodni kolačići",
-        "description": "Ovi su kolačići neophodni kako bismo zapamtili vaše postavke",
+        "title": "Neophodno",
+        "description": "Ovi kolačići su ključni kako bi se zapamtili vaši odabiri vezani uz kolačiće",
         "linkedCategory": "necessary"
       },
       {
-        "title": "Kolačići za analitiku",
-        "description": "Ovi kolačići omogućuju web stranici da zapamti odabire koje ste napravili u prošlosti",
+        "title": "Analitika",
+        "description": "",
         "linkedCategory": "analytics",
         "cookieTable": {
           "headers": {
-            "name": "Ime",
-            "domain": "Servis",
+            "name": "Naziv",
+            "domain": "Usluga",
             "description": "Opis"
           },
           "body": [
             {
-              "name": "_ga",
+              "name": "/^_ga/",
               "domain": "Google Analytics",
-              "description": "Kolačić postavljen za <a href=\"https://marketingplatform.google.com/about/analytics/\" target=\"_blank\">Google Analytics</a>."
+              "description": "Kolačić postavlja <a href=\"https://marketingplatform.google.com/about/analytics/\" target=\"_blank\">Google Analytics</a>."
             },
             {
               "name": "_gid",
               "domain": "Google Analytics",
-              "description": "Kolačić postavljen za <a href=\"https://marketingplatform.google.com/about/analytics/\" target=\"_blank\">Google Analytics</a>"
+              "description": "Kolačić postavlja <a href=\"https://marketingplatform.google.com/about/analytics/\" target=\"_blank\">Google Analytics</a>."
             }
           ]
         }
       },
       {
+        "title": "Oglašavanje",
+        "description": "Google koristi kolačiće za oglašavanje, uključujući posluživanje i prikazivanje oglasa, personalizaciju oglasa (ovisno o vašim postavkama oglasa na <a href=\"https://g.co/adsettings\">g.co/adsettings</a>), ograničavanje broja prikaza oglasa korisniku, isključivanje oglasa koje ste odlučili ne vidjeti, te mjerenje učinkovitosti oglasa.",
+        "linkedCategory": "advertisement"
+      },
+      {
+        "title": "Funkcionalnost",
+        "description": "Kolačići koji se koriste za funkcionalnost omogućuju korisnicima interakciju s uslugom ili stranicom za pristup značajkama koje su temeljne za tu uslugu. Temeljne značajke uključuju postavke poput odabira jezika korisnika, optimizacije proizvoda koje pomažu u održavanju i poboljšanju usluge, te održavanje informacija vezanih uz korisničku sesiju, poput sadržaja košarice.",
+        "linkedCategory": "functionality"
+      },
+      {
+        "title": "Sigurnost",
+        "description": "Kolačići koji se koriste za sigurnost autentificiraju korisnike, sprječavaju prijevare i štite korisnike tijekom njihove interakcije s uslugom.",
+        "linkedCategory": "security"
+      },
+      {
         "title": "Više informacija",
-        "description": "Za sve upite u vezi s našim pravilima o kolačićima i vašim izborima, molimo<a class=\"cc-link\" href=\"mailto:info@studiolumistra.com\" target=\"_blank\">kontaktirajte nas</a>."
+        "description": "Za sva pitanja vezana uz našu politiku kolačića i vaše izbore, molimo <a class=\"cc-link\" href=\"mailto:info@studiolumistra.com\" target=\"_blank\">kontaktirajte nas</a>."
       }
     ]
   }

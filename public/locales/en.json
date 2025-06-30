@@ -8,5 +8,14 @@
     "next_project": "Next project",
     "see_more": "See more",
     "overview": "Overview"
+  },
+  "cookies": {
+    "analytics_storage": "Enables storage (such as cookies) related to analytics e.g. visit duration.",
+    "ad_storage": "Enables storage (such as cookies) related to advertising.",
+    "ad_user_data": "Sets consent for sending user data related to advertising to Google.",
+    "ad_personalization": "Sets consent for personalized advertising.",
+    "functionality_storage": "Enables storage that supports the functionality of the website or app e.g. language settings.",
+    "personalization_storage": "Enables storage related to personalization e.g. video recommendations.",
+    "security_storage": "Enables storage related to security such as authentication functionality, fraud prevention, and other user protection."
   }
 }

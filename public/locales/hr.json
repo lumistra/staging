@@ -8,5 +8,14 @@
     "next_project": "Sljedeće",
     "see_more": "Vidi više",
     "overview": "Pregled"
+  },
+  "cookies": {
+    "analytics_storage": "Omogućuje pohranu (poput kolačića) povezanu s analitikom, npr. trajanje posjeta.",
+    "ad_storage": "Omogućuje pohranu (poput kolačića) povezanu s oglašavanjem.",
+    "ad_user_data": "Postavlja privolu za slanje korisničkih podataka vezanih uz oglašavanje Googleu.",
+    "ad_personalization": "Postavlja privolu za personalizirano oglašavanje.",
+    "functionality_storage": "Omogućuje pohranu koja podržava funkcionalnost web stranice ili aplikacije, npr. postavke jezika.",
+    "personalization_storage": "Omogućuje pohranu povezanu s personalizacijom, npr. preporuke videa.",
+    "security_storage": "Omogućuje pohranu povezanu sa sigurnošću, poput funkcionalnosti autentifikacije, sprječavanja prijevara i druge zaštite korisnika."
   }
 }

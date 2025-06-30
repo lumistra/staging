@@ -27,3 +27,8 @@ declare namespace NodeJS {
     mockApi: string | undefined
   }
 }
+
+interface Window {
+  dataLayer?: any[];
+  gtag?: Function;
+}

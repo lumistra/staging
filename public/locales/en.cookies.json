@@ -18,13 +18,13 @@
         "description": "We use cookies to ensure the basic functionalities of the website and to enhance your online experience..."
       },
       {
-        "title": "Strictly necessary cookies",
+        "title": "Necessary",
         "description": "These cookies are essential in order to remember your cookie preferences",
         "linkedCategory": "necessary"
       },
       {
-        "title": "Performance and Analytics cookies",
-        "description": "These cookies allow the website to remember the choices you have made in the past",
+        "title": "Analytics",
+        "description": "",
         "linkedCategory": "analytics",
         "cookieTable": {
           "headers": {
@@ -34,7 +34,7 @@
           },
           "body": [
             {
-              "name": "_ga",
+              "name": "/^_ga/",
               "domain": "Google Analytics",
               "description": "Cookie set by <a href=\"https://marketingplatform.google.com/about/analytics/\" target=\"_blank\">Google Analytics</a>."
             },
@@ -45,6 +45,21 @@
             }
           ]
         }
+      },
+      {
+        "title": "Advertising",
+        "description": "Google uses cookies for advertising, including serving and rendering ads, personalizing ads (depending on your ad settings at <a href=\"https://g.co/adsettings\">g.co/adsettings</a>), limiting the number of times an ad is shown to a user, muting ads you have chosen to stop seeing, and measuring the effectiveness of ads.",
+        "linkedCategory": "advertisement"
+      },
+      {
+        "title": "Functionality",
+        "description": "Cookies used for functionality allow users to interact with a service or site to access features that are fundamental to that service. Things considered fundamental to the service include preferences like the user’s choice of language, product optimizations that help maintain and improve a service, and maintaining information relating to a user’s session, such as the content of a shopping cart.",
+        "linkedCategory": "functionality"
+      },
+      {
+        "title": "Security",
+        "description": "Cookies used for security authenticate users, prevent fraud, and protect users as they interact with a service.",
+        "linkedCategory": "security"
       },
       {
         "title": "More information",
