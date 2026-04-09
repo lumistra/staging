@@ -44,8 +44,8 @@
 
     .header,
     .row {
+      @include fonts.fontSize(21px);
       display: grid;
-      font-size: 21px;
       gap: 20px;
       grid-template-columns: repeat(2, 1fr);
       width: 100%;
@@ -55,7 +55,7 @@
       }
 
       @media screen and (max-width: sizes.$mobile) {
-        font-size: 16px;
+        @include fonts.fontSize(16px);
       }
     }
 
@@ -92,26 +92,26 @@
       }
 
       .title {
-        font-size: 72px;
+        @include fonts.fontSize(72px);
 
         @media screen and (max-width: sizes.$desktop) {
-          font-size: 52px;
+          @include fonts.fontSize(52px);
           grid-column: 1;
         }
 
         @media screen and (max-width: sizes.$laptop) {
-          font-size: 36px;
+          @include fonts.fontSize(36px);
         }
 
         @media screen and (max-width: sizes.$mobile) {
-          font-size: 24px;
+          @include fonts.fontSize(24px);
         }
       }
 
       .paragraph {
+        @include fonts.fontSize(21px);
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        font-size: 21px;
         grid-row: 2;
 
         @media screen and (max-width: 1500px) {
@@ -128,7 +128,7 @@
         }
 
         @media screen and (max-width: sizes.$mobile) {
-          font-size: 16px;
+          @include fonts.fontSize(16px);
           gap: 20px;
           grid-template-columns: 1fr 2ch;
         }
@@ -162,7 +162,7 @@
       }
 
       .index {
-        font-size: 48px;
+        @include fonts.fontSize(48px);
         font-weight: 300;
 
         @media screen and (max-width: sizes.$desktop) {
@@ -174,18 +174,18 @@
         width: 100%;
 
         .heading {
+          @include fonts.fontSize(48px);
           align-items: center;
           display: flex;
-          font-size: 48px;
           gap: 20px;
           justify-content: space-between;
 
           @media screen and (max-width: sizes.$desktop) {
-            font-size: 36px;
+            @include fonts.fontSize(36px);
           }
 
           @media screen and (max-width: sizes.$mobile) {
-            font-size: 24px;
+            @include fonts.fontSize(24px);
           }
 
           .icon {

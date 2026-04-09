@@ -1,4 +1,5 @@
 @use "../colors";
+@use "../fonts";
 @use "../sizes";
 
 .latestWrapper {
@@ -28,23 +29,23 @@
   }
 
   .articlesTitle {
+    @include fonts.fontSize(72px);
     display: flex;
-    font-size: 72px;
     grid-column-end: 4;
     grid-column-start: 1;
     margin-bottom: 40px;
 
     @media screen and (max-width: sizes.$desktop) {
-      font-size: 52px;
+      @include fonts.fontSize(52px);
     }
 
     @media screen and (max-width: sizes.$laptop) {
-      font-size: 36px;
+      @include fonts.fontSize(36px);
     }
 
     @media screen and (max-width: sizes.$mobile) {
+      @include fonts.fontSize(24px);
       border-top: 1px solid rgb(colors.$gray);
-      font-size: 24px;
       grid-column: 1;
       margin-bottom: 20px;
       margin-left: sizes.$mobileMinBleedWidth;
@@ -104,7 +105,7 @@
   }
 
   h3 {
-    font-size: 48px;
+    @include fonts.fontSize(48px);
     grid-column-end: 5;
     grid-column-start: 3;
 
@@ -113,7 +114,7 @@
     }
 
     @media screen and (max-width: sizes.$desktop) {
-      font-size: 36px;
+      @include fonts.fontSize(36px);
     }
 
     @media screen and (max-width: sizes.$tablet) {
@@ -121,12 +122,12 @@
     }
 
     @media screen and (max-width: sizes.$mobile) {
-      font-size: 24px;
+      @include fonts.fontSize(24px);
     }
   }
 
   .wtpParagraph {
-    font-size: 21px;
+    @include fonts.fontSize(21px);
     line-height: 36px;
     grid-column-start: 3;
 
@@ -139,7 +140,7 @@
     }
 
     @media screen and (max-width: sizes.$mobile) {
-      font-size: 16px;
+      @include fonts.fontSize(16px);
       line-height: 26px;
     }
   }

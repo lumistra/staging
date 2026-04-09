@@ -9,18 +9,18 @@
   justify-content: space-between;
 
   h3 {
-    font-size: 72px;
+    @include fonts.fontSize(72px);
 
     @media screen and (max-width: sizes.$desktop) {
-      font-size: 52px;
+      @include fonts.fontSize(52px);
     }
 
     @media screen and (max-width: sizes.$laptop) {
-      font-size: 36px;
+      @include fonts.fontSize(36px);
     }
 
     @media screen and (max-width: sizes.$mobile) {
-      font-size: 24px;
+      @include fonts.fontSize(24px);
     }
   }
 
@@ -60,8 +60,8 @@
   }
 
   .featuredTextWrapper {
+    @include fonts.fontSize(21px);
     display: grid;
-    font-size: 21px;
     grid-template-columns: repeat(4, 1fr);
 
     @media screen and (max-width: 1500px) {
@@ -73,9 +73,9 @@
     }
 
     @media screen and (max-width: sizes.$mobile) {
+      @include fonts.fontSize(16px);
       align-items: flex-end;
       display: flex;
-      font-size: 16px;
       gap: 20px;
       justify-content: space-between;
       margin: 0 sizes.$mobileMinBleedWidth;

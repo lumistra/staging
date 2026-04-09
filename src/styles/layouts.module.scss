@@ -1,9 +1,10 @@
+@use "fonts";
 @use "sizes";
 
 .textWrapper {
+  @include fonts.fontSize(21px);
   align-items: center;
   display: grid;
-  font-size: 21px;
   gap: 20px;
   grid-template-columns: repeat(2, 1fr);
   margin-bottom: 10px;
@@ -19,7 +20,7 @@
   }
 
   @media screen and (max-width: sizes.$mobile) {
-    font-size: 16px;
+    @include fonts.fontSize(16px);
   }
 
   .alignLeft {

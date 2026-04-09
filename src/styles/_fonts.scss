@@ -1,3 +1,33 @@
 $regular: "UntitledSans";
 $regular_fallback: "Geist";
 $mono: "Geist-Mono";
+
+@mixin fontSize($size: 16px, $important: "") {
+  @if $important == "important" {
+    font-size: $size !important;
+  } @else {
+    font-size: $size;
+  }
+
+  @if $size == 86px {
+    letter-spacing: -3px;
+  }
+  @if $size == 72px {
+    letter-spacing: -2.5px;
+  }
+  @if $size == 60px {
+    letter-spacing: -2px;
+  }
+  @if $size == 48px {
+    letter-spacing: -1.5px;
+  }
+  @if $size == 36px {
+    letter-spacing: -1px;
+  }
+  @if $size == 32px {
+    letter-spacing: -0.5px;
+  }
+  @if $size == 24px {
+    letter-spacing: -0.3px;
+  }
+}

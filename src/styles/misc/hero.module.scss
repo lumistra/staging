@@ -1,4 +1,5 @@
 @use "../colors";
+@use "../fonts";
 @use "../sizes";
 
 .heroWrapper {
@@ -24,8 +25,8 @@
   }
 
   .heroTitle {
+    @include fonts.fontSize(86px, "important");
     display: flex;
-    font-size: 86px !important;
     white-space: pre-wrap !important;
 
     @media screen and (max-width: 1500px) {
@@ -33,23 +34,23 @@
     }
 
     @media screen and (max-width: sizes.$desktop) {
-      font-size: 60px !important;
+      @include fonts.fontSize(60px, "important");
     }
 
     @media screen and (max-width: sizes.$laptop) {
-      font-size: 48px !important;
+      @include fonts.fontSize(48px, "important");
     }
 
     @media screen and (max-width: sizes.$mobile) {
-      font-size: 32px !important;
+      @include fonts.fontSize(32px, "important");
     }
   }
 
   .heroFootnote {
+    @include fonts.fontSize(21px);
     align-items: center;
     color: rgb(colors.$gray);
     display: flex;
-    font-size: 21px;
     gap: 10px;
     margin-top: 25vh;
     padding-bottom: 160px;
@@ -100,23 +101,23 @@
     }
 
     .heroGradientTitle {
+      @include fonts.fontSize(86px, "important");
       color: rgb(colors.$white);
       display: flex;
-      font-size: 86px !important;
       height: fit-content;
       width: fit-content;
       z-index: 10;
 
       @media screen and (max-width: sizes.$desktop) {
-        font-size: 60px !important;
+        @include fonts.fontSize(60px, "important");
       }
 
       @media screen and (max-width: sizes.$laptop) {
-        font-size: 48px !important;
+        @include fonts.fontSize(48px, "important");
       }
 
       @media screen and (max-width: sizes.$mobile) {
-        font-size: 32px !important;
+        @include fonts.fontSize(32px, "important");
       }
     }
   }

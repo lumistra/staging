@@ -1,4 +1,5 @@
 @use "../colors";
+@use "../fonts";
 @use "../sizes";
 
 .heroWrapper {
@@ -11,33 +12,33 @@
   }
 
   .heroTitle {
-    font-size: 86px;
+    @include fonts.fontSize(86px);
     margin-bottom: 80px;
 
     @media screen and (max-width: sizes.$desktop) {
-      font-size: 60px;
+      @include fonts.fontSize(60px);
     }
 
     @media screen and (max-width: sizes.$laptop) {
-      font-size: 48px;
+      @include fonts.fontSize(48px);
     }
 
     @media screen and (max-width: sizes.$mobile) {
-      font-size: 32px;
+      @include fonts.fontSize(32px);
       margin-bottom: 20px;
     }
   }
 
   .heroCredentials {
+    @include fonts.fontSize(21px);
     color: rgb(colors.$gray);
     display: flex;
     flex-wrap: wrap;
-    font-size: 21px;
     gap: 0 0.5ch;
     margin-bottom: 20px;
 
     @media screen and (max-width: sizes.$mobile) {
-      font-size: 16px;
+      @include fonts.fontSize(16px);
       margin-bottom: 10px;
     }
 
@@ -104,29 +105,29 @@
     }
 
     .recommendedTitle {
-      font-size: 48px;
+      @include fonts.fontSize(48px);
 
       @media screen and (max-width: sizes.$desktop) {
-        font-size: 36px;
+        @include fonts.fontSize(36px);
       }
 
       @media screen and (max-width: sizes.$mobile) {
-        font-size: 24px;
+        @include fonts.fontSize(24px);
       }
     }
 
     .recommendedCTA {
+      @include fonts.fontSize(48px);
       cursor: pointer;
-      font-size: 48px;
       white-space: nowrap;
 
       @media screen and (max-width: sizes.$desktop) {
-        font-size: 36px;
+        @include fonts.fontSize(36px);
       }
 
       @media screen and (max-width: sizes.$mobile) {
+        @include fonts.fontSize(16px);
         align-self: flex-start;
-        font-size: 16px;
       }
 
       svg {

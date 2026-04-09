@@ -1,4 +1,5 @@
 @use "../colors";
+@use "../fonts";
 @use "../sizes";
 
 .wrapper {
@@ -48,15 +49,15 @@
     }
 
     .title {
+      @include fonts.fontSize(36px);
       color: rgb(colors.$gray);
-      font-size: 36px;
 
       @media screen and (max-width: sizes.$laptop) {
-        font-size: 28px;
+        @include fonts.fontSize(28px);
       }
 
       @media screen and (max-width: sizes.$tablet) {
-        font-size: 24px;
+        @include fonts.fontSize(24px);
       }
     }
 

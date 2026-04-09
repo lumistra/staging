@@ -27,16 +27,16 @@
     }
 
     .pitchTitle {
-      font-size: 60px;
+      @include fonts.fontSize(60px);
       font-weight: 400;
       grid-column: 2/3;
 
       @media screen and (max-width: sizes.$desktop) {
-        font-size: 48px;
+        @include fonts.fontSize(48px);
       }
 
       @media screen and (max-width: sizes.$tablet) {
-        font-size: 32px;
+        @include fonts.fontSize(32px);
       }
 
       @media screen and (max-width: sizes.$mobile) {
@@ -76,11 +76,11 @@
     }
 
     .pitchLabel {
+      @include fonts.fontSize(16px);
       color: rgb(colors.$gray);
-      font-size: 16px;
 
       @media screen and (max-width: sizes.$laptop) {
-        font-size: 14px;
+        @include fonts.fontSize(14px);
       }
     }
   }

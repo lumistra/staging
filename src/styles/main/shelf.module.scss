@@ -22,16 +22,16 @@
     }
 
     * {
-      font-size: 60px !important;
+      @include fonts.fontSize(60px, "important");
       font-weight: 400 !important;
       margin: 0;
 
       @media screen and (max-width: sizes.$desktop) {
-        font-size: 48px !important;
+        @include fonts.fontSize(48px, "important");
       }
 
       @media screen and (max-width: sizes.$tablet) {
-        font-size: 32px !important;
+        @include fonts.fontSize(32px, "important");
       }
     }
   }
@@ -87,20 +87,20 @@
       }
 
       .number {
-        font-size: 21px;
+        @include fonts.fontSize(21px);
 
         @media screen and (max-width: sizes.$tablet) {
-          font-size: 18px;
+          @include fonts.fontSize(18px);
         }
       }
 
       .label {
-        font-size: 36px;
+        @include fonts.fontSize(36px);
         position: relative;
         width: fit-content;
 
         @media screen and (max-width: sizes.$tablet) {
-          font-size: 24px;
+          @include fonts.fontSize(24px);
         }
       }
 

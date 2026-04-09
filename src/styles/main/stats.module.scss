@@ -1,4 +1,5 @@
 @use "../colors";
+@use "../fonts";
 @use "../sizes";
 
 .statsWrapper {
@@ -29,11 +30,11 @@
     }
 
     .steps {
+      @include fonts.fontSize(21px);
       color: rgb(colors.$gray);
-      font-size: 21px;
 
       @media screen and (max-width: sizes.$tablet) {
-        font-size: 16px;
+        @include fonts.fontSize(16px);
       }
     }
   }
@@ -63,16 +64,16 @@
   }
 
   .stat {
-    font-size: 260px;
+    @include fonts.fontSize(260px);
     line-height: 195px;
 
     @media screen and (max-width: sizes.$desktop) {
-      font-size: 200px;
+      @include fonts.fontSize(200px);
       line-height: 155px;
     }
 
     @media screen and (max-width: sizes.$tablet) {
-      font-size: 140px;
+      @include fonts.fontSize(140px);
       line-height: 110px;
     }
   }
@@ -85,19 +86,19 @@
     min-height: 200px;
 
     p {
-      font-size: 36px;
+      @include fonts.fontSize(36px);
 
       @media screen and (max-width: sizes.$tablet) {
-        font-size: 32px;
+        @include fonts.fontSize(32px);
       }
     }
 
     span {
+      @include fonts.fontSize(21px);
       color: rgb(colors.$gray);
-      font-size: 21px;
 
       @media screen and (max-width: sizes.$tablet) {
-        font-size: 16px;
+        @include fonts.fontSize(16px);
       }
     }
   }

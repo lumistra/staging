@@ -1,4 +1,5 @@
 @use "colors";
+@use "fonts";
 @use "sizes";
 
 .sidenav-wrapper {
@@ -108,10 +109,10 @@
         }
 
         .label {
-          font-size: 21px;
+          @include fonts.fontSize(21px);
 
           @media screen and (max-width: sizes.$mobile) {
-            font-size: 16px;
+            @include fonts.fontSize(16px);
           }
         }
 
@@ -136,18 +137,18 @@
             gap: 20px;
 
             .locales {
+              @include fonts.fontSize(48px);
               align-items: center;
               color: rgb(colors.$gray);
               display: flex;
-              font-size: 48px;
               gap: 10px;
 
               @media screen and (max-width: sizes.$desktop) {
-                font-size: 36px;
+                @include fonts.fontSize(36px);
               }
 
               @media screen and (max-width: sizes.$mobile) {
-                font-size: 24px;
+                @include fonts.fontSize(24px);
               }
 
               .splitter {
@@ -183,18 +184,18 @@
           }
 
           .options {
+            @include fonts.fontSize(48px);
             align-items: center;
             color: rgb(colors.$gray);
             display: flex;
-            font-size: 48px;
             gap: 10px;
 
             @media screen and (max-width: sizes.$desktop) {
-              font-size: 36px;
+              @include fonts.fontSize(36px);
             }
 
             @media screen and (max-width: sizes.$mobile) {
-              font-size: 24px;
+              @include fonts.fontSize(24px);
             }
 
             .splitter {
@@ -243,21 +244,21 @@
         }
 
         .routes-wrapper {
+          @include fonts.fontSize(72px);
           display: flex;
           flex-direction: column;
-          font-size: 72px;
           gap: 30px;
 
           @media screen and (max-width: sizes.$desktop) {
-            font-size: 52px;
+            @include fonts.fontSize(52px);
           }
 
           @media screen and (max-width: sizes.$laptop) {
-            font-size: 36px;
+            @include fonts.fontSize(36px);
           }
 
           @media screen and (max-width: sizes.$mobile) {
-            font-size: 24px;
+            @include fonts.fontSize(24px);
             gap: 20px;
           }
 

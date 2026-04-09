@@ -31,11 +31,11 @@
     }
 
     .pitchNumber {
+      @include fonts.fontSize(48px);
       color: rgb(colors.$gray);
-      font-size: 48px;
 
       @media screen and (max-width: sizes.$desktop) {
-        font-size: 36px;
+        @include fonts.fontSize(36px);
       }
 
       @media screen and (max-width: sizes.$tablet) {
@@ -44,15 +44,15 @@
     }
 
     .pitchLabel {
+      @include fonts.fontSize(48px);
       color: rgb(colors.$gray);
-      font-size: 48px;
 
       @media screen and (max-width: sizes.$desktop) {
-        font-size: 36px;
+        @include fonts.fontSize(36px);
       }
 
       @media screen and (max-width: sizes.$mobile) {
-        font-size: 24px;
+        @include fonts.fontSize(24px);
       }
     }
 
@@ -67,21 +67,21 @@
       }
 
       .pitchTitle {
-        font-size: 48px;
+        @include fonts.fontSize(48px);
 
         @media screen and (max-width: sizes.$desktop) {
-          font-size: 36px;
+          @include fonts.fontSize(36px);
         }
 
         @media screen and (max-width: sizes.$mobile) {
-          font-size: 24px;
+          @include fonts.fontSize(24px);
         }
       }
 
       .pitchParagraph {
+        @include fonts.fontSize(21px);
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        font-size: 21px;
 
         @media screen and (max-width: 1800px) {
           grid-template-columns: 1fr;
@@ -92,7 +92,7 @@
         }
 
         @media screen and (max-width: sizes.$mobile) {
-          font-size: 16px;
+          @include fonts.fontSize(16px);
         }
       }
 
