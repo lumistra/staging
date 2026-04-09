@@ -27,7 +27,7 @@ The deployment is triggered by manually running the ["Deploy" workflow](https://
 
 | Dependency | Version  |
 | ------------------ | -------- |
-| [Node.js](https://nodejs.org/en) | `>=20` |
+| [Node.js](https://nodejs.org/en) | `>=24` |
 | [yarn](https://yarnpkg.com) | `>=1.22.22` |
 | [Storyblok](https://www.storyblok.com) | `N/A` |
 

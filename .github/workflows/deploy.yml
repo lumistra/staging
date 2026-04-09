@@ -12,7 +12,7 @@ permissions:
   id-token: write
 
 env:
-  NODE_VERSION: 20.0
+  NODE_VERSION: 24
 
 jobs:
   build:
@@ -20,10 +20,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Set up Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: yarn
@@ -41,18 +41,18 @@ jobs:
           GTM_ID: ${{ secrets.GTM_ID }}
 
       - name: Build sitemap
-        if: ${{ vars.ENVIRONMENT }} == 'production'
+        if: vars.ENVIRONMENT == 'production'
         run: yarn build:sitemap
         env:
           SITE_URL: ${{ vars.SITE_URL }}
 
       - name: Setup GitHub Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v6
 
       - name: Upload build
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
-          path: './out'
+          path: "./out"
 
   deploy:
     name: Deploy
@@ -65,4 +65,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
