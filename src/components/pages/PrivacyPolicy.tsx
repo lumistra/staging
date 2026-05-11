@@ -6,6 +6,7 @@ import style from '@/styles/privacy-policy.module.scss';
 
 export default function PrivacyPolicy() {
   const [host, setHost] = useState('');
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => setHost(window.location.host), []);
 
   return (

@@ -30,7 +30,6 @@ export const useScreenSize = () => {
       tabletQuery.removeEventListener('change', handler);
       mobileQuery.removeEventListener('change', handler);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return {

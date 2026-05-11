@@ -1,11 +1,11 @@
 import type { ContactData, HeroData, MetaData } from '@/types/components';
 import type { CTALinkData, MediaData, StylingData } from '@/types/shared';
-import type { ISbRichtext, ISbStoryData, SbBlokData } from '@storyblok/react';
+import type { ISbStoryData, SbBlokData, StoryblokRichTextNode } from '@storyblok/react';
 
 export type OverviewData = {
   cover: MediaData
   title: string
-  paragraph: ISbRichtext
+  paragraph: StoryblokRichTextNode
 };
 
 export type ProjectData = {

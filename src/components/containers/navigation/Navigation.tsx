@@ -24,6 +24,7 @@ export default function Navigation(props: Props) {
       setIsTop(window.scrollY <= 0);
     };
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsTop(window.scrollY <= 0);
     window.addEventListener('scroll', handleToggleNavigationVersion);
 

@@ -6,7 +6,7 @@ import { getRawPath, routes } from '@/utils';
 
 export default function PageTransition() {
   const router = useRouter();
-  const [title, setTitle] = useState({ value: '', seed: Date.now() });
+  const [title, setTitle] = useState(() => ({ value: '', seed: Date.now() }));
   const path = getRawPath(router.asPath, false);
 
   useEffect(() => {

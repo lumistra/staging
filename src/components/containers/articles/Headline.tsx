@@ -17,7 +17,7 @@ const WPM = 238;
 
 function Headline(props: Props) {
   const [readTime, setReadTime] = useState('Calculating...');
-  const timeoutID = useRef<NodeJS.Timeout>(undefined);
+  const timeoutID = useRef<ReturnType<typeof setTimeout>>(undefined);
   const publishedAt = new Date(props.blok.publishedAt);
 
   useEffect(() => {

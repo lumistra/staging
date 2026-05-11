@@ -2,7 +2,7 @@ import type { HeadlineData } from '@/types/articles';
 import type {
   CMSLink, CTALinkData, Icons, MediaData, StylingData,
 } from '@/types/shared';
-import type { ISbRichtext } from '@storyblok/react';
+import type { StoryblokRichTextNode } from '@storyblok/react';
 
 export type MetaData = {
   title?: string
@@ -17,7 +17,7 @@ export type MetaData = {
 };
 
 export type HeroData = {
-  title: ISbRichtext | string
+  title: StoryblokRichTextNode | string
   footnoteCTA?: string
   gradient: boolean
   spacingBottom: boolean
@@ -25,11 +25,11 @@ export type HeroData = {
 
 export type AboutSectionData = {
   title: string
-  paragraph: ISbRichtext
+  paragraph: StoryblokRichTextNode
 } & StylingData;
 
 export type AboutSplitData = {
-  text: ISbRichtext
+  text: StoryblokRichTextNode
   cta?: [CTALinkData]
 } & StylingData;
 
@@ -53,13 +53,13 @@ export type AltBackgroundSectionData = {
 export type SelectionData = {
   heroHide: boolean
   heroTitle: string
-  heroParagraph: ISbRichtext
+  heroParagraph: StoryblokRichTextNode
   idleTitle: string
-  idleParagraph: ISbRichtext
+  idleParagraph: StoryblokRichTextNode
   positiveTitle: string
-  positiveParagraph: ISbRichtext
+  positiveParagraph: StoryblokRichTextNode
   negativeTitle: string
-  negativeParagraph: ISbRichtext
+  negativeParagraph: StoryblokRichTextNode
   inputStartText: string
   inputPlaceholder: string
   inputNoResults: string
@@ -74,7 +74,7 @@ type WorkflowStepData = {
 
 export type WorkflowData = {
   title?: string
-  paragraph?: ISbRichtext
+  paragraph?: StoryblokRichTextNode
   steps: WorkflowStepData[]
   headerAlign?: 'left' | 'right'
   background?: 'primary' | 'white'
@@ -99,7 +99,7 @@ export type BentoItemData = {
 };
 
 export type BentoData = {
-  headline: ISbRichtext
+  headline: StoryblokRichTextNode
   frames: BentoItemData
 } & StylingData;
 
@@ -110,13 +110,13 @@ export type ShelfItemData = {
 };
 
 export type ShelfData = {
-  headline: ISbRichtext
+  headline: StoryblokRichTextNode
   steps: ShelfItemData[]
 } & StylingData;
 
 export type GrowItemData = {
   title: string
-  paragraph: ISbRichtext
+  paragraph: StoryblokRichTextNode
   cta: [CTALinkData]
   gallery: MediaData[]
 };
@@ -139,9 +139,9 @@ export type PitchData = {
 type PitchMoreItemData = {
   title: string
   leftLabel?: string
-  leftParagraph?: ISbRichtext
+  leftParagraph?: StoryblokRichTextNode
   rightLabel?: string
-  rightParagraph?: ISbRichtext
+  rightParagraph?: StoryblokRichTextNode
 };
 
 export type PitchMoreData = {
@@ -152,7 +152,7 @@ export type WantToPublishData = {
   background: 'dark' | 'gray'
   spacingTop: boolean
   title: string
-  paragraph: ISbRichtext
+  paragraph: StoryblokRichTextNode
 } & StylingData;
 
 type Serviceitem = {

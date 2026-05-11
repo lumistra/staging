@@ -2,7 +2,7 @@ import {
   forEach, includes, isArray, some,
 } from 'lodash';
 import { locales } from '@/hooks/useTranslations';
-import type { ISbRichtext } from '@storyblok/react';
+import type { StoryblokRichTextNode } from '@storyblok/react';
 
 export const isProd = process.env.NODE_ENV === 'production';
 export const storyVersion: 'published' | 'draft' = process.env.environment === 'production' ? 'published' : 'draft';
@@ -52,7 +52,7 @@ export const getOrderNumber = (index: number, brackets?: boolean): string => {
   return number;
 };
 
-export const hasRichText = (document: ISbRichtext | undefined) => {
+export const hasRichText = (document: StoryblokRichTextNode | undefined) => {
   if (!document?.content) return false;
 
   for (const item of document.content) {

@@ -22,7 +22,7 @@ function Grow(props: Props) {
   const [cursorPosition, setCursorPosition] = useState<CursorPosition>(null);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const [activeBlock, setActiveBlock] = useState(-1);
-  const intervalID = useRef<NodeJS.Timeout>(undefined);
+  const intervalID = useRef<ReturnType<typeof setInterval>>(undefined);
   const currentBlock = props.blok.blocks[Math.max(0, activeBlock)];
 
   useEffect(() => {

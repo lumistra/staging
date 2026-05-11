@@ -20,6 +20,7 @@ export default function Lightbox(props: Props) {
 
   return (
     <>
+      {/* eslint-disable-next-line react-hooks/refs */}
       {cloneElement(props.children, {
         ...props.children.props,
         onClick: handleLightboxToggle,

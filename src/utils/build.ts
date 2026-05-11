@@ -1,6 +1,6 @@
 import fs from 'fs';
 import {
-  compact, forEach, includes, map, split,
+  compact, includes, map, split,
 } from 'lodash';
 import { defaultLocale, locales } from '@/hooks/useTranslations';
 import { getRawPath, storyVersion } from '.';
@@ -24,7 +24,7 @@ export const generateStaticPaths = (cmsLinks: string[]) => {
 export const generateGlobals = async (api: StoryblokClient) => {
   if (process.env.mockApi) return;
 
-  forEach(locales, async ({ value: locale }) => {
+  await Promise.all(map(locales, async ({ value: locale }) => {
     const [{ data: header }, { data: footer }] = await Promise.all([
       api.get(`cdn/stories/${locale}/global/header`, { version: storyVersion }),
       api.get(`cdn/stories/${locale}/global/footer`, { version: storyVersion }),
@@ -33,5 +33,5 @@ export const generateGlobals = async (api: StoryblokClient) => {
     fs.mkdirSync(`${process.cwd()}/tmp/${locale}`, { recursive: true });
     fs.writeFileSync(`${process.cwd()}/tmp/${locale}/header.json`, JSON.stringify(header.story), { encoding: 'utf-8' });
     fs.writeFileSync(`${process.cwd()}/tmp/${locale}/footer.json`, JSON.stringify(footer.story), { encoding: 'utf-8' });
-  });
+  }));
 };

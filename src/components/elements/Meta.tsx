@@ -61,7 +61,7 @@ export default function Meta(props: Props) {
       <script
         key="schema.org"
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
+         
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             props.blok.article ? {

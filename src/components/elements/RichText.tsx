@@ -3,11 +3,11 @@ import classNames from 'classnames';
 import { isEmpty } from 'lodash';
 import Link from '@/components/elements/Link';
 import { hasRichText } from '@/utils';
-import type { ISbRichtext } from '@storyblok/react';
+import type { StoryblokRichTextNode } from '@storyblok/react';
 
 type Props = {
   className?: string
-  children: ISbRichtext | undefined
+  children: StoryblokRichTextNode | undefined
 };
 
 export default function RichText(props: Props) {
@@ -17,7 +17,7 @@ export default function RichText(props: Props) {
     <div className={classNames('rich-text-wrapper', props.className)}>
       {render(props.children, {
         markResolvers: {
-          // eslint-disable-next-line react/no-unstable-nested-components
+           
           [MARK_LINK]: (children, componentProps) => {
             const { linktype, href } = componentProps;
 

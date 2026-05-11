@@ -52,7 +52,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <script
           key="schema.org"
           type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
+           
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(
               {

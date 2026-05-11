@@ -29,6 +29,7 @@ export const useDarkMode = (props: Props) => {
       handleMode(darkMode.matches);
     };
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     handleMode(darkMode.matches, storedMode);
     darkMode.addEventListener('change', handler);
 

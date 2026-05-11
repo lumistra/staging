@@ -27,7 +27,7 @@ export default function Selected(props: Props) {
   const [modalShow, setModalShow] = useState(false);
   const [modalProject, setModalProject] = useState<ISbStoryData<ProjectData> | null>();
   const [cursorPosition, setCursorPosition] = useState<CursorPosition>(null);
-  const timeoutID = useRef<NodeJS.Timeout>(undefined);
+  const timeoutID = useRef<ReturnType<typeof setTimeout>>(undefined);
   const [modalProjectOverview] = modalProject?.content.overview || [];
 
   useScrollAnimations({

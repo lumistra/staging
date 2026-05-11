@@ -23,7 +23,7 @@ export default function Featured(props: Props) {
   const [modalShow, setModalShow] = useState(false);
   const [cursorPosition, setCursorPosition] = useState<CursorPosition>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const intervalID = useRef<NodeJS.Timeout>(undefined);
+  const intervalID = useRef<ReturnType<typeof setInterval>>(undefined);
   const currentProject = props.blok.projects[currentIndex];
   const [currentProjectOverview] = currentProject.content.overview || [];
 
