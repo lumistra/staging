@@ -1,0 +1,40 @@
+@use "../sizes";
+
+.labWrapper {
+  margin-bottom: 100px;
+  margin-top: 100px;
+
+  .labGrid {
+    display: grid;
+    grid-auto-rows: 1vw;
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: -0.5vw;
+    width: calc(100% + 1vw);
+
+    .labContainer {
+      grid-row-end: span var(--row-span-desktop);
+      padding: 0.5vw;
+
+      .labImage {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    @media screen and (max-width: sizes.$tablet) {
+      grid-template-columns: repeat(2, 1fr);
+
+      .labContainer {
+        grid-row-end: span var(--row-span-tablet);
+      }
+    }
+
+    @media screen and (max-width: sizes.$mobile) {
+      grid-template-columns: 1fr;
+
+      .labContainer {
+        grid-row-end: span var(--row-span-mobile);
+      }
+    }
+  }
+}

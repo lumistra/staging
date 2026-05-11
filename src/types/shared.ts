@@ -13,6 +13,7 @@ export enum Icons {
 export type MediaData = {
   id: number,
   alt: string | null,
+  name: string | null,
   filename: string,
   copyright: string,
   meta_data: {

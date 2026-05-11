@@ -1,6 +1,6 @@
 import classNames from 'classnames';
-import { includes, some } from 'lodash';
 import NextImage from 'next/image';
+import { isVideo } from '@/utils';
 
 type Props = {
   className?: string,
@@ -15,17 +15,19 @@ type Props = {
 export default function Media(props: Props) {
   const basePath = (process.env.basePath || '');
   const src = `${basePath}${props.src}`;
-  const isVideo = some(['webm', 'mp4', 'ogg'], (format) => includes(src, `.${format}`));
+  const videoFormat = isVideo(src);
 
   return (
     <div
-      className={classNames('image-container', props.className)}
+      className={classNames('image-container', props.className, {
+        'mock-media': !!process.env.mockApi,
+      })}
       {...props.storyblokEditable}
       onClick={props.onClick}
       onMouseEnter={props.onMouseEnter}
       onMouseLeave={props.onMouseLeave}
     >
-      {isVideo ? (
+      {videoFormat ? (
         <video src={src} muted autoPlay playsInline loop />
       ) : (
         <NextImage src={src} alt={props.alt || ''} fill />

@@ -16,6 +16,7 @@ import AnimatedLineSection from '@/components/containers/misc/AnimatedLineSectio
 import Navigation from '@/components/containers/navigation/Navigation';
 import Sidenav from '@/components/containers/navigation/Sidenav';
 import Featured from '@/components/containers/projects/Featured';
+import Lab from '@/components/containers/projects/Lab';
 import Overview from '@/components/containers/projects/Overview';
 import Selected from '@/components/containers/projects/Selected';
 import Pitch from '@/components/containers/services/Pitch';
@@ -51,6 +52,7 @@ const components = {
   heroAlt: Hero,
   featured: Featured,
   selected: Selected,
+  lab: Lab,
   latest: Latest,
   selection: Selection,
   workflow: Workflow,

@@ -39,6 +39,10 @@ export type SelectedData = {
   view: keyof typeof View
 } & StylingData;
 
+export type LabData = {
+  items: MediaData[]
+} & StylingData;
+
 export type WorkData = {
   meta: [MetaData]
   hero: [HeroData]

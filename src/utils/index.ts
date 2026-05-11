@@ -1,4 +1,6 @@
-import { forEach, isArray } from 'lodash';
+import {
+  forEach, includes, isArray, some,
+} from 'lodash';
 import { locales } from '@/hooks/useTranslations';
 import type { ISbRichtext } from '@storyblok/react';
 
@@ -7,16 +9,17 @@ export const storyVersion: 'published' | 'draft' = process.env.environment === '
 export const routes = {
   mocks: {
     home: '/',
-    news: '/news',
     work: '/work',
+    projects: '/projects',
+    lab: '/lab',
     about: '/about',
     contact: '/contact',
     services: '/services',
+    news: '/news',
+    articles: '/articles',
   },
   expected: {
-    news: '/news',
     work: '/work',
-    articles: '/articles',
     projects: '/projects',
   },
   privacyPolicy: '/privacy-policy',
@@ -56,3 +59,5 @@ export const hasRichText = (document: ISbRichtext | undefined) => {
     if (isArray(item.content) && item.content.length > 0) return true;
   }
 };
+
+export const isVideo = (src: string) => some(['webm', 'mp4', 'ogg'], (format) => includes(src, `.${format}`));

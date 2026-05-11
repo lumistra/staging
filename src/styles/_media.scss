@@ -7,12 +7,16 @@
   justify-content: center;
   position: relative;
 
-  img,
+  &.mock-media img,
   video {
     background-image: url("/assets/svg/placeholder.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  img,
+  video {
     height: 100%;
     object-fit: cover;
     object-position: center;
@@ -77,12 +81,16 @@
     height: 100%;
     width: 100%;
 
-    img,
+    &.mock-media img,
     video {
       background-image: url("/assets/svg/placeholder.svg");
       background-position: top;
       background-repeat: no-repeat;
       background-size: contain;
+    }
+
+    img,
+    video {
       height: 100%;
       object-fit: contain;
       object-position: top;
