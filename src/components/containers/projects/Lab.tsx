@@ -59,7 +59,7 @@ export default function Lab(props: Props) {
             >
               <Lightbox image={media}>
                 <Media
-                  className={style.labImage}
+                  className={style.labMedia}
                   src={media.filename}
                   alt={media.alt}
                 />

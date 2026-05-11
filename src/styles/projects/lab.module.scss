@@ -15,7 +15,8 @@
       grid-row-end: span var(--row-span-desktop);
       padding: 0.5vw;
 
-      .labImage {
+      .labMedia {
+        cursor: pointer;
         height: 100%;
         width: 100%;
       }
